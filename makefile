@@ -25,7 +25,7 @@ clean:
 
 public/%.html: tmp/%.md base.html
 	$(MKDIR)
-	$(RUBY) scripts/make-html.rb $< > $@ 
+	$(RUBY) scripts/make-html.rb $* > $@ 
 
 tmp/index.md: tmp/index.yaml
 	$(MKDIR)
