@@ -11,7 +11,7 @@ text = open(target_file, 'r'){|io|io.read}
 
 title = text.match(/\#\s+(.+)/)&.[](1) || text.match(/(.+)\n=====/)&.[](1) || '無題'
 
-body = Kramdown::Document.new(text).to_html
+body = Kramdown::Document.new(text).to_html.gsub(/(?<!>|\s)\n(?!<|\s)/){'<br>'}
 
 html_base = open('base.html', 'r').read
 
