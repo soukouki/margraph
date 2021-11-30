@@ -10,5 +10,5 @@ toなるものがあるっぽい？
 $ \mathbb{RNC} $
 黒板文字、私は好きです。
 
-$ \begin{pmatrix} a & b \\ c & d \end{pmatrix} $
+$ \displaystyle \begin{pmatrix} a & b \\ c & d \end{pmatrix} $
 行列のテスト
