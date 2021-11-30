@@ -3,5 +3,6 @@ LaTeXのメモ
 
 MathJaxでどこまで出来るのか、どうやって書くかのメモ。
 
-$\[ \lim_{x\to\infty}f(x) \]$
+$ \displaystyle \lim_{x\to\infty}f(x) $
 toなるものがあるっぽい？
+$ \dlim_{x\to\infty} $ではない
