@@ -10,3 +10,37 @@ blockquote {
   border-left-width: 2px;
   border-left-color: var(--bs-primary);
 }
+
+table {
+  max-width: fit-content;
+  border: 16px;
+  border-radius: 16px;
+}
+thead > tr > th,
+tbody > tr > td {
+  border: none;
+}
+tbody > tr > td + td {
+  padding-left: 32px;
+}
+thead > tr > th {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+thead > tr,
+tbody > tr {
+  border: none;
+}
+thead > tr > th {
+  border-bottom: solid 2px var(--bs-light);
+}
+tbody > tr + tr > td {
+  border-top: solid 2px var(--bs-light);
+}
+thead > tr > th:empty {
+  border: none;
+  display: none;
+}
+table img {
+  border-radius: 16px;
+}
