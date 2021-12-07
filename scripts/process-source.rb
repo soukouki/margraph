@@ -26,14 +26,14 @@ index_title = index[:dirs].find{|h|h[:path] == File.dirname(target_file)}[:title
 
 mixin_files.each do |file|
   source += (
-    # Kramdownが悪さをするみたいなので、先頭に空白を入れておく
     "<pre><code class=\"language-#{File.extname(file)[1..-1]}\">"+
-    open(file){|f|f.read}.gsub(/\A\n+/,"").gsub(/^/, "    ")+
+    open(file){|f|f.read}.gsub(/\A\n+/,"")+
     "</code></pre>"
   )
 end
 
 source += <<~MD
+
 
   <button type="button" class="btn-primary" onclick="window.location.href='#{ENV['EDITLINK']}src/#{target_file}.md';">Edit</button>
   

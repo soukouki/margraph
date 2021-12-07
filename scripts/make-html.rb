@@ -15,7 +15,7 @@ body = Kramdown::Document.new(text)
   .to_html
   .gsub(/(?<!>|\s)\n(?!<|\s)/){|s|'<br>'} # タグに挟まれていたりする改行をbrタグに置き換え
   .gsub(/(?<=>)(\u00A0)(?=<\/th>)/){''} # tableで項目を入れないときに出てくるゼロ幅スペースを削除
-  .gsub(/(^|(?!>))    /, "") # Kramdownでcodeブロック内が置き換えられてしまうのでつけていた空白を削除
+  .gsub(/(?<=<code>)(.+)(?=<br>)/){|m|p m; "<code class\"language-#{$1}\">"} # コードブロックの言語設定をclassに設定
 
 html_base = open('base.html', 'r').read
 
