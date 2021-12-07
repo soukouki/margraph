@@ -10,5 +10,7 @@ toなるものがあるっぽい？
 $ \mathbb{RNC} $
 黒板文字、私は好きです。
 
-$ \displaystyle \begin{pmatrix} a & b \\ c & d \end{pmatrix} $
 行列のテスト
+$$ \begin{pmatrix} a & b \\ c & d \end{pmatrix} $$
+
+`$ \begin{pmatrix} a & b \\ c & d \end{pmatrix} $`と$を一つにするとうまく表示してくれない。
