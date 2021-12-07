@@ -13,7 +13,7 @@ title = text.match(/\#\s+(.+)/)&.[](1) || text.match(/(.+)\n=====/)&.[](1) || '�
 
 body = Kramdown::Document.new(text)
   .to_html
-  .gsub(/(?<!>|\s)\n(?!<|\s)/){|s|$stderr.puts "*"*100; $stderr.puts s; $stderr.puts "*"*100; '<br>'} # タグに挟まれていたりする改行をbrタグに置き換え
+  .gsub(/(?<!>|\s)\n(?!<|\s)/){|s|'<br>'} # タグに挟まれていたりする改行をbrタグに置き換え
   .gsub(/(?<=>)(\u00A0)(?=<\/th>)/){''} # tableで項目を入れないときに出てくるゼロ幅スペースを削除
   .gsub(/(^|(?!>))    /, "") # Kramdownでcodeブロック内が置き換えられてしまうのでつけていた空白を削除
 
