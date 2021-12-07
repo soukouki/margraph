@@ -44,3 +44,7 @@ thead > tr > th:empty {
 table img {
   border-radius: 16px;
 }
+
+.hljs {
+  background: #1118;
+}
