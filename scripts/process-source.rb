@@ -6,6 +6,8 @@ require './scripts/breadcrumb'
 
 target_file = ARGV[0]
 
+mixin_files = ARGV[1..-1]
+
 index = YAML.load_file('tmp/index.yaml')
 
 root_dir_path = root_dir_path(target_file)
@@ -22,8 +24,16 @@ index_in_same_dir = files_in_same_dir.find_index{|p|p[:path] == target_file}
 
 index_title = index[:dirs].find{|h|h[:path] == File.dirname(target_file)}[:title]
 
-source += <<~MD
+mixin_files.each do |file|
+  source += (
+    # Kramdownが悪さをするみたいなので、先頭に空白を入れておく
+    "<pre><code class=\"language-#{File.extname(file)[1..-1]}\">"+
+    open(file){|f|f.read}.gsub(/\A\n+/,"").gsub(/^/, "    ")+
+    "</code></pre>"
+  )
+end
 
+source += <<~MD
 
   <button type="button" class="btn-primary" onclick="window.location.href='#{ENV['EDITLINK']}src/#{target_file}.md';">Edit</button>
   
