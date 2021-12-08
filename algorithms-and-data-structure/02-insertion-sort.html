@@ -29,7 +29,8 @@
 <p>配列の端っこにすでにソートされた部分を作っていき、次の要素をソートされた部分に挿入していく。</p>
 <pre><code class="language-py">array = [1, 5, 2, 9, 4, 0]
 
-# 昇順<br>for i in range(1, len(array)):
+# 昇順
+for i in range(1, len(array)):
   print(array)
   value = array[i]
   # array[0..i]のすでにソートされた場所から、挿入場所を探す
@@ -39,9 +40,11 @@
     i -= 1
   array[i] = value
 
-print(array)<br>exit()
+print(array)
+exit()
 
-# 降順<br>for i in range(1, len(array)):
+# 降順
+for i in range(1, len(array)):
   value = array[i]
   while i &gt; 0 and array[i-1] &lt; value: # この部分を変更
     array[i] = array[i-1]
