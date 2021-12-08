@@ -10,8 +10,5 @@ toなるものがあるっぽい？
 $ \mathbb{RNC} $
 黒板文字、私は好きです。
 
-$$ \displaystyle \begin{pmatrix} a & b \\ c & d \end{pmatrix} $$
-行列は`$$`で囲まないとだめっぽい？
-
 $$ \begin{pmatrix} a & b \\ c & d \end{pmatrix} $$
-displaystyleがいるかどうかの確認
+行列はこうしないといけない。`$$`で囲むのに注意
