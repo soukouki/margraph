@@ -12,3 +12,5 @@ $ \mathbb{RNC} $
 
 $ \displaystyle \begin{pmatrix} a & b \\ c & d \end{pmatrix} $
 行列のテスト
+
+スマホだとうまく表示されない...
