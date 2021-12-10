@@ -10,11 +10,8 @@ toなるものがあるっぽい？
 $ \mathbb{RNC} $
 黒板文字、私は好きです。
 
-$ \displaystyle \begin{pmatrix} a & b \\ c & d \end{pmatrix} $
-行列のテスト
-
-スマホだとうまく表示されない...
-
 $$ \displaystyle \begin{pmatrix} a & b \\ c & d \end{pmatrix} $$
+行列は`$$`で囲まないとだめっぽい？
 
-$を2つにしてみるチャレンジ
+$$ \begin{pmatrix} a & b \\ c & d \end{pmatrix} $$
+displaystyleがいるかどうかの確認
