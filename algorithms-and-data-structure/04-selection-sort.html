@@ -27,20 +27,21 @@
 
 <p>比較の回数は$ (N-1)+(N-2)+\dots+1 = \dfrac{N(N-1)}{2} $</p>
 
-<p>要素の個数回、未ソートの配列をなめて一番小さいものを、未ソートの部分の先頭と入れ替える。&lt;pre&gt;<code class="language-py">a = [1, 5, 2, 9, 4, 0]</code></p>
+<p>要素の個数回、未ソートの配列をなめて一番小さいものを、未ソートの部分の先頭と入れ替える。　</p>
+<pre><code class="language-py">a = [1, 5, 2, 9, 4, 0]
 
-<p>n = len(a)</p>
+n = len(a)
 
-<p>for i in range(0, n):
+for i in range(0, n):
   minj = i
   for j in range(i+1, n):
     print(i, j, minj, a)
     if a[j] &lt; a[minj]:
       minj = j
-    a[i], a[minj] = a[minj], a[i]</p>
+    a[i], a[minj] = a[minj], a[i]
 
-<p>print(a)
-&lt;/code&gt;&lt;/pre&gt;</p>
+print(a)
+</code></pre>
 
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/algorithms-and-data-structure/04-selection-sort.md';">Edit</button></p>
 
