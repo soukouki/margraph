@@ -1,6 +1,7 @@
 # 選択ソート
 
 空間計算量$ O\left(N\right) $
+
 時間計算量$ O\left(N^2\right) $
 
 比較の回数は$ (N-1)+(N-2)+\dots+1 = \dfrac{N(N-1)}{2} $
