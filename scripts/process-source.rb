@@ -10,11 +10,25 @@ mixin_files = ARGV[1..-1]
 
 index = YAML.load_file('tmp/merged_article_list.yaml')
 
+network = YAML.load_file('tmp/merged_network.yaml')
+
 root_dir_path = root_dir_path(target_file)
 
 source = make_breadcrumb_for_file(index, target_file)
 
-source += open("src/#{target_file}.md", 'r'){|io|io.read}
+article = open("src/#{target_file}.md", 'r'){|io|io.read}
+
+replace_index = article.each_line.first.length
+network[target_file].each do |link|
+  replace_by = link[:text]
+  found_index = article.index(replace_by, replace_index)
+  break if found_index.nil?
+  replace_to = "[#{replace_by}](#{root_dir_path}#{link[:path]}.html)"
+  article[found_index...found_index+replace_by.length] = replace_to
+  replace_index = found_index + replace_to.length
+end
+
+source += article
 
 files_in_same_dir = index[:files]
   .select{|h|h[:dir] == File.dirname(target_file)}
@@ -61,12 +75,4 @@ source += <<~MD
   </div>
 MD
 
-puts source.gsub(/\[(.+?)\](?!\()/){|origin_text|
-  link_text = $1
-  link = index[:files].find{|h|h[:title] == link_text}
-  if link
-    "[#{link[:title]}](#{root_dir_path}#{link[:path]}.html)"
-  else
-    origin_text
-  end
-}
+puts source

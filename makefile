@@ -39,9 +39,9 @@ tmp/%/index.md: tmp/merged_article_list.yaml
 	$(MKDIR)
 	$(RUBY) scripts/make-index.rb $* > $@
 
-tmp/%.md: src/%.md tmp/merged_article_list.yaml
+tmp/%.md: src/%.md tmp/merged_article_list.yaml tmp/merged_network.yaml
 	$(MKDIR)
-	$(RUBY) scripts/process-source.rb $* $(wordlist 3,$(words $+),$+) > $@
+	$(RUBY) scripts/process-source.rb $* $(wordlist 4,$(words $+),$+) > $@
 
 tmp/%/attache_files.dep: src/%/*
 	$(MKDIR)

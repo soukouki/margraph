@@ -38,9 +38,11 @@ result = src_files
               text: title,
               path: item[:path],
               surrounding_text: src[[0, i-10].max..[src.length, i+title.length+10].min],
+              index: i
             }
           end
       end
+      .sort_by{|h|h[:index]}
     [src_file, matches]
   end
   .to_h
