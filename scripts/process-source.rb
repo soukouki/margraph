@@ -8,7 +8,7 @@ target_file = ARGV[0]
 
 mixin_files = ARGV[1..-1]
 
-index = YAML.load_file('tmp/index.yaml')
+index = YAML.load_file('tmp/marged_article_list.yaml')
 
 root_dir_path = root_dir_path(target_file)
 
@@ -20,7 +20,7 @@ files_in_same_dir = index[:files]
   .select{|h|h[:dir] == File.dirname(target_file)}
   .sort_by{|h|h[:path]}
 
-index_in_same_dir = files_in_same_dir.find_index{|p|p[:path] == target_file}
+index_in_same_dir = files_in_same_dir.find_index{|p|p[:path] == "#{target_file}"}
 
 index_title = index[:dirs].find{|h|h[:path] == File.dirname(target_file)}[:title]
 

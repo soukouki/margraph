@@ -8,7 +8,7 @@ SOURCE_DIRS = $(sort $(dir $(SOURCES)))
 HTML_FILES = $(patsubst src/%.md,public/%.html,$(SOURCES))
 INDEXES = $(subst //,/,$(patsubst src/%,public/%/index.html,$(SOURCE_DIRS)))
 
-TITLES_FILES = $(patsubst src/%,tmp/%/titles.yaml,$(SOURCE_DIRS))
+ARTICLE_LIST_FILES = $(patsubst src/%,tmp/%article_list.yaml,$(SOURCE_DIRS))
 LINK_NETWORK_FILES = $(patsubst src/%,tmp/%/network.yaml,$(SOURCE_DIRS))
 ATTACH_FILES_DEPENDENCE = $(patsubst src/%,tmp/%/attache_files.dep,$(SOURCE_DIRS))
 
@@ -31,15 +31,15 @@ public/%.html: tmp/%.md base.html
 	$(MKDIR)
 	$(RUBY) scripts/make-html.rb $* > $@ 
 
-tmp/index.md: tmp/index.yaml
+tmp/index.md: tmp/marged_article_list.yaml
 	$(MKDIR)
 	$(RUBY) scripts/make-index.rb . > $@
 
-tmp/%/index.md: tmp/index.yaml
+tmp/%/index.md: tmp/marged_article_list.yaml
 	$(MKDIR)
 	$(RUBY) scripts/make-index.rb $* > $@
 
-tmp/%.md: src/%.md tmp/index.yaml
+tmp/%.md: src/%.md tmp/marged_article_list.yaml
 	$(MKDIR)
 	$(RUBY) scripts/process-source.rb $* $(wordlist 3,$(words $+),$+) > $@
 
@@ -47,9 +47,17 @@ tmp/%/attache_files.dep: src/%/*
 	$(MKDIR)
 	$(RUBY) scripts/make-attach-files-dependence.rb $+ > $@
 
-tmp/index.yaml: $(SOURCES)
+tmp/%/article_list.yaml: src/%/*.md
 	$(MKDIR)
-	$(RUBY) scripts/index-sources.rb
+	$(RUBY) scripts/collect-articles.rb $* $(patsubst src/%.md,%,$+) > $@
+
+tmp/article_list.yaml: src/*.md
+	$(MKDIR)
+	$(RUBY) scripts/collect-articles.rb "." $(patsubst src/%.md,%,$+) > $@
+
+tmp/marged_article_list.yaml: $(ARTICLE_LIST_FILES)
+	$(MKDIR)
+	$(RUBY) scripts/marge-yaml.rb $+ > $@
 
 public/style.css: style.css
 	$(MKDIR)

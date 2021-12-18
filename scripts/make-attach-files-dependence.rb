@@ -1,5 +1,5 @@
 
-files = ARGV[0..-1]
+files = ARGV
 
 md_files, other_files = files.partition{|f|f =~ /^.*\.md$/}
 md_files.each do |md|
