@@ -5,7 +5,7 @@ require './scripts/breadcrumb'
 
 target_dir = ARGV[0]
 
-index = YAML.load_file('tmp/marged_article_list.yaml')
+index = YAML.load_file('tmp/merged_article_list.yaml')
 
 files = index[:files]
   .filter{|hash|hash[:dir] == target_dir}

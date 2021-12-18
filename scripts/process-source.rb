@@ -8,7 +8,7 @@ target_file = ARGV[0]
 
 mixin_files = ARGV[1..-1]
 
-index = YAML.load_file('tmp/marged_article_list.yaml')
+index = YAML.load_file('tmp/merged_article_list.yaml')
 
 root_dir_path = root_dir_path(target_file)
 
