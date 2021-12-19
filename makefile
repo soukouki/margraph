@@ -2,7 +2,7 @@
 RUBY = ruby
 MKDIR = mkdir -p $(dir $@)
 
-SOURCES = $(wildcard src/*.md src/**/*.md)
+SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*/*.md)
 SOURCE_DIRS = $(sort $(dir $(SOURCES)))
 
 HTML_FILES = $(patsubst src/%.md,public/%.html,$(SOURCES))

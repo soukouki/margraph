@@ -18,7 +18,8 @@ def make_breadcrumb index, dir_or_file
   middle = dir_or_file.split('/')[0..-2].map{|dir|
     breadcrumb_path += dir
     title = index[:dirs].find{|h|h[:path]==breadcrumb_path}[:title]
-    %!<li class="breadcrumb-item"><a href="#{'../'*breadcrumb_path.count('/')}index.html">#{title}</a></li>!
+    breadcrumb_path += '/'
+    %!<li class="breadcrumb-item"><a href="#{root_dir_path}#{breadcrumb_path}index.html">#{title}</a></li>!
   }
   tail_title = (
     index[:files].find{|h|h[:path] == dir_or_file}&.[](:title) ||
