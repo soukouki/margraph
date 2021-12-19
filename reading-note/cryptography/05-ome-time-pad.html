@@ -7,37 +7,41 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
-    <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>識別性</title>
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>使い捨てパッド</title>
   </head>
   <body>
     <article class="container" style="max-width: 50em;">
       <nav style="--bs-breadcrumb-divider: '&gt;';" aria-lavel="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="../index.html">note</a></li>
-<li class="breadcrumb-item"><a href="index.html">color</a></li>
-<li class="breadcrumb-item active" aria-current="page">識別性</li>
+    <li class="breadcrumb-item"><a href="../../index.html">note</a></li>
+<li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
+<li class="breadcrumb-item"><a href="../../reading-note/cryptography/index.html">cryptography</a></li>
+<li class="breadcrumb-item active" aria-current="page">使い捨てパッド</li>
   </ol>
 </nav>
 
-<h1 id="section">識別性</h1>
+<h1 id="section">使い捨てパッド</h1>
 
-<p>見る対象が複数あるときに、どの程度区別しやすいかを示す特性</p>
+<p>0と1が出る暗号論的乱数と各ビットをXORしたもの。</p>
 
-<p>共通項があるものには同系色を使ったり、はっきり特別したいものには対照系の色を使ったり</p>
+<p>鍵の長さと平文の長さが同じなのが特徴。</p>
 
-<p>例えば路線図や路線マークには同じデザインで異なる路線カラーが使われているけれど、これは色による<a href="../color/04-sikibetusei.html">識別性</a>を狙った例</p>
+<p>鍵が分からなければ平文も分からない。
+けれど、平文と同じ長さの鍵を秘密に届けられるなら、そもそもそれでいいじゃん、みたいな暗号。</p>
 
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/color/04-sikibetusei.md';">Edit</button></p>
+<p>理論的には、攻撃者が復号化したときに、それが正しい平文なのかを検証する術がない、という形で安全性を確認する。</p>
+
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/reading-note/cryptography/05-ome-time-pad.md';">Edit</button></p>
 
 <hr />
 <div class="row text-center">
 <div class="col">
-前のページ<br /><a href="03-yumokusei.html">誘目性</a>
+前のページ<br /><a href="04-enigma.html">エニグマ</a>
 
 </div>
 <div class="col">
-  目次<br /><a href="index.html">color</a>
+  目次<br /><a href="index.html">cryptography</a>
 </div>
 <div class="col">
 
