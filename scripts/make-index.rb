@@ -2,6 +2,7 @@
 require 'yaml'
 
 require './scripts/breadcrumb'
+require './scripts/utility'
 
 target_dir = ARGV[0]
 
@@ -17,6 +18,8 @@ dirs = index[:dirs]
   .delete_if{|hash|hash[:path] == target_dir}
 
 puts make_breadcrumb_for_dir(index, target_dir)
+
+root_dir_path = root_dir_path(target_dir+'/')
 
 puts <<~MD
   #{index[:dirs].find{|h|h[:path] == target_dir}[:title]} の目次
@@ -34,7 +37,7 @@ puts <<~MD
         <ul class="list-group list-group-flush">
         #{
           dirs.map{|h|
-            %!<li class="list-group-item"><a href="#{h[:path]}/index.html">#{h[:title]}</a></li>!
+            %!<li class="list-group-item"><a href="#{root_dir_path}/#{h[:path]}/index.html">#{h[:title]}</a></li>!
           }.join("\n")
         }
         </ul>
