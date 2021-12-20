@@ -23,3 +23,4 @@
       - $t \in S'$ は明らか
     - $t_1 \in S_j$ に対して、$t$ が $\mathrm{succ}\ t_1, \mathrm{pred}\ t_1, \mathrm{iszero}\ t_1$ならば
       - $t_1 \in S'$ となり、$t \in S'$ が成り立つ
+    - 同様に $\mathrm{if}\ t1\ \mathrm{then}\ t2\ \mathrm{else}\ t3 \in S'$ が成り立つ
