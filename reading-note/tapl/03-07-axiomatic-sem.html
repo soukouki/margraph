@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>具体的な式の定義</title>
+    <title>公理的意味論</title>
   </head>
   <body>
     <article class="container" style="max-width: 50em;">
@@ -17,32 +17,28 @@
     <li class="breadcrumb-item"><a href="../../index.html">note</a></li>
 <li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
 <li class="breadcrumb-item"><a href="../../reading-note/tapl/index.html">tapl</a></li>
-<li class="breadcrumb-item active" aria-current="page">具体的な式の定義</li>
+<li class="breadcrumb-item active" aria-current="page">公理的意味論</li>
   </ol>
 </nav>
 
-<h1 id="section">具体的な式の定義</h1>
+<h1 id="section">公理的意味論</h1>
 
-<ul>
-  <li>$S_0$は空集合</li>
-  <li>$S_1$ は<a href="../../reading-note/tapl/03-01-recursive-def.html">再帰的な式の定義</a>や<a href="../../reading-note/tapl/03-02-inference-def.html">推論規則による式の定義</a>をそのまま持ってきてる</li>
-  <li>$S_2 = S_{1+1}$ では、$t_1 = 0 \in S_1$ とすると $\mathrm{succ}\ t_1 = \mathrm{succ}\ 0 \in S_2$ とかも算出できるようになってる</li>
-  <li>$S$ で $S = S_0 \cup S_1 \cup \dots \cup S_i$とまとめて、すべての式が集合に入るようにする</li>
-</ul>
+<p>言語の定義として<a href="../../reading-note/tapl/03-07-axiomatic-sem.html">公理的意味論</a>自身を取る</p>
 
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/reading-note/tapl/03-03-concrete-def.md';">Edit</button></p>
+<p>鬼門は手続き</p>
+
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/reading-note/tapl/03-07-axiomatic-sem.md';">Edit</button></p>
 
 <hr />
 <div class="row text-center">
 <div class="col">
-前のページ<br /><a href="03-02-inference-def.html">推論規則による式の定義</a>
+前のページ<br /><a href="03-06-expressive-sem.html">表示的意味論</a>
 
 </div>
 <div class="col">
   目次<br /><a href="index.html">tapl</a>
 </div>
 <div class="col">
-後のページ<br /><a href="03-04-defs-is-equal.html">再帰的な式の定義と具体的な式の定義は等しい</a>
 
 </div>
 </div>
