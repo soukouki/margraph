@@ -22,6 +22,7 @@ result = src_files
     root_dir_path = root_dir_path(src_file[4..-1]) # src/...
     matches = index[:files]
       .flat_map do |item|
+        next [] if item[:path] == src_file
         title = item[:title]
         Enumerator
           .new do |y|

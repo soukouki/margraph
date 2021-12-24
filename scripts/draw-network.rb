@@ -22,4 +22,4 @@ DOT
 
 # ruby scripts/draw-network.rb > a.dot
 
-# dot a.dot -Tpng -Kneato -o network.png
+# dot a.dot -Tpng -Kneato -o a.png
