@@ -25,7 +25,7 @@
 <p>その要素と、次の要素(または前後の要素)へのポインタをもつものが、鎖状につながっているイメージ</p>
 
 <ul>
-  <li>片方向<a href="../algorithms-and-data-structure/07-linked-list.html">連結リスト</a>
+  <li>片方向連結リスト
     <ul>
       <li>要素と、次の要素へのポインタの構造が、鎖状につながるイメージ</li>
       <li>前の要素を取得する事ができないので、後ろから辿ろうとすると$O\left(n^2\right)$かかってしまう</li>
@@ -33,7 +33,7 @@
       <li>要素の次の要素の削除も$O\left(1\right)$</li>
     </ul>
   </li>
-  <li>双方向<a href="../algorithms-and-data-structure/07-linked-list.html">連結リスト</a>
+  <li>双方向連結リスト
     <ul>
       <li>要素と、前後の要素へのポインタの構造が、鎖状につながるイメージ</li>
       <li>前後の要素を取得できるので、後ろからたどっていくことも$O\left(n\right)$でできる</li>
@@ -43,7 +43,7 @@
   </li>
 </ul>
 
-<p>どちらにしろ、k番目にの要素は、片方向<a href="../algorithms-and-data-structure/07-linked-list.html">連結リスト</a>なら$O\left(k\right)$、双方向<a href="../algorithms-and-data-structure/07-linked-list.html">連結リスト</a>なら$ O\left(\min\left(k, n-k\right)\right) $かかり、配列より遅いので注意が必要。</p>
+<p>どちらにしろ、k番目にの要素は、片方向連結リストなら$O\left(k\right)$、双方向連結リストなら$ O\left(\min\left(k, n-k\right)\right) $かかり、配列より遅いので注意が必要。</p>
 
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/algorithms-and-data-structure/07-linked-list.md';">Edit</button></p>
 

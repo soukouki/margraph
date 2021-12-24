@@ -23,7 +23,7 @@
 
 <h1 id="section">再帰的な式の定義と具体的な式の定義は等しい</h1>
 
-<p>命題3.2.6(<a href="../../reading-note/tapl/03-04-defs-is-equal.html">再帰的な式の定義と具体的な式の定義は等しい</a>)について</p>
+<p>命題3.2.6(<a href="../../reading-note/tapl/03-01-recursive-def.html">再帰的な式の定義</a>と<a href="../../reading-note/tapl/03-03-concrete-def.html">具体的な式の定義</a>は等しい)について</p>
 
 <ul>
   <li>$\mathcal{T}$ はある条件を満たす最小の集合として定義されている
@@ -35,10 +35,10 @@
               <li>これで、$S \subseteq \mathcal{T}$ であることがわかる</li>
             </ul>
           </li>
-          <li>(b) $\mathcal{T}$ を満たす任意の集合が $S$ を部分集合として持つこと
+          <li>(b) $\mathcal{T}$ を満たす任意の集合 $S’$ が $S$ を部分集合として持つこと
             <ul>
-              <li>これで、$\mathcal{T}$ のすべての要素が $S$に含まれることがわかる</li>
-              <li>$\mathcal{T} \subseteq S$</li>
+              <li>つまり、$\mathcal{T}$ だが $S$ ではない集合がないことがわかる</li>
+              <li>これで、$\mathcal{T} \subseteq S$ であることがわかる</li>
             </ul>
           </li>
         </ul>
@@ -51,13 +51,18 @@
         <ul>
           <li>定数は $S$ に含まれる</li>
           <li>$t_1 \in S$ ならば $t_1 \in S_i$ であり、$\mathrm{succ}\ t_1, \mathrm{pred}\ t_1, \mathrm{iszero}\ t_1$ はそれぞれ $S_{i+1}$に含まれる</li>
+          <li>同様に、$\mathrm{if}\ t_1\ \mathrm{then}\ t_2\ \mathrm{else}\ t_3 \in S$</li>
         </ul>
       </li>
     </ul>
   </li>
   <li>(b)
     <ul>
-      <li>$S_i \subseteq S’$</li>
+      <li>$S’ \subseteq \mathcal{T}$ のとき、$S_i \subseteq S’$であることを求める
+        <ul>
+          <li>$S_i \subseteq S’ \subseteq \mathcal{T}$ となる</li>
+        </ul>
+      </li>
       <li>$i = 0$ のときと $i &gt; 0$ のときに分け、帰納法を使って証明する</li>
       <li>$i = 0$ のとき
         <ul>
