@@ -27,9 +27,27 @@ clean:
 	rm -r public || true
 	rm -r tmp || true
 
+# (開発中)ネットワーク可視化
+
+tmp/network.dot: tmp/merged_network.yaml
+	$(MKDIR)
+	ruby scripts/draw-network.rb > tmp/network.dot
+
+tmp/network.png: tmp/network.dot
+	$(MKDIR)
+	dot tmp/network.dot -Tpng -o tmp/network.png
+
+# public内のファイル
+
 public/%.html: tmp/%.md base.html
 	$(MKDIR)
-	$(RUBY) scripts/make-html.rb $* > $@ 
+	$(RUBY) scripts/make-html.rb $* > $@
+
+public/style.css: style.css
+	$(MKDIR)
+	cp $< $@
+
+# 変換用のマークダウン
 
 tmp/index.md: tmp/merged_article_list.yaml
 	$(MKDIR)
@@ -43,9 +61,7 @@ tmp/%.md: src/%.md tmp/merged_article_list.yaml tmp/merged_network.yaml
 	$(MKDIR)
 	$(RUBY) scripts/process-source.rb $* $(wordlist 4,$(words $+),$+) > $@
 
-tmp/%/attache_files.dep: src/%/*
-	$(MKDIR)
-	$(RUBY) scripts/make-attach-files-dependence.rb $+ > $@
+# 変換用のデータ作成
 
 tmp/%/article_list.yaml: src/%/*.md
 	$(MKDIR)
@@ -71,8 +87,10 @@ tmp/merged_network.yaml: $(LINK_NETWORK_FILES)
 	$(MKDIR)
 	$(RUBY) scripts/merge-yaml.rb $+ > $@
 
-public/style.css: style.css
+# 添付ファイル用の依存関係
+
+tmp/%/attache_files.dep: src/%/*
 	$(MKDIR)
-	cp $< $@
+	$(RUBY) scripts/make-attach-files-dependence.rb $+ > $@
 
 -include $(ATTACH_FILES_DEPENDENCE)

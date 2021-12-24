@@ -15,11 +15,7 @@ body = network
 
 puts <<~DOT
   digraph {
-    overlap = scale;
+    layout = fdp;
     #{body}
   }
 DOT
-
-# ruby scripts/draw-network.rb > a.dot
-
-# dot a.dot -Tpng -Kneato -o a.png
