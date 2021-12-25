@@ -182,6 +182,69 @@ s &amp;=&amp; \lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\
 &amp;\to^\ast&amp; c_1
 \end{eqnarray}\]
 
+<p><code>pred(0)</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{prd}\ c_0
+&amp;=&amp; (\lambda m.\ \mathrm{fst}\ (m\ s\ z))\ c_0\\
+&amp;\to&amp; \mathrm{fst}\ (c_0\ s\ z)\\
+&amp;=&amp; \mathrm{fst}\ ((\lambda s.\ \lambda z.\ z)\ s\ z)\\
+&amp;\to^\ast&amp; \mathrm{fst}\ z\\
+&amp;=&amp; \mathrm{fst}\ (\mathrm{pair}\ c_0\ c_0)\\
+&amp;\to^\ast&amp; c_0
+\end{eqnarray}\]
+
+<h2 id="sub">sub</h2>
+
+<p>timesやpowerと同じ様に、先程のpredを $n$ 回繰り返す</p>
+
+<p>$\mathrm{sub} = \lambda m.\ \lambda n.\ n\ (\lambda x.\ pred x)\ m$</p>
+
+<p><code>3-2</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{sub}\ c_3\ c_2
+&amp;=&amp; (\lambda m.\ \lambda n.\ n\ (\lambda x.\ \mathrm{pred}\ x)\ m)\ c_3\ c_2\\
+&amp;\to^\ast&amp; c_2\ (\lambda x.\ \mathrm{pred}\ x)\ c_3\\
+&amp;=&amp; (\lambda s.\ \lambda z.\ s\ (s\ z))\ (\lambda x.\ \mathrm{pred}\ x)\ c_3\\
+&amp;\to^\ast&amp; (\lambda x.\ \mathrm{pred}\ x)\ ((\lambda x.\ \mathrm{pred}\ x)\ c_3)\\
+&amp;\to&amp; (\lambda x.\ \mathrm{pred}\ x)\ (pred\ c_3)\\
+&amp;\to^\ast&amp; (\lambda x.\ \mathrm{pred}\ x)\ c_2\\
+&amp;\to&amp; \mathrm{pred}\ c_2\\
+&amp;\to^\ast&amp; c_1
+\end{eqnarray}\]
+
+<p><code>1-2</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{sub}\ c_1\ c_2
+&amp;=&amp; (\lambda m.\ \lambda n.\ n\ (\lambda x.\ \mathrm{pred}\ x)\ m)\ c_1\ c_2\\
+&amp;\to^\ast&amp; (\lambda x.\ \mathrm{pred}\ x)\ c_1\\
+&amp;=&amp; (\lambda s.\ \lambda z.\ s\ (s\ z))\ (\lambda x.\ \mathrm{pred}\ x)\ c_1\\
+&amp;\to^\ast&amp; ((\lambda x.\ \mathrm{pred}\ x)\ ((\lambda x.\ \mathrm{pred}\ x)\ c_1))\\
+&amp;\to&amp; c_2\ ((\lambda x.\ \mathrm{pred}\ x)\ (\mathrm{pred}\ c_1))\\
+&amp;\to^\ast&amp; ((\lambda x.\ \mathrm{pred}\ x)\ c_0)\\
+&amp;\to&amp; \mathrm{pred} c_0\\
+&amp;\to&amp; c_0
+\end{eqnarray}\]
+
+<h2 id="equal">equal</h2>
+
+<p>引いてiszeroで調べれば終わり・・・と思いきや、引く数のほうが多いと失敗します。とりあえずandで誤魔化します</p>
+
+<p>$\mathrm{equal} = \lambda m.\ \lambda n.\ \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ m\ n))\ (\mathrm{iszro}\ (\mathrm{sub}\ n\ m))$</p>
+
+<p><code>1==2</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{eqaul}\ c_1\ c_2
+&amp;=&amp; (\lambda m.\ \lambda n.\ \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ m\ n))\ (\mathrm{iszro}\ (\mathrm{sub}\ n\ m)))\ c_1\ c_2\\
+&amp;\to^\ast&amp; \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ c_1\ c_2))\ (\mathrm{iszro}\ (\mathrm{sub}\ c_2\ c_1))\\
+&amp;\to^\ast&amp; \mathrm{and}\ (\mathrm{iszro}\ c_0)\ (\mathrm{iszro}\ c_1)\\
+&amp;\to^\ast&amp; \mathrm{and\ tru\ fls}\\
+&amp;\to^\ast&amp; \mathrm{fls}
+\end{eqnarray}\]
+
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/reading-note/tapl/05-13-church-number.md';">Edit</button></p>
 
 <hr />
