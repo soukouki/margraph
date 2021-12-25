@@ -178,3 +178,74 @@ $$
 &\to^\ast& c_1
 \end{eqnarray}
 $$
+
+`pred(0)`の例
+
+$$
+\begin{eqnarray}
+\mathrm{prd}\ c_0
+&=& (\lambda m.\ \mathrm{fst}\ (m\ s\ z))\ c_0\\
+&\to& \mathrm{fst}\ (c_0\ s\ z)\\
+&=& \mathrm{fst}\ ((\lambda s.\ \lambda z.\ z)\ s\ z)\\
+&\to^\ast& \mathrm{fst}\ z\\
+&=& \mathrm{fst}\ (\mathrm{pair}\ c_0\ c_0)\\
+&\to^\ast& c_0
+\end{eqnarray}
+$$
+
+## sub
+
+timesやpowerと同じ様に、先程のpredを $n$ 回繰り返す
+
+$\mathrm{sub} = \lambda m.\ \lambda n.\ n\ (\lambda x.\ pred x)\ m$
+
+`3-2`の例
+
+$$
+\begin{eqnarray}
+\mathrm{sub}\ c_3\ c_2
+&=& (\lambda m.\ \lambda n.\ n\ (\lambda x.\ \mathrm{pred}\ x)\ m)\ c_3\ c_2\\
+&\to^\ast& c_2\ (\lambda x.\ \mathrm{pred}\ x)\ c_3\\
+&=& (\lambda s.\ \lambda z.\ s\ (s\ z))\ (\lambda x.\ \mathrm{pred}\ x)\ c_3\\
+&\to^\ast& (\lambda x.\ \mathrm{pred}\ x)\ ((\lambda x.\ \mathrm{pred}\ x)\ c_3)\\
+&\to& (\lambda x.\ \mathrm{pred}\ x)\ (pred\ c_3)\\
+&\to^\ast& (\lambda x.\ \mathrm{pred}\ x)\ c_2\\
+&\to& \mathrm{pred}\ c_2\\
+&\to^\ast& c_1
+\end{eqnarray}
+$$
+
+`1-2`の例
+
+$$
+\begin{eqnarray}
+\mathrm{sub}\ c_1\ c_2
+&=& (\lambda m.\ \lambda n.\ n\ (\lambda x.\ \mathrm{pred}\ x)\ m)\ c_1\ c_2\\
+&\to^\ast& (\lambda x.\ \mathrm{pred}\ x)\ c_1\\
+&=& (\lambda s.\ \lambda z.\ s\ (s\ z))\ (\lambda x.\ \mathrm{pred}\ x)\ c_1\\
+&\to^\ast& ((\lambda x.\ \mathrm{pred}\ x)\ ((\lambda x.\ \mathrm{pred}\ x)\ c_1))\\
+&\to& c_2\ ((\lambda x.\ \mathrm{pred}\ x)\ (\mathrm{pred}\ c_1))\\
+&\to^\ast& ((\lambda x.\ \mathrm{pred}\ x)\ c_0)\\
+&\to& \mathrm{pred} c_0\\
+&\to& c_0
+\end{eqnarray}
+$$
+
+## equal
+
+引いてiszeroで調べれば終わり・・・と思いきや、引く数のほうが多いと失敗します。とりあえずandで誤魔化します
+
+$\mathrm{equal} = \lambda m.\ \lambda n.\ \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ m\ n))\ (\mathrm{iszro}\ (\mathrm{sub}\ n\ m))$
+
+`1==2`の例
+
+$$
+\begin{eqnarray}
+\mathrm{eqaul}\ c_1\ c_2
+&=& (\lambda m.\ \lambda n.\ \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ m\ n))\ (\mathrm{iszro}\ (\mathrm{sub}\ n\ m)))\ c_1\ c_2\\
+&\to^\ast& \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ c_1\ c_2))\ (\mathrm{iszro}\ (\mathrm{sub}\ c_2\ c_1))\\
+&\to^\ast& \mathrm{and}\ (\mathrm{iszro}\ c_0)\ (\mathrm{iszro}\ c_1)\\
+&\to^\ast& \mathrm{and\ tru\ fls}\\
+&\to^\ast& \mathrm{fls}
+\end{eqnarray}
+$$
