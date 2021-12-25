@@ -32,7 +32,7 @@
 </blockquote>
 
 <p>プログラミング言語にもそういう点があるんじゃないかと思ってる…
-例えばgotoやwhile、forを使って配列を舐めるような書き方は、本質的でない部分が多くてあまり美しくないけれど、高階関数を使えば(場合にもよるが)簡潔で的確…</p>
+例えばgotoやwhile、forを使って配列を舐めるような書き方は、本質的でない部分が多くてあまり美しくないけれど、<a href="../reading-note/tapl/05-10-higher-order-func.html">高階関数</a>を使えば(場合にもよるが)簡潔で的確…</p>
 
 <p>いや、単にプログラムの抽象化について美しく感じているだけな気もする。
 実際美しいんだけども…
@@ -71,8 +71,11 @@ Rubyのinject(0, :+)とか大好き</p>
     <script>
       MathJax = {
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
       };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">

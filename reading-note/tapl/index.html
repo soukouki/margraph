@@ -33,14 +33,31 @@
 <ul class="list-group list-group-flush">
 <li class="list-group-item"><a href="01-01-intro.html">型システム入門</a></li>
 <li class="list-group-item"><a href="01-02-types.html">型システム</a></li>
-<li class="list-group-item"><a href="03-00-apology.html">第三章以降のおことわり</a></li>
-<li class="list-group-item"><a href="03-01-recursive-def.html">再帰的な式の定義</a></li>
-<li class="list-group-item"><a href="03-02-inference-def.html">推論規則による式の定義</a></li>
-<li class="list-group-item"><a href="03-03-concrete-def.html">具体的な式の定義</a></li>
-<li class="list-group-item"><a href="03-04-defs-is-equal.html">再帰的な式の定義と具体的な式の定義は等しい</a></li>
+<li class="list-group-item"><a href="03-01-recursive-def.html">再帰的な項の定義</a></li>
+<li class="list-group-item"><a href="03-02-inference-def.html">推論規則による項の定義</a></li>
+<li class="list-group-item"><a href="03-03-concrete-def.html">具体的な項の定義</a></li>
+<li class="list-group-item"><a href="03-04-defs-is-equal.html">再帰的な項の定義と具体的な項の定義は等しい</a></li>
 <li class="list-group-item"><a href="03-05-operational-sem.html">操作的意味論</a></li>
 <li class="list-group-item"><a href="03-06-expressive-sem.html">表示的意味論</a></li>
 <li class="list-group-item"><a href="03-07-axiomatic-sem.html">公理的意味論</a></li>
+<li class="list-group-item"><a href="03-08-bool-value.html">型なしブール式</a></li>
+<li class="list-group-item"><a href="03-09-arithmetic-expr.html">型なし算術式</a></li>
+<li class="list-group-item"><a href="03-09a-normal-form.html">正規形</a></li>
+<li class="list-group-item"><a href="03-10-dead-end.html">行き詰まり状態</a></li>
+<li class="list-group-item"><a href="03-11-small-step-semantics.html">小ステップ意味論</a></li>
+<li class="list-group-item"><a href="03-12-large-step-semantics.html">大ステップ意味論</a></li>
+<li class="list-group-item"><a href="05-01-combinator.html">コンビネータ</a></li>
+<li class="list-group-item"><a href="05-02-beta-reduction.html">ベータ簡約</a></li>
+<li class="list-group-item"><a href="05-03-full-beta-reduction.html">完全ベータ簡約</a></li>
+<li class="list-group-item"><a href="05-04-normal-order-reduction.html">正規順序戦略</a></li>
+<li class="list-group-item"><a href="05-05-call-by-name.html">名前呼び戦略</a></li>
+<li class="list-group-item"><a href="05-06-call-by-value.html">値呼び戦略</a></li>
+<li class="list-group-item"><a href="05-07-call-by-need.html">必要呼び戦略</a></li>
+<li class="list-group-item"><a href="05-10-higher-order-func.html">高階関数</a></li>
+<li class="list-group-item"><a href="05-11-currying.html">カリー化</a></li>
+<li class="list-group-item"><a href="05-12-church-bool.html">チャーチブール数</a></li>
+<li class="list-group-item"><a href="05-12a-pair.html">ラムダ計算のペア</a></li>
+<li class="list-group-item"><a href="05-13-church-number.html">チャーチ数</a></li>
 </ul>
 </div>
 
@@ -63,8 +80,11 @@
     <script>
       MathJax = {
         tex: {
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
       };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">

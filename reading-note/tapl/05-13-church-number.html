@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>チャーチ数</title>
+  </head>
+  <body>
+    <article class="container" style="max-width: 50em;">
+      <nav style="--bs-breadcrumb-divider: '&gt;';" aria-lavel="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../index.html">note</a></li>
+<li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
+<li class="breadcrumb-item"><a href="../../reading-note/tapl/index.html">tapl</a></li>
+<li class="breadcrumb-item active" aria-current="page">チャーチ数</li>
+  </ol>
+</nav>
+
+<h1 id="section">チャーチ数</h1>
+
+<p>簡単さを求めるため、振る舞い等価なものは区別せずに考える。そのため、<a href="../../reading-note/tapl/05-06-call-by-value.html">値呼び戦略</a>ではなく、<a href="../../reading-note/tapl/05-03-full-beta-reduction.html">完全ベータ簡約</a>で簡約している</p>
+
+\[\begin{eqnarray}
+c_0 &amp;=&amp; \lambda s.\ \lambda z.\ z\\
+c_1 &amp;=&amp; \lambda s.\ \lambda z.\ s\ z\\
+c_2 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ z)\\
+c_3 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
+&amp;\vdots&amp;
+\end{eqnarray}\]
+
+<p>$\mathrm{succ}$ を $n$ 回適用するコンビネータで表現する</p>
+
+<h2 id="succ">succ</h2>
+
+<p>外側に1つ分追加するイメージ</p>
+
+<p>$\mathrm{scc} = \lambda n.\ \lambda s.\ \lambda z\ s\ (n\ s\ z)$</p>
+
+<p><code>succ(2)</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{scc}\ c_2
+&amp;=&amp; (\lambda n.\ \lambda s.\ \lambda z\ s\ (n\ s\ z))\ c_2\\
+&amp;\to&amp; \lambda s.\ \lambda z\ s\ (c_2\ s\ z)\\
+&amp;=&amp; \lambda s.\ \lambda z.\ s\ ((\lambda s.\ \lambda z.\ s\ (s\ z))\ s\ z)\\
+&amp;\to&amp; \lambda s.\ \lambda z.\ s\ (\lambda z.\ s\ (s\ z)\ z)\\
+&amp;\to&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
+&amp;=&amp; c_3
+\end{eqnarray}\]
+
+<h2 id="succ2">succ(2)</h2>
+
+<p>内側に1つ分追加するイメージ</p>
+
+<p>$\mathrm{scc’} = \lambda n.\ \lambda s.\ \lambda z.\ n\ s\ (s\ z)$</p>
+
+<p><code>succ'(2)</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{scc'}\ c_2
+&amp;=&amp; (\lambda n.\ \lambda s.\ \lambda z.\ n\ s\ (s\ z))\ c_2\\
+&amp;\to&amp; \lambda s.\ \lambda z.\ c_2\ s\ (s\ z)\\
+&amp;=&amp; \lambda s.\ \lambda z.\ (\lambda s.\ \lambda z.\ s\ (s\ z))\ s\ (s\ z)\\
+&amp;\to^\ast&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
+&amp;=&amp; c_3
+\end{eqnarray}\]
+
+<h2 id="plus">plus</h2>
+
+<p>$m, n$ が与えられて、$m$ の $z$ に $n$ を入れるイメージ</p>
+
+<p>$\mathrm{plus} = \lambda m.\ \lambda n.\ \lambda s.\ \lambda z.\ m\ s\ (n\ s\ z)$</p>
+
+<p><code>1+2</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{plus}\ c_1\ c_2
+&amp;=&amp; (\lambda m.\ \lambda n.\ \lambda s.\ \lambda z.\ m\ s\ (n\ s\ z))\ c_1\ c_2\\
+&amp;\to^\ast&amp; \lambda s.\ \lambda z.\ c_1\ s\ (c_2\ s\ z)\\
+&amp;=&amp; \lambda s.\ \lambda z.\ c_1\ s\ ((\lambda s.\ \lambda z.\ s\ (s\ z))\ s\ z)\\
+&amp;\to^\ast&amp; \lambda s.\ \lambda z.\ c_1\ s\ (s\ (s\ z))\\
+&amp;=&amp;  \lambda s.\ \lambda z.\ (\lambda s.\ \lambda z.\ s\ z)\ s\ (s\ (s\ z))\\
+&amp;\to&amp; \lambda s.\ \lambda z.\ (\lambda z.\ s\ z)\ (s\ (s\ z))\\
+&amp;\to&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
+&amp;=&amp; c_3
+\end{eqnarray}\]
+
+<h2 id="times">times</h2>
+
+<p>$n$ を使って $n$ を足す関数を作り、それを $m$ に渡して $m$ 回実行してもらう</p>
+
+<p>$\mathrm{times} = \lambda m.\ \lambda n.\ m\ (\mathrm{plus}\ n)\ c_0$</p>
+
+<p><code>2*2</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{times}\ c_2\ c_2
+&amp;=&amp; (\lambda m.\ \lambda n.\ m\ (\mathrm{plus}\ n)\  c_0)\ c_2\ c_2\\
+&amp;\to^\ast&amp; c_2\ (\mathrm{plus}\ c_2)\ c_0\\
+&amp;=&amp; (\lambda s.\ \lambda z.\ s\ (s\ z))\ (\mathrm{plus}\ c_2)\ c_0\\
+&amp;\to^\ast&amp; (\mathrm{plus}\ c_2)\ (\mathrm{plus}\ c_2\ c_0)\\
+&amp;=&amp; \mathrm{plus}\ c_2\ c_2\\
+&amp;\to^\ast&amp; c_4
+\end{eqnarray}\]
+
+<h2 id="power">power</h2>
+
+<p>$\mathrm{times}$ の $\mathrm{plus}$ を $\mathrm{times}$ に置き換えたらうまくいきそう</p>
+
+<p>$\mathrm{power} = \lambda m.\ \lambda n.\ m\ (\mathrm{times}\ n)\ c_1$</p>
+
+<p><code>2**3</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{power}\ c_3\ c_2
+&amp;=&amp; (\lambda m.\ \lambda n.\ m\ (\mathrm{times}\ n)\ c_1)\ c_3\ c_2\\
+&amp;\to^\ast&amp; c_3 (\mathrm{times}\ c_2)\ c_1\\
+&amp;=&amp; (\lambda s.\ \lambda z.\ s\ (s\ (s\ z)))\ (\mathrm{times}\ c_2)\ c_1\\
+&amp;\to^\ast&amp; (\mathrm{times}\ c_2)\ ((\mathrm{times}\ c_2)\ (\mathrm{times}\ c_2\ c_1))\\
+&amp;\to^\ast&amp; (\mathrm{times}\ c_2)\ (\mathrm{times}\ c_2\ c_2)\\
+&amp;\to^\ast&amp; \mathrm{times}\ c_2\ c_4\\
+&amp;\to^\ast&amp; c_8
+\end{eqnarray}\]
+
+<h2 id="iszero">iszero</h2>
+
+<p>$c_0$ のみ、そのまま $z$ を返すので、succは引数を受け取って、引数に関わらず $\mathrm{fls}$ を返す関数にすればよい</p>
+
+<p>$\mathrm{iszro} = \lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}$</p>
+
+<p><code>iszero?(0)</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{iszro}\ c_0
+&amp;=&amp; (\lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru})\ c_0\\
+&amp;\to^\ast&amp; c_0\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
+&amp;=&amp; (\lambda s.\ \lambda z.\ z)\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
+&amp;\to^\ast&amp; \mathrm{tru}
+\end{eqnarray}\]
+
+<p><code>iszero?(1)</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{iszro}\ c_1
+&amp;=&amp; (\lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru})\ c_1\\
+&amp;\to^\ast&amp; c_1\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
+&amp;=&amp; (\lambda s.\ \lambda z.\ s\ z)\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
+&amp;\to^\ast&amp; (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
+&amp;\to^\ast&amp; \mathrm{fls}
+\end{eqnarray}\]
+
+<h2 id="pred">pred</h2>
+
+<p>succでは、2つ目の要素の値と、2つ目の要素値+1をペアにして渡していく。すると、$c_n$ のとき $\mathrm{pair}\ c_{n-1}\ c_n$ となるので、それを使う</p>
+
+\[\begin{eqnarray}
+z &amp;=&amp; \mathrm{pair}\ c_0\ c_0\\
+s &amp;=&amp; \lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ p))\\
+\mathrm{prd} &amp;=&amp; \lambda m.\ \mathrm{fst}\ (m\ s\ z)\\
+\end{eqnarray}\]
+
+<p><code>pred(2)</code>の例</p>
+
+\[\begin{eqnarray}
+\mathrm{prd}\ c_2
+&amp;=&amp; (\lambda m.\ \mathrm{fst}\ (m\ s\ z))\ c_2\\
+&amp;\to&amp; \mathrm{fst}\ (c_2\ s\ z)\\
+&amp;=&amp; \mathrm{fst}\ ((\lambda s.\ \lambda z.\ s\ (s\ z))\ s\ z)\\
+&amp;\to^\ast&amp; \mathrm{fst}\ (s\ (s\ z))\\
+&amp;=&amp; \mathrm{fst}\ (s\ (\lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ p))\ (\mathrm{pair}\ c_0\ c_0)))\\
+&amp;\to&amp; \mathrm{fst}\ (s\ (\mathrm{pair}\ (\mathrm{snd}\ (\mathrm{pair}\ c_0\ c_0))\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ (\mathrm{pair}\ c_0\ c_0)))))\\
+&amp;\to^\ast&amp; \mathrm{fst}\ (s\ (\mathrm{pair}\ c_0\ (\mathrm{plus}\ c_1\ c_0)))\\
+&amp;\to^\ast&amp; \mathrm{fst}\ (s\ (\mathrm{pair}\ c_0\ c_1))\\
+&amp;=&amp; \mathrm{fst}\ ((\lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ p)))\ (\mathrm{pair}\ c_0\ c_1))\\
+&amp;\to&amp; \mathrm{fst}\ (\mathrm{pair}\ (\mathrm{snd}\ (\mathrm{pair}\ c_0\ c_1))\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ (\mathrm{pair}\ c_0\ c_1))))\\
+&amp;\to^\ast&amp; \mathrm{snd}\ (\mathrm{pair}\ c_0\ c_1)\\
+&amp;\to^\ast&amp; c_1
+\end{eqnarray}\]
+
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/reading-note/tapl/05-13-church-number.md';">Edit</button></p>
+
+<hr />
+<div class="row text-center">
+<div class="col">
+前のページ<br /><a href="05-12a-pair.html">ラムダ計算のペア</a>
+
+</div>
+<div class="col">
+  目次<br /><a href="index.html">tapl</a>
+</div>
+<div class="col">
+
+</div>
+</div>
+
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

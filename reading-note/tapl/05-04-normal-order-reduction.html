@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>正規順序戦略</title>
+  </head>
+  <body>
+    <article class="container" style="max-width: 50em;">
+      <nav style="--bs-breadcrumb-divider: '&gt;';" aria-lavel="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../../index.html">note</a></li>
+<li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
+<li class="breadcrumb-item"><a href="../../reading-note/tapl/index.html">tapl</a></li>
+<li class="breadcrumb-item active" aria-current="page">正規順序戦略</li>
+  </ol>
+</nav>
+
+<h1 id="section">正規順序戦略</h1>
+
+<p>常に、最も左で最も外側の簡約基が最初に簡略される</p>
+
+<p><a href="../../reading-note/tapl/05-03-full-beta-reduction.html">完全ベータ簡約</a>と同じ例では、必ず外側の $\lambda x.\ x$ から簡約しないといけない</p>
+
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/reading-note/tapl/05-04-normal-order-reduction.md';">Edit</button></p>
+
+<hr />
+<div class="row text-center">
+<div class="col">
+前のページ<br /><a href="05-03-full-beta-reduction.html">完全ベータ簡約</a>
+
+</div>
+<div class="col">
+  目次<br /><a href="index.html">tapl</a>
+</div>
+<div class="col">
+後のページ<br /><a href="05-05-call-by-name.html">名前呼び戦略</a>
+
+</div>
+</div>
+
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>
