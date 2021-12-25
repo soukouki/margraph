@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <title>言語自作勉強会</title>
+  </head>
+  <body>
+    <article class="container" style="max-width: 50em;">
+      <nav style="--bs-breadcrumb-divider: '&gt;';" aria-lavel="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="../index.html">note</a></li>
+<li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
+<li class="breadcrumb-item active" aria-current="page">言語自作勉強会</li>
+  </ol>
+</nav>
+
+<h1 id="section">言語自作勉強会</h1>
+
+<p>の反省</p>
+
+<h2 id="section-1">概要</h2>
+
+<p>事前に私が作った<a href="https://github.com/soukouki/baby-interpriter">baby-interpriter</a>を使って、改造ベースでインタプリタの構造や作り方を学んでいく勉強会</p>
+
+<p>一回4時間の勉強会を計5回つづけ、解説しつつひたすら問題を解いてく形。</p>
+
+<p>事前勉強会として、2人に先に教えつつ仮資料を作った。その2人をTAとして、参加者10人でメインの勉強会を開いた。</p>
+
+<h2 id="section-2">良い点</h2>
+
+<ul>
+  <li>とりあえず5回終えた参加者が出た
+    <ul>
+      <li>最初はコードに対して目が滑っていたのが、1000行近い(多分やってる途中で1000行超えたかな)コードを読めるようにはなったのは、プログラミング全般の成果としてあるかも
+        <ul>
+          <li>その人は確かJS未経験で入ってたし、かなりの成長</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>字句解析、構文解析、評価の区別あたりは・・・1/3はちゃんと把握できてると思う
+    <ul>
+      <li>1/3は、触ってないケースを考えると怪しくなる程度までは持っていけたんじゃないかな</li>
+    </ul>
+  </li>
+  <li>再帰下降構文解析は参加者の2/3が把握したと思う
+    <ul>
+      <li>これ、結構すごいのでは？自分はかなり苦戦したところだし</li>
+      <li>構文解析の動きを、1時間かけてじっくり追っていく課題があったけど、あれの成果が出たんじゃないかなと思う
+        <ul>
+          <li>急がば回れ、なのかもしれない</li>
+          <li>正直、1時間もこの課題に割くのは結構怖かったけれど、思ってた数倍くらいの効果でびっくりしてる</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>質問についてはほぼ答えられた
+    <ul>
+      <li>環境構築とかを除いて、言語に関する技術はとりあえず答えられたと思う</li>
+      <li>後述のスライドの難しさもあって、深い問いに当たる前に、やり方の質問が来てるのかも知れない。</li>
+      <li>十分に深い部分の質問が来ないような仕組みになっていた可能性もあるので、あまり浮かれていられない</li>
+    </ul>
+  </li>
+  <li>TAの2人に関しては、かなり深い部分の知識まで付けられた気はする
+    <ul>
+      <li>TA2人と、参加者10人との違いはなんだろう？
+        <ul>
+          <li>TAのときは受講者が少なく、深い部分まで教えられたのかも？</li>
+          <li>シンプルに勉強会の時間外での勉強の量が違うのかもしれない
+            <ul>
+              <li>特にいれーさーに関してはものすごい努力してた</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>難易度はなんとか教えられる程度に抑えられた
+    <ul>
+      <li>改造ベースにするのは結構良かったと思う
+        <ul>
+          <li>既存のコードをコピペできるので、とりあえず理解して無くても動かせたりもした</li>
+          <li>すでにあるコードから考察していた人もいた</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="section-3">悪い点</h2>
+
+<ul>
+  <li>少し難易度が高かったかもしれない
+    <ul>
+      <li>毎回聞いてみると、難易度が高い、難しいみたいな感想があった</li>
+      <li>これって、内容が難しいだけじゃなくて、教え方が悪かった説がない？
+        <ul>
+          <li>具体的な内容は教えずに、考えてみてっていう方針でやっていたけれど、そうじゃなくて、先に具体的な解き方を教えたほうが良かったのかも知れない？
+            <ul>
+              <li>解き方だけ知って、本質的な内容の理解が進まなくなることを恐れてた</li>
+            </ul>
+          </li>
+          <li>スライドの内容が少なくて、どう進めればいいのかは聞くか考えるかしかない
+            <ul>
+              <li>スライドに大半の内容が書いてあれば
+                <ul>
+                  <li>読んでからやりたい人(具体的な内容が先にほしい人)は読めるし</li>
+                  <li>できるだけ自分で考えたい人は読まずに考える方向に進んだのでは</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>そうすれば全体的な難易度は抑えられたのでは？</li>
+        </ul>
+      </li>
+      <li>想像している受講者のレベルと実際のレベルが合ってなかった説
+        <ul>
+          <li>自分が想像してるのって、多分高校の頃の自分だけど、それってプログラミングを初めて数年は経ってるし、少しはプログラムを書いた経験がある状態</li>
+          <li>受講者がそのレベルまで届いてなかったのは十分考えられそう</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>勉強会の回数が多いかも
+    <ul>
+      <li>朱雀先輩の、2、3日一気に拘束して、がっと知識を入れるスタイルもいいかも知れない
+        <ul>
+          <li>持っていくレベルが高かったのかも知れない
+            <ul>
+              <li>参加者が後々勉強を進めてくれることを期待して、もっと初歩的な部分だけを入れればよかったのかも？
+                <ul>
+                  <li>参加者への信頼が足りない説はある・・・</li>
+                  <li>正直、勉強会の後に続けてくれるとはあまり考えてないかも・・・</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>参加者の最低ラインというか、どこまで知ってるかのラインはまぁ、予想通りではあるかも
+            <ul>
+              <li>ただ、最終回まで分割代入が怪しい人もいたし、その点はちょっと課題かも</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>特に寝坊した回で受講者が来なくなってしまったのは本当に後悔</li>
+      <li>IoT Dojoとかぶって来れなくなった人も多かった</li>
+      <li>スライドによる自習がやりづらいのはかなり問題かもしれない</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-4">その他</h3>
+
+<ul>
+  <li>難易度の予測がちょっと甘かった
+    <ul>
+      <li>思ったよりも簡単そうに解いたり、難しそうに解いたりということがあった
+        <ul>
+          <li>構文解析1回目は、1時間半程度で掛け算と単項マイナスを実装する人が出ていて、かなりびっくりした</li>
+          <li>と思いきや構文解析2回目で、すぐに解かれると思っていたらelseやwhileでかなり苦戦された</li>
+          <li>whileは評価のほうが少しあるけれど、それにしてはみんな難易度高そうに解いてた</li>
+        </ul>
+      </li>
+      <li>完全に予測するのは無理だろうけれど、まぁ意外だった</li>
+    </ul>
+  </li>
+</ul>
+
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/other/makeing-language-workspace.md';">Edit</button></p>
+
+<hr />
+<div class="row text-center">
+<div class="col">
+前のページ<br /><a href="latex-test.html">$\text{タイトルを}\LaTeX\text{で書ける}$</a>
+
+</div>
+<div class="col">
+  目次<br /><a href="index.html">other</a>
+</div>
+<div class="col">
+
+</div>
+</div>
+
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>
