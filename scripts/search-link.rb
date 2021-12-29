@@ -44,6 +44,13 @@ result = src_files
           end
       end
       .sort_by{|h|h[:index]}
+      .inject([]) do |list, item|
+        next [item] if list.empty?
+        last = list.last
+        next list.push [list.pop, item].max_by{|i|i[:text].length} if last[:index] == item[:index]
+        next list if last[:index] + last[:text].length >= item[:index]
+        list.push item
+      end
     [src_file, matches]
   end
   .to_h
