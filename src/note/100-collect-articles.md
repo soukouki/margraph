@@ -1,6 +1,6 @@
 # Collect Articles
 
-markdownファイルを解析して、タイトルとパスをまとめたリストを作る
+Markdownファイルを解析して、タイトルとパスをまとめたリストを作る
 
 ディレクトリ毎に実行される
 
@@ -25,11 +25,11 @@ markdownファイルを解析して、タイトルとパスをまとめたリス
 [
   {
     "title": "タイトル",
-    "path": ["aaa", "bbb"]
+    "path": "aaa/bbb"
   },
   {
     "title": "タイトル2",
-    "path": ["aaa", "ccc"]
+    "path": "aaa/ccc"
   }
 ]
 ```
