@@ -25,11 +25,12 @@
   "title": "タイトル",
   "contents": [
     {
-      "type": "paragraphs",
-      "paragraphs": [
-        "タイトル直下のテキスト",
-        "段落毎に分けておく"
-      ]
+      "type": "paragraph",
+      "text": "タイトル直下のテキスト"
+    },
+    {
+      "type": "paragraph",
+      "text": "複数のパラグラフが来るときには、こんな感じで"
     },
     {
       "type": "title",
@@ -41,6 +42,7 @@
       "paragraphs": [
         "<code>文字装飾などについては、HTMLを直接埋め込む</code>",
         "改行なんかは\nそのままにしておく。andのような特殊文字は&lt;とする(Markdownパーサーを使う性質上このほうが楽)"
+        "テーブルと配列に関しても、そのままぶっこむ"
       ]
     }
   ],
