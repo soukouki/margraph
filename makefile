@@ -6,11 +6,11 @@ SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*
 SOURCE_DIRS = $(sort $(dir $(SOURCES)))
 
 HTML_FILES = $(patsubst src/%.md,public/%.html,$(SOURCES))
-INDEXES = $(subst //,/,$(patsubst src/%,public/%/index.html,$(SOURCE_DIRS)))
+INDEXES = $(subst //,/,$(patsubst src/%,public/%index.html,$(SOURCE_DIRS)))
 
 ARTICLE_LIST_FILES = $(patsubst src/%,tmp/%article_list.yaml,$(SOURCE_DIRS))
 LINK_NETWORK_FILES = $(patsubst src/%,tmp/%network.yaml,$(SOURCE_DIRS))
-ATTACH_FILES_DEPENDENCE = $(patsubst src/%,tmp/%/attache_files.dep,$(SOURCE_DIRS))
+ATTACH_FILES_DEPENDENCE = $(patsubst src/%,tmp/%attache_files.dep,$(SOURCE_DIRS))
 
 export EDITLINK = https://github.com/soukouki/note/edit/master/
 export NEWFILELINK = https://github.com/soukouki/note/new/master/
