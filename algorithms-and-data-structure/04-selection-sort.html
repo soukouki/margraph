@@ -31,6 +31,21 @@
 <p>要素の個数回、未ソートの配列をなめて一番小さいものを、未ソートの部分の先頭と入れ替える。</p>
 
 <p>空間計算量の割には速いので、メモリの制限がきつい場合は使われることもあるらしい？</p>
+<pre><code class="language-py">a = [1, 5, 2, 9, 4, 0]
+
+n = len(a)
+
+for i in range(0, n-1):
+  minj = i
+  for j in range(i, n):
+    print(i, j, minj, a)
+    if a[j] &lt; a[minj]:
+      minj = j
+  if i != minj:
+    a[i], a[minj] = a[minj], a[i]
+
+print(a)
+</code></pre>
 
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/algorithms-and-data-structure/04-selection-sort.md';">Edit</button></p>
 

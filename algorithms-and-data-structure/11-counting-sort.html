@@ -27,6 +27,21 @@
 <p>時間計算量 $O\left(n\right)$</p>
 
 <p>空間計算量 $O\left(n\right)$</p>
+<pre><code class="language-py">a = [1, 5, 2, 9, 4, 0, 2, 4, 0]
+k = max(a)
+counts = [0] * (k+1)
+result = [0] * len(a)
+
+for i in range(0, len(a)):
+  counts[a[i]] += 1
+for i in range(1, k+1):
+  counts[i] = counts[i] + counts[i-1]
+for i in range(len(a)-1, -1, -1):
+  result[counts[a[i]]-1] = a[i]
+  counts[a[i]] -= 1
+
+print(result)
+</code></pre>
 
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/algorithms-and-data-structure/11-counting-sort.md';">Edit</button></p>
 

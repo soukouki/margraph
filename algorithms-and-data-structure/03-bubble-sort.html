@@ -32,6 +32,18 @@
 あとはそれを要素の回数分行うだけ。</p>
 
 <p>最悪の場合は<a href="../algorithms-and-data-structure/02-insertion-sort.html">挿入ソート</a>と同じ感じかな？</p>
+<pre><code class="language-py">a = [1, 5, 2, 9, 4, 0]
+
+n = len(a)
+
+for i in range(0, n-1):
+  for j in range(n-1, i,-1):
+    print(i, j, a)
+    if a[j] &lt; a[j-1]:
+      a[j], a[j-1] = a[j-1], a[j]
+
+print(a)
+</code></pre>
 
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/algorithms-and-data-structure/03-bubble-sort.md';">Edit</button></p>
 
