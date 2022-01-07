@@ -1,6 +1,6 @@
 # Parse Markdown
 
-Markdownをパースして、note用中間表現を生成する。リンクの反映や
+Markdownをパースして、note用中間表現を生成する。リンクの反映などもこのときに行う
 
 Markdownファイル毎に実行される
 

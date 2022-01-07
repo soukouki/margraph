@@ -1,4 +1,4 @@
-# Generate Index
+# Make Index
 
 ディレクトリの構造をパースして、目次用のnote用中間表現を生成する
 
