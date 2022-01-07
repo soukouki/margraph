@@ -8,40 +8,53 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>other の目次</title>
+    <title>Kramdown</title>
   </head>
   <body>
     <article class="container" style="max-width: 50em;">
       <nav style="--bs-breadcrumb-divider: '&gt;';" aria-lavel="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../index.html">note</a></li>
-<li class="breadcrumb-item active" aria-current="page">other</li>
+<li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
+<li class="breadcrumb-item active" aria-current="page">Kramdown</li>
   </ol>
 </nav>
 
-<h1 id="other-">other の目次</h1>
+<h1 id="kramdown">Kramdown</h1>
 
-<div class="d-grid gap-3">
-<div></div>
+<dl>
+  <dt>公式ページ</dt>
+  <dd>https://kramdown.gettalong.org/index.html</dd>
+  <dt>gemのドキュメント</dt>
+  <dd>https://kramdown.gettalong.org/rdoc/index.html</dd>
+  <dt>ソースコード</dt>
+  <dd>https://github.com/gettalong/kramdown</dd>
+</dl>
 
+<h2 id="convert">Convertの流れ</h2>
+<p>Kramdownで、<code>Kramdown::Document.new("# header").to_html</code>の内部を追ってみたときのメモ</p>
 
-<div class="card">
-<h2 class="card-header">
-  メモ
-</h2>
-<ul class="list-group list-group-flush">
-<li class="list-group-item"><a href="credit.html">フル単の人に比べて取れてない単位</a></li>
-<li class="list-group-item"><a href="kramdown.html">Kramdown</a></li>
-<li class="list-group-item"><a href="latex-note.html">LaTeXのメモ</a></li>
-<li class="list-group-item"><a href="latex-test.html">$\text{タイトルを}\LaTeX\text{で書ける}$</a></li>
-<li class="list-group-item"><a href="makeing-language-workspace.html">言語自作勉強会</a></li>
-<li class="list-group-item"><a href="sintyoku-konpe.html">進捗コンペ</a></li>
-</ul>
+<ol>
+  <li><code>Kramdown::Document#method_missing</code>で、Converterの中から動的に選択して取ってくる</li>
+  <li><code>Kramdown::Converter::Base#convert</code>で、<code>Converter::Html.new</code>ってやってConverterを生成</li>
+  <li><code>Kramdown::Converter::Html#convert</code>で、sendを使って<code>converter_*</code>を呼んでいく</li>
+</ol>
+
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/edit/master/src/other/kramdown.md';">Edit</button></p>
+
+<hr />
+<div class="row text-center">
+<div class="col">
+前のページ<br /><a href="credit.html">フル単の人に比べて取れてない単位</a>
+
 </div>
+<div class="col">
+  目次<br /><a href="index.html">other</a>
+</div>
+<div class="col">
+後のページ<br /><a href="latex-note.html">LaTeXのメモ</a>
 
-
-<button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/note/new/master/src/other';">Add</button>
-
+</div>
 </div>
 
     </article>
