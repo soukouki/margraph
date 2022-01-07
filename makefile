@@ -1,8 +1,8 @@
 
-RUBY = ruby
 MKDIR = mkdir -p $(dir $@)
+COLLECT_ARTICLES = ruby scripts/collect-articles/collect-articles.rb
 
-SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*/*.md)
+SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*/*.md) # 無数にあるが、うまく扱えなかったのでとりあえず
 SOURCE_DIRS = $(sort $(dir $(SOURCES)))
 
 HTML_FILES = $(patsubst src/%.md,public/%.html,$(SOURCES))
@@ -37,60 +37,13 @@ tmp/network.png: tmp/network.dot
 	$(MKDIR)
 	dot tmp/network.dot -Tpng -o tmp/network.png
 
-# public内のファイル
+# 変換用の一時データ生成
 
-public/%.html: tmp/%.md base.html
+tmp/%/articles.json: src/%/*.md
 	$(MKDIR)
-	$(RUBY) scripts/make-html.rb $* > $@
+	$(COLLECT_ARTICLES) $*
 
-public/style.css: style.css
+tmp/articles.json: src/*.md
 	$(MKDIR)
-	cp $< $@
+	$(COLLECT_ARTICLES) .
 
-# 変換用のマークダウン
-
-tmp/index.md: tmp/merged_article_list.yaml
-	$(MKDIR)
-	$(RUBY) scripts/make-index.rb . > $@
-
-tmp/%/index.md: tmp/merged_article_list.yaml
-	$(MKDIR)
-	$(RUBY) scripts/make-index.rb $* > $@
-
-tmp/%.md: src/%.md tmp/merged_article_list.yaml tmp/merged_network.yaml
-	$(MKDIR)
-	$(RUBY) scripts/process-source.rb $* $(wordlist 4,$(words $+),$+) > $@
-
-# 変換用のデータ作成
-
-tmp/%/article_list.yaml: src/%/*.md
-	$(MKDIR)
-	$(RUBY) scripts/collect-articles.rb $* $(patsubst src/%.md,%,$+) > $@
-
-tmp/article_list.yaml: src/*.md
-	$(MKDIR)
-	$(RUBY) scripts/collect-articles.rb "." $(patsubst src/%.md,%,$+) > $@
-
-tmp/merged_article_list.yaml: $(ARTICLE_LIST_FILES)
-	$(MKDIR)
-	$(RUBY) scripts/merge-yaml.rb $+ > $@
-
-tmp/%/network.yaml: tmp/merged_article_list.yaml src/%/*.md
-	$(MKDIR)
-	$(RUBY) scripts/search-link.rb $(patsubst src/%.md,%,$(wordlist 2,$(words $+),$+)) > $@
-
-tmp/network.yaml: tmp/merged_article_list.yaml src/*.md
-	$(MKDIR)
-	$(RUBY) scripts/search-link.rb $(patsubst src/%.md,%,$(wordlist 2,$(words $+),$+)) > $@
-
-tmp/merged_network.yaml: $(LINK_NETWORK_FILES)
-	$(MKDIR)
-	$(RUBY) scripts/merge-yaml.rb $+ > $@
-
-# 添付ファイル用の依存関係
-
-tmp/%/attache_files.dep: src/%/*
-	$(MKDIR)
-	$(RUBY) scripts/make-attach-files-dependence.rb $+ > $@
-
--include $(ATTACH_FILES_DEPENDENCE)
