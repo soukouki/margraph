@@ -1,0 +1,23 @@
+# Make Dependence
+
+Search Attachment Filesで探した添付ファイルのリストから、Makefileで読み込むための依存関係ファイルを生成する
+
+ディレクトリ毎に実行される
+
+## 入力
+
+### ファイル
+
+- `tmp/<path>/attached-files.json`
+
+### コマンドライン
+
+- 扱うディレクトリ
+
+## 出力
+
+### ファイル
+
+- `tmp/<path>/attached-files.dep`
+
+HTMLの表示に必要なファイル(例えば画像)なら、`public/**/*.html`の依存関係に入れ込むようにする

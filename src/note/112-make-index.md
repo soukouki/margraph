@@ -8,6 +8,7 @@
 
 ## ファイル
 
+- `src/<path>/*.md`
 - `merged-articles.json`
 
 ### コマンドライン

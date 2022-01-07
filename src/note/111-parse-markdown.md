@@ -1,6 +1,6 @@
 # Parse Markdown
 
-Markdownをパースして、note用中間表現を生成する。リンクの反映などもこのときに行う
+Markdownをパースして、note用中間表現を生成する。aタグなどのリンクの反映、添付ファイルの埋め込みはこの段階で行う。
 
 Markdownファイル毎に実行される
 
@@ -8,8 +8,10 @@ Markdownファイル毎に実行される
 
 ### ファイル
 
+- `src/<path>.md`
 - `merged-articles.json`
 - `merged-link-network.json`
+- `tmp/<pahtのディレクトリ>/attached-files.json`
 
 ### コマンドライン
 
