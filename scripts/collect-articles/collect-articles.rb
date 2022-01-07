@@ -10,7 +10,7 @@ files = source_files
     title = open(file_path, 'r'){|io|io.readline}.chomp.sub(/^#\s+/, '')
     {
       title: title.empty? ? "無題" : title,
-      path: file_path,
+      path: file_path.gsub(/src\/(.*)\.md/){$1},
     }
   end
 
