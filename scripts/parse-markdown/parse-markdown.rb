@@ -10,6 +10,16 @@ link_network = JSON.load_file("tmp/merged-link-network.json")
 
 source = open("src/#{src_path}.md", "r"){|io|io.read}
 
+replace_index = source.each_line.first.length
+link_network[src_path].each do |link|
+  replace_by = link["title"]
+  found_index = source.index(replace_by, replace_index)
+  break if found_index.nil?
+  replace_to = "[#{replace_by}](#{"../"*src_path.count("/")}#{link["path"]}.html)"
+  source[found_index...found_index+replace_by.length] = replace_to
+  replace_index = found_index + replace_to.length
+end
+
 root = Kramdown::Document.new(source).root
 
 class InternalJson < Kramdown::Converter::Html
