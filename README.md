@@ -1,4 +1,5 @@
-# note
-A my note.
+# margraph
 
-Please see https://soukouki.github.io/note/index.html
+Please see https://soukouki.github.io/margraph/index.html
+
+named by @sizumita
