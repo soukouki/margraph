@@ -35,19 +35,19 @@
         </div>
       <% end %>
 
-      <% if dirs %>
+      <% if dirs && !dirs.empty? %>
         <h2>フォルダ</h2>
         <div class="dir-list list-group list-group-flush">
         <% dirs.each do |dir| %>
           <div class="list-group-item">
-            <a class="card-body" href="<%= root_dir_path+dir[:path] %>.html"><%= dir[:title] %></a>
+            <a class="card-body" href="<%= root_dir_path+dir[:path] %>/index.html"><%= dir[:title] %></a>
           </div>
         <% end %>
         </div>
       <% end %>
 
       
-      <% if files %>
+      <% if files && !files.empty? %>
         <h2>ファイル</h2>
         <div class="file-list list-group list-group-flush">
         <% files.each do |file| %>
