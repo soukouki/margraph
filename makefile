@@ -61,3 +61,6 @@ tmp/link-network.json: tmp/merged-articles.json src/*.md
 
 tmp/merged-link-network.json: $(LINK_NETWORK_FILES)
 	$(MERGE_JSON) $@ $^
+
+tmp/%.inter.json: src/%.md tmp/merged-articles.json tmp/merged-link-network.json
+	$(PARSE_MARKDOWN) $*

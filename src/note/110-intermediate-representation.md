@@ -8,7 +8,7 @@ pathを使う場所に関しては、aタグと中間表現で分ける。aタ�
 
 ## 記事の中間表現
 ````md
-# タイトル
+# 記事の中間表現のサンプル
 
 タイトル直下のテキスト
 
@@ -38,7 +38,7 @@ alert(1);
 
 ```json
 {
-  "title": "タイトル",
+  "title": "記事の中間表現のサンプル",
   "breadcrumb": [
     {
       "title": "note",
@@ -50,17 +50,17 @@ alert(1);
     },
     {
       "title": "page",
-      "path": "aaa/index/page"
+      "path": "aaa/page"
     }
   ],
   "contents": [
     {
       "type": "element",
-      "text": "<p>タイトル直下のテキスト</p>"
+      "text": "<div>タイトル直下のテキスト</div>"
     },
     {
       "type": "element",
-      "text": "<p>複数のパラグラフが来るときには、こんな感じで</p>"
+      "text": "<div>複数のパラグラフが来るときには、こんな感じで</div>"
     },
     {
       "type": "header",
@@ -70,19 +70,19 @@ alert(1);
     {
       "type": "element",
       "text":
-        "<p><strong>文字装飾などについては、HTMLを直接埋め込む。</strong>\n"+
+        "<div><strong>文字装飾などについては、HTMLを直接埋め込む。</strong>\n"+
         "改行なんかは\nそのままにしておく。andのような特殊文字は&lt;と置き換える\n"+
-        "テーブルと配列に関しても、そのままぶっこむ。</p>\n"
+        "テーブルと配列に関しても、そのままぶっこむ。</div>\n"
     },
     {
       "type": "code",
       "lang": "js",
-      "text": "alert(1);"
+      "code": "alert(1);"
     },
     {
       "type": "code",
       "lang": null,
-      "text": "言語を指定しなかった場合は、nullを入れる"
+      "code": "言語を指定しなかった場合は、nullを入れる"
     },
     {
       "type": "element",
@@ -90,7 +90,7 @@ alert(1);
     },
     {
       "type": "element",
-      "text": "<p>ここに書かれていない要素は、elementの中に直接入れる</p>"
+      "text": "<div>ここに書かれていない要素は、elementの中に直接入れる</div>"
     }
   ],
   "prev": {

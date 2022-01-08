@@ -22,14 +22,19 @@ Markdownファイルを解析して、タイトルとパスをまとめたリス
 
 `src/aaa`ディレクトリ内に`src/aaa/bbb.md`, `src/aaa/ccc.md`ファイルがあるときの実行例(整形後)
 ```json
-[
-  {
-    "title": "タイトル",
-    "path": "aaa/bbb"
+{
+  "files": {
+    "aaa/bbb": {
+      "title": "タイトル"
+    },
+    "aaa/ccc": {
+      "title": "タイトル2"
+    }
   },
-  {
-    "title": "タイトル2",
-    "path": "aaa/ccc"
+  "dirs": {
+    "aaa": {
+      "title": "aaa"
+    }
   }
-]
+}
 ```

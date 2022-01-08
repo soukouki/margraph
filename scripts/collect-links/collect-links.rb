@@ -8,7 +8,7 @@ require "json"
 
 collect_path = ARGV[0]
 
-articles = JSON.load_file("tmp/merged-articles.json", symbolize_names: true)
+articles = JSON.load_file("tmp/merged-articles.json")
 
 src_files = Dir["src/#{collect_path}/*.md"]
 
@@ -25,10 +25,10 @@ result = src_files
     else
       collect_path+"/"+File.basename(src_file, ".md")
     end
-    matches = articles[:files]
-      .flat_map do |article|
-        next [] if article[:path] == path
-        title = article[:title]
+    matches = articles["files"]
+      .flat_map do |match_path, article|
+        next [] if match_path == path
+        title = article["title"]
         Enumerator
           .new do |y|
             i = 0
@@ -42,7 +42,7 @@ result = src_files
           .map do |i|
             {
               title: title,
-              path: article[:path],
+              path: match_path,
               surrounding_text: src[[0, i-10].max..[src.length, i+title.length+10].min],
               index: i
             }

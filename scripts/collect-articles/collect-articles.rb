@@ -8,17 +8,22 @@ source_files = Dir["src/#{path}/*.md"].map{|p|p.gsub("./","")}
 files = source_files
   .map do |file_path|
     title = open(file_path, 'r'){|io|io.readline}.chomp.sub(/^#\s+/, '')
-    {
-      title: title.empty? ? "無題" : title,
-      path: file_path.gsub(/src\/(.*)\.md/){$1},
-    }
+    [
+      file_path.gsub(/src\/(.*)\.md/){$1},
+      {
+        title: title.empty? ? "無題" : title,
+      }
+    ]
   end
+  .to_h
 
-dir = {
-  title: path == '.' ? File.basename(Dir.pwd) : path,
-  path: path,
-}
+dirs = [[
+  path == '.' ? '' : path,
+  {
+    title: path == '.' ? File.basename(Dir.pwd) : File.basename(path),
+  }
+]].to_h
 
 open("tmp/#{path}/articles.json", "w"){|io|
-  io.puts({files: files, dirs: [dir]}.to_json)
+  io.puts({files: files, dirs: dirs}.to_json)
 }
