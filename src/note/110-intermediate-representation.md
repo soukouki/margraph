@@ -108,7 +108,7 @@ alert(1);
 目次の中間表現
 ```json
 {
-  "title": "aaaの目次",
+  "title": "aaa",
   "breadcrumb": [
     {
       "title": "note",

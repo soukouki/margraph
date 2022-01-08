@@ -4,6 +4,7 @@ MERGE_JSON = ruby scripts/merge-json/merge-json.rb
 COLLECT_ARTICLES = ruby scripts/collect-articles/collect-articles.rb
 COLLECT_LINKS = ruby scripts/collect-links/collect-links.rb
 PARSE_MARKDOWN = ruby scripts/parse-markdown/parse-markdown.rb
+MAKE_INDEX = ruby scripts/make-index/make-index.rb
 
 SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*/*.md) # 無数にあるが、うまく扱えなかったのでとりあえず
 SOURCE_DIRS = $(sort $(dir $(SOURCES)))
@@ -48,7 +49,7 @@ tmp/%/articles.json: src/%/*.md
 
 tmp/articles.json: src/*.md
 	$(MKDIR)
-	$(COLLECT_ARTICLES) .
+	$(COLLECT_ARTICLES) ""
 
 tmp/merged-articles.json: $(ARTICLES_FILES)
 	$(MERGE_JSON) $@ $^
@@ -64,3 +65,9 @@ tmp/merged-link-network.json: $(LINK_NETWORK_FILES)
 
 tmp/%.inter.json: src/%.md tmp/merged-articles.json tmp/merged-link-network.json
 	$(PARSE_MARKDOWN) $*
+
+tmp/%/index.inter.json: src/%/*.md tmp/merged-articles.json
+	$(MAKE_INDEX) $*
+
+tmp/index.inter.json: src/*.md tmp/merged-articles.json
+	$(MAKE_INDEX) ""

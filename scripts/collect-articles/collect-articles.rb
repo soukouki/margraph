@@ -3,7 +3,7 @@ require "json"
 
 path = ARGV[0]
 
-source_files = Dir["src/#{path}/*.md"].map{|p|p.gsub("./","")}
+source_files = Dir["src/#{path}/*.md"].map{|p|p.gsub("//","/")}
 
 files = source_files
   .map do |file_path|
@@ -18,9 +18,9 @@ files = source_files
   .to_h
 
 dirs = [[
-  path == '.' ? '' : path,
+  path,
   {
-    title: path == '.' ? File.basename(Dir.pwd) : File.basename(path),
+    title: path == '' ? File.basename(Dir.pwd) : File.basename(path),
   }
 ]].to_h
 
