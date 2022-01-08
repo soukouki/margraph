@@ -11,7 +11,7 @@
     <title><%= title %></title>
   </head>
   <body>
-    <article class="container" style="max-width: 50em;">
+    <article class="container" style="max-width: 40em;">
 
       <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -35,25 +35,49 @@
         </div>
       <% end %>
 
+      <% if dirs %>
+        <h2>フォルダ</h2>
+        <div class="dir-list list-group list-group-flush">
+        <% dirs.each do |dir| %>
+          <div class="list-group-item">
+            <a class="card-body" href="<%= root_dir_path+dir[:path] %>.html"><%= dir[:title] %></a>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+
+      
+      <% if files %>
+        <h2>ファイル</h2>
+        <div class="file-list list-group list-group-flush">
+        <% files.each do |file| %>
+          <div class="list-group-item">
+            <a href="<%= root_dir_path+file[:path] %>.html"><%= file[:title] %></a>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+      
+      <hr />
+
       <% if prev_index_next %>
         <div class="hood-link">
-          <hr />
           <div class="row text-center">
             <div class="col">
               <% if prev_index_next[0] %>
-                Prev<br />
+                前の記事<br />
                 <a href="<%= root_dir_path+prev_index_next[0][:path] %>.html"><%= prev_index_next[0][:title] %></a>
               <% end %>
             </div>
             <div class="col">
               <% if prev_index_next[1] %>
-                Index<br />
+                目次<br />
                 <a href="<%= root_dir_path+prev_index_next[1][:path] %>.html"><%= prev_index_next[1][:title] %></a>
               <% end %>
             </div>
             <div class="col">
               <% if prev_index_next[2] %>
-                Next<br />
+                次の記事<br />
                 <a href="<%= root_dir_path+prev_index_next[2][:path] %>.html"><%= prev_index_next[2][:title] %></a>
               <% end %>
             </div>
@@ -61,6 +85,14 @@
         </div>
       <% end %>
 
+      <div class="d-flex flex-row-reverse">
+        <% if type == "article" %>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='<%= "#{ENV['EDITLINK']}src/#{path}.md" %>';">Edit</button>
+        <% end %>
+        <% if type == "index" %>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='<%= "#{ENV['NEWFILELINK']}src/#{File.dirname(path)}" %>';">Add</button>
+        <% end %>
+      </div>
     </article>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

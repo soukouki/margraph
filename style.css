@@ -3,10 +3,6 @@ body {
   margin-top: 2em;
 }
 
-button {
-	border: none;
-}
-
 article > * + * {
   margin-top: 16px;
 }
@@ -17,6 +13,20 @@ article > * + * {
 
 .contents > div > div > :is(ul, ol) {
   margin-bottom: 0;
+}
+
+:is(.dir-list, .file-list) > .list-group-item {
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-left: 0;
+}
+:is(.dir-list, .file-list) > .list-group-item > * {
+  padding-left: 0;
+}
+
+hr {
+  margin-top: 32px;
+  margin-bottom: 16px;
 }
 
 blockquote {

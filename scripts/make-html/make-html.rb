@@ -9,6 +9,7 @@ inter_rep = JSON.load_file("tmp/#{path}.inter.json", symbolize_names: true)
 
 root_dir_path = "../"*path.count("/")
 
+type = inter_rep[:type]
 title = inter_rep[:title]
 breadcrumb = inter_rep[:breadcrumb]
 contents = inter_rep[:contents]
