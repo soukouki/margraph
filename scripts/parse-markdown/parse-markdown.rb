@@ -40,7 +40,7 @@ class InternalJson < Kramdown::Converter::Html
           convert_text_with_list(c)
         end
       end
-      .join("\n")
+      .join("<br>")
       [{
         type: "element",
         text: "<div>#{text}</div>"
@@ -56,12 +56,12 @@ class InternalJson < Kramdown::Converter::Html
       .value
       .split("\n")
       .reject(&:empty?)
-      .chunk{|cl|cl.start_with?(/\s+-|\s+\d+\. /)}
+      .chunk{|cl|cl.start_with?(/\s*-|\s*\d+\. /)}
       .map do |is_list, lines|
         if is_list
           "<div>"+Kramdown::Document.new(lines.join("\n")).to_html+"</div>"
         else
-          lines.join("\n")
+          lines.join("<br>")
         end
       end
       .join("\n")
@@ -95,7 +95,7 @@ def files_in_same_dir articles, path
 end
 
 breadcrumb = make_breadcrumb(articles, src_path)
-contents = InternalJson.convert(root)[0]
+contents = InternalJson.convert(root)[0][0]
 files_in_same_dir = files_in_same_dir(articles, src_path)
 position = files_in_same_dir.index(src_path)
 
@@ -109,7 +109,7 @@ index = {
   title: articles["dirs"][File::dirname(src_path) == "." ? "" : File::dirname(src_path)]["title"]
 }
 nxt_path = files_in_same_dir[position+1]
-nxt = position == files_in_same_dir.length ? nil : {
+nxt = (position+1) == files_in_same_dir.length ? nil : {
   path: nxt_path,
   title: articles["files"][nxt_path]["title"],
 }

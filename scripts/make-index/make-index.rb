@@ -19,7 +19,7 @@ files = articles["files"]
 
 breadcrumb = target_path
   .split("/")
-  .inject([""]){|r,i|r+[r[-1]+i]}
+  .inject([""]){|r,i|r + [r[-1] == "" ? i : r[-1]+"/"+i]}
   .map do |dir_path|
     {
       path: dir_path == "" ? "index" : dir_path+"/index",

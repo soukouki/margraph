@@ -5,6 +5,7 @@ COLLECT_ARTICLES = ruby scripts/collect-articles/collect-articles.rb
 COLLECT_LINKS = ruby scripts/collect-links/collect-links.rb
 PARSE_MARKDOWN = ruby scripts/parse-markdown/parse-markdown.rb
 MAKE_INDEX = ruby scripts/make-index/make-index.rb
+MAKE_HTML = ruby scripts/make-html/make-html.rb
 
 SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*/*.md) # 無数にあるが、うまく扱えなかったのでとりあえず
 SOURCE_DIRS = $(sort $(dir $(SOURCES)))
@@ -30,6 +31,9 @@ install:
 clean:
 	rm -r public || true
 	rm -r tmp || true
+
+public/style.css: style.css
+	cp style.css public/style.css
 
 # (開発中)ネットワーク可視化
 
@@ -71,3 +75,7 @@ tmp/%/index.inter.json: src/%/*.md tmp/merged-articles.json
 
 tmp/index.inter.json: src/*.md tmp/merged-articles.json
 	$(MAKE_INDEX) ""
+
+public/%.html: tmp/%.inter.json scripts/make-html/base.erb
+	$(MKDIR)
+	$(MAKE_HTML) $*

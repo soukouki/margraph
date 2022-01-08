@@ -3,6 +3,22 @@ body {
   margin-top: 2em;
 }
 
+button {
+	border: none;
+}
+
+article > * + * {
+  margin-top: 16px;
+}
+
+.contents > * + * {
+  margin-top: 16px;
+}
+
+.contents > div > div > :is(ul, ol) {
+  margin-bottom: 0;
+}
+
 blockquote {
   padding-left: 10px;
   margin: 10px 0;
