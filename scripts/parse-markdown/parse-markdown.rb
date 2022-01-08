@@ -13,7 +13,7 @@ source = open("src/#{src_path}.md", "r"){|io|io.read}
 root = Kramdown::Document.new(source).root
 
 class InternalJson < Kramdown::Converter::Html
-  def convert(el, indent=0)
+  def convert(el, indent=0, is_called_by_root = false)
     case el.type
     when :header
       level = el.options[:level]
@@ -48,7 +48,14 @@ class InternalJson < Kramdown::Converter::Html
     when :blank
       []
     else
-      [send(@dispatcher[el.type], el, indent)]
+      if is_called_by_root
+        [{
+          type: "element",
+          text: "<div>#{send(@dispatcher[el.type], el, indent)}</div>"
+        }]
+      else
+        send(@dispatcher[el.type], el, indent)
+      end
     end
   end
   def convert_text_with_list(el)
@@ -69,7 +76,7 @@ class InternalJson < Kramdown::Converter::Html
   def convert_root(el, indent)
     el
       .children
-      .flat_map{|child|convert(child)}
+      .flat_map{|child|convert(child, 0, true)}
   end
 end
 
@@ -95,7 +102,7 @@ def files_in_same_dir articles, path
 end
 
 breadcrumb = make_breadcrumb(articles, src_path)
-contents = InternalJson.convert(root)[0][0]
+contents = InternalJson.convert(root)[0]
 files_in_same_dir = files_in_same_dir(articles, src_path)
 position = files_in_same_dir.index(src_path)
 
@@ -116,6 +123,7 @@ nxt = (position+1) == files_in_same_dir.length ? nil : {
 
 open("tmp/#{src_path}.inter.json", "w") do |io|
   io.puts({
+    type: "article",
     title: articles["files"][src_path]["title"],
     breadcrumb: breadcrumb,
     contents: contents,

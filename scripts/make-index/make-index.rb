@@ -29,6 +29,7 @@ breadcrumb = target_path
 
 open("tmp/#{target_path}/index.inter.json", "w") do |io|
   io.puts({
+    type: "index",
     title: articles["dirs"][target_path]["title"],
     breadcrumb: breadcrumb,
     dirs: dirs.map{|path|{path: path, title: articles["dirs"][path]["title"]}},
