@@ -21,6 +21,7 @@ Markdownファイルを解析して、タイトルとパスをまとめたリス
 `tmp/<path>/articles.json`を生成
 
 `src/aaa`ディレクトリ内に`src/aaa/bbb.md`, `src/aaa/ccc.md`ファイルがあるときの実行例(整形後)
+
 ```json
 {
   "files": {

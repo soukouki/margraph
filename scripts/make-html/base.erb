@@ -28,6 +28,8 @@
         <% contents.each do |el| %>
             <% if el[:type] == "header" %>
               <h<%= el[:level] %>><%= el[:text] %></h<%= el[:level] %>>
+            <% elsif el[:type] == "code" %>
+              <pre><code <%= el[:lang] ? "class=\"language-#{el[:lang]}\"" : '' %>><%= el[:code] %></code></pre>
             <% elsif el[:type] == "element" %>
               <%= el[:text] %>
             <% end %>

@@ -36,11 +36,11 @@ class InternalJson < Kramdown::Converter::Html
     when :p
       if el.children.length == 1 && el.children[0].type == :codespan
         code = el.children[0].value
-        lang = code.start_with?(/[a-zA-Z#+]+|.+\.[a-zA-Z]+/) ? code.lines[0] : nil
+        lang = code.start_with?(/[a-zA-Z#+]+|.+\.[a-zA-Z]+/) ? code.lines[0].chomp : nil
         return [{
           type: "code",
           lang: lang,
-          code: code,
+          code: lang.nil? ? code.delete_prefix("\n") : code.lines[1..-1].join(""),
         }]
       end
       text = el.children.map do |c|
@@ -50,7 +50,7 @@ class InternalJson < Kramdown::Converter::Html
           convert_text_with_list(c)
         end
       end
-      .join("<br>")
+        .join("")
       [{
         type: "element",
         text: "<div>#{text}</div>"
@@ -78,7 +78,7 @@ class InternalJson < Kramdown::Converter::Html
         if is_list
           "<div>"+Kramdown::Document.new(lines.join("\n")).to_html+"</div>"
         else
-          lines.join("<br>")
+          lines.join("")
         end
       end
       .join("\n")

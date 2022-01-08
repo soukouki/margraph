@@ -33,6 +33,7 @@ clean:
 	rm -r tmp || true
 
 public/style.css: style.css
+	$(MKDIR)
 	cp style.css public/style.css
 
 # (開発中)ネットワーク可視化
