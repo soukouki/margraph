@@ -12,8 +12,8 @@ ARTICLE_LIST_FILES = $(patsubst src/%,tmp/%article_list.yaml,$(SOURCE_DIRS))
 LINK_NETWORK_FILES = $(patsubst src/%,tmp/%network.yaml,$(SOURCE_DIRS))
 ATTACH_FILES_DEPENDENCE = $(patsubst src/%,tmp/%attache_files.dep,$(SOURCE_DIRS))
 
-export EDITLINK = https://github.com/soukouki/note/edit/master/
-export NEWFILELINK = https://github.com/soukouki/note/new/master/
+export EDITLINK = https://github.com/soukouki/margraph/edit/master/
+export NEWFILELINK = https://github.com/soukouki/margraph/new/master/
 export SOURCE_EXTENSION = txt rb py scala
 
 .PHONY: all install clean
