@@ -20,9 +20,14 @@ result = src_files
     end
       .gsub(/\s+/, " ")
     root_dir_path = "../"*collect_path.count("\/")
+    path = if collect_path.empty?
+      File.basename(src_file, ".md")
+    else
+      collect_path+"/"+File.basename(src_file, ".md")
+    end
     matches = articles[:files]
       .flat_map do |article|
-        next [] if article[:path] == src_file
+        next [] if article[:path] == path
         title = article[:title]
         Enumerator
           .new do |y|
@@ -58,7 +63,7 @@ result = src_files
           surrounding_text: article[:surrounding_text]
         }
       end
-    [collect_path+File.basename(src_file), matches]
+    [path, matches]
   end
   .to_h
 

@@ -3,6 +3,7 @@ MKDIR = mkdir -p $(dir $@)
 MERGE_JSON = ruby scripts/merge-json/merge-json.rb
 COLLECT_ARTICLES = ruby scripts/collect-articles/collect-articles.rb
 COLLECT_LINKS = ruby scripts/collect-links/collect-links.rb
+PARSE_MARKDOWN = ruby scripts/parse-markdown/parse-markdown.rb
 
 SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*/*.md) # 無数にあるが、うまく扱えなかったのでとりあえず
 SOURCE_DIRS = $(sort $(dir $(SOURCES)))
@@ -31,7 +32,7 @@ clean:
 
 # (開発中)ネットワーク可視化
 
-tmp/network.dot: tmp/merged_network.yaml
+tmp/network.dot: tmp/merged-link-network.json
 	$(MKDIR)
 	ruby scripts/draw-network.rb > tmp/network.dot
 
