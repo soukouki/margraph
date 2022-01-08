@@ -2,6 +2,7 @@
 MKDIR = mkdir -p $(dir $@)
 MERGE_JSON = ruby scripts/merge-json/merge-json.rb
 COLLECT_ARTICLES = ruby scripts/collect-articles/collect-articles.rb
+COLLECT_LINKS = ruby scripts/collect-links/collect-links.rb
 
 SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*/*.md) # 無数にあるが、うまく扱えなかったのでとりあえず
 SOURCE_DIRS = $(sort $(dir $(SOURCES)))
@@ -10,7 +11,7 @@ HTML_FILES = $(patsubst src/%.md,public/%.html,$(SOURCES))
 INDEXES = $(subst //,/,$(patsubst src/%,public/%index.html,$(SOURCE_DIRS)))
 
 ARTICLES_FILES = $(patsubst src/%,tmp/%articles.json,$(SOURCE_DIRS))
-LINK_NETWORK_FILES = $(patsubst src/%,tmp/%network.yaml,$(SOURCE_DIRS))
+LINK_NETWORK_FILES = $(patsubst src/%,tmp/%link-network.json,$(SOURCE_DIRS))
 ATTACH_FILES_DEPENDENCE = $(patsubst src/%,tmp/%attache_files.dep,$(SOURCE_DIRS))
 
 export EDITLINK = https://github.com/soukouki/margraph/edit/master/
@@ -49,4 +50,13 @@ tmp/articles.json: src/*.md
 	$(COLLECT_ARTICLES) .
 
 tmp/merged-articles.json: $(ARTICLES_FILES)
+	$(MERGE_JSON) $@ $^
+
+tmp/%/link-network.json: tmp/merged-articles.json src/%/*.md
+	$(COLLECT_LINKS) $*
+
+tmp/link-network.json: tmp/merged-articles.json src/*.md
+	$(COLLECT_LINKS) ""
+
+tmp/merged-link-network.json: $(LINK_NETWORK_FILES)
 	$(MERGE_JSON) $@ $^
