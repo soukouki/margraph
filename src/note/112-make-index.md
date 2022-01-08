@@ -1,6 +1,6 @@
 # Make Index
 
-ディレクトリの構造をパースして、目次用のnote用中間表現を生成する
+ディレクトリの構造をパースして、目次用のmargraph用中間表現を生成する
 
 ディレクトリ毎に実行される
 
@@ -17,4 +17,4 @@
 
 ## 出力
 
-`tmp/<パス>/index.inter.json`にnote用中間表現を出力
+`tmp/<パス>/index.inter.json`にmargraph用中間表現を出力

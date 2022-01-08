@@ -1,6 +1,6 @@
 # Parse Markdown
 
-Markdownをパースして、note用中間表現を生成する。aタグなどのリンクの反映、添付ファイルの埋め込みはこの段階で行う。
+Markdownをパースして、margraph用中間表現を生成する。aタグなどのリンクの反映、添付ファイルの埋め込みはこの段階で行う。
 
 Markdownファイル毎に実行される
 
@@ -19,4 +19,4 @@ Markdownファイル毎に実行される
 
 ## 出力
 
-`tmp/<パス>.inter.json`にnote用中間表現を出力
+`tmp/<パス>.inter.json`にmargraph用中間表現を出力

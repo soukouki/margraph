@@ -1,6 +1,6 @@
 # Make Html
 
-Make IndexとParse Markdownで生成したnote用中間表現を、HTMLファイルに変換する
+Make IndexとParse Markdownで生成したmargraph用中間表現を、HTMLファイルに変換する
 
 中間表現のファイルごとに実行される
 
