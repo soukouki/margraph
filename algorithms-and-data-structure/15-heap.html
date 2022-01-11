@@ -28,9 +28,11 @@
 
 <p><a href="../algorithms-and-data-structure/13-binary-tree.html">二分木</a>をヒープに変換する処理は、$O\left(n\right)$ かかる</p>
 
-<p>代わりに、要素の中で最大(最小)の要素は $O\left(1\right)$ で取得でき、最大(最小)の要素を取り出す(削除する)には $O\left(n\right)$ かかる</p>
+<p>代わりに、要素の中で最大(最小)の要素は $O\left(1\right)$ で取得できる</p>
 
-<p>また、挿入には $O\left(n\right)$ かかる</p>
+<p>最大(最小)の要素を取り出す(削除する)には $O\left(\log n\right)$ かかる(ヒープにするための並び替えに時間がかかる)</p>
+
+<p>また、挿入には $O\left(\log n\right)$ かかる</p>
 
 <p>ヒープ構造の実装は配列だけで表現でき、例えば以下のようにすると要素同士を行き来できる</p>
 
