@@ -6,6 +6,7 @@ COLLECT_LINKS = ruby scripts/collect-links/collect-links.rb
 PARSE_MARKDOWN = ruby scripts/parse-markdown/parse-markdown.rb
 MAKE_INDEX = ruby scripts/make-index/make-index.rb
 MAKE_HTML = ruby scripts/make-html/make-html.rb
+SEARCH_ATTACHMENT_FILES = ruby scripts/search-attachment-files/search.rb
 
 SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*/*.md) # 無数にあるが、うまく扱えなかったのでとりあえず
 SOURCE_DIRS = $(sort $(dir $(SOURCES)))
