@@ -30,27 +30,27 @@
 <ul>
   <li>$nv$ の扱い
     <ul>
-      <li>$nv$ は $0$ か $\mathrm{succ}\ nv$になる</li>
-      <li>例えば $\mathrm{succ\ pred}\ 0$ は $nv$ にはならない</li>
+      <li>$nv$ は $0$ か $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{succ}\ nv$になる</li>
+      <li>例えば $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{succ\ pred}\ 0$ は $nv$ にはならない</li>
       <li>多分だけど、計算の順序を一意にするためにある気がする</li>
     </ul>
   </li>
-  <li>なぜ $\mathrm{prev}\ 0 \to 0$ なのか
+  <li>なぜ $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{prev}\ 0 \to 0$ なのか
     <ul>
       <li>要するに、マイナスの状態を許容しない理由</li>
-      <li>つまり、なぜ $nv ::= 0, \mathrm{succ}\ nv, \mathrm{pred}\ nv$ ではないのか</li>
+      <li>つまり、なぜ $nv ::= 0, \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{succ}\ nv, \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{pred}\ nv$ ではないのか</li>
       <li>E-SuccとE-Predがあるのだから、上のものがあってもいいはず。</li>
       <li>評価の順序を一意にするため？
         <ul>
           <li>E-PredSuccに加えて、E-SuccPredが必要になるはずで</li>
-          <li>$\mathrm{succ_1\ pred_2\ succ_3}\ 0$ があったとき
+          <li>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{succ_1\ pred_2\ succ_3}\ 0$ があったとき
             <ul>
-              <li>E-SuccPredを使って $\mathrm{succ_3}\ 0$
+              <li>E-SuccPredを使って $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{succ_3}\ 0$
                 <ul>
                   <li>$1-1+1+0 \to (1-1)+1+0 \to 1+0$ みたいな感じ</li>
                 </ul>
               </li>
-              <li>E-SuccとE-PredSuccを使って $\mathrm{succ_1}\ 0$
+              <li>E-SuccとE-PredSuccを使って $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{succ_1}\ 0$
                 <ul>
                   <li>$1-1+1+0 \to 1+(-1+1)+0 \to 1+0$ みたいな感じ</li>
                 </ul>

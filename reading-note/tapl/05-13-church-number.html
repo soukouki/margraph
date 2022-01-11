@@ -25,225 +25,225 @@
 
 <p>簡単のため、振る舞い等価なものは区別せずに考える。そのため、<a href="../../reading-note/tapl/05-06-call-by-value.html">値呼び戦略</a>ではなく、<a href="../../reading-note/tapl/05-03-full-beta-reduction.html">完全ベータ簡約</a>で簡約している</p>
 
-\[\begin{eqnarray}
-c_0 &amp;=&amp; \lambda s.\ \lambda z.\ z\\
-c_1 &amp;=&amp; \lambda s.\ \lambda z.\ s\ z\\
-c_2 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ z)\\
-c_3 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+c_0 &amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ z\\
+c_1 &amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ z\\
+c_2 &amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ z)\\
+c_3 &amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ (s\ z))\\
 &amp;\vdots&amp;
-\end{eqnarray}\]
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
-<p>$\mathrm{succ}$ を $n$ 回適用する<a href="../../reading-note/tapl/05-01-combinator.html">コンビネータ</a>で表現する</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{succ}$ を $n$ 回適用する<a href="../../reading-note/tapl/05-01-combinator.html">コンビネータ</a>で表現する</p>
 
 <h2 id="succ">succ</h2>
 
 <p>外側に1つ分追加するイメージ</p>
 
-<p>$\mathrm{scc} = \lambda n.\ \lambda s.\ \lambda z\ s\ (n\ s\ z)$</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{scc} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> n.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> s.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> z\ s\ (n\ s\ z)$</p>
 
 <p><code>succ(2)</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{scc}\ c_2
-&amp;=&amp; (\lambda n.\ \lambda s.\ \lambda z\ s\ (n\ s\ z))\ c_2\\
-&amp;\to&amp; \lambda s.\ \lambda z\ s\ (c_2\ s\ z)\\
-&amp;=&amp; \lambda s.\ \lambda z.\ s\ ((\lambda s.\ \lambda z.\ s\ (s\ z))\ s\ z)\\
-&amp;\to&amp; \lambda s.\ \lambda z.\ s\ (\lambda z.\ s\ (s\ z)\ z)\\
-&amp;\to&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{scc}\ c_2
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) n.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z\ s\ (n\ s\ z))\ c_2\\
+&amp;\to&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z\ s\ (c_2\ s\ z)\\
+&amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ z))\ s\ z)\\
+&amp;\to&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ z)\ z)\\
+&amp;\to&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ (s\ z))\\
 &amp;=&amp; c_3
-\end{eqnarray}\]
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <h2 id="succ2">succ(2)</h2>
 
 <p>内側に1つ分追加するイメージ</p>
 
-<p>$\mathrm{scc’} = \lambda n.\ \lambda s.\ \lambda z.\ n\ s\ (s\ z)$</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{scc’} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> n.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> s.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> z.\ n\ s\ (s\ z)$</p>
 
 <p><code>succ'(2)</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{scc'}\ c_2
-&amp;=&amp; (\lambda n.\ \lambda s.\ \lambda z.\ n\ s\ (s\ z))\ c_2\\
-&amp;\to&amp; \lambda s.\ \lambda z.\ c_2\ s\ (s\ z)\\
-&amp;=&amp; \lambda s.\ \lambda z.\ (\lambda s.\ \lambda z.\ s\ (s\ z))\ s\ (s\ z)\\
-&amp;\to^\ast&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{scc'}\ c_2
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) n.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ n\ s\ (s\ z))\ c_2\\
+&amp;\to&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ c_2\ s\ (s\ z)\\
+&amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ z))\ s\ (s\ z)\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ (s\ z))\\
 &amp;=&amp; c_3
-\end{eqnarray}\]
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <h2 id="plus">plus</h2>
 
 <p>$m, n$ が与えられて、$m$ の $z$ に $n$ を入れるイメージ</p>
 
-<p>$\mathrm{plus} = \lambda m.\ \lambda n.\ \lambda s.\ \lambda z.\ m\ s\ (n\ s\ z)$</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{plus} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> m.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> n.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> s.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> z.\ m\ s\ (n\ s\ z)$</p>
 
 <p><code>1+2</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{plus}\ c_1\ c_2
-&amp;=&amp; (\lambda m.\ \lambda n.\ \lambda s.\ \lambda z.\ m\ s\ (n\ s\ z))\ c_1\ c_2\\
-&amp;\to^\ast&amp; \lambda s.\ \lambda z.\ c_1\ s\ (c_2\ s\ z)\\
-&amp;=&amp; \lambda s.\ \lambda z.\ c_1\ s\ ((\lambda s.\ \lambda z.\ s\ (s\ z))\ s\ z)\\
-&amp;\to^\ast&amp; \lambda s.\ \lambda z.\ c_1\ s\ (s\ (s\ z))\\
-&amp;=&amp;  \lambda s.\ \lambda z.\ (\lambda s.\ \lambda z.\ s\ z)\ s\ (s\ (s\ z))\\
-&amp;\to&amp; \lambda s.\ \lambda z.\ (\lambda z.\ s\ z)\ (s\ (s\ z))\\
-&amp;\to&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_1\ c_2
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) n.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ m\ s\ (n\ s\ z))\ c_1\ c_2\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ c_1\ s\ (c_2\ s\ z)\\
+&amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ c_1\ s\ ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ z))\ s\ z)\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ c_1\ s\ (s\ (s\ z))\\
+&amp;=&amp;  \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ z)\ s\ (s\ (s\ z))\\
+&amp;\to&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ z)\ (s\ (s\ z))\\
+&amp;\to&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ (s\ z))\\
 &amp;=&amp; c_3
-\end{eqnarray}\]
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <h2 id="times">times</h2>
 
 <p>$n$ を使って $n$ を足す関数を作り、それを $m$ に渡して $m$ 回実行してもらう</p>
 
-<p>$\mathrm{times} = \lambda m.\ \lambda n.\ m\ (\mathrm{plus}\ n)\ c_0$</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{times} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> m.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> n.\ m\ (\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{plus}\ n)\ c_0$</p>
 
 <p><code>2*2</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{times}\ c_2\ c_2
-&amp;=&amp; (\lambda m.\ \lambda n.\ m\ (\mathrm{plus}\ n)\  c_0)\ c_2\ c_2\\
-&amp;\to^\ast&amp; c_2\ (\mathrm{plus}\ c_2)\ c_0\\
-&amp;=&amp; (\lambda s.\ \lambda z.\ s\ (s\ z))\ (\mathrm{plus}\ c_2)\ c_0\\
-&amp;\to^\ast&amp; (\mathrm{plus}\ c_2)\ (\mathrm{plus}\ c_2\ c_0)\\
-&amp;=&amp; \mathrm{plus}\ c_2\ c_2\\
-&amp;\to^\ast&amp; c_4
-\end{eqnarray}\]
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ c_2\ c_2
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) n.\ m\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ n)\  c_0)\ c_2\ c_2\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_2\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_2)\ c_0\\
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ z))\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_2)\ c_0\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_2)\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_2\ c_0)\\
+&amp;=&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_2\ c_2\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_4
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <h2 id="power">power</h2>
 
-<p>$\mathrm{times}$ の $\mathrm{plus}$ を $\mathrm{times}$ に置き換えたらうまくいきそう</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{times}$ の $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{plus}$ を $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{times}$ に置き換えたらうまくいきそう</p>
 
-<p>$\mathrm{power} = \lambda m.\ \lambda n.\ m\ (\mathrm{times}\ n)\ c_1$</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{power} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> m.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> n.\ m\ (\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{times}\ n)\ c_1$</p>
 
 <p><code>2**3</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{power}\ c_3\ c_2
-&amp;=&amp; (\lambda m.\ \lambda n.\ m\ (\mathrm{times}\ n)\ c_1)\ c_3\ c_2\\
-&amp;\to^\ast&amp; c_3 (\mathrm{times}\ c_2)\ c_1\\
-&amp;=&amp; (\lambda s.\ \lambda z.\ s\ (s\ (s\ z)))\ (\mathrm{times}\ c_2)\ c_1\\
-&amp;\to^\ast&amp; (\mathrm{times}\ c_2)\ ((\mathrm{times}\ c_2)\ (\mathrm{times}\ c_2\ c_1))\\
-&amp;\to^\ast&amp; (\mathrm{times}\ c_2)\ (\mathrm{times}\ c_2\ c_2)\\
-&amp;\to^\ast&amp; \mathrm{times}\ c_2\ c_4\\
-&amp;\to^\ast&amp; c_8
-\end{eqnarray}\]
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{power}\ c_3\ c_2
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) n.\ m\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ n)\ c_1)\ c_3\ c_2\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_3 (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ c_2)\ c_1\\
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ (s\ z)))\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ c_2)\ c_1\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ c_2)\ ((\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ c_2)\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ c_2\ c_1))\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ c_2)\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ c_2\ c_2)\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{times}\ c_2\ c_4\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_8
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <h2 id="iszero">iszero</h2>
 
-<p>$c_0$ のみ、そのまま $z$ を返すので、succは引数を受け取って、引数に関わらず $\mathrm{fls}$ を返す関数にすればよい</p>
+<p>$c_0$ のみ、そのまま $z$ を返すので、succは引数を受け取って、引数に関わらず $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{fls}$ を返す関数にすればよい</p>
 
-<p>$\mathrm{iszro} = \lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}$</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{iszro} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> m.\ m\ (\l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> x.\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{fls})\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{tru}$</p>
 
 <p><code>iszero?(0)</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{iszro}\ c_0
-&amp;=&amp; (\lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru})\ c_0\\
-&amp;\to^\ast&amp; c_0\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
-&amp;=&amp; (\lambda s.\ \lambda z.\ z)\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
-&amp;\to^\ast&amp; \mathrm{tru}
-\end{eqnarray}\]
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{iszro}\ c_0
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ m\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru})\ c_0\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_0\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}\\
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ z)\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <p><code>iszero?(1)</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{iszro}\ c_1
-&amp;=&amp; (\lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru})\ c_1\\
-&amp;\to^\ast&amp; c_1\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
-&amp;=&amp; (\lambda s.\ \lambda z.\ s\ z)\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
-&amp;\to^\ast&amp; (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
-&amp;\to^\ast&amp; \mathrm{fls}
-\end{eqnarray}\]
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{iszro}\ c_1
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ m\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru})\ c_1\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_1\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}\\
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ z)\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls}
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <h2 id="pred">pred</h2>
 
-<p>succでは、2つ目の要素の値と、2つ目の要素値+1をペアにして渡していく。すると、$c_n$ のとき $\mathrm{pair}\ c_{n-1}\ c_n$ となるので、それを使う</p>
+<p>succでは、2つ目の要素の値と、2つ目の要素値+1をペアにして渡していく。すると、$c_n$ のとき $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{p<a href="../../algorithms-and-data-structure/07a-array.html">a</a>ir}\ c_{n-1}\ c_n$ となるので、それを使う</p>
 
-\[\begin{eqnarray}
-z &amp;=&amp; \mathrm{pair}\ c_0\ c_0\\
-s &amp;=&amp; \lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ p))\\
-\mathrm{prd} &amp;=&amp; \lambda m.\ \mathrm{fst}\ (m\ s\ z)\\
-\end{eqnarray}\]
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+z &amp;=&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_0\\
+s &amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) p.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ p)\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_1\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ p))\\
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{prd} &amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (m\ s\ z)\\
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <p><code>pred(2)</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{prd}\ c_2
-&amp;=&amp; (\lambda m.\ \mathrm{fst}\ (m\ s\ z))\ c_2\\
-&amp;\to&amp; \mathrm{fst}\ (c_2\ s\ z)\\
-&amp;=&amp; \mathrm{fst}\ ((\lambda s.\ \lambda z.\ s\ (s\ z))\ s\ z)\\
-&amp;\to^\ast&amp; \mathrm{fst}\ (s\ (s\ z))\\
-&amp;=&amp; \mathrm{fst}\ (s\ (\lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ p))\ (\mathrm{pair}\ c_0\ c_0)))\\
-&amp;\to&amp; \mathrm{fst}\ (s\ (\mathrm{pair}\ (\mathrm{snd}\ (\mathrm{pair}\ c_0\ c_0))\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ (\mathrm{pair}\ c_0\ c_0)))))\\
-&amp;\to^\ast&amp; \mathrm{fst}\ (s\ (\mathrm{pair}\ c_0\ (\mathrm{plus}\ c_1\ c_0)))\\
-&amp;\to^\ast&amp; \mathrm{fst}\ (s\ (\mathrm{pair}\ c_0\ c_1))\\
-&amp;=&amp; \mathrm{fst}\ ((\lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ p)))\ (\mathrm{pair}\ c_0\ c_1))\\
-&amp;\to&amp; \mathrm{fst}\ (\mathrm{pair}\ (\mathrm{snd}\ (\mathrm{pair}\ c_0\ c_1))\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ (\mathrm{pair}\ c_0\ c_1))))\\
-&amp;\to^\ast&amp; \mathrm{snd}\ (\mathrm{pair}\ c_0\ c_1)\\
-&amp;\to^\ast&amp; c_1
-\end{eqnarray}\]
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{prd}\ c_2
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (m\ s\ z))\ c_2\\
+&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (c_2\ s\ z)\\
+&amp;=&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ z))\ s\ z)\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (s\ (s\ z))\\
+&amp;=&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (s\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) p.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ p)\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_1\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ p))\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_0)))\\
+&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (s\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_0))\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_1\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_0)))))\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (s\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_1\ c_0)))\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (s\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_1))\\
+&amp;=&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) p.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ p)\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_1\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ p)))\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_1))\\
+&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_1))\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{plus}\ c_1\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_1))))\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{snd}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_1)\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_1
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <p><code>pred(0)</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{prd}\ c_0
-&amp;=&amp; (\lambda m.\ \mathrm{fst}\ (m\ s\ z))\ c_0\\
-&amp;\to&amp; \mathrm{fst}\ (c_0\ s\ z)\\
-&amp;=&amp; \mathrm{fst}\ ((\lambda s.\ \lambda z.\ z)\ s\ z)\\
-&amp;\to^\ast&amp; \mathrm{fst}\ z\\
-&amp;=&amp; \mathrm{fst}\ (\mathrm{pair}\ c_0\ c_0)\\
-&amp;\to^\ast&amp; c_0
-\end{eqnarray}\]
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{prd}\ c_0
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (m\ s\ z))\ c_0\\
+&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (c_0\ s\ z)\\
+&amp;=&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ z)\ s\ z)\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ z\\
+&amp;=&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fst}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{p[a](../../algorithms-and-data-structure/07a-array.html)ir}\ c_0\ c_0)\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_0
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <h2 id="sub">sub</h2>
 
 <p>timesやpowerと同じ様に、先程のpredを $n$ 回繰り返す</p>
 
-<p>$\mathrm{sub} = \lambda m.\ \lambda n.\ n\ (\lambda x.\ pred x)\ m$</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{sub} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> m.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> n.\ n\ (\l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> x.\ pred x)\ m$</p>
 
 <p><code>3-2</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{sub}\ c_3\ c_2
-&amp;=&amp; (\lambda m.\ \lambda n.\ n\ (\lambda x.\ \mathrm{pred}\ x)\ m)\ c_3\ c_2\\
-&amp;\to^\ast&amp; c_2\ (\lambda x.\ \mathrm{pred}\ x)\ c_3\\
-&amp;=&amp; (\lambda s.\ \lambda z.\ s\ (s\ z))\ (\lambda x.\ \mathrm{pred}\ x)\ c_3\\
-&amp;\to^\ast&amp; (\lambda x.\ \mathrm{pred}\ x)\ ((\lambda x.\ \mathrm{pred}\ x)\ c_3)\\
-&amp;\to&amp; (\lambda x.\ \mathrm{pred}\ x)\ (pred\ c_3)\\
-&amp;\to^\ast&amp; (\lambda x.\ \mathrm{pred}\ x)\ c_2\\
-&amp;\to&amp; \mathrm{pred}\ c_2\\
-&amp;\to^\ast&amp; c_1
-\end{eqnarray}\]
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{sub}\ c_3\ c_2
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) n.\ n\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ m)\ c_3\ c_2\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_2\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ c_3\\
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ z))\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ c_3\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ c_3)\\
+&amp;\to&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ (pred\ c_3)\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ c_2\\
+&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ c_2\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; c_1
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <p><code>1-2</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{sub}\ c_1\ c_2
-&amp;=&amp; (\lambda m.\ \lambda n.\ n\ (\lambda x.\ \mathrm{pred}\ x)\ m)\ c_1\ c_2\\
-&amp;\to^\ast&amp; (\lambda x.\ \mathrm{pred}\ x)\ c_1\\
-&amp;=&amp; (\lambda s.\ \lambda z.\ s\ (s\ z))\ (\lambda x.\ \mathrm{pred}\ x)\ c_1\\
-&amp;\to^\ast&amp; ((\lambda x.\ \mathrm{pred}\ x)\ ((\lambda x.\ \mathrm{pred}\ x)\ c_1))\\
-&amp;\to&amp; c_2\ ((\lambda x.\ \mathrm{pred}\ x)\ (\mathrm{pred}\ c_1))\\
-&amp;\to^\ast&amp; ((\lambda x.\ \mathrm{pred}\ x)\ c_0)\\
-&amp;\to&amp; \mathrm{pred} c_0\\
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{sub}\ c_1\ c_2
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) n.\ n\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ m)\ c_1\ c_2\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ c_1\\
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) s.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) z.\ s\ (s\ z))\ (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ c_1\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ c_1))\\
+&amp;\to&amp; c_2\ ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ c_1))\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; ((\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) x.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred}\ x)\ c_0)\\
+&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{pred} c_0\\
 &amp;\to&amp; c_0
-\end{eqnarray}\]
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
-<h2 id="equal">equal</h2>
+<h2 id="equaalgorithms-and-data-structure07a-arrayhtmll">equ<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l</h2>
 
-<p>引いてiszeroで調べれば終わり・・・と思いきや、引く数のほうが多いと失敗します。とりあえずandで誤魔化します</p>
+<p>引いてiszeroで調べれば終わり・・・と思いきや、引く数のほうが多いと失敗します。とりあえず<a href="../../algorithms-and-data-structure/07a-array.html">a</a>ndで誤魔化します</p>
 
-<p>$\mathrm{equal} = \lambda m.\ \lambda n.\ \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ m\ n))\ (\mathrm{iszro}\ (\mathrm{sub}\ n\ m))$</p>
+<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{equ<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> m.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> n.\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{<a href="../../algorithms-and-data-structure/07a-array.html">a</a>nd}\ (\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{iszro}\ (\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{sub}\ m\ n))\ (\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{iszro}\ (\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{sub}\ n\ m))$</p>
 
 <p><code>1==2</code>の例</p>
 
-\[\begin{eqnarray}
-\mathrm{eqaul}\ c_1\ c_2
-&amp;=&amp; (\lambda m.\ \lambda n.\ \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ m\ n))\ (\mathrm{iszro}\ (\mathrm{sub}\ n\ m)))\ c_1\ c_2\\
-&amp;\to^\ast&amp; \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ c_1\ c_2))\ (\mathrm{iszro}\ (\mathrm{sub}\ c_2\ c_1))\\
-&amp;\to^\ast&amp; \mathrm{and}\ (\mathrm{iszro}\ c_0)\ (\mathrm{iszro}\ c_1)\\
-&amp;\to^\ast&amp; \mathrm{and\ tru\ fls}\\
-&amp;\to^\ast&amp; \mathrm{fls}
-\end{eqnarray}\]
+\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
+\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{eq[a](../../algorithms-and-data-structure/07a-array.html)ul}\ c_1\ c_2
+&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) m.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) n.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{[a](../../algorithms-and-data-structure/07a-array.html)nd}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{iszro}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{sub}\ m\ n))\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{iszro}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{sub}\ n\ m)))\ c_1\ c_2\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{[a](../../algorithms-and-data-structure/07a-array.html)nd}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{iszro}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{sub}\ c_1\ c_2))\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{iszro}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{sub}\ c_2\ c_1))\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{[a](../../algorithms-and-data-structure/07a-array.html)nd}\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{iszro}\ c_0)\ (\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{iszro}\ c_1)\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{[a](../../algorithms-and-data-structure/07a-array.html)nd\ tru\ fls}\\
+&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls}
+\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
 
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/tapl/05-13-church-number.md';">Edit</button></p>
 

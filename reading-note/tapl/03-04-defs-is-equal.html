@@ -26,47 +26,47 @@
 <p>命題3.2.6(<a href="../../reading-note/tapl/03-01-recursive-def.html">再帰的な項の定義</a>と<a href="../../reading-note/tapl/03-03-concrete-def.html">具体的な項の定義</a>は等しい)について</p>
 
 <ul>
-  <li>$\mathcal{T}$ はある条件を満たす最小の集合として定義されている
+  <li>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thc<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l{T}$ はある条件を満たす最小の集合として定義されている
     <ul>
-      <li>次の2条件を満たせば、$\mathcal{T} = S$ が証明される
+      <li>次の2条件を満たせば、$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thc<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l{T} = S$ が証明される
         <ul>
-          <li>(a) $S$ が $\mathcal{T}$ の条件を満たすこと
+          <li>(<a href="../../algorithms-and-data-structure/07a-array.html">a</a>) $S$ が $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thc<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l{T}$ の条件を満たすこと
             <ul>
-              <li>これで、$S \subseteq \mathcal{T}$ であることがわかる</li>
+              <li>これで、$S \subseteq \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thc<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l{T}$ であることがわかる</li>
             </ul>
           </li>
-          <li>(b) $\mathcal{T}$ を満たす任意の集合 $S’$ が $S$ を部分集合として持つこと
+          <li>(b) $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thc<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l{T}$ を満たす任意の集合 $S’$ が $S$ を部分集合として持つこと
             <ul>
-              <li>つまり、$\mathcal{T}$ だが $S$ ではない集合がないことがわかる</li>
-              <li>これで、$\mathcal{T} \subseteq S$ であることがわかる</li>
+              <li>つまり、$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thc<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l{T}$ だが $S$ ではない集合がないことがわかる</li>
+              <li>これで、$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thc<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l{T} \subseteq S$ であることがわかる</li>
             </ul>
           </li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>(a)
+  <li>(<a href="../../algorithms-and-data-structure/07a-array.html">a</a>)
     <ul>
       <li>下の2つのことを示して、帰納法で証明する
         <ul>
           <li>定数は $S$ に含まれる</li>
-          <li>$t_1 \in S$ ならば $t_1 \in S_i$ であり、$\mathrm{succ}\ t_1, \mathrm{pred}\ t_1, \mathrm{iszero}\ t_1$ はそれぞれ $S_{i+1}$に含まれる</li>
-          <li>同様に、$\mathrm{if}\ t_1\ \mathrm{then}\ t_2\ \mathrm{else}\ t_3 \in S$</li>
+          <li>$t_1 \in S$ ならば $t_1 \in S_i$ であり、$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{succ}\ t_1, \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{pred}\ t_1, \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{iszero}\ t_1$ はそれぞれ $S_{i+1}$に含まれる</li>
+          <li>同様に、$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{if}\ t_1\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{then}\ t_2\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{else}\ t_3 \in S$</li>
         </ul>
       </li>
     </ul>
   </li>
   <li>(b)
     <ul>
-      <li>$S’ \subseteq \mathcal{T}$ のとき、$S_i \subseteq S’$であることを求める
+      <li>$S’ \subseteq \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thc<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l{T}$ のとき、$S_i \subseteq S’$であることを求める
         <ul>
-          <li>$S_i \subseteq S’ \subseteq \mathcal{T}$ となる</li>
+          <li>$S_i \subseteq S’ \subseteq \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thc<a href="../../algorithms-and-data-structure/07a-array.html">a</a>l{T}$ となる</li>
         </ul>
       </li>
       <li>$i = 0$ のときと $i &gt; 0$ のときに分け、帰納法を使って証明する</li>
       <li>$i = 0$ のとき
         <ul>
-          <li>$S_i = \varnothing$ なので、明らかに $S_i \subseteq S’$</li>
+          <li>$S_i = \v<a href="../../algorithms-and-data-structure/07a-array.html">a</a>rnothing$ なので、明らかに $S_i \subseteq S’$</li>
         </ul>
       </li>
       <li>$i &gt; 0$ のとき
@@ -76,12 +76,12 @@
               <li>$t \in S’$ は明らか</li>
             </ul>
           </li>
-          <li>$t_1 \in S_j$ に対して、$t$ が $\mathrm{succ}\ t_1, \mathrm{pred}\ t_1, \mathrm{iszero}\ t_1$ならば
+          <li>$t_1 \in S_j$ に対して、$t$ が $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{succ}\ t_1, \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{pred}\ t_1, \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{iszero}\ t_1$ならば
             <ul>
               <li>$t_1 \in S’$ となり、$t \in S’$ が成り立つ</li>
             </ul>
           </li>
-          <li>同様に $\mathrm{if}\ t1\ \mathrm{then}\ t2\ \mathrm{else}\ t3 \in S’$ が成り立つ</li>
+          <li>同様に $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{if}\ t1\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{then}\ t2\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{else}\ t3 \in S’$ が成り立つ</li>
         </ul>
       </li>
     </ul>
