@@ -9,3 +9,16 @@
 代わりに、要素の中で最大(最小)の要素は $O\left(1\right)$ で取得でき、最大(最小)の要素を取り出す(削除する)には $O\left(n\right)$ かかる
 
 また、挿入には $O\left(n\right)$ かかる
+
+ヒープ構造の実装は配列だけで表現でき、例えば
+```py
+parent(i)
+    return floor(i/2)
+
+left(i)
+    return 2i
+
+right(i)
+    return 2i+1
+```
+という形で木の要素を行き来できる
