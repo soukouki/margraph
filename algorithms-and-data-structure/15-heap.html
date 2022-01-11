@@ -32,8 +32,9 @@
 
 <p>また、挿入には $O\left(n\right)$ かかる</p>
 
-<p>ヒープ構造の実装は配列だけで表現でき、例えば
-```py
+<p>ヒープ構造の実装は配列だけで表現でき、例えば以下のようにすると要素同士を行き来できる</p>
+
+<p>```py
 parent(i)
     return floor(i/2)</p>
 
@@ -42,8 +43,7 @@ parent(i)
 
 <p>right(i)
     return 2i+1
-```
-という形で木の要素を行き来できる</p>
+```</p>
 
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/algorithms-and-data-structure/15-heap.md';">Edit</button></p>
 
