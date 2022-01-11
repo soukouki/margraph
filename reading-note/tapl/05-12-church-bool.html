@@ -23,76 +23,76 @@
 
 <h1 id="section">チャーチブール数</h1>
 
-<h2 id="truefaalgorithms-and-data-structure07a-arrayhtmllse">trueとf<a href="../../algorithms-and-data-structure/07a-array.html">a</a>lse</h2>
+<h2 id="truefalse">trueとfalse</h2>
 
-\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
-\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru} &amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) t.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) f.\ t\\
-\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls} &amp;=&amp; \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) t.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) f.\ f
-\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
+\[\begin{eqnarray}
+\mathrm{tru} &amp;=&amp; \lambda t.\ \lambda f.\ t\\
+\mathrm{fls} &amp;=&amp; \lambda t.\ \lambda f.\ f
+\end{eqnarray}\]
 
 <h2 id="test">test</h2>
 
-<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{test} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> l.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> m.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> n.\ l\ m\ n$</p>
+<p>$\mathrm{test} = \lambda l.\ \lambda m.\ \lambda n.\ l\ m\ n$</p>
 
-<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{test}\ b\ v\ w$ は、$b$ が $\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{tru}$ のとき $v$ へ簡約され、$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{fls}$ のとき $w$ へ簡約される</p>
+<p>$\mathrm{test}\ b\ v\ w$ は、$b$ が $\mathrm{tru}$ のとき $v$ へ簡約され、$\mathrm{fls}$ のとき $w$ へ簡約される</p>
 
-<h2 id="aalgorithms-and-data-structure07a-arrayhtmlnd"><a href="../../algorithms-and-data-structure/07a-array.html">a</a>nd</h2>
+<h2 id="and">and</h2>
 
-<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{<a href="../../algorithms-and-data-structure/07a-array.html">a</a>nd} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> b.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> c.\ b\ c\ fls$</p>
+<p>$\mathrm{and} = \lambda b.\ \lambda c.\ b\ c\ fls$</p>
 
-<p><code>true [a](../../algorithms-and-data-structure/07a-array.html)nd f[a](../../algorithms-and-data-structure/07a-array.html)lse</code>の例</p>
+<p><code>true and false</code>の例</p>
 
-\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
-\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{[a](../../algorithms-and-data-structure/07a-array.html)nd\ tru\ fls} 
-&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) b.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) c.\ b\ c\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru\ fls}\\
-&amp;\to&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) c.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}\ c\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls}\\
-&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru\ fls\ fls}\\
-&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) t.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) f.\ t)\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls\ fls}\\
-&amp;\to&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) f.\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls}\\
-&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls}
-\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
+\[\begin{eqnarray}
+\mathrm{and\ tru\ fls} 
+&amp;=&amp; (\lambda b.\ \lambda c.\ b\ c\ \mathrm{fls})\ \mathrm{tru\ fls}\\
+&amp;\to&amp; (\lambda c.\ \mathrm{tru}\ c\ \mathrm{fls})\ \mathrm{fls}\\
+&amp;\to&amp; \mathrm{tru\ fls\ fls}\\
+&amp;=&amp; (\lambda t.\ \lambda f.\ t)\ \mathrm{fls\ fls}\\
+&amp;\to&amp; (\lambda f.\ \mathrm{fls})\ \mathrm{fls}\\
+&amp;\to&amp; \mathrm{fls}
+\end{eqnarray}\]
 
 <p>値呼び出し戦略によって、内部の抽象よりも $c$ が先に簡約される</p>
 
 <h2 id="or">or</h2>
 
-<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{tru}$ は前側、$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{fls}$ は後側の値を返すので、それを利用していい感じに組んでいけばいい</p>
+<p>$\mathrm{tru}$ は前側、$\mathrm{fls}$ は後側の値を返すので、それを利用していい感じに組んでいけばいい</p>
 
-<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{or} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> b.\ \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> c.\ b\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{tru}\ c\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{tru\ fls}$</p>
+<p>$\mathrm{or} = \lambda b.\ \lambda c.\ b\ \mathrm{tru}\ c\ \mathrm{tru\ fls}$</p>
 
-<p><code>f[a](../../algorithms-and-data-structure/07a-array.html)lse or true</code>の例</p>
+<p><code>false or true</code>の例</p>
 
-\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
-\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{or\ fls\ tru}
-&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) b.\ \l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) c.\ b\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}\ c\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru\ fls})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls\ tru}\\
-&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls\ tru\ tru\ tru\ fls}\\
-&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru\ tru\ fls}\\
-&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}
-\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
+\[\begin{eqnarray}
+\mathrm{or\ fls\ tru}
+&amp;=&amp; (\lambda b.\ \lambda c.\ b\ \mathrm{tru}\ c\ \mathrm{tru\ fls})\ \mathrm{fls\ tru}\\
+&amp;\to^\ast&amp; \mathrm{fls\ tru\ tru\ tru\ fls}\\
+&amp;\to^\ast&amp; \mathrm{tru\ tru\ fls}\\
+&amp;\to^\ast&amp; \mathrm{tru}
+\end{eqnarray}\]
 
 <h2 id="not">not</h2>
 
-<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{test}\ b\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{fls\ tru}$ と考えれば良い</p>
+<p>$\mathrm{test}\ b\ \mathrm{fls\ tru}$ と考えれば良い</p>
 
-<p>$\m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{not} = \l<a href="../../algorithms-and-data-structure/07a-array.html">a</a>mbd<a href="../../algorithms-and-data-structure/07a-array.html">a</a> b.\ b\ \m<a href="../../algorithms-and-data-structure/07a-array.html">a</a>thrm{fls\ tru}$</p>
+<p>$\mathrm{not} = \lambda b.\ b\ \mathrm{fls\ tru}$</p>
 
 <p><code>not true</code>の例</p>
 
-\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
-\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{not\ tru}
-&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) b.\ b\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls\ tru})\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}\\
-&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru\ fls\ tru}\\
-&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls}
-\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
+\[\begin{eqnarray}
+\mathrm{not\ tru}
+&amp;=&amp; (\lambda b.\ b\ \mathrm{fls\ tru})\ \mathrm{tru}\\
+&amp;\to&amp; \mathrm{tru\ fls\ tru}\\
+&amp;\to^\ast&amp; \mathrm{fls}
+\end{eqnarray}\]
 
-<p><code>not f[a](../../algorithms-and-data-structure/07a-array.html)lse</code>の例</p>
+<p><code>not false</code>の例</p>
 
-\[\begin{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}
-\m[a](../../algorithms-and-data-structure/07a-array.html)thrm{not\ fls}
-&amp;=&amp; (\l[a](../../algorithms-and-data-structure/07a-array.html)mbd[a](../../algorithms-and-data-structure/07a-array.html) b.\ b\ \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls\ tru} \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls}\\
-&amp;\to&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{fls\ fls\ tru}\\
-&amp;\to^\[a](../../algorithms-and-data-structure/07a-array.html)st&amp; \m[a](../../algorithms-and-data-structure/07a-array.html)thrm{tru}
-\end{eqn[a](../../algorithms-and-data-structure/07a-array.html)rr[a](../../algorithms-and-data-structure/07a-array.html)y}\]
+\[\begin{eqnarray}
+\mathrm{not\ fls}
+&amp;=&amp; (\lambda b.\ b\ \mathrm{fls\ tru} \mathrm{fls}\\
+&amp;\to&amp; \mathrm{fls\ fls\ tru}\\
+&amp;\to^\ast&amp; \mathrm{tru}
+\end{eqnarray}\]
 
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/tapl/05-12-church-bool.md';">Edit</button></p>
 

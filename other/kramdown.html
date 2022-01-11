@@ -24,20 +24,20 @@
 
 <dl>
   <dt>公式ページ</dt>
-  <dd>https://kr<a href="../algorithms-and-data-structure/07a-array.html">a</a>mdown.gett<a href="../algorithms-and-data-structure/07a-array.html">a</a>long.org/index.html</dd>
+  <dd>https://kramdown.gettalong.org/index.html</dd>
   <dt>gemのドキュメント</dt>
-  <dd>https://kr<a href="../algorithms-and-data-structure/07a-array.html">a</a>mdown.gett<a href="../algorithms-and-data-structure/07a-array.html">a</a>long.org/rdoc/index.html</dd>
+  <dd>https://kramdown.gettalong.org/rdoc/index.html</dd>
   <dt>ソースコード</dt>
-  <dd>https://github.com/gett<a href="../algorithms-and-data-structure/07a-array.html">a</a>long/kr<a href="../algorithms-and-data-structure/07a-array.html">a</a>mdown</dd>
+  <dd>https://github.com/gettalong/kramdown</dd>
 </dl>
 
 <h2 id="convert">Convertの流れ</h2>
-<p>Kr<a href="../algorithms-and-data-structure/07a-array.html">a</a>mdownで、<code>Kr[a](../algorithms-and-data-structure/07a-array.html)mdown::Document.new("# he[a](../algorithms-and-data-structure/07a-array.html)der").to_html</code>の内部を追ってみたときのメモ</p>
+<p>Kramdownで、<code>Kramdown::Document.new("# header").to_html</code>の内部を追ってみたときのメモ</p>
 
 <ol>
-  <li><code>Kr[a](../algorithms-and-data-structure/07a-array.html)mdown::Document#method_missing</code>で、Converterの中から動的に選択して取ってくる</li>
-  <li><code>Kr[a](../algorithms-and-data-structure/07a-array.html)mdown::Converter::B[a](../algorithms-and-data-structure/07a-array.html)se#convert</code>で、<code>Converter::Html.new</code>ってやってConverterを生成</li>
-  <li><code>Kr[a](../algorithms-and-data-structure/07a-array.html)mdown::Converter::Html#convert</code>で、sendを使って<code>converter_*</code>を呼んでいく</li>
+  <li><code>Kramdown::Document#method_missing</code>で、Converterの中から動的に選択して取ってくる</li>
+  <li><code>Kramdown::Converter::Base#convert</code>で、<code>Converter::Html.new</code>ってやってConverterを生成</li>
+  <li><code>Kramdown::Converter::Html#convert</code>で、sendを使って<code>converter_*</code>を呼んでいく</li>
 </ol>
 
 <p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/kramdown.md';">Edit</button></p>
