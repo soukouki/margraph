@@ -8,42 +8,48 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>大ステップ意味論</title>
+    <title>ベクトルの回転</title>
   </head>
   <body>
     <article class="container" style="max-width: 50em;">
       <nav style="--bs-breadcrumb-divider: '&gt;';" aria-lavel="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
-<li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
-<li class="breadcrumb-item"><a href="../../reading-note/tapl/index.html">tapl</a></li>
-<li class="breadcrumb-item active" aria-current="page">大ステップ意味論</li>
+<li class="breadcrumb-item"><a href="../../class-notes/index.html">class-notes</a></li>
+<li class="breadcrumb-item"><a href="../../class-notes/electromagnetics/index.html">electromagnetics</a></li>
+<li class="breadcrumb-item active" aria-current="page">ベクトルの回転</li>
   </ol>
 </nav>
 
-<h1 id="section">大ステップ意味論</h1>
+<h1 id="section">ベクトルの回転</h1>
 
-<p><a href="../../reading-note/tapl/03-05-operational-sem.html">操作的意味論</a>で用いられる二つのスタイルのうちの一つ。もう一つは<a href="../../reading-note/tapl/03-11-small-step-semantics.html">小ステップ意味論</a></p>
+\[\nabla \times \mathbf{A}
+= \left(
+  \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z},
+  \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x},
+  \frac{\partial A_y}{\partial x} - \frac{\partial A_x}{\partial y}
+  \right)\]
 
-<p>評価の表記法は色々やろうとしたけれど、どうにもわからない</p>
+<p>x軸の計算はyとz、y軸の計算はzとx、z軸の計算はxとy、というふうに、求める軸と異なる2軸を使う。
+分母と分子(微分だからちょっと違うが)でそれぞれ軸が異なっている。
+分子を見ると、x軸はz-&gt;y、y軸はz-&gt;x、z軸はx-&gt;y、というふうに文字が続く。</p>
 
-<p>あと、何重にも先を見て置き換えて・・・みたいなことをするので、なんだか単純にはできないというか、少なくとも人だと覚えていられなくなる</p>
+<p>多分こんなふうに覚えれば軸は間違えないはず・・・</p>
 
-<p>プログラムで処理するのであれば大ステップ意味論でもいいのかもしれないのかな？(<a href="../../class-notes/algorithms-and-data-structure/05-stacks.html">スタック</a>を使ってうまく処理をしてくれそう)</p>
+<p><a href="../../class-notes/electromagnetics/div.html">ベクトルの発散</a>とにているが、あっちは内積、こっちは外積</p>
 
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/tapl/03-12-large-step-semantics.md';">Edit</button></p>
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/class-notes/electromagnetics/rot.md';">Edit</button></p>
 
 <hr />
 <div class="row text-center">
 <div class="col">
-前のページ<br /><a href="03-11-small-step-semantics.html">小ステップ意味論</a>
+前のページ<br /><a href="div.html">ベクトルの発散</a>
 
 </div>
 <div class="col">
-  目次<br /><a href="index.html">tapl</a>
+  目次<br /><a href="index.html">electromagnetics</a>
 </div>
 <div class="col">
-後のページ<br /><a href="05-01-combinator.html">コンビネータ</a>
 
 </div>
 </div>
