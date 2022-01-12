@@ -1,7 +1,7 @@
 # ベクトルの回転
 
 $$
-\nabla \times \mathbf{A}
+\mathbf{\nabla} \times \mathbf{A}
 = \left(
   \frac{\partial A_z}{\partial y} - \frac{\partial A_y}{\partial z},
   \frac{\partial A_x}{\partial z} - \frac{\partial A_z}{\partial x},
