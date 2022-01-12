@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>ベクトルの発散</title>
+    <title>ガウスの法則</title>
   </head>
   <body>
     <article class="container" style="max-width: 50em;">
@@ -17,36 +17,53 @@
     <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
 <li class="breadcrumb-item"><a href="../../class-notes/index.html">class-notes</a></li>
 <li class="breadcrumb-item"><a href="../../class-notes/electromagnetics/index.html">electromagnetics</a></li>
-<li class="breadcrumb-item active" aria-current="page">ベクトルの発散</li>
+<li class="breadcrumb-item active" aria-current="page">ガウスの法則</li>
   </ol>
 </nav>
 
-<h1 id="section">ベクトルの発散</h1>
+<h1 id="section">ガウスの法則</h1>
 
-\[\mathbf{\nabla} \cdot \mathbf{A} = 
-\frac{\partial A_x}{\partial x} +
-\frac{\partial A_y}{\partial y} +
-\frac{\partial A_Z}{\partial z}\]
+<p>クーロンの法則から導かれた物理法則</p>
 
-<p>それぞれの要素を微分していく</p>
+<p>微分形と積分形があるらしい</p>
 
-<p><a href="../../class-notes/electromagnetics/rot.html">ベクトルの回転</a>とにているが、あっちは外積、こっちは内積</p>
+<h2 id="section-1">微分形のガウスの法則</h2>
 
-<p>空間において、ある点で流出、流入しているかを表す。発散が0であれば、そのベクトル場は何も湧き出さず染み込まず、ただ流れるだけになる。逆に発散が常に正であれば、その空間からナニカ湧いてでてきていることになる。</p>
+\[\mathbf{\nabla}\cdot\mathbf{E}(\mathbf{r}) =
+\begin{cases}
+0 &amp; (\text{電荷が点 $\mathbf{r}$ にない場合}) \\
+\dfrac{\rho(\mathbf{r})}{\varepsilon_0} &amp; (\text{電荷が点 $\mathbf{r}$ にある場合})
+\end{cases}\]
 
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/class-notes/electromagnetics/div.md';">Edit</button></p>
+<p><a href="../../class-notes/electromagnetics/div.html">ベクトルの発散</a>を思い出すと、電場の湧き出し・染み込みと電荷密度の関係を表す公式なのがわかる。</p>
+
+<p><a href="../../class-notes/electromagnetics/div.html">ベクトルの発散</a>さえわかれば、積分形のガウスの法則より簡単に思える。</p>
+
+<h2 id="section-2">積分形のガウスの法則</h2>
+
+\[\int_S \mathbf{E} \cdot \mathbf{n}\ dS =
+\begin{cases}
+0 &amp; (\text{電荷がSの外側にある場合}) \\
+\dfrac{q}{\varepsilon_0} &amp; (\text{電荷がSの内側にある場合})
+\end{cases}\]
+
+<p>面で囲った部分において、そこから出てくるベクトル場と電荷密度の関係を表す公式なのがわかる。</p>
+
+<p>面を積分してるから積分形なのかな？</p>
+
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/class-notes/electromagnetics/gauss.md';">Edit</button></p>
 
 <hr />
 <div class="row text-center">
 <div class="col">
-前のページ<br /><a href="coulomb.html">クーロン力</a>
+前のページ<br /><a href="div.html">ベクトルの発散</a>
 
 </div>
 <div class="col">
   目次<br /><a href="index.html">electromagnetics</a>
 </div>
 <div class="col">
-後のページ<br /><a href="gauss.html">ガウスの法則</a>
+後のページ<br /><a href="rot.html">ベクトルの回転</a>
 
 </div>
 </div>
