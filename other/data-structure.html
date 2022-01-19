@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>Kramdown</title>
+    <title>無題</title>
   </head>
   <body>
     <article class="container" style="max-width: 50em;">
@@ -16,43 +16,31 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
 <li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
-<li class="breadcrumb-item active" aria-current="page">Kramdown</li>
+<li class="breadcrumb-item active" aria-current="page">無題</li>
   </ol>
 </nav>
 
-<h1 id="kramdown">Kramdown</h1>
+<p>最近データ構造が面白いと思うようになった。多分<a href="../class-notes/algorithms-and-data-structure/01-intro.html">アルゴリズムとデータ構造</a>の授業のせい。</p>
 
-<dl>
-  <dt>公式ページ</dt>
-  <dd>https://kramdown.gettalong.org/index.html</dd>
-  <dt>gemのドキュメント</dt>
-  <dd>https://kramdown.gettalong.org/rdoc/index.html</dd>
-  <dt>ソースコード</dt>
-  <dd>https://github.com/gettalong/kramdown</dd>
-</dl>
+<p>例えば<a href="../class-notes/algorithms-and-data-structure/15-heap.html">ヒープ</a>と<a href="../class-notes/algorithms-and-data-structure/16-heap-sort.html">ヒープソート</a>を知ったときに面白いなと感じた。ソートアルゴリズムの種類なんてたかが知れているだろうと思っていたのに、貴構造と組み合わせるだけであんなに面白いアルゴリズムができるんだと感動した。</p>
 
-<h2 id="convert">Convertの流れ</h2>
-<p>Kramdownで、<code>Kramdown::Document.new("# header").to_html</code>の内部を追ってみたときのメモ</p>
+<p><a href="../class-notes/algorithms-and-data-structure/01-intro.html">アルゴリズムとデータ構造</a>といえば競プロだけれども、正直競プロの方にはあまり興味がわかない。競プロの方はどうやってアルゴリズムを活用するかにかかっているけれど私が好きなのはアルゴリズムを知るところにあるからなのかな。</p>
 
-<ol>
-  <li><code>Kramdown::Document#method_missing</code>で、Converterの中から動的に選択して取ってくる</li>
-  <li><code>Kramdown::Converter::Base#convert</code>で、<code>Converter::Html.new</code>ってやってConverterを生成</li>
-  <li><code>Kramdown::Converter::Html#convert</code>で、sendを使って<code>converter_*</code>を呼んでいく</li>
-</ol>
+<p>そんなわけでアルゴリズムを学びたいと思ったけれどどうにも時間が足りない…</p>
 
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/kramdown.md';">Edit</button></p>
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/data-structure.md';">Edit</button></p>
 
 <hr />
 <div class="row text-center">
 <div class="col">
-前のページ<br /><a href="data-structure.html">無題</a>
+前のページ<br /><a href="credit.html">フル単の人に比べて取れてない単位</a>
 
 </div>
 <div class="col">
   目次<br /><a href="index.html">other</a>
 </div>
 <div class="col">
-後のページ<br /><a href="latex-note.html">LaTeXのメモ</a>
+後のページ<br /><a href="kramdown.html">Kramdown</a>
 
 </div>
 </div>
