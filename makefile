@@ -40,14 +40,12 @@ public/style.css: style.css
 # (開発中)ネットワーク可視化
 
 tmp/network.dot: tmp/merged-link-network.json
-	$(MKDIR)
 	ruby scripts/draw-network.rb > tmp/network.dot
 
 tmp/network.png: tmp/network.dot
-	$(MKDIR)
 	dot tmp/network.dot -Tpng -o tmp/network.png
 
-# 変換用の一時データ生成
+# HTMLの変換
 
 tmp/%/articles.json: src/%/*.md
 	$(MKDIR)
@@ -81,3 +79,14 @@ tmp/index.inter.json: src/*.md tmp/merged-articles.json
 public/%.html: tmp/%.inter.json scripts/make-html/base.erb
 	$(MKDIR)
 	$(MAKE_HTML) $*
+
+# 依存関係
+
+tmp/%/attached-files.json: src/%/*
+	$(MKDIR)
+	$(SEARCH_ATTACHMENT_FILES) $*
+
+tmp/attache_files.json: src/*
+	$(MKDIR)
+	$(SEARCH_ATTACHMENT_FILES) ""
+
