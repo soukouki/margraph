@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>ヒープ</title>
+    <title>$O\left(1\right)$</title>
   </head>
   <body>
     <article class="container" style="max-width: 50em;">
@@ -17,50 +17,32 @@
     <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
 <li class="breadcrumb-item"><a href="../../class-notes/index.html">class-notes</a></li>
 <li class="breadcrumb-item"><a href="../../class-notes/algorithms-and-data-structure/index.html">algorithms-and-data-structure</a></li>
-<li class="breadcrumb-item active" aria-current="page">ヒープ</li>
+<li class="breadcrumb-item active" aria-current="page">$O\left(1\right)$</li>
   </ol>
 </nav>
 
-<h1 id="section">ヒープ</h1>
+<h1 id="oleft1right">$O\left(1\right)$</h1>
 
-<p>子要素は親要素より常に大きい(小さい)か等しい、という制約がついた<a href="../../class-notes/algorithms-and-data-structure/12-tree.html">木構造</a></p>
+<p>ビッグオー記法、アルゴリズムのオーダー</p>
 
-<p><a href="../../class-notes/algorithms-and-data-structure/13-binary-tree.html">二分木</a>を使った、二分ヒープを指すことが多い</p>
+<ul>
+  <li>最高</li>
+  <li>どんなにデータが来ても同じ時間(定数時間)で解ける</li>
+  <li>定数時間はかかるので、定数倍の高速化はできる</li>
+</ul>
 
-<p><a href="../../class-notes/algorithms-and-data-structure/13-binary-tree.html">二分木</a>をヒープに変換する処理は、$O\left(n\right)$ かかる</p>
-
-<p>代わりに、要素の中で最大(最小)の要素は <a href="../../class-notes/algorithms-and-data-structure/90-bigo-1.html">$O\left(1\right)$</a> で取得できる</p>
-
-<p>最大(最小)の要素を取り出す(削除する)には $O\left(\log n\right)$ かかる(ヒープにするための並び替えに時間がかかる)</p>
-
-<p>また、挿入には $O\left(\log n\right)$ かかる</p>
-
-<p>ヒープ構造の実装は<a href="../../class-notes/algorithms-and-data-structure/07a-array.html">配列</a>だけで表現でき、例えば以下のようにすると要素同士を行き来できる</p>
-
-<p>```py
-parent(i)
-    return floor(i/2)</p>
-
-<p>left(i)
-    return 2i</p>
-
-<p>right(i)
-    return 2i+1
-```</p>
-
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/class-notes/algorithms-and-data-structure/15-heap.md';">Edit</button></p>
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/class-notes/algorithms-and-data-structure/90-bigo-1.md';">Edit</button></p>
 
 <hr />
 <div class="row text-center">
 <div class="col">
-前のページ<br /><a href="14-binary-search-tree.html">二分探索木</a>
+前のページ<br /><a href="21-BFS.html">幅優先探索</a>
 
 </div>
 <div class="col">
   目次<br /><a href="index.html">algorithms-and-data-structure</a>
 </div>
 <div class="col">
-後のページ<br /><a href="16-heap-sort.html">ヒープソート</a>
 
 </div>
 </div>
