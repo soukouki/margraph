@@ -43,17 +43,13 @@ class InternalJson < Kramdown::Converter::Html
           code: lang.nil? ? code.delete_prefix("\n") : code.lines[1..-1].join(""),
         }]
       end
-      text = el.children.map do |c|
-        if c.type != :text
-          convert(c, indent)
-        else
-          convert_text_with_list(c)
-        end
-      end
+      text = el
+        .children
+        .map{|c|convert(c, indent)}
         .join("")
       [{
         type: "element",
-        text: "<div>#{text}</div>"
+        text: "<div>#{re_parse(text)}</div>"
       }]
     when :blank
       []
@@ -68,9 +64,8 @@ class InternalJson < Kramdown::Converter::Html
       end
     end
   end
-  def convert_text_with_list(el)
-    el
-      .value
+  def re_parse(text)
+    text
       .split("\n")
       .reject(&:empty?)
       .chunk{|cl|cl.start_with?(/\s*-|\s*\d+\. /)}
