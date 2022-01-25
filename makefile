@@ -86,7 +86,7 @@ tmp/%/attached-files.json: src/%/*
 	$(MKDIR)
 	$(SEARCH_ATTACHMENT_FILES) $*
 
-tmp/attache_files.json: src/*
+tmp/attached-files.json: src/*
 	$(MKDIR)
 	$(SEARCH_ATTACHMENT_FILES) ""
 
