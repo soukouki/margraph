@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="<%= root_dir_path %>style.css" type="text/css">
+    <title><%= title %></title>
+  </head>
+  <body>
+    <article class="container" style="max-width: 40em;">
+
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <% breadcrumb.each do |item| %>
+            <li class="breadcrumb-item"><a href="<%= root_dir_path+item[:path] %>.html"><%= item[:title] %></a></li>
+          <% end %>
+        </ol>
+      </nav>
+
+      <h1><%= title %></h1>
+
+      <% if contents %>
+        <div class="contents">
+        <% contents.each do |el| %>
+            <% if el[:type] == "header" %>
+              <h<%= el[:level] %>><%= el[:text] %></h<%= el[:level] %>>
+            <% elsif el[:type] == "code" %>
+              <pre><code <%= el[:lang] ? "class=\"language-#{el[:lang]}\"" : '' %>><%= el[:code] %></code></pre>
+            <% elsif el[:type] == "image" %>
+              <img class="img-fluid rounded" src="<%= root_dir_path %><%= el[:path] %>.<%= el[:extension] %>">
+            <% elsif el[:type] == "element" %>
+              <%= el[:text] %>
+            <% end %>
+          <% end %>
+        </div>
+      <% end %>
+
+      <% if dirs && !dirs.empty? %>
+        <h2>フォルダ</h2>
+        <div class="dir-list list-group list-group-flush">
+        <% dirs.each do |dir| %>
+          <div class="list-group-item">
+            <a class="card-body" href="<%= root_dir_path+dir[:path] %>/index.html"><%= dir[:title] %></a>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+
+      
+      <% if files && !files.empty? %>
+        <h2>ファイル</h2>
+        <div class="file-list list-group list-group-flush">
+        <% files.each do |file| %>
+          <div class="list-group-item">
+            <a href="<%= root_dir_path+file[:path] %>.html"><%= file[:title] %></a>
+          </div>
+        <% end %>
+        </div>
+      <% end %>
+      
+      <hr />
+
+      <% if prev_index_next %>
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              <% if prev_index_next[0] %>
+                前の記事<br />
+                <a href="<%= root_dir_path+prev_index_next[0][:path] %>.html"><%= prev_index_next[0][:title] %></a>
+              <% end %>
+            </div>
+            <div class="col">
+              <% if prev_index_next[1] %>
+                目次<br />
+                <a href="<%= root_dir_path+prev_index_next[1][:path] %>.html"><%= prev_index_next[1][:title] %></a>
+              <% end %>
+            </div>
+            <div class="col">
+              <% if prev_index_next[2] %>
+                次の記事<br />
+                <a href="<%= root_dir_path+prev_index_next[2][:path] %>.html"><%= prev_index_next[2][:title] %></a>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="d-flex flex-row-reverse">
+        <% if type == "article" %>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='<%= "#{ENV['EDITLINK']}src/#{path}.md" %>';">Edit</button>
+        <% end %>
+        <% if type == "index" %>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='<%= "#{ENV['NEWFILELINK']}src/#{File.dirname(path)}" %>';">Add</button>
+        <% end %>
+      </div>
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

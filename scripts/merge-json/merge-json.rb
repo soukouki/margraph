@@ -1,10 +1,11 @@
 
-require "yaml"
+require "json"
 
-files = ARGV
+output = ARGV[0]
+files = ARGV[1..-1]
 
-files
-  .map{|path|YAML.load_file(path)}
+obj = files
+  .map{|path|JSON.load_file(path)}
   .inject({}) do |hash, content|
     proc = ->(key, self_val, other_val) do
       case
@@ -16,5 +17,7 @@ files
     end
     hash.merge!(content, &proc)
   end
-  .to_yaml
-  .display
+
+open(output, "w"){|io|
+  io.puts obj.to_json
+}
