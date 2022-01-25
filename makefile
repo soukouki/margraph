@@ -19,6 +19,7 @@ INDEXES = $(subst //,/,$(patsubst src/%,public/%index.html,$(SOURCE_DIRS)))
 
 ARTICLES_FILES = $(patsubst src/%,tmp/%articles.json,$(SOURCE_DIRS))
 LINK_NETWORK_FILES = $(patsubst src/%,tmp/%link-network.json,$(SOURCE_DIRS))
+ATTACHMENTS_FILES = $(patsubst src/%,tmp/%attachments-files.json,$(SOURCE_DIRS))
 
 export EDITLINK = https://github.com/soukouki/margraph/edit/master/
 export NEWFILELINK = https://github.com/soukouki/margraph/new/master/
@@ -71,7 +72,7 @@ tmp/link-network.json: tmp/merged-articles.json src/*.md
 tmp/merged-link-network.json: $(LINK_NETWORK_FILES)
 	$(MERGE_JSON) $@ $^
 
-tmp/%.inter.json: src/%.md tmp/merged-articles.json tmp/merged-link-network.json
+tmp/%.inter.json: src/%.md tmp/merged-articles.json tmp/merged-link-network.json $(ATTACHMENTS_FILES)
 	$(PARSE_MARKDOWN) $*
 
 tmp/%/index.inter.json: src/%/*.md tmp/merged-articles.json

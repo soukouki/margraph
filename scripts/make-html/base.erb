@@ -30,6 +30,8 @@
               <h<%= el[:level] %>><%= el[:text] %></h<%= el[:level] %>>
             <% elsif el[:type] == "code" %>
               <pre><code <%= el[:lang] ? "class=\"language-#{el[:lang]}\"" : '' %>><%= el[:code] %></code></pre>
+            <% elsif el[:type] == "image" %>
+              <img src="<%= root_dir_path %><%= el[:path] %>.<%= el[:extension] %>">
             <% elsif el[:type] == "element" %>
               <%= el[:text] %>
             <% end %>

@@ -3,10 +3,14 @@ require "json"
 
 require "kramdown"
 
+require_relative "internal-json"
+
 src_path = ARGV[0]
+src_dir_path = src_path.include?("/") ? File.dirname(src_path) : ""
 
 articles = JSON.load_file("tmp/merged-articles.json")
 link_network = JSON.load_file("tmp/merged-link-network.json")
+attachments_files = JSON.load_file("tmp/#{src_dir_path}/attachments-files.json")
 
 source = open("src/#{src_path}.md", "r"){|io|io.read}
 
@@ -18,76 +22,6 @@ link_network[src_path].each do |link|
   replace_to = "[#{replace_by}](#{"../"*src_path.count("/")}#{link["path"]}.html)"
   source[found_index...found_index+replace_by.length] = replace_to
   replace_index = found_index + replace_to.length
-end
-
-root = Kramdown::Document.new(source).root
-
-class InternalJson < Kramdown::Converter::Html
-  def convert(el, indent=0, is_called_by_root = false)
-    case el.type
-    when :header
-      level = el.options[:level]
-      return [] if level == 1
-      [{
-        type: "header",
-        level: level,
-        text: el.children[0].value
-      }]
-    when :p
-      is_codeblock = (
-        el.children.length == 1 &&
-        el.children[0].type == :codespan &&
-        el.children[0].value.include?("\n")
-      )
-      if is_codeblock
-        code = el.children[0].value
-        lang = code.start_with?(/[a-zA-Z#+]+|.+\.[a-zA-Z]+/) ? code.lines[0].chomp : nil
-        return [{
-          type: "code",
-          lang: lang,
-          code: lang.nil? ? code.delete_prefix("\n") : code.lines[1..-1].join(""),
-        }]
-      end
-      text = el
-        .children
-        .map{|c|convert(c, indent)}
-        .join("")
-      [{
-        type: "element",
-        text: "<div>#{re_parse(text)}</div>"
-      }]
-    when :blank
-      []
-    else
-      if is_called_by_root
-        [{
-          type: "element",
-          text: "<div>#{send(@dispatcher[el.type], el, indent)}</div>"
-        }]
-      else
-        send(@dispatcher[el.type], el, indent)
-      end
-    end
-  end
-  def re_parse(text)
-    text
-      .split("\n")
-      .reject(&:empty?)
-      .chunk{|cl|cl.start_with?(/\s*-|\s*\d+\. /)}
-      .map do |is_list, lines|
-        if is_list
-          "<div>"+Kramdown::Document.new(lines.join("\n")).to_html+"</div>"
-        else
-          lines.join("")
-        end
-      end
-      .join("\n")
-  end
-  def convert_root(el, indent)
-    el
-      .children
-      .flat_map{|child|convert(child, 0, true)}
-  end
 end
 
 def make_breadcrumb articles, path
@@ -112,7 +46,26 @@ def files_in_same_dir articles, path
 end
 
 breadcrumb = make_breadcrumb(articles, src_path)
-contents = InternalJson.convert(root)[0]
+
+attachments = attachments_files[src_path].map do |atta|
+  case atta["type"]
+  when "image"
+    {
+      type: "image",
+      path: atta["path"],
+      extension: atta["extension"]
+    }
+  when "text"
+    {
+      type: "code",
+      lang: atta["extension"],
+      code: open("src/#{atta["path"]}.#{atta["extension"]}"){|io|io.read}
+    }
+  end
+end
+root = Kramdown::Document.new(source).root
+contents = InternalJson.convert(root)[0] + attachments
+
 files_in_same_dir = files_in_same_dir(articles, src_path)
 position = files_in_same_dir.index(src_path)
 

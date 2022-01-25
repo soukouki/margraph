@@ -11,7 +11,7 @@ Markdownファイル毎に実行される
 - `src/<path>.md`
 - `merged-articles.json`
 - `merged-link-network.json`
-- `tmp/<pahtのディレクトリ>/attached-files.json`
+- `tmp/<pathのディレクトリ>/attachment-files.json`
 
 ### コマンドライン
 
