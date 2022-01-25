@@ -11,39 +11,64 @@
     <title>チャーチ数</title>
   </head>
   <body>
-    <article class="container" style="max-width: 50em;">
-      <nav style="--bs-breadcrumb-divider: '&gt;';" aria-lavel="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
-<li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
-<li class="breadcrumb-item"><a href="../../reading-note/tapl/index.html">tapl</a></li>
-<li class="breadcrumb-item active" aria-current="page">チャーチ数</li>
-  </ol>
-</nav>
+    <article class="container" style="max-width: 40em;">
 
-<h1 id="section">チャーチ数</h1>
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../reading-note/tapl/index.html">tapl</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../reading-note/tapl/05-13-church-number.html">チャーチ数</a></li>
+          
+        </ol>
+      </nav>
 
-<p>簡単のため、振る舞い等価なものは区別せずに考える。そのため、<a href="../../reading-note/tapl/05-06-call-by-value.html">値呼び戦略</a>ではなく、<a href="../../reading-note/tapl/05-03-full-beta-reduction.html">完全ベータ簡約</a>で簡約している</p>
+      <h1>チャーチ数</h1>
 
-\[\begin{eqnarray}
+      
+        <div class="contents">
+        
+            
+              <div>簡単のため、振る舞い等価なものは区別せずに考える。そのため、<a href="../../reading-note/tapl/05-06-call-by-value.html">値呼び戦略</a>ではなく、<a href="../../reading-note/tapl/05-03-full-beta-reduction.html">完全ベータ簡約</a>で簡約している</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 c_0 &amp;=&amp; \lambda s.\ \lambda z.\ z\\
 c_1 &amp;=&amp; \lambda s.\ \lambda z.\ s\ z\\
 c_2 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ z)\\
 c_3 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;\vdots&amp;
 \end{eqnarray}\]
-
-<p>$\mathrm{succ}$ を $n$ 回適用する<a href="../../reading-note/tapl/05-01-combinator.html">コンビネータ</a>で表現する</p>
-
-<h2 id="succ">succ</h2>
-
-<p>外側に1つ分追加するイメージ</p>
-
-<p>$\mathrm{scc} = \lambda n.\ \lambda s.\ \lambda z\ s\ (n\ s\ z)$</p>
-
-<p><code>succ(2)</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <div>$\mathrm{succ}$ を $n$ 回適用する<a href="../../reading-note/tapl/05-01-combinator.html">コンビネータ</a>で表現する</div>
+            
+          
+            
+              <h2>succ</h2>
+            
+          
+            
+              <div>外側に1つ分追加するイメージ</div>
+            
+          
+            
+              <div>$\mathrm{scc} = \lambda n.\ \lambda s.\ \lambda z\ s\ (n\ s\ z)$</div>
+            
+          
+            
+              <div><code>succ(2)</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{scc}\ c_2
 &amp;=&amp; (\lambda n.\ \lambda s.\ \lambda z\ s\ (n\ s\ z))\ c_2\\
 &amp;\to&amp; \lambda s.\ \lambda z\ s\ (c_2\ s\ z)\\
@@ -52,16 +77,27 @@ c_3 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;\to&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;=&amp; c_3
 \end{eqnarray}\]
-
-<h2 id="succ2">succ(2)</h2>
-
-<p>内側に1つ分追加するイメージ</p>
-
-<p>$\mathrm{scc’} = \lambda n.\ \lambda s.\ \lambda z.\ n\ s\ (s\ z)$</p>
-
-<p><code>succ'(2)</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <h2>succ(2)</h2>
+            
+          
+            
+              <div>内側に1つ分追加するイメージ</div>
+            
+          
+            
+              <div>$\mathrm{scc’} = \lambda n.\ \lambda s.\ \lambda z.\ n\ s\ (s\ z)$</div>
+            
+          
+            
+              <div><code>succ'(2)</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{scc'}\ c_2
 &amp;=&amp; (\lambda n.\ \lambda s.\ \lambda z.\ n\ s\ (s\ z))\ c_2\\
 &amp;\to&amp; \lambda s.\ \lambda z.\ c_2\ s\ (s\ z)\\
@@ -69,16 +105,27 @@ c_3 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;\to^\ast&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;=&amp; c_3
 \end{eqnarray}\]
-
-<h2 id="plus">plus</h2>
-
-<p>$m, n$ が与えられて、$m$ の $z$ に $n$ を入れるイメージ</p>
-
-<p>$\mathrm{plus} = \lambda m.\ \lambda n.\ \lambda s.\ \lambda z.\ m\ s\ (n\ s\ z)$</p>
-
-<p><code>1+2</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <h2>plus</h2>
+            
+          
+            
+              <div>$m, n$ が与えられて、$m$ の $z$ に $n$ を入れるイメージ</div>
+            
+          
+            
+              <div>$\mathrm{plus} = \lambda m.\ \lambda n.\ \lambda s.\ \lambda z.\ m\ s\ (n\ s\ z)$</div>
+            
+          
+            
+              <div><code>1+2</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{plus}\ c_1\ c_2
 &amp;=&amp; (\lambda m.\ \lambda n.\ \lambda s.\ \lambda z.\ m\ s\ (n\ s\ z))\ c_1\ c_2\\
 &amp;\to^\ast&amp; \lambda s.\ \lambda z.\ c_1\ s\ (c_2\ s\ z)\\
@@ -89,16 +136,27 @@ c_3 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;\to&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;=&amp; c_3
 \end{eqnarray}\]
-
-<h2 id="times">times</h2>
-
-<p>$n$ を使って $n$ を足す関数を作り、それを $m$ に渡して $m$ 回実行してもらう</p>
-
-<p>$\mathrm{times} = \lambda m.\ \lambda n.\ m\ (\mathrm{plus}\ n)\ c_0$</p>
-
-<p><code>2*2</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <h2>times</h2>
+            
+          
+            
+              <div>$n$ を使って $n$ を足す関数を作り、それを $m$ に渡して $m$ 回実行してもらう</div>
+            
+          
+            
+              <div>$\mathrm{times} = \lambda m.\ \lambda n.\ m\ (\mathrm{plus}\ n)\ c_0$</div>
+            
+          
+            
+              <div><code>2*2</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{times}\ c_2\ c_2
 &amp;=&amp; (\lambda m.\ \lambda n.\ m\ (\mathrm{plus}\ n)\  c_0)\ c_2\ c_2\\
 &amp;\to^\ast&amp; c_2\ (\mathrm{plus}\ c_2)\ c_0\\
@@ -107,16 +165,27 @@ c_3 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;=&amp; \mathrm{plus}\ c_2\ c_2\\
 &amp;\to^\ast&amp; c_4
 \end{eqnarray}\]
-
-<h2 id="power">power</h2>
-
-<p>$\mathrm{times}$ の $\mathrm{plus}$ を $\mathrm{times}$ に置き換えたらうまくいきそう</p>
-
-<p>$\mathrm{power} = \lambda m.\ \lambda n.\ m\ (\mathrm{times}\ n)\ c_1$</p>
-
-<p><code>2**3</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <h2>power</h2>
+            
+          
+            
+              <div>$\mathrm{times}$ の $\mathrm{plus}$ を $\mathrm{times}$ に置き換えたらうまくいきそう</div>
+            
+          
+            
+              <div>$\mathrm{power} = \lambda m.\ \lambda n.\ m\ (\mathrm{times}\ n)\ c_1$</div>
+            
+          
+            
+              <div><code>2**3</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{power}\ c_3\ c_2
 &amp;=&amp; (\lambda m.\ \lambda n.\ m\ (\mathrm{times}\ n)\ c_1)\ c_3\ c_2\\
 &amp;\to^\ast&amp; c_3 (\mathrm{times}\ c_2)\ c_1\\
@@ -126,26 +195,42 @@ c_3 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;\to^\ast&amp; \mathrm{times}\ c_2\ c_4\\
 &amp;\to^\ast&amp; c_8
 \end{eqnarray}\]
-
-<h2 id="iszero">iszero</h2>
-
-<p>$c_0$ のみ、そのまま $z$ を返すので、succは引数を受け取って、引数に関わらず $\mathrm{fls}$ を返す関数にすればよい</p>
-
-<p>$\mathrm{iszro} = \lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}$</p>
-
-<p><code>iszero?(0)</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <h2>iszero</h2>
+            
+          
+            
+              <div>$c_0$ のみ、そのまま $z$ を返すので、succは引数を受け取って、引数に関わらず $\mathrm{fls}$ を返す関数にすればよい</div>
+            
+          
+            
+              <div>$\mathrm{iszro} = \lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}$</div>
+            
+          
+            
+              <div><code>iszero?(0)</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{iszro}\ c_0
 &amp;=&amp; (\lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru})\ c_0\\
 &amp;\to^\ast&amp; c_0\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
 &amp;=&amp; (\lambda s.\ \lambda z.\ z)\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
 &amp;\to^\ast&amp; \mathrm{tru}
 \end{eqnarray}\]
-
-<p><code>iszero?(1)</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <div><code>iszero?(1)</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{iszro}\ c_1
 &amp;=&amp; (\lambda m.\ m\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru})\ c_1\\
 &amp;\to^\ast&amp; c_1\ (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
@@ -153,20 +238,32 @@ c_3 &amp;=&amp; \lambda s.\ \lambda z.\ s\ (s\ (s\ z))\\
 &amp;\to^\ast&amp; (\lambda x.\ \mathrm{fls})\ \mathrm{tru}\\
 &amp;\to^\ast&amp; \mathrm{fls}
 \end{eqnarray}\]
-
-<h2 id="pred">pred</h2>
-
-<p>succでは、2つ目の要素の値と、2つ目の要素値+1をペアにして渡していく。すると、$c_n$ のとき $\mathrm{pair}\ c_{n-1}\ c_n$ となるので、それを使う</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <h2>pred</h2>
+            
+          
+            
+              <div>succでは、2つ目の要素の値と、2つ目の要素値+1をペアにして渡していく。すると、$c_n$ のとき $\mathrm{pair}\ c_{n-1}\ c_n$ となるので、それを使う</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 z &amp;=&amp; \mathrm{pair}\ c_0\ c_0\\
 s &amp;=&amp; \lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\ (\mathrm{snd}\ p))\\
 \mathrm{prd} &amp;=&amp; \lambda m.\ \mathrm{fst}\ (m\ s\ z)\\
 \end{eqnarray}\]
-
-<p><code>pred(2)</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <div><code>pred(2)</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{prd}\ c_2
 &amp;=&amp; (\lambda m.\ \mathrm{fst}\ (m\ s\ z))\ c_2\\
 &amp;\to&amp; \mathrm{fst}\ (c_2\ s\ z)\\
@@ -181,10 +278,15 @@ s &amp;=&amp; \lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\
 &amp;\to^\ast&amp; \mathrm{snd}\ (\mathrm{pair}\ c_0\ c_1)\\
 &amp;\to^\ast&amp; c_1
 \end{eqnarray}\]
-
-<p><code>pred(0)</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <div><code>pred(0)</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{prd}\ c_0
 &amp;=&amp; (\lambda m.\ \mathrm{fst}\ (m\ s\ z))\ c_0\\
 &amp;\to&amp; \mathrm{fst}\ (c_0\ s\ z)\\
@@ -193,16 +295,27 @@ s &amp;=&amp; \lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\
 &amp;=&amp; \mathrm{fst}\ (\mathrm{pair}\ c_0\ c_0)\\
 &amp;\to^\ast&amp; c_0
 \end{eqnarray}\]
-
-<h2 id="sub">sub</h2>
-
-<p>timesやpowerと同じ様に、先程のpredを $n$ 回繰り返す</p>
-
-<p>$\mathrm{sub} = \lambda m.\ \lambda n.\ n\ (\lambda x.\ pred x)\ m$</p>
-
-<p><code>3-2</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <h2>sub</h2>
+            
+          
+            
+              <div>timesやpowerと同じ様に、先程のpredを $n$ 回繰り返す</div>
+            
+          
+            
+              <div>$\mathrm{sub} = \lambda m.\ \lambda n.\ n\ (\lambda x.\ pred x)\ m$</div>
+            
+          
+            
+              <div><code>3-2</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{sub}\ c_3\ c_2
 &amp;=&amp; (\lambda m.\ \lambda n.\ n\ (\lambda x.\ \mathrm{pred}\ x)\ m)\ c_3\ c_2\\
 &amp;\to^\ast&amp; c_2\ (\lambda x.\ \mathrm{pred}\ x)\ c_3\\
@@ -213,10 +326,15 @@ s &amp;=&amp; \lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\
 &amp;\to&amp; \mathrm{pred}\ c_2\\
 &amp;\to^\ast&amp; c_1
 \end{eqnarray}\]
-
-<p><code>1-2</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <div><code>1-2</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{sub}\ c_1\ c_2
 &amp;=&amp; (\lambda m.\ \lambda n.\ n\ (\lambda x.\ \mathrm{pred}\ x)\ m)\ c_1\ c_2\\
 &amp;\to^\ast&amp; (\lambda x.\ \mathrm{pred}\ x)\ c_1\\
@@ -227,16 +345,27 @@ s &amp;=&amp; \lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\
 &amp;\to&amp; \mathrm{pred} c_0\\
 &amp;\to&amp; c_0
 \end{eqnarray}\]
-
-<h2 id="equal">equal</h2>
-
-<p>引いてiszeroで調べれば終わり・・・と思いきや、引く数のほうが多いと失敗します。とりあえずandで誤魔化します</p>
-
-<p>$\mathrm{equal} = \lambda m.\ \lambda n.\ \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ m\ n))\ (\mathrm{iszro}\ (\mathrm{sub}\ n\ m))$</p>
-
-<p><code>1==2</code>の例</p>
-
-\[\begin{eqnarray}
+</div>
+            
+          
+            
+              <h2>equal</h2>
+            
+          
+            
+              <div>引いてiszeroで調べれば終わり・・・と思いきや、引く数のほうが多いと失敗します。とりあえずandで誤魔化します</div>
+            
+          
+            
+              <div>$\mathrm{equal} = \lambda m.\ \lambda n.\ \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ m\ n))\ (\mathrm{iszro}\ (\mathrm{sub}\ n\ m))$</div>
+            
+          
+            
+              <div><code>1==2</code>の例</div>
+            
+          
+            
+              <div>\[\begin{eqnarray}
 \mathrm{eqaul}\ c_1\ c_2
 &amp;=&amp; (\lambda m.\ \lambda n.\ \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ m\ n))\ (\mathrm{iszro}\ (\mathrm{sub}\ n\ m)))\ c_1\ c_2\\
 &amp;\to^\ast&amp; \mathrm{and}\ (\mathrm{iszro}\ (\mathrm{sub}\ c_1\ c_2))\ (\mathrm{iszro}\ (\mathrm{sub}\ c_2\ c_1))\\
@@ -244,24 +373,50 @@ s &amp;=&amp; \lambda p.\ \mathrm{pair}\ (\mathrm{snd}\ p)\ (\mathrm{plus}\ c_1\
 &amp;\to^\ast&amp; \mathrm{and\ tru\ fls}\\
 &amp;\to^\ast&amp; \mathrm{fls}
 \end{eqnarray}\]
-
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/tapl/05-13-church-number.md';">Edit</button></p>
-
-<hr />
-<div class="row text-center">
-<div class="col">
-前のページ<br /><a href="05-12a-pair.html">ラムダ計算のペア</a>
-
 </div>
-<div class="col">
-  目次<br /><a href="index.html">tapl</a>
-</div>
-<div class="col">
-後のページ<br /><a href="05-14-z-combinator.html">不動点コンビネータ</a>
+            
+          
+        </div>
+      
 
-</div>
-</div>
+      
 
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+                前の記事<br />
+                <a href="../../reading-note/tapl/05-12a-pair.html">ラムダ計算のペア</a>
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../../reading-note/tapl/index.html">tapl</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../../reading-note/tapl/05-14-z-combinator.html">不動点コンビネータ</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/tapl/05-13-church-number.md';">Edit</button>
+        
+        
+      </div>
     </article>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

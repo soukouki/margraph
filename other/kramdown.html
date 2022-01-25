@@ -11,20 +11,31 @@
     <title>Kramdown</title>
   </head>
   <body>
-    <article class="container" style="max-width: 50em;">
-      <nav style="--bs-breadcrumb-divider: '&gt;';" aria-lavel="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
-<li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
-<li class="breadcrumb-item active" aria-current="page">Kramdown</li>
-  </ol>
-</nav>
+    <article class="container" style="max-width: 40em;">
 
-<h1 id="kramdown">Kramdown</h1>
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
+          
+            <li class="breadcrumb-item"><a href="../other/kramdown.html">Kramdown</a></li>
+          
+        </ol>
+      </nav>
 
-<p>Rubyで使えるMarkdownパーサー</p>
+      <h1>Kramdown</h1>
 
-<dl>
+      
+        <div class="contents">
+        
+            
+              <div>Rubyで使えるMarkdownパーサー</div>
+            
+          
+            
+              <div><dl>
   <dt>公式ページ</dt>
   <dd>https://kramdown.gettalong.org/index.html</dd>
   <dt>gemのドキュメント</dt>
@@ -32,33 +43,67 @@
   <dt>ソースコード</dt>
   <dd>https://github.com/gettalong/kramdown</dd>
 </dl>
-
-<h2 id="convert">Convertの流れ</h2>
-<p>Kramdownで、<code>Kramdown::Document.new("# header").to_html</code>の内部を追ってみたときのメモ</p>
-
-<ol>
+</div>
+            
+          
+            
+              <h2>Convertの流れ</h2>
+            
+          
+            
+              <div>Kramdownで、<code>Kramdown::Document.new("# header").to_html</code>の内部を追ってみたときのメモ</div>
+            
+          
+            
+              <div><ol>
   <li><code>Kramdown::Document#method_missing</code>で、Converterの中から動的に選択して取ってくる</li>
   <li><code>Kramdown::Converter::Base#convert</code>で、<code>Converter::Html.new</code>ってやってConverterを生成</li>
   <li><code>Kramdown::Converter::Html#convert</code>で、sendを使って<code>converter_*</code>を呼んでいく</li>
 </ol>
-
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/kramdown.md';">Edit</button></p>
-
-<hr />
-<div class="row text-center">
-<div class="col">
-前のページ<br /><a href="kakau.html">Kakau</a>
-
 </div>
-<div class="col">
-  目次<br /><a href="index.html">other</a>
-</div>
-<div class="col">
-後のページ<br /><a href="latex-note.html">LaTeXのメモ</a>
+            
+          
+        </div>
+      
 
-</div>
-</div>
+      
 
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+                前の記事<br />
+                <a href="../other/kakau.html">Kakau</a>
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../other/index.html">other</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../other/latex-note.html">LaTeXのメモ</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/kramdown.md';">Edit</button>
+        
+        
+      </div>
     </article>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

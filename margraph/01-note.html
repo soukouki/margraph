@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <title>margraph</title>
+  </head>
+  <body>
+    <article class="container" style="max-width: 40em;">
+
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../margraph/index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../margraph/01-note.html">margraph</a></li>
+          
+        </ol>
+      </nav>
+
+      <h1>margraph</h1>
+
+      
+        <div class="contents">
+        
+            
+              <div>named by sizumita</div>
+            
+          
+            
+              <div><a href="../long-tweets/2021-11-02.html">Scrapbox</a>がgoogleアカウント必要なので、自分用に作っちゃったもの。階層整理型のメモツールと、グラフ整理型のメモツールのいいとこ取りを目指す。</div>
+            
+          
+            
+              <div>マイクロサービスアーキテクチャを読んで、金のトンカチを持ってしまったので、とりあえずその思想をこのプロジェクトにぶち込む。どうせ失敗したところで困るのは自分だけだし、まぁ作業をなかったコトにすれば済む。具体的には、プラクティスの導入、疎結合・高凝縮性への配慮のあたりを参考にしてみる</div>
+            
+          
+            
+              <h2>プラクティスの導入</h2>
+            
+          
+            
+              <div>それぞれのサービスが、どのようなふうになっているかを書く</div>
+            
+          
+            
+              <div>この場合だと、中間のデータのやり取りにはjsonを利用する、といったもの</div>
+            
+          
+            
+              <h2>疎結合・高凝縮性への配慮</h2>
+            
+          
+            
+              <div>マイクロサービスアーキテクチャ独自のものではなく、一般的に言われてる性質</div>
+            
+          
+            
+              <div>一つの機能を変更するときに、変更箇所はできるだけ一箇所に固まっているべき、みたいな感じ</div>
+            
+          
+            
+              <div>例えば、UIの部分を変更するのであれば、データの構造が変わるとかでない限り、UIについてのコードの変更だけで済むようにする</div>
+            
+          
+        </div>
+      
+
+      
+
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../margraph/index.html">margraph</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../margraph/02-practice.html">margraphのプラクティス</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/margraph/01-note.md';">Edit</button>
+        
+        
+      </div>
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

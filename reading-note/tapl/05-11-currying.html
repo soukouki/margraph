@@ -11,39 +11,76 @@
     <title>カリー化</title>
   </head>
   <body>
-    <article class="container" style="max-width: 50em;">
-      <nav style="--bs-breadcrumb-divider: '&gt;';" aria-lavel="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
-<li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
-<li class="breadcrumb-item"><a href="../../reading-note/tapl/index.html">tapl</a></li>
-<li class="breadcrumb-item active" aria-current="page">カリー化</li>
-  </ol>
-</nav>
+    <article class="container" style="max-width: 40em;">
 
-<h1 id="section">カリー化</h1>
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../reading-note/tapl/index.html">tapl</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../reading-note/tapl/05-11-currying.html">カリー化</a></li>
+          
+        </ol>
+      </nav>
 
-<p>複数の引数を取る関数を、<a href="../../reading-note/tapl/05-10-higher-order-func.html">高階関数</a>に変換すること</p>
+      <h1>カリー化</h1>
 
-<p>例えば、$f = \lambda(x, y).\ s$ のような複数の引数を取る関数があるとき、$f(v,w) = (\lambda y.\ [x\mapsto v]s)\ w = [y\mapsto w][x\mapsto v]s $ と変換していくこと</p>
+      
+        <div class="contents">
+        
+            
+              <div>複数の引数を取る関数を、<a href="../../reading-note/tapl/05-10-higher-order-func.html">高階関数</a>に変換すること</div>
+            
+          
+            
+              <div>例えば、$f = \lambda(x, y).\ s$ のような複数の引数を取る関数があるとき、$f(v,w) = (\lambda y.\ [x\mapsto v]s)\ w = [y\mapsto w][x\mapsto v]s $ と変換していくこと</div>
+            
+          
+        </div>
+      
 
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/tapl/05-11-currying.md';">Edit</button></p>
+      
 
-<hr />
-<div class="row text-center">
-<div class="col">
-前のページ<br /><a href="05-10-higher-order-func.html">高階関数</a>
+      
+      
+      
+      <hr />
 
-</div>
-<div class="col">
-  目次<br /><a href="index.html">tapl</a>
-</div>
-<div class="col">
-後のページ<br /><a href="05-12-church-bool.html">チャーチブール数</a>
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+                前の記事<br />
+                <a href="../../reading-note/tapl/05-10-higher-order-func.html">高階関数</a>
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../../reading-note/tapl/index.html">tapl</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../../reading-note/tapl/05-12-church-bool.html">チャーチブール数</a>
+              
+            </div>
+          </div>
+        </div>
+      
 
-</div>
-</div>
-
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/tapl/05-11-currying.md';">Edit</button>
+        
+        
+      </div>
     </article>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
