@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>Kramdown</title>
+    <title>Kakau</title>
   </head>
   <body>
     <article class="container" style="max-width: 50em;">
@@ -16,45 +16,40 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
 <li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
-<li class="breadcrumb-item active" aria-current="page">Kramdown</li>
+<li class="breadcrumb-item active" aria-current="page">Kakau</li>
   </ol>
 </nav>
 
-<h1 id="kramdown">Kramdown</h1>
+<h1 id="kakau">Kakau</h1>
 
-<p>Rubyで使えるMarkdownパーサー</p>
+<p>kakau.app</p>
 
-<dl>
-  <dt>公式ページ</dt>
-  <dd>https://kramdown.gettalong.org/index.html</dd>
-  <dt>gemのドキュメント</dt>
-  <dd>https://kramdown.gettalong.org/rdoc/index.html</dd>
-  <dt>ソースコード</dt>
-  <dd>https://github.com/gettalong/kramdown</dd>
-</dl>
+<ul>
+  <li>メモアプリの一つ</li>
+  <li>箇条書きをさらに進歩させたような感じ
+    <ul>
+      <li>レベルみたいな仕組みがあって、箇条書きのインデントを増やしていける</li>
+      <li>逆にインデントを減らしていくと、見出しになっていく</li>
+    </ul>
+  </li>
+  <li>変わった仕組みを持つアプリ</li>
+  <li>横にも要素を追加していけるような感じだったはず</li>
+  <li>横への追加は縦の位置が揃うから、テーブルみたいな表現ができる、みたいな記憶</li>
+</ul>
 
-<h2 id="convert">Convertの流れ</h2>
-<p>Kramdownで、<code>Kramdown::Document.new("# header").to_html</code>の内部を追ってみたときのメモ</p>
-
-<ol>
-  <li><code>Kramdown::Document#method_missing</code>で、Converterの中から動的に選択して取ってくる</li>
-  <li><code>Kramdown::Converter::Base#convert</code>で、<code>Converter::Html.new</code>ってやってConverterを生成</li>
-  <li><code>Kramdown::Converter::Html#convert</code>で、sendを使って<code>converter_*</code>を呼んでいく</li>
-</ol>
-
-<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/kramdown.md';">Edit</button></p>
+<p><button type="button" class="btn-primary" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/kakau.md';">Edit</button></p>
 
 <hr />
 <div class="row text-center">
 <div class="col">
-前のページ<br /><a href="kakau.html">Kakau</a>
+前のページ<br /><a href="jikyu.html">時給換算</a>
 
 </div>
 <div class="col">
   目次<br /><a href="index.html">other</a>
 </div>
 <div class="col">
-後のページ<br /><a href="latex-note.html">LaTeXのメモ</a>
+後のページ<br /><a href="kramdown.html">Kramdown</a>
 
 </div>
 </div>
