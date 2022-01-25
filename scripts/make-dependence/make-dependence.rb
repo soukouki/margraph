@@ -1,6 +1,10 @@
 
 require "json"
 
+def JSON.load_file(file)
+  parse(File.read(file))
+end
+
 src_path = ARGV[0]
 
 attachments = JSON.load_file("tmp/#{src_path}/attachments-files.json")

@@ -5,6 +5,10 @@ require "kramdown"
 
 require_relative "internal-json"
 
+def JSON.load_file(file)
+  parse(File.read(file))
+end
+
 src_path = ARGV[0]
 src_dir_path = src_path.include?("/") ? File.dirname(src_path) : ""
 

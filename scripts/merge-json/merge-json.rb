@@ -1,6 +1,10 @@
 
 require "json"
 
+def JSON.load_file(file)
+  parse(File.read(file))
+end
+
 output = ARGV[0]
 files = ARGV[1..-1]
 

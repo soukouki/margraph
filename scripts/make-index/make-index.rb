@@ -1,6 +1,10 @@
 
 require "json"
 
+def JSON.load_file(file)
+  parse(File.read(file))
+end
+
 articles = JSON.load_file("tmp/merged-articles.json")
 
 target_path = ARGV[0]

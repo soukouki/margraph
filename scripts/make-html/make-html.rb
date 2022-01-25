@@ -1,7 +1,10 @@
 
 require "json"
-
 require "erb"
+
+def JSON.load_file(file, **opt)
+  parse(File.read(file), opt)
+end
 
 path = ARGV[0]
 

@@ -1,6 +1,10 @@
 
 require 'json'
 
+def JSON.load_file(file)
+  parse(File.read(file))
+end
+
 index = JSON.load_file('tmp/merged-articles.json')
 
 files_map = index['files'].map{|path, arr|[path, arr['title']]}.to_h
