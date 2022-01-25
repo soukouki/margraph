@@ -18,7 +18,7 @@ margraphの添付ファイルに必要なデータを収集して、添付ファ
 
 ### ファイル
 
-`tmp/<path>/attached-files.json`
+`tmp/<path>/attachments-files.json`
 
 `aaa.md`に`aaa.png`と`aaa1.test.python`が添付される場合
 

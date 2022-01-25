@@ -40,6 +40,6 @@ result = md_files
   end
   .to_h
 
-open("tmp/#{src_path}/attached-files.json", "w") do |io|
+open("tmp/#{src_path}/attachments-files.json", "w") do |io|
   io.puts result.to_json
 end

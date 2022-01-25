@@ -8,7 +8,7 @@ Search Attachment Filesで探したmargraphの添付ファイルのリストか�
 
 ### ファイル
 
-- `tmp/<path>/attached-files.json`
+- `tmp/<path>/attachments-files.json`
 
 ### コマンドライン
 
@@ -18,7 +18,7 @@ Search Attachment Filesで探したmargraphの添付ファイルのリストか�
 
 ### ファイル
 
-- `tmp/<path>/attached-files.dep`
+- `tmp/<path>/dependence.dep`
 
 makefileにそのままincludeするためのファイル
 - Parse Markdownを呼び出す時の依存ファイルにファイルを入れる

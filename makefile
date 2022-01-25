@@ -16,7 +16,6 @@ INDEXES = $(subst //,/,$(patsubst src/%,public/%index.html,$(SOURCE_DIRS)))
 
 ARTICLES_FILES = $(patsubst src/%,tmp/%articles.json,$(SOURCE_DIRS))
 LINK_NETWORK_FILES = $(patsubst src/%,tmp/%link-network.json,$(SOURCE_DIRS))
-ATTACH_FILES_DEPENDENCE = $(patsubst src/%,tmp/%attache_files.dep,$(SOURCE_DIRS))
 
 export EDITLINK = https://github.com/soukouki/margraph/edit/master/
 export NEWFILELINK = https://github.com/soukouki/margraph/new/master/
@@ -82,11 +81,11 @@ public/%.html: tmp/%.inter.json scripts/make-html/base.erb
 
 # 依存関係
 
-tmp/%/attached-files.json: src/%/*
+tmp/%/attachments-files.json: src/%/*
 	$(MKDIR)
 	$(SEARCH_ATTACHMENT_FILES) $*
 
-tmp/attached-files.json: src/*
+tmp/attachments-files.json: src/*
 	$(MKDIR)
 	$(SEARCH_ATTACHMENT_FILES) ""
 
