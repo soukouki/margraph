@@ -7,9 +7,12 @@ PARSE_MARKDOWN = ruby scripts/parse-markdown/parse-markdown.rb
 MAKE_INDEX = ruby scripts/make-index/make-index.rb
 MAKE_HTML = ruby scripts/make-html/make-html.rb
 SEARCH_ATTACHMENT_FILES = ruby scripts/search-attachment-files/search.rb
+MAKE_DEPENDENCE = ruby scripts/make-dependence/make-dependence.rb
 
 SOURCES = $(wildcard src/*.md src/*/*.md src/*/*/*.md src/*/*/*/*.md src/*/*/*/*/*.md) # 無数にあるが、うまく扱えなかったのでとりあえず
 SOURCE_DIRS = $(sort $(dir $(SOURCES)))
+
+DEPENDENCE_FILES = $(subst //,/,$(patsubst src/%,tmp/%dependence.dep,$(SOURCE_DIRS)))
 
 HTML_FILES = $(patsubst src/%.md,public/%.html,$(SOURCES))
 INDEXES = $(subst //,/,$(patsubst src/%,public/%index.html,$(SOURCE_DIRS)))
@@ -20,6 +23,8 @@ LINK_NETWORK_FILES = $(patsubst src/%,tmp/%link-network.json,$(SOURCE_DIRS))
 export EDITLINK = https://github.com/soukouki/margraph/edit/master/
 export NEWFILELINK = https://github.com/soukouki/margraph/new/master/
 export SOURCE_EXTENSION = txt rb py scala
+
+include $(DEPENDENCE_FILES)
 
 .PHONY: all install clean
 
@@ -88,4 +93,10 @@ tmp/%/attachments-files.json: src/%/*
 tmp/attachments-files.json: src/*
 	$(MKDIR)
 	$(SEARCH_ATTACHMENT_FILES) ""
+
+tmp/%/dependence.dep: tmp/%/attachments-files.json
+	$(MAKE_DEPENDENCE) $*
+
+tmp/dependence.dep: tmp/attachments-files.json
+	$(MAKE_DEPENDENCE) ""
 

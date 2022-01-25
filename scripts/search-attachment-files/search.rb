@@ -19,6 +19,7 @@ files = file_origins.map do |origin|
     origin: origin,
     path: path,
     ext: ext,
+    type: ["png", "json", "gif", "svg"].include?(ext) ? "image" : "text",
   }
 end
 
@@ -28,12 +29,12 @@ result = md_files
   .map do |md_file|
     atta = other_files
       .select{|other|other[:path].start_with? md_file[:path]}
-      .reject{|atta|binaryfile?(atta[:origin])}
+      .reject{|atta|atta[:type] != "image" && binaryfile?(atta[:origin])}
       .map do |atta|
         {
           path: atta[:path],
           extension: atta[:ext],
-          type: ["png", "json", "gif", "svg"].include?(atta[:ext]),
+          type: atta[:type]
         }
       end
     [md_file[:path], atta]
