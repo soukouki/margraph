@@ -22,6 +22,8 @@ margraphの添付ファイルに必要なデータを収集して、添付ファ
 
 `aaa.md`に`aaa.png`と`aaa1.test.python`が添付される場合
 
+またバイナリファイルかテキストファイルかを判別して、バイナリファイルの場合は読み込まないようにする
+
 ```json
 {
   "aaa": [
@@ -32,7 +34,7 @@ margraphの添付ファイルに必要なデータを収集して、添付ファ
     },
     {
       "path": "aaa1.test",
-      "extension": "python",
+      "extension": "py",
       "type": "text"
     }
   ]
