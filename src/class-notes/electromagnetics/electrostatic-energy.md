@@ -1,6 +1,7 @@
 # 静電エネルギー
 
 n個の電荷があるとき、
+
 $$
 U = \frac{1}{2}\sum_{i \neq j}^n \frac{1}{4 \pi \varepsilon_0} \frac{q_i q_j}{|\mathbf{r}_i - \mathbf{r}_j|}
 $$
