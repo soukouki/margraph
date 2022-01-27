@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <title>margraphのUI</title>
+  </head>
+  <body>
+    <article class="container" style="max-width: 40em;">
+
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../margraph/index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../margraph/margraph-ui.html">margraphのUI</a></li>
+          
+        </ol>
+      </nav>
+
+      <h1>margraphのUI</h1>
+
+      
+        <div class="contents">
+        
+            
+              <div><ul>
+  <li>記事を見せるときは本文も出す
+    <ul>
+      <li>記事一覧もそう</li>
+      <li><a href="../long-tweets/2021-11-02.html">Scrapbox</a>に近づきつつある…うーん</li>
+    </ul>
+  </li>
+  <li>マイナーな記事も重要
+    <ul>
+      <li>巡ってるときに同じページが出てきたら、見終わったと思う</li>
+      <li>ページランクが低いからと言って、記事の質が悪いわけではない</li>
+    </ul>
+  </li>
+  <li>情報密度は上げたい</li>
+  <li><a href="../long-tweets/2021-11-02.html">Scrapbox</a>ではリンクやタグを指定するときに気をつける、<a href="../margraph/01-note.html">margraph</a>ではタイトルをつけるときに気をつける</li>
+  <li>タグ的なものはやればできるけど、案内はしない
+    <ul>
+      <li>タグで整理するのむずくない？
+        <ul>
+          <li>デカイタグができると面倒</li>
+          <li>本文の文字列なら、具体的な話をするときに省略して書く</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>GitHubに飛ばなくても記事の編集がしたい
+    <ul>
+      <li>記事の編集・追加をするコストは低くあってほしい</li>
+    </ul>
+  </li>
+  <li>タイトルのリンクはどうしようかな
+    <ul>
+      <li>タイトル部分の文字列しかつながってない関係が結構ある</li>
+      <li>けれど、タイトル部分にリンクをそのまま付けるのはやりずらい</li>
+      <li>なんか違う形式のリンクにできないかな
+        <ul>
+          <li>例えば、本文にリンクは貼らないけれどネットワークとしては存在する的な</li>
+          <li>それって同じ名前の記事にも使えるんじゃないかな？</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="../other/kajou.html">箇条書き</a>がやっぱ良い
+    <ul>
+      <li>情報の追加がしやすい</li>
+      <li>まじめに文章を考えるのは無駄</li>
+      <li><a href="../margraph/01-note.html">margraph</a>のUIも<a href="../other/kajou.html">箇条書き</a>しやすいようにしたい
+        <ul>
+          <li>記事を新しく書くときに、デフォルトで<a href="../other/kajou.html">箇条書き</a>になるように</li>
+        </ul>
+      </li>
+      <li><a href="../other/kakau.html">Kakau</a>やん
+        <ul>
+          <li>あれは<a href="../other/kajou.html">箇条書き</a>の概念をさらに拡張したメモサービス</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>
+            
+          
+        </div>
+      
+
+      
+
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+                前の記事<br />
+                <a href="../margraph/margraph-kakin.html">margraphの課金形式</a>
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../margraph/index.html">margraph</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../margraph/margraph-why.html">margraphに求められていること</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/margraph/margraph-ui.md';">Edit</button>
+        
+        
+      </div>
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>
