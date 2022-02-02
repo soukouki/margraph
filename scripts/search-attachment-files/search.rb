@@ -19,7 +19,7 @@ files = file_origins.map do |origin|
     origin: origin,
     path: path,
     ext: ext,
-    type: ["png", "json", "gif", "svg"].include?(ext) ? "image" : "text",
+    type: ["png", "jpeg", "gif", "svg"].include?(ext) ? "image" : "text",
   }
 end
 

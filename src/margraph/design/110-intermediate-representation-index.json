@@ -1,0 +1,26 @@
+{
+  "type": "index",
+  "title": "aaa",
+  "breadcrumb": [
+    {
+      "title": "note",
+      "path": "index",
+    },
+    {
+      "title": "aaa",
+      "path": "aaa/index"
+    }
+  ],
+  "dirs": [
+    {
+      "title": "ディレクトリのタイトル",
+      "path": "aaa/direc"
+    }
+  ],
+  "files": [
+    {
+      "title": "ファイルのタイトル",
+      "path": "aaa/page"
+    }
+  ]
+}
