@@ -90,7 +90,26 @@ pathを使う場所に関しては、aタグと中間表現で分ける。aタ�
     "title": "目次のタイトル",
     "path": "aaa/index"
   },
-  "next": null
+  "next": null,
+  "links": [
+    {
+      "title": "タイトル",
+      "path": "aaa/bbb/title",
+      "opening": "タイトルとは、文章の",
+      "image": null,
+      "links": [
+        {
+          "title": "文章",
+          "path": "aaa/bbb/sentence",
+          "opening": "文章とは、",
+          "image": {
+            "path": "aaa/bbb/sentence-image1",
+            "extension": "png"
+          }
+        }
+      ]
+    }
+  ]
 }
 ```
 
