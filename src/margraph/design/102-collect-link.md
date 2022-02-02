@@ -26,13 +26,11 @@
   "aaa/bbb": [
     {
       "title": "タイトル",
-      "path": "aaa/ccc",
-      "surrounding_text": "改行はそのまま\nタイトル付近の文字列"
+      "path": "aaa/ccc"
     },
     {
       "title": "タイトル2",
-      "path": "aaa/ddd/fff",
-      "surrounding_text": "端っこの方にかかる場合もある\  例えばタイトル2"
+      "path": "aaa/ddd/fff"
     }
   ],
   "fff": []

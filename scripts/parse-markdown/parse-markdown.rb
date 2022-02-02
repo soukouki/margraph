@@ -13,10 +13,12 @@ src_path = ARGV[0]
 src_dir_path = src_path.include?("/") ? File.dirname(src_path) : ""
 
 articles = JSON.load_file("tmp/merged-articles.json")
+files_articles = articles["files"]
 link_network = JSON.load_file("tmp/merged-link-network.json")
 attachments_files = JSON.load_file("tmp/#{src_dir_path}/attachments-files.json")
 
 source = open("src/#{src_path}.md", "r"){|io|io.read}
+title = files_articles[src_path]["title"]
 
 replace_index = source.each_line.first.length
 link_network[src_path].each do |link|
@@ -76,7 +78,7 @@ position = files_in_same_dir.index(src_path)
 prev_path = files_in_same_dir[position-1]
 prev = position == 0 ? nil : {
   path: prev_path,
-  title: articles["files"][prev_path]["title"],
+  title: files_articles[prev_path]["title"],
 }
 index = {
   path: File::dirname(src_path) == "." ? "index" : File::dirname(src_path)+"/index",
@@ -85,17 +87,71 @@ index = {
 nxt_path = files_in_same_dir[position+1]
 nxt = (position+1) == files_in_same_dir.length ? nil : {
   path: nxt_path,
-  title: articles["files"][nxt_path]["title"],
+  title: files_articles[nxt_path]["title"],
 }
+
+def grandchild_articles files_articles, link_network, child_path
+  self_links = link_network[child_path].map do |h|
+    pa = h["path"]
+    {
+      title: h["title"],
+      path: pa,
+      opening: files_articles[pa]["opening"],
+      image: nil, # 画像の情報をとってくるにはまた数箇所変更する必要があるので、今回は見送る
+    }
+  end
+  others_links = link_network.flat_map do |pa, arr|
+    arr
+      .select{|h|h["path"] == child_path}
+      .map do |h|
+        pa = h["path"]
+        {
+          title: h["title"],
+          path: pa,
+          opening: files_articles[pa]["opening"],
+          image: nil,
+        }
+      end
+  end
+  (self_links + others_links).uniq
+end
+
+linked_pathes = [src_path]
+self_link = {
+  title: title,
+  paht: src_path,
+  opening: files_articles[src_path]["opening"],
+  image: nil,
+  links: grandchild_articles(files_articles, link_network, src_path).reject{|h|linked_pathes.include? h[:path]}.each{|h|linked_pathes.push h[:path]}
+}
+others_links = link_network
+  .flat_map do |path, arr|
+    arr
+      .select{|hash|link_network[path].map{|h|h["path"]}.include? src_path}
+      .reject{|h|linked_pathes.include? h["path"]}
+      .each{|h|linked_pathes.push h["path"]}
+      .map do |hash|
+        pa = hash["path"]
+        {
+          title: hash["title"],
+          path: pa,
+          opening: files_articles[pa]["opening"],
+          image: nil,
+          links: grandchild_articles(files_articles, link_network, pa).reject{|h|linked_pathes.include? h[:path]}.each{|h|linked_pathes.push h[:path]}
+        }
+      end
+  end
+links = [self_link] + others_links
 
 open("tmp/#{src_path}.inter.json", "w") do |io|
   io.puts({
     type: "article",
-    title: articles["files"][src_path]["title"],
+    title: title,
     breadcrumb: breadcrumb,
     contents: contents,
     prev: prev,
     index: index,
     next: nxt,
+    links: links,
   }.to_json)
 end

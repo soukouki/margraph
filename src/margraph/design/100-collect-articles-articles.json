@@ -1,0 +1,17 @@
+{
+  "files": {
+    "aaa/bbb": {
+      "title": "タイトル",
+      "opening": "タイトルとは・・・"
+    },
+    "aaa/ccc": {
+      "title": "タイトル2",
+      "opening": "タイトル2とは・・・"
+    }
+  },
+  "dirs": {
+    "aaa": {
+      "title": "aaa"
+    }
+  }
+}

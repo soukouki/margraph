@@ -47,7 +47,6 @@ result = src_files
             {
               title: title,
               path: match_path,
-              surrounding_text: src[[0, i-10].max..[src.length, i+title.length+10].min],
               index: i
             }
           end
@@ -64,7 +63,6 @@ result = src_files
         {
           title: article[:title],
           path: article[:path],
-          surrounding_text: article[:surrounding_text]
         }
       end
     [path, matches]
