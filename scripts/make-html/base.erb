@@ -103,22 +103,22 @@
       </div>
 
       <% if links %>
-      <div>
+      <div class="link-network">
         <% links.each do |ch_link| %>
           <div class="row flex-nowrap overflow-auto">
             <div class="col-4">
-              <div class="card">
+              <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title"><a href="<%= root_dir_path+ch_link[:path] %>.html"><%= ch_link[:title] %></a></h5>
+                  <h5 class="card-title fs-6"><a href="<%= root_dir_path+ch_link[:path] %>.html"><%= ch_link[:title] %></a></h5>
                   <p class="card-text"><%= ch_link[:opening] %>...</p>
                 </div>
               </div>
             </div>
             <% ch_link[:links].each do |gc_link| %>
               <div class="col-4">
-                <div class="card">
+                <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title"><a href="<%= root_dir_path+gc_link[:path] %>.html"><%= gc_link[:title] %></a></h5>
+                    <h5 class="card-title fs-6"><a href="<%= root_dir_path+gc_link[:path] %>.html"><%= gc_link[:title] %></a></h5>
                     <p class="card-text"><%= gc_link[:opening] %>...</p>
                   </div>
                 </div>
