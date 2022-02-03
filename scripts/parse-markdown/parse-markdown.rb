@@ -100,48 +100,40 @@ def grandchild_articles files_articles, link_network, child_path
       image: nil, # 画像の情報をとってくるにはまた数箇所変更する必要があるので、今回は見送る
     }
   end
-  others_links = link_network.flat_map do |pa, arr|
-    arr
-      .select{|h|h["path"] == child_path}
-      .map do |h|
-        pa = h["path"]
-        {
-          title: h["title"],
-          path: pa,
-          opening: files_articles[pa]["opening"],
-          image: nil,
-        }
-      end
-  end
+  others_links = link_network
+    .select{|h|h["path"] == child_path}
+    .uniq
+    .map do |h|
+      pa = h["path"]
+      {
+        title: h["title"],
+        path: pa,
+        opening: files_articles[pa]["opening"],
+        image: nil,
+      }
+    end
   (self_links + others_links).uniq
 end
 
+link_pathes = (
+  link_network[src_path].map{|h|h["path"]} + 
+  link_network
+    .select{|pa, links|links.map{|h|h["path"]}.include? src_path}
+    .map{|pa,_links|pa}
+).uniq
 linked_pathes = [src_path]
-self_link = {
-  title: title,
-  paht: src_path,
-  opening: files_articles[src_path]["opening"],
-  image: nil,
-  links: grandchild_articles(files_articles, link_network, src_path).reject{|h|linked_pathes.include? h[:path]}.each{|h|linked_pathes.push h[:path]}
-}
-others_links = link_network
-  .flat_map do |path, arr|
-    arr
-      .select{|hash|link_network[path].map{|h|h["path"]}.include? src_path}
-      .reject{|h|linked_pathes.include? h["path"]}
-      .each{|h|linked_pathes.push h["path"]}
-      .map do |hash|
-        pa = hash["path"]
-        {
-          title: hash["title"],
-          path: pa,
-          opening: files_articles[pa]["opening"],
-          image: nil,
-          links: grandchild_articles(files_articles, link_network, pa).reject{|h|linked_pathes.include? h[:path]}.each{|h|linked_pathes.push h[:path]}
-        }
-      end
+links = link_pathes
+  .reject{|pa|linked_pathes.include? pa}
+  .each{|pa|linked_pathes.push pa}
+  .map do |child_path|
+    {
+      title: files_articles[child_path]["title"],
+      path: child_path,
+      opening: files_articles[child_path]["opening"],
+      image: nil,
+      links: grandchild_articles(files_articles, link_network, child_path).reject{|h|linked_pathes.include? h[:path]}.each{|h|linked_pathes.push h[:path]}
+    }
   end
-links = [self_link] + others_links
 
 open("tmp/#{src_path}.inter.json", "w") do |io|
   io.puts({
