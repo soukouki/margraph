@@ -1,7 +1,7 @@
 
 require "json"
 
-MAX_NUM_OF_OPENING_CHARS = 50
+MAX_NUM_OF_OPENING_CHARS = 30
 
 path = ARGV[0]
 

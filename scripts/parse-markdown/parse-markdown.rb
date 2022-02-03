@@ -101,12 +101,10 @@ def grandchild_articles files_articles, link_network, child_path
     }
   end
   others_links = link_network
-    .select{|h|h["path"] == child_path}
-    .uniq
-    .map do |h|
-      pa = h["path"]
+    .select{|_pa,arr|arr.map{|h|h["path"]}.include? child_path}
+    .map do |pa, _h|
       {
-        title: h["title"],
+        title: files_articles[pa]["title"],
         path: pa,
         opening: files_articles[pa]["opening"],
         image: nil,

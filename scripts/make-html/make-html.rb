@@ -20,6 +20,8 @@ contents = inter_rep[:contents]
 prev_index_next = [inter_rep[:prev], inter_rep[:index], inter_rep[:next]]
 prev_index_next = nil if prev_index_next.all?(&:nil?)
 
+links = inter_rep[:links]
+
 dirs = inter_rep[:dirs]
 files = inter_rep[:files]
 

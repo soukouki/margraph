@@ -11,15 +11,19 @@
     <title><%= title %></title>
   </head>
   <body>
-    <article class="container" style="max-width: 40em;">
-
-      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    
+    <nav class="navbar fixed-top bg-body" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <div class="container" style="max-width: 40em;">
         <ol class="breadcrumb">
-          <% breadcrumb.each do |item| %>
+          <% breadcrumb[0..-2].each do |item| %>
             <li class="breadcrumb-item"><a href="<%= root_dir_path+item[:path] %>.html"><%= item[:title] %></a></li>
           <% end %>
+          <li class="breadcrumb-item"><%= breadcrumb[-1][:title] %></li>
         </ol>
-      </nav>
+      </div>
+    </nav>
+
+    <article class="container" style="max-width: 40em;">
 
       <h1><%= title %></h1>
 
@@ -97,6 +101,34 @@
           <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='<%= "#{ENV['NEWFILELINK']}src/#{File.dirname(path)}" %>';">Add</button>
         <% end %>
       </div>
+
+      <% if links %>
+      <div>
+        <% links.each do |ch_link| %>
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title"><a href="<%= root_dir_path+ch_link[:path] %>.html"><%= ch_link[:title] %></a></h5>
+                  <p class="card-text"><%= ch_link[:opening] %>...</p>
+                </div>
+              </div>
+            </div>
+            <% ch_link[:links].each do |gc_link| %>
+              <div class="col-4">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title"><a href="<%= root_dir_path+gc_link[:path] %>.html"><%= gc_link[:title] %></a></h5>
+                    <p class="card-text"><%= gc_link[:opening] %>...</p>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+      <% end %>
+
     </article>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
