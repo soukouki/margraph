@@ -1,12 +1,4 @@
 
-body {
-  margin-top: 2em;
-}
-
-article {
-  margin-top: 64px;
-}
-
 article > * + * {
   margin-top: 16px;
 }
