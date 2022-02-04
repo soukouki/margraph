@@ -3,8 +3,26 @@ body {
   margin-top: 2em;
 }
 
+article {
+  margin-top: 64px;
+}
+
 article > * + * {
   margin-top: 16px;
+}
+
+.link-network > * + * {
+  margin-top: 16px;
+}
+
+.link-network > .row > div {
+  min-width: 10em;
+  padding: 0;
+}
+
+.link-network card-text {
+  background: red;
+  color: var(--bs-gray);
 }
 
 .contents > * + * {
