@@ -5,6 +5,9 @@
 計算の際には電流素片の場所を基準にするのか、原点を基準にするのかで楽になったりする。
 
 $$
-\mathbf{B} = \int_C d\mathbf{B}\\
+\mathbf{B} = \int_C d\mathbf{B}
+$$
+
+$$
 d\mathbf{B} = \frac{\mu_0}{4\pi}\frac{Id\mathbf{l}\times\mathbf{r}}{r^3}
 $$
