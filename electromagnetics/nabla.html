@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>ストークスの定理</title>
+    <title>$\mathbf{\nabla}$</title>
   </head>
   <body>
     
@@ -19,33 +19,29 @@
           
             <li class="breadcrumb-item"><a href="../electromagnetics/index.html">electromagnetics</a></li>
           
-          <li class="breadcrumb-item">ストークスの定理</li>
+          <li class="breadcrumb-item">$\mathbf{\nabla}$</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>ストークスの定理</h1>
+      <h1>$\mathbf{\nabla}$</h1>
 
       
         <div class="contents">
         
             
-              <div>電磁気の静電ポテンシャルや、<a href="../electromagnetics/ampere-equation.html">アンペールの法則</a>の証明で用いる</div>
+              <div><a href="../electromagnetics/div.html">ベクトルの発散</a>や<a href="../electromagnetics/rot.html">ベクトルの回転</a>で使う</div>
             
           
             
-              <div>微小な面積における<a href="../electromagnetics/rot.html">ベクトルの回転</a>と法線ベクトルの内積を面積分していくと、ベクトルを線積分したものと等しくなる</div>
-            
-          
-            
-              <div>なお法線ベクトルは、線積分の経路が反時計回りになるようにする</div>
-            
-          
-            
-              <div>\[\int_S\mathbf{\left(\nabla\times A(r)\right)\cdot n(r)}\ dS = \int_C \mathbf{A(r)}\cdot d\mathbf{r}\]
+              <div>\[\mathbf{\nabla} = \left(\frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z}\right)\]
 </div>
+            
+          
+            
+              <div>これを覚えておけば、<a href="../electromagnetics/div.html">ベクトルの発散</a>や回転がわからなくなっても、内積と外積の計算方法を思い出せれば戦える。そっちも忘れたらなかなか大変だけれども。</div>
             
           
         </div>
@@ -64,7 +60,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../electromagnetics/sprint.html">ばねの方程式</a>
+                <a href="../electromagnetics/maxwell.html">マクスウェルの方程式</a>
               
             </div>
             <div class="col">
@@ -76,7 +72,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../electromagnetics/tesla.html">テスラ</a>
+                <a href="../electromagnetics/ohm.html">オームの法則</a>
               
             </div>
           </div>
@@ -85,7 +81,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/electromagnetics/stokes.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/electromagnetics/nabla.md';">Edit</button>
         
         
       </div>
@@ -97,8 +93,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../electromagnetics/ampere-equation.html">アンペールの法則</a></h5>
-                  <p class="card-text">## 微分形 磁束密度の湧き出しは電流密度と透磁率によって定ま...</p>
+                  <h5 class="card-title fs-6"><a href="../electromagnetics/div.html">ベクトルの発散</a></h5>
+                  <p class="card-text">$$ \mathbf{\nabla} \cdot \mathb...</p>
                 </div>
               </div>
             </div>
@@ -106,17 +102,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../electromagnetics/flux.html">磁束</a></h5>
-                    <p class="card-text">$\Phi$ (ギリシャ文字ファイの大文字)を使う。 回路を縁...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../electromagnetics/maxwell.html">マクスウェルの方程式</a></h5>
-                    <p class="card-text">電場についてのガウスの法則より、$\displaystyle ...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/gauss-elec.html">電場についてのガウスの法則</a></h5>
+                    <p class="card-text">クーロンの法則から導かれた物理法則 微分形と積分形があるらしい...</p>
                   </div>
                 </div>
               </div>
@@ -136,17 +123,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../electromagnetics/div.html">ベクトルの発散</a></h5>
-                    <p class="card-text">$$ \mathbf{\nabla} \cdot \mathb...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../electromagnetics/nabla.html">$\mathbf{\nabla}$</a></h5>
-                    <p class="card-text">ベクトルの発散やベクトルの回転で使う $$ \mathbf{\...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/stokes.html">ストークスの定理</a></h5>
+                    <p class="card-text">電磁気の静電ポテンシャルや、アンペールの法則の証明で用いる 微...</p>
                   </div>
                 </div>
               </div>

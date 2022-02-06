@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>ファラデーの電磁誘導の法則</title>
+    <title>電場についてのガウスの法則</title>
   </head>
   <body>
     
@@ -19,42 +19,74 @@
           
             <li class="breadcrumb-item"><a href="../electromagnetics/index.html">electromagnetics</a></li>
           
-          <li class="breadcrumb-item">ファラデーの電磁誘導の法則</li>
+          <li class="breadcrumb-item">電場についてのガウスの法則</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>ファラデーの電磁誘導の法則</h1>
+      <h1>電場についてのガウスの法則</h1>
 
       
         <div class="contents">
         
             
-              <div><a href="../electromagnetics/flux.html">磁束</a>の変化とコイルの起電力が比例する、という法則</div>
+              <div>クーロンの法則から導かれた物理法則</div>
             
           
             
-              <div>\[\phi_{em} = -\frac{d\Phi}{dt}\]
+              <div>微分形と積分形があるらしい</div>
+            
+          
+            
+              <h2>微分形の</h2>
+            
+          
+            
+              <div>\[\mathbf{\nabla}\cdot\mathbf{E}(\mathbf{r}) =
+\begin{cases}
+0 &amp; (\text{電荷が点 $\mathbf{r}$ にない場合}) \\
+\dfrac{\rho(\mathbf{r})}{\varepsilon_0} &amp; (\text{電荷が点 $\mathbf{r}$ にある場合})
+\end{cases}\]
 </div>
             
           
             
-              <h2>積分形</h2>
+              <div><a href="../electromagnetics/div.html">ベクトルの発散</a>を思い出すと、電場の湧き出し・染み込みと電荷密度の関係を表す公式なのがわかる。</div>
             
           
             
-              <div>また更に計算すると、\(\phi_{em} = \int_C\mathbf{E}\cdot d\mathbf{l}\)</div>
+              <div><a href="../electromagnetics/div.html">ベクトルの発散</a>さえわかれば、積分形の<a href="../electromagnetics/gauss.html">ガウスの法則</a>より直感的に思える。</div>
             
           
             
-              <h2>微分形</h2>
+              <div>特定の点のやつだから $\rho$</div>
             
           
             
-              <div>\[\mathbf{\nabla}\times E(\mathbf{r},t) = -\frac{\partial\mathbf{B}(\mathbf{r},t)}{\partial t}\]
+              <h2>積分形の</h2>
+            
+          
+            
+              <div>\[\int_S \mathbf{E} \cdot \mathbf{n}\ dS =
+\begin{cases}
+0 &amp; (\text{電荷がSの外側にある場合}) \\
+\dfrac{q}{\varepsilon_0} &amp; (\text{電荷がSの内側にある場合})
+\end{cases}\]
 </div>
+            
+          
+            
+              <div>面で囲った部分において、そこから出てくるベクトル場と電荷密度の関係を表す公式なのがわかる。</div>
+            
+          
+            
+              <div>面を積分してるから積分形なのかな？</div>
+            
+          
+            
+              <div>範囲の内側の電荷量だから $q$</div>
             
           
         </div>
@@ -73,7 +105,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../electromagnetics/equation-of-motion.html">運動方程式</a>
+                <a href="../electromagnetics/gauss.html">ガウスの法則</a>
               
             </div>
             <div class="col">
@@ -85,7 +117,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../electromagnetics/flux.html">磁束</a>
+                <a href="../electromagnetics/gauss-mag.html">磁場についてのガウスの法則</a>
               
             </div>
           </div>
@@ -94,7 +126,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/electromagnetics/faraday.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/electromagnetics/gauss-elec.md';">Edit</button>
         
         
       </div>
@@ -106,8 +138,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../electromagnetics/flux.html">磁束</a></h5>
-                  <p class="card-text">$\Phi$ (ギリシャ文字ファイの大文字)を使う。 回路を縁...</p>
+                  <h5 class="card-title fs-6"><a href="../electromagnetics/gauss.html">ガウスの法則</a></h5>
+                  <p class="card-text">- 電場についてのガウスの法則 - 磁場についてのガウスの法則...</p>
                 </div>
               </div>
             </div>
@@ -115,8 +147,29 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../electromagnetics/ampere.html">アンペールの力</a></h5>
-                    <p class="card-text">磁束密度 $\mathbf{B}$ の中の微小部分の導線 $\...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/gauss-mag.html">磁場についてのガウスの法則</a></h5>
+                    <p class="card-text">磁場の湧き出しが存在しない、つまりは磁気モノポールが存在しない...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../electromagnetics/div.html">ベクトルの発散</a></h5>
+                  <p class="card-text">$$ \mathbf{\nabla} \cdot \mathb...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/rot.html">ベクトルの回転</a></h5>
+                    <p class="card-text">$$ \mathbf{\nabla} \times \math...</p>
                   </div>
                 </div>
               </div>
@@ -124,8 +177,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../electromagnetics/ampere-equation.html">アンペールの法則</a></h5>
-                    <p class="card-text">## 微分形 磁束密度の湧き出しは電流密度と透磁率によって定ま...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/nabla.html">$\mathbf{\nabla}$</a></h5>
+                    <p class="card-text">ベクトルの発散やベクトルの回転で使う $$ \mathbf{\...</p>
                   </div>
                 </div>
               </div>
@@ -145,8 +198,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../electromagnetics/gauss-elec.html">電場についてのガウスの法則</a></h5>
-                    <p class="card-text">クーロンの法則から導かれた物理法則 微分形と積分形があるらしい...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/faraday.html">ファラデーの電磁誘導の法則</a></h5>
+                    <p class="card-text">磁束の変化とコイルの起電力が比例する、という法則 $$ \ph...</p>
                   </div>
                 </div>
               </div>
@@ -154,8 +207,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../electromagnetics/gauss-mag.html">磁場についてのガウスの法則</a></h5>
-                    <p class="card-text">磁場の湧き出しが存在しない、つまりは磁気モノポールが存在しない...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/ampere-equation.html">アンペールの法則</a></h5>
+                    <p class="card-text">## 微分形 磁束密度の湧き出しは電流密度と透磁率によって定ま...</p>
                   </div>
                 </div>
               </div>
