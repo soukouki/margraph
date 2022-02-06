@@ -11,4 +11,4 @@ $$
 \mathbf{A(r)} = \dfrac{\mu_0}{4\pi}\int_V\dfrac{\mathbf{i(r')}}{|\mathbf{r-r'}|}\ dV'
 $$
 
-これはビオ・サバールの法則で求めた $\mathbf{\nabla\times A(r) = B(r)}$ と一致する
+これはビオ・サバールの法則で $\mathbf{\nabla\times A(r) = B(r)}$ と一致する
