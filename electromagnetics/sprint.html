@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>電気伝導度</title>
+    <title>ばねの方程式</title>
   </head>
   <body>
     
@@ -19,25 +19,20 @@
           
             <li class="breadcrumb-item"><a href="../electromagnetics/index.html">electromagnetics</a></li>
           
-          <li class="breadcrumb-item">電気伝導度</li>
+          <li class="breadcrumb-item">ばねの方程式</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>電気伝導度</h1>
+      <h1>ばねの方程式</h1>
 
       
         <div class="contents">
         
             
-              <div>\[\sigma = \frac{1}{\rho}\]
-</div>
-            
-          
-            
-              <div><a href="../electromagnetics/ohm.html">オームの法則</a>とかで使う。</div>
+              <div>\(\frac{d^2f}{dt^2} = -\omega^2f(t)\\f(t) = A\cos(\omega t+B) \cdots (A,B:\text{任意の定数})\)初期条件から $A,B$ が定まる</div>
             
           
         </div>
@@ -56,7 +51,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../electromagnetics/rot.html">ベクトルの回転</a>
+                <a href="../electromagnetics/sigma.html">電気伝導度</a>
               
             </div>
             <div class="col">
@@ -68,7 +63,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../electromagnetics/sprint.html">ばねの方程式</a>
+                <a href="../electromagnetics/stokes.html">ストークスの定理</a>
               
             </div>
           </div>
@@ -77,25 +72,13 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/electromagnetics/sigma.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/electromagnetics/sprint.md';">Edit</button>
         
         
       </div>
 
       
       <div class="link-network">
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../electromagnetics/ohm.html">オームの法則</a></h5>
-                  <p class="card-text">$ V  \Delta \phi = RI $ 人によっては中...</p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
         
       </div>
       
