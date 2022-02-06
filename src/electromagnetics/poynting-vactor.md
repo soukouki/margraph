@@ -7,7 +7,7 @@ $$
 \mathbf{S}
 &=& \mathbf{E\times H} \\
 &=& \frac{1}{\mu_0}\mathbf{E}\times\mathbf{B}
-\end{eqnarray
-$$}
+\end{eqnarray}
+$$
 
 $\mathbf{H}$ は磁場の強度
