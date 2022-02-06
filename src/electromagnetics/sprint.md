@@ -6,6 +6,6 @@ $\sin$ や $\cos$ は2回微分すると符号が逆になった上で元の関�
 
 $\dfrac{d^2f}{dt^2} = -\omega^2f(t)$
 
-$f(t) = A\cos(\omega t+B) \cdots (A,B:\text{任意の定数})$
+$f(t) = A\cos(\omega t+B) \quad (A,B:\text{任意の定数})$
 
 初期条件から $A,B$ が定まる
