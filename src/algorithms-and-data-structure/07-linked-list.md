@@ -13,4 +13,4 @@
   - 要素の付近への挿入は$O\left(1\right)$
   - 要素の付近の削除も$O\left(1\right)$
 
-どちらにしろ、k番目にの要素は、片方向連結リストなら$O\left(k\right)$、双方向連結リストなら$ O\left(\min\left(k, n-k\right)\right) $かかり、配列より遅いので注意が必要。
+どちらにしろ、k番目の要素へのアクセスは、片方向連結リストなら$O\left(k\right)$、双方向連結リストなら$ O\left(\min\left(k, n-k\right)\right) $かかり、配列より遅いので注意が必要。
