@@ -16,3 +16,27 @@
   - その他はサードパーティ製
   - `-extra`が最後につくライブラリは、すでにあるライブラリに対して追加機能を加えるもの
     - あと一歩こういう機能が足りない・・・！ってときに調べるとあったりする
+
+- 説明の流れ
+  - TEAを軽く説明
+  - Buttons
+    - 足し引きするボタンを追加してみたりとか
+  - 関数型とは〰的な？
+  - Text Fields
+  - Forms
+  - ライブラリの探し方
+  - TODOリスト作ってみる
+    - 前半の重め演習かな？
+  - Forms
+  - 乱数
+    - 例を適当に
+  - Book
+    - なんかのAPIを触ってみる
+    - https://cdn2.dott.dev/data.json
+      - 福島県の新型コロナのデータ
+    - https://www.jma.go.jp/bosai/forecast/data/forecast/070000.json
+      - 天気予報のデータ
+    - https://zenn-api.netlify.app
+      - こっちはababさん主催の勉強会で触ったやつ
+  - Elmの環境構築
+  - 外部ライブラリ
