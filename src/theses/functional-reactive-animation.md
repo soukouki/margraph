@@ -1,5 +1,7 @@
 # Functional Reactive Animation
 
+ElmのTEAの元となった論文(今となってはだいぶ離れてるらしい)
+
 http://conal.net/papers/icfp97/icfp97.pdf
 
 ## どんなもの？
