@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>永続データ構造</title>
+    <title>Elmで競プロ</title>
   </head>
   <body>
     
@@ -19,28 +19,39 @@
           
             <li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
           
-          <li class="breadcrumb-item">永続データ構造</li>
+          <li class="breadcrumb-item">Elmで競プロ</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>永続データ構造</h1>
+      <h1>Elmで競プロ</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>変更するときに、値を直接書き換えるのではなく、変更前のバージョンを参照しながら新しいオブジェクトを作るデータ構造</li>
-  <li>関数型プログラミングでよく使う
+  <li>環境
     <ul>
-      <li>例えばclojureや<a href="../other/elm.html">Elm</a>の<a href="../algorithms-and-data-structure/07a-array.html">配列</a>、リストはそう</li>
+      <li>https://github.com/soukouki/elm-competitive-program-template
+        <ul>
+          <li>テンプレート作った</li>
+        </ul>
+      </li>
     </ul>
   </li>
-  <li>一部を書き換えた完全に新しいオブジェクトを作っているとメモリが過剰に必要になるので、前のオブジェクトを参照する</li>
-  <li>副作用の排除をデータ構造の面から考えた感じ？</li>
+  <li>作りたいライブラリ
+    <ul>
+      <li>入出力のライブラリがとりあえず欲しい
+        <ul>
+          <li><a href="../algorithms-and-data-structure/07a-array.html">配列</a>に入れていく処理とかいちいち書きたくない</li>
+          <li>パーサーに似た感じで指定できたら良いなぁ</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 </div>
             
@@ -61,7 +72,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../other/outliner.html">アウトライナー</a>
+                <a href="../other/elm.html">Elm</a>
               
             </div>
             <div class="col">
@@ -73,7 +84,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../other/plags-ut.html">PLAGS UT</a>
+                <a href="../other/elm-study.html">Elmをぶんぶんに教えた時のメモ</a>
               
             </div>
           </div>
@@ -82,70 +93,13 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/persistant-data-structure.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/elm-comp.md';">Edit</button>
         
         
       </div>
 
       
       <div class="link-network">
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/elm.html">Elm</a></h5>
-                  <p class="card-text">- https://guide.elm-lang.jp   -...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/elm-study.html">Elmをぶんぶんに教えた時のメモ</a></h5>
-                    <p class="card-text">- 説明の流れ   - The Elm Architectur...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/undergraduate-1.html">学部一年の振り返り</a></h5>
-                    <p class="card-text">- プログラミング関連について   - Rustを触ってみたり...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/elm-test.html">elm-test</a></h5>
-                    <p class="card-text">- Elmで使うテストフレームワーク - `npm insta...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../scraps/shifting-language-eco-system.html">言語のエコシステムの変化</a></h5>
-                    <p class="card-text">https://izumisy.work/entry/2021...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../theses/functional-reactive-animation.html">Functional Reactive Animation</a></h5>
-                    <p class="card-text">ElmのTEAの元となった論文(今となってはだいぶ離れてるらし...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
         
           <div class="row flex-nowrap overflow-auto">
             <div class="col-4">
@@ -268,8 +222,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/elm-comp.html">Elmで競プロ</a></h5>
-                    <p class="card-text">- 環境   - https://github.com/sou...</p>
+                    <h5 class="card-title fs-6"><a href="../other/persistant-data-structure.html">永続データ構造</a></h5>
+                    <p class="card-text">- 変更するときに、値を直接書き換えるのではなく、変更前のバー...</p>
                   </div>
                 </div>
               </div>
