@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>ツーブロック</title>
+    <title>型と値を同じように扱いたい</title>
   </head>
   <body>
     
@@ -19,28 +19,37 @@
           
             <li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
           
-          <li class="breadcrumb-item">ツーブロック</li>
+          <li class="breadcrumb-item">型と値を同じように扱いたい</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>ツーブロック</h1>
+      <h1>型と値を同じように扱いたい</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>髪型の一つ</li>
-  <li>耳のとこ刈り上げて、縦長な感じにする</li>
-  <li>陽キャに多いイメージ(偏見?)</li>
-  <li>あまり好みではないので次に髪を切る時には違う髪型でお願いしてみる
+  <li>型と値を同じように扱いたい</li>
+  <li>Zigは引数に型を渡せる
     <ul>
-      <li>切った直後はあれだけど、1,2週間くらい経てば馴染む気がする</li>
+      <li>ジェネリクスやテンプレートの書き方が変わっただけではあるけれど、より関数らしい書き方になってる</li>
     </ul>
   </li>
+  <li>TypeScriptは値型がある
+    <ul>
+      <li>型として値を扱える
+        <ul>
+          <li><code>number | "str1" | undefined</code>みたいな型を用意できる</li>
+        </ul>
+      </li>
+      <li>実行時に型の情報はないのでパターンマッチみたいなのはできない</li>
+    </ul>
+  </li>
+  <li>篩形とかは型に対して条件式みたいな形で制約を加えられる</li>
 </ul>
 </div>
             
@@ -61,7 +70,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../other/twitter.html">ツイッター</a>
+                <a href="../other/two-block.html">ツーブロック</a>
               
             </div>
             <div class="col">
@@ -73,7 +82,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../other/type-and-value.html">型と値を同じように扱いたい</a>
+                <a href="../other/undergraduate-1.html">学部一年の振り返り</a>
               
             </div>
           </div>
@@ -82,7 +91,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/two-block.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/type-and-value.md';">Edit</button>
         
         
       </div>
