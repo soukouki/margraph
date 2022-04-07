@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>言語のエコシステムの変化</title>
+    <title>ベクトル</title>
   </head>
   <body>
     
@@ -17,43 +17,27 @@
           
             <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../scraps/index.html">scraps</a></li>
+            <li class="breadcrumb-item"><a href="../math/index.html">math</a></li>
           
-          <li class="breadcrumb-item">言語のエコシステムの変化</li>
+          <li class="breadcrumb-item">ベクトル</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>言語のエコシステムの変化</h1>
+      <h1>ベクトル</h1>
 
       
         <div class="contents">
         
             
-              <div>https://izumisy.work/entry/2021/11/13/181404</div>
-            
-          
-            
               <div><ul>
-  <li>なぜ<a href="../programming/elm.html">Elm</a>は進化が遅いのか、を書いた記事
+  <li>ベクタとも</li>
+  <li>C++の<a href="../algorithms-and-data-structure/07a-array.html">配列</a>とかで見れるvectorはこれ</li>
+  <li>よく $\boldsymbol{u} \in \mathcal{R}^n$ と表したりする
     <ul>
-      <li>新機能の追加は華やかだが、機能自体が技術的負債となっていく</li>
-      <li><a href="../programming/elm.html">Elm</a>は教育用<a href="../other/language.html">言語</a>でもあり、<a href="../other/language.html">言語</a>のミニマムさ、シンプルさに重きを置いている</li>
-      <li>機能をたくさん追加することによって、後方互換性や技術的負債が大変なことになっている<a href="../other/language.html">言語</a>が存在する</li>
-    </ul>
-  </li>
-  <li>このままだと、<a href="../programming/elm.html">Elm</a>で開発されたプログラムは10年経っても開発できると思う</li>
-  <li>特にWEB<a href="../math/05-system.html">系</a>の<a href="../other/language.html">言語</a>では、ものすごい速さで栄枯盛衰が起きていて、一瞬で<a href="../other/language.html">言語</a>や、そのエコシステムが廃れていく
-    <ul>
-      <li>Ruby on RailsやCoffe Scriptを採用したプロジェクトとかは、それ自体が技術的負債になりかけてそう</li>
-    </ul>
-  </li>
-  <li>Schemeをあえて使う理由として、<a href="../other/language.html">言語</a>の仕様が小さいから、<a href="../other/language.html">言語</a>のはやりが過ぎても学んで開発しやすい、というのがあったはず</li>
-  <li><a href="../programming/elm.html">Elm</a>のような、変化の遅いエコシステムを採用するのは案外良いのかもしれない
-    <ul>
-      <li>かといって時代遅れの<a href="../other/language.html">言語</a>を採用する(例えばCOBOLとか)のはちょっと違う</li>
+      <li>これは $\boldsymbol{u}$ が有理数でn次のベクトル</li>
     </ul>
   </li>
 </ul>
@@ -76,19 +60,19 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../scraps/saikyo-kashika.html">最強の可視化</a>
+                <a href="../math/00-introduction.html">フーリエ解析</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../scraps/index.html">scraps</a>
+                <a href="../math/index.html">math</a>
               
             </div>
             <div class="col">
               
                 次の記事<br />
-                <a href="../scraps/syudouken.html">2択を作り主導権を握る</a>
+                <a href="../math/02-inner-product.html">内積</a>
               
             </div>
           </div>
@@ -97,7 +81,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/scraps/shifting-language-eco-system.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/01-vector.md';">Edit</button>
         
         
       </div>
@@ -109,8 +93,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../programming/elm.html">Elm</a></h5>
-                  <p class="card-text">- https://guide.elm-lang.jp   -...</p>
+                  <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/07a-array.html">配列</a></h5>
+                  <p class="card-text">メモリ上で連続した領域。言わずとしれたデータ構造 リスト構造と...</p>
                 </div>
               </div>
             </div>
@@ -118,8 +102,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/undergraduate-1.html">学部一年の振り返り</a></h5>
-                    <p class="card-text">- プログラミング関連について   - Rustを触ってみたり...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/07-linked-list.html">連結リスト</a></h5>
+                    <p class="card-text">その要素と、次の要素(または前後の要素)へのポインタをもつもの...</p>
                   </div>
                 </div>
               </div>
@@ -127,8 +111,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/persistant-data-structure.html">永続データ構造</a></h5>
-                    <p class="card-text">- 変更するときに、値を直接書き換えるのではなく、変更前のバー...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/19-adjacency-list.html">隣接リスト</a></h5>
+                    <p class="card-text">グラフ構造を表す手段の一つ ノード`i`がエッジによってノード...</p>
                   </div>
                 </div>
               </div>
@@ -136,8 +120,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/elm-study.html">Elmをぶんぶんに教えた時のメモ</a></h5>
-                    <p class="card-text">- 説明の流れ   - The Elm Architectur...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/15-heap.html">ヒープ</a></h5>
+                    <p class="card-text">子要素は親要素より常に大きい(小さい)か等しい、という制約がつ...</p>
                   </div>
                 </div>
               </div>
@@ -145,8 +129,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/elm-test.html">elm-test</a></h5>
-                    <p class="card-text">- Elmで使うテストフレームワーク - `npm insta...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/04-selection-sort.html">選択ソート</a></h5>
+                    <p class="card-text">空間計算量$ O\left(N\right) $ 時間計算量$...</p>
                   </div>
                 </div>
               </div>
@@ -154,29 +138,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../theses/functional-reactive-animation.html">Functional Reactive Animation</a></h5>
-                    <p class="card-text">ElmのTEAの元となった論文(今となってはだいぶ離れてるらし...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/language.html">言語</a></h5>
-                  <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/rule.html">ルール</a></h5>
-                    <p class="card-text">- 人が増えるとどうせ守られなくなるもの   - 人が多いノー...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/06-queue.html">キュー</a></h5>
+                    <p class="card-text">first-in, first-out(FIFO) スタックと...</p>
                   </div>
                 </div>
               </div>
@@ -184,8 +147,26 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../linguistics/minimal-pair.html">ミニマル・ペア</a></h5>
-                    <p class="card-text">Minimal-Pair 音素の範囲を見つけるために使うペアと...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/09-merge-sort.html">マージソート</a></h5>
+                    <p class="card-text">分割統治法を用いたアルゴリズム - 分割   - 配列があった...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/02-insertion-sort.html">挿入ソート</a></h5>
+                    <p class="card-text">空間計算量$ O\left(N\right) $ 時間計算量$...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/05-stacks.html">スタック</a></h5>
+                    <p class="card-text">last-in, first-out(LIFO) 例えば平積み...</p>
                   </div>
                 </div>
               </div>
@@ -202,6 +183,15 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/102-collect-link.html">Collect Links</a></h5>
+                    <p class="card-text">集められた記事のタイトルを使って、記事中からどの部分にリンクを...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../margraph/design/110a-sample.html">記事の中間表現のテスト用</a></h5>
                     <p class="card-text">タイトル直下のテキスト 段落毎に分けておく ## h2用タイト...</p>
                   </div>
@@ -211,8 +201,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/design/120-attachment.html">margraphの添付ファイル</a></h5>
-                    <p class="card-text">`src/<mdファイルのパス>`から始まる文字があるときには...</p>
+                    <h5 class="card-title fs-6"><a href="../margraph/design/101-merge-json.html">Merge Json</a></h5>
+                    <p class="card-text">複数のjsonファイルを与えられたときに、いい感じにマージして...</p>
                   </div>
                 </div>
               </div>
@@ -220,8 +210,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/design/02-practice.html">margraphのプラクティス</a></h5>
-                    <p class="card-text">## 処理を小さなスクリプトに分ける - スクリプトに違う言語...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/persistant-data-structure.html">永続データ構造</a></h5>
+                    <p class="card-text">- 変更するときに、値を直接書き換えるのではなく、変更前のバー...</p>
                   </div>
                 </div>
               </div>
@@ -229,8 +219,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/honshitu.html">本質</a></h5>
-                    <p class="card-text">物事の根本的な性質・要素 - 大した影響がない要素を捨てた、変...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/elm-comp.html">Elmで競プロ</a></h5>
+                    <p class="card-text">- 環境   - https://github.com/sou...</p>
                   </div>
                 </div>
               </div>
@@ -238,80 +228,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/clothes.html">服装100本ノック</a></h5>
-                    <p class="card-text">お洒落な服装を見て、どうしてそれがお洒落に見えるのかを言語化す...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/plags-ut.html">PLAGS UT</a></h5>
-                    <p class="card-text">- 自動評価付きPythonプログラミング課題管理システム -...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/prog-game.html">プログラミングを使ったゲームのアイデア</a></h5>
-                    <p class="card-text">- フィールドの中にロボット(?)なりを配置して、戦わせるゲー...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/makeing-language-workspace.html">言語自作勉強会</a></h5>
-                    <p class="card-text">の反省 ## 概要 事前に私が作った[baby-interpr...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/zig.html">Zig</a></h5>
-                    <p class="card-text">- プログラミング言語の一つ - https://ziglan...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-07-axiomatic-sem.html">公理的意味論</a></h5>
-                    <p class="card-text">言語の定義として公理的意味論自身を取る 鬼門は手続き...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/05-06-call-by-value.html">値呼び戦略</a></h5>
-                    <p class="card-text">正規順序戦略のように最も外側の簡約基を簡約するが、右側がすでに...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-05-operational-sem.html">操作的意味論</a></h5>
-                    <p class="card-text">抽象機械を定義し、プログラミング言語の振る舞いを規定する 機械...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-06-expressive-sem.html">表示的意味論</a></h5>
-                    <p class="card-text">意味領域の集まりを見つけ、項を意味領域の元に移す解釈関数を定義...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/daachhorce.html">Daachhorce</a></h5>
+                    <p class="card-text">- ダークホース https://tech.legalforc...</p>
                   </div>
                 </div>
               </div>
@@ -325,11 +243,89 @@
                 </div>
               </div>
             
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../electromagnetics/stokes.html">ストークスの定理</a></h5>
+                  <p class="card-text">電磁気の静電ポテンシャルや、アンペールの法則の証明で用いる 微...</p>
+                </div>
+              </div>
+            </div>
+            
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../scraps/don.html">「ドン」がネットワークのくびれで機能する</a></h5>
-                    <p class="card-text">https://yashio.hatenablog.com/e...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/ampere-equation.html">アンペールの法則</a></h5>
+                    <p class="card-text">ビオ・サバールの法則では計算が複雑なので、それを簡単にするため...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../electromagnetics/div.html">ベクトルの発散</a></h5>
+                  <p class="card-text">$$ \mathbf{\nabla} \cdot \mathb...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/nabla.html">$\mathbf{\nabla}$</a></h5>
+                    <p class="card-text">ベクトルの発散やベクトルの回転で使う $$ \mathbf{\...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../electromagnetics/coulomb.html">クーロン力</a></h5>
+                  <p class="card-text">2つの静止している電荷間に働く力の性質 $$ \mathbf{...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../electromagnetics/rot.html">ベクトルの回転</a></h5>
+                  <p class="card-text">$$ \mathbf{\nabla} \times \math...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../electromagnetics/gauss-elec.html">電場についてのガウスの法則</a></h5>
+                  <p class="card-text">クーロンの法則から導かれた物理法則 微分形と積分形があるらしい...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/gauss.html">ガウスの法則</a></h5>
+                    <p class="card-text">- 電場についてのガウスの法則 - 磁場についてのガウスの法則...</p>
                   </div>
                 </div>
               </div>
@@ -337,26 +333,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../scraps/question.html">質問の思いつき方</a></h5>
-                    <p class="card-text">どうやったら良い質問をできるか、みたいな記事 https://...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../theses/ppl2022-1.html">Type-Based Qubit Allocatiion for a First-Order Quantum Programming Language</a></h5>
-                    <p class="card-text">PPL2022の発表 ## どんなもの？ - 量子計算機上で動...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../theses/ppl.html">PPL</a></h5>
-                    <p class="card-text">プログラミングおよびプログラミング言語ワークショップ...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/maxwell.html">マクスウェルの方程式</a></h5>
+                    <p class="card-text">電場についてのガウスの法則より、$\displaystyle ...</p>
                   </div>
                 </div>
               </div>
@@ -372,15 +350,6 @@
                 </div>
               </div>
             </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/01-vector.html">ベクトル</a></h5>
-                    <p class="card-text">- ベクタとも - C++の配列とかで見れるvectorはこれ...</p>
-                  </div>
-                </div>
-              </div>
             
               <div class="col-4">
                 <div class="card h-100">
@@ -475,6 +444,15 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/language.html">言語</a></h5>
+                    <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../reading-note/color/03-yumokusei.html">誘目性</a></h5>
                     <p class="card-text">人が興味関心がないものに対しても、発見しやすいか否かを示す特性...</p>
                   </div>
@@ -489,6 +467,27 @@
                   </div>
                 </div>
               </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../scraps/shifting-language-eco-system.html">言語のエコシステムの変化</a></h5>
+                    <p class="card-text">https://izumisy.work/entry/2021...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/02-inner-product.html">内積</a></h5>
+                  <p class="card-text">- $\boldsymbol{u}$ と $\boldsymb...</p>
+                </div>
+              </div>
+            </div>
             
           </div>
         

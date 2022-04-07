@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>ルール</title>
+    <title>系</title>
   </head>
   <body>
     
@@ -17,50 +17,91 @@
           
             <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
+            <li class="breadcrumb-item"><a href="../math/index.html">math</a></li>
           
-          <li class="breadcrumb-item">ルール</li>
+          <li class="breadcrumb-item">系</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>ルール</h1>
+      <h1>系</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>人が増えるとどうせ守られなくなるもの
+  <li><a href="../math/01-vector.html">ベクトル</a>で扱っていたものを関数に適用していく
     <ul>
-      <li>人が多いノートツールとかだと、ルールみたいのが自然とできてしまうらしい</li>
-      <li><a href="../long-tweets/2021-11-02.html">Scrapbox</a>はそれを避けるために、階層整理型からグラフ整理型にした
+      <li>$\displaystyle (f \cdot g) = \int_a^b f(x)g(x)\ dx$</li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$\displaystyle</td>
+              <td> </td>
+              <td>f</td>
+              <td> </td>
+              <td>= (f \cdot f)^\frac{1}{2} = \left(\int_a^b f(x)^2\ dx \right)^\frac{1}{2}$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$</td>
+              <td> </td>
+              <td>\varphi_i</td>
+              <td> </td>
+              <td>= 1$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>$(\varphi_i \cdot \varphi_i) = 1$</li>
+      <li>$(\varphi_i \cdot \varphi_j) = 0\quad(i \neq j)$</li>
+    </ul>
+  </li>
+  <li>これを使うと
+    <ul>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>$\displaystyle \int_a^b f(x) \varphi_n(x)\ dx = a_n(\varphi_n \cdot \varphi_n) = a_n</td>
+              <td> </td>
+              <td>\varphi_n</td>
+              <td> </td>
+              <td>^2$</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        <table>
+          <tbody>
+            <tr>
+              <td>よって $\displaystyle a_n = \frac{1}{</td>
+              <td> </td>
+              <td>\varphi_n</td>
+              <td> </td>
+              <td>^2} \int_a^b f(x)\varphi_n(x)\ dx$</td>
+            </tr>
+          </tbody>
+        </table>
         <ul>
-          <li><a href="../margraph/01-note.html">margraph</a>でも、複数人で作業したときにどうなるのか試してみたい</li>
+          <li>これが<a href="../math/06-fourier-coefficients.html">フーリエ係数</a>につながる</li>
         </ul>
       </li>
     </ul>
   </li>
-  <li>ルールで人に強制するよりも、自然とルールから外れた行いがなくなる方がいい
+  <li>これなんか群論ににてない？
     <ul>
-      <li>ゲームのチュートリアルみたいなものがあってもいい</li>
-      <li><a href="../margraph/margraph-kakin.html">margraphの課金形式</a>でも無料プランは制約多めにして、<a href="../margraph/01-note.html">margraph</a>の哲学に近いものを強制するような仕組みにしたい</li>
-    </ul>
-  </li>
-  <li>Wikipediaのページを見ると、ルールがたくさん書かれてて嫌だな…と感じる
-    <ul>
-      <li>ルールを定めなくとも、ルールに反した操作をしづらいようにしたい
-        <ul>
-          <li>例えばプレス機とかで、手を挟み込まないように両手でボタンを押さないといけないようにする的な</li>
-        </ul>
-      </li>
-      <li>でも、出来ることが広がると予想していない良い行いがあるかも
-        <ul>
-          <li>それってルールに縛られない状態だからこそ出来るのでは？</li>
-        </ul>
-      </li>
+      <li><a href="../math/01-vector.html">ベクトル</a>で扱っていたものを関数に適用できないか試すところとか</li>
     </ul>
   </li>
 </ul>
@@ -83,19 +124,19 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../other/politics.html">国家に対し求めるもの</a>
+                <a href="../math/04-orthogonal-basis.html">正規直行基底</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../other/index.html">other</a>
+                <a href="../math/index.html">math</a>
               
             </div>
             <div class="col">
               
                 次の記事<br />
-                <a href="../other/saikyounokasika-tihoubyou.html">最強の可視化と地方病</a>
+                <a href="../math/06-fourier-coefficients.html">フーリエ係数</a>
               
             </div>
           </div>
@@ -104,7 +145,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/rule.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/05-system.md';">Edit</button>
         
         
       </div>
@@ -116,8 +157,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../long-tweets/2021-11-02.html">Scrapbox</a></h5>
-                  <p class="card-text">Scrapboxの哲学みたいなページを読んでるけど、ページ間の...</p>
+                  <h5 class="card-title fs-6"><a href="../math/01-vector.html">ベクトル</a></h5>
+                  <p class="card-text">- ベクタとも - C++の配列とかで見れるvectorはこれ...</p>
                 </div>
               </div>
             </div>
@@ -125,8 +166,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/margraph-junban.html">リンク</a></h5>
-                    <p class="card-text">- コードブロック中ではリンクしない方がいい   - LaTe...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/07a-array.html">配列</a></h5>
+                    <p class="card-text">メモリ上で連続した領域。言わずとしれたデータ構造 リスト構造と...</p>
                   </div>
                 </div>
               </div>
@@ -134,8 +175,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/margraph-ui.html">margraphのUI</a></h5>
-                    <p class="card-text">- 記事を見せるときは本文も出す   - 記事一覧もそう   ...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/stokes.html">ストークスの定理</a></h5>
+                    <p class="card-text">電磁気の静電ポテンシャルや、アンペールの法則の証明で用いる 微...</p>
                   </div>
                 </div>
               </div>
@@ -143,8 +184,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/design/201-num-of-hops.html">何ホップ分表示するか</a></h5>
-                    <p class="card-text">関連項目として、何ホップ分表示させるか - Scrapboxで...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/div.html">ベクトルの発散</a></h5>
+                    <p class="card-text">$$ \mathbf{\nabla} \cdot \mathb...</p>
                   </div>
                 </div>
               </div>
@@ -152,8 +193,35 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/outliner.html">アウトライナー</a></h5>
-                    <p class="card-text">- 章立てとかの全体的な構造を定めてから、細部の文章を追加して...</p>
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/coulomb.html">クーロン力</a></h5>
+                    <p class="card-text">2つの静止している電荷間に働く力の性質 $$ \mathbf{...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/rot.html">ベクトルの回転</a></h5>
+                    <p class="card-text">$$ \mathbf{\nabla} \times \math...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../electromagnetics/gauss-elec.html">電場についてのガウスの法則</a></h5>
+                    <p class="card-text">クーロンの法則から導かれた物理法則 微分形と積分形があるらしい...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/02-inner-product.html">内積</a></h5>
+                    <p class="card-text">- $\boldsymbol{u}$ と $\boldsymb...</p>
                   </div>
                 </div>
               </div>
@@ -164,8 +232,32 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../margraph/01-note.html">margraph</a></h5>
-                  <p class="card-text">named by sizumita Scrapboxがgoog...</p>
+                  <h5 class="card-title fs-6"><a href="../math/06-fourier-coefficients.html">フーリエ係数</a></h5>
+                  <p class="card-text">- 先程定義した系を使う - $\displaystyle a...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../1-self_introduction.html">自己紹介</a></h5>
+                  <p class="card-text">どこかの大学の情報系の学科に通っています。 数学とか物理とかが...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/12-tree.html">木構造</a></h5>
+                  <p class="card-text">言わずと知れた、逆さまの木のようになった抽象データ構造 グラフ...</p>
                 </div>
               </div>
             </div>
@@ -173,8 +265,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../class-note.html">授業ノート</a></h5>
-                    <p class="card-text">margraph上の授業ノート 授業の一部分しか書いてなかった...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/17-graph.html">グラフ構造</a></h5>
+                    <p class="card-text">ノードとエッジで構成された抽象データ型 ノードには向きや距離を...</p>
                   </div>
                 </div>
               </div>
@@ -182,8 +274,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../0-description.html">サイトについての説明</a></h5>
-                    <p class="card-text">このサイトはsou7がまとめている、margraphによるノー...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/15-heap.html">ヒープ</a></h5>
+                    <p class="card-text">子要素は親要素より常に大きい(小さい)か等しい、という制約がつ...</p>
                   </div>
                 </div>
               </div>
@@ -191,26 +283,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../long-tweets/2021-11-25.html">ノートの活用</a></h5>
-                    <p class="card-text">人が覚えられる量には明らかに限界がある(例えば保育園や小学校の...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/block-ui.html">ブロック的データ</a></h5>
-                    <p class="card-text">margraphとかで、箇条書きの中に入れられないもの。 - ...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/undergraduate-1.html">学部一年の振り返り</a></h5>
-                    <p class="card-text">- プログラミング関連について   - Rustを触ってみたり...</p>
+                    <h5 class="card-title fs-6"><a href="../algorithms-and-data-structure/13-binary-tree.html">二分木</a></h5>
+                    <p class="card-text">木構造の一種。それぞれのノードが2つの子しか持たない。...</p>
                   </div>
                 </div>
               </div>
@@ -227,35 +301,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/sintyoku-konpe.html">進捗コンペ</a></h5>
-                    <p class="card-text">Zliでやってた進捗コンペで出た成果 ## 主な進捗 - 言語...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/twitter.html">ツイッター</a></h5>
-                    <p class="card-text">言わずとしれたツイッター にゃーんってつぶやいたり、思考を吐き...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/hyoki-yure.html">表記揺れ</a></h5>
-                    <p class="card-text">- margraphさとこの問題がもろに出る - 表記揺れをま...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../scraps/haburashi-test.html">歯ブラシテスト</a></h5>
-                    <p class="card-text">https://cnxt.jp/topics/toothbru...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/data-structure.html">データ構造面白い</a></h5>
+                    <p class="card-text">最近データ構造が面白いと思うようになった。多分アルゴリズムとデ...</p>
                   </div>
                 </div>
               </div>
@@ -266,11 +313,110 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../margraph/margraph-kakin.html">margraphの課金形式</a></h5>
-                  <p class="card-text">- サービスとして運用するなら、課金は必須   - サーバー代...</p>
+                  <h5 class="card-title fs-6"><a href="../electromagnetics/laplace.html">ラプラス方程式</a></h5>
+                  <p class="card-text">電荷が存在しない場合、つまり $\rho  0$ のときのポア...</p>
                 </div>
               </div>
             </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../history-of-science/11-ptolemy.html">プトレマイオス</a></h5>
+                  <p class="card-text">天動説の体系を洗練させた...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../history-of-science/09-ptolemaic-system.html">天動説</a></h5>
+                    <p class="card-text">アリストテレスは天動説をとっていた アリストテレスの天動説にあ...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../history-of-science/12-truth.html">真理の区別</a></h5>
+                  <p class="card-text">天動説におけるアリストテレスの体系とプトレマイオスの体系に対す...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../history-of-science/04-aristotle.html">アリストテレス</a></h5>
+                    <p class="card-text">プラトンの弟子 万学の祖と呼ばれる 現在の主要な学問のほぼ全て...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../light-novel/sengoku-komachi.html">戦国小町苦労譚</a></h5>
+                  <p class="card-text">夾竹桃 - ゆっくり更新なので、思い出した時に読むくらい - ...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../light-novel/world-tree.html">世界樹の上に村を作ってみませんか</a></h5>
+                  <p class="card-text">氷純 - ハロロース！の元ネタ - かなりしっかりとしたまちづ...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../long-tweets/2021-11-27.html">入れ替わり系</a></h5>
+                  <p class="card-text">入れ替わり系の物語とかって、日本みたいに高校進学率がかなり高く...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/07-fourier-series.html">フーリエ級数</a></h5>
+                  <p class="card-text">- $\displaystyle \sum_{n0}^\inf...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/00-introduction.html">フーリエ解析</a></h5>
+                    <p class="card-text">- の授業ノート - 自分用にダラダラ作っているので、あまり参...</p>
+                  </div>
+                </div>
+              </div>
             
           </div>
         
@@ -287,8 +433,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/05-system.html">系</a></h5>
-                    <p class="card-text">- ベクトルで扱っていたものを関数に適用していく   - $\...</p>
+                    <h5 class="card-title fs-6"><a href="../other/rule.html">ルール</a></h5>
+                    <p class="card-text">- 人が増えるとどうせ守られなくなるもの   - 人が多いノー...</p>
                   </div>
                 </div>
               </div>
@@ -458,15 +604,6 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../scraps/shifting-language-eco-system.html">言語のエコシステムの変化</a></h5>
-                    <p class="card-text">https://izumisy.work/entry/2021...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../theses/ppl2022-1.html">Type-Based Qubit Allocatiion for a First-Order Quantum Programming Language</a></h5>
                     <p class="card-text">PPL2022の発表 ## どんなもの？ - 量子計算機上で動...</p>
                   </div>
@@ -487,6 +624,60 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../theses/functional-reactive-animation.html">Functional Reactive Animation</a></h5>
                     <p class="card-text">ElmのTEAの元となった論文(今となってはだいぶ離れてるらし...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../reading-note/color/03-yumokusei.html">誘目性</a></h5>
+                  <p class="card-text">人が興味関心がないものに対しても、発見しやすいか否かを示す特性...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/color/02-sininsei.html">視認性</a></h5>
+                    <p class="card-text">人が興味関心があるものを探すときに、発見しやすいか否かを示す特...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../reading-note/color/04-sikibetusei.html">識別性</a></h5>
+                  <p class="card-text">見る対象が複数あるときに、どの程度区別しやすいかを示す特性 共...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../scraps/shifting-language-eco-system.html">言語のエコシステムの変化</a></h5>
+                  <p class="card-text">https://izumisy.work/entry/2021...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/elm.html">Elm</a></h5>
+                    <p class="card-text">- https://guide.elm-lang.jp   -...</p>
                   </div>
                 </div>
               </div>
