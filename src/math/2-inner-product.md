@@ -1,4 +1,4 @@
 # 内積
 
-- $\mathbf{u}$ と $\mathbf{v}$ が $n$ 次元のベクトルであれば、$\displaystyle (u \cdot v) = \sum_{i=1}^n a_i b_i$
+- $\boldsymbol{u}$ と $\boldsymbol{v}$ が $n$ 次元のベクトルであれば、$\displaystyle (\boldsymbol{u} \cdot \boldsymbol{v}) = \sum_{i=1}^n a_i b_i$
 - inner productやdot productとも言われる

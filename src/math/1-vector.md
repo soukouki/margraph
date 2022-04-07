@@ -2,5 +2,5 @@
 
 - ベクタとも
 - C++の配列とかで見れるvectorはこれ
-- よく $\mathbf{u} \in \mathcal{R}^n$ と表したりする
-  - これは $\mathbf{u}$ が有理数でn次のベクトル
+- よく $\boldsymbol{u} \in \mathcal{R}^n$ と表したりする
+  - これは $\boldsymbol{u}$ が有理数でn次のベクトル
