@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>Re:VIEW記法</title>
+    <title>犠牲的アーキテクチャ</title>
   </head>
   <body>
     
@@ -19,28 +19,53 @@
           
             <li class="breadcrumb-item"><a href="../scraps/index.html">scraps</a></li>
           
-          <li class="breadcrumb-item">Re:VIEW記法</li>
+          <li class="breadcrumb-item">犠牲的アーキテクチャ</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>Re:VIEW記法</h1>
+      <h1>犠牲的アーキテクチャ</h1>
 
       
         <div class="contents">
         
             
-              <div>https://github.com/kmuto/review/blob/master/doc/format.ja.md</div>
-            
-          
-            
-              <div>本を作るための記法。Markdownに似た感じ。</div>
-            
-          
-            
-              <div>TeXの機能をMarkdownの基本機能に追加したような、ちょっと不思議な感じ。</div>
+              <div><ul>
+  <li>https://bliki-ja.github.io/SacrificialArchitecture/</li>
+  <li>「Martin Fowler’s Bliki」の日本語訳</li>
+  <li>サービスを支えるための今は正しいアーキテクチャは、10年後のそのサービスにおいては正しくない</li>
+  <li>サービスを立ち上げるときにおいては、様々な仕様変更・機能追加が行われる
+    <ul>
+      <li>そして10年後には、更に大量の負荷がかかるかもしれない</li>
+      <li>標準となる技術が変化していくかもしれない
+        <ul>
+          <li>特にWebやモバイルの技術なんかは顕著</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>コードを書く際に、そのコードの寿命を決めておく
+    <ul>
+      <li>負荷がある規模を超えたら現行の版を捨て、最初から作り直したほうが良い</li>
+      <li>サブシステム群を数年おきに再設計し、捨てていくのが良い</li>
+    </ul>
+  </li>
+  <li>モジュール性は重要
+    <ul>
+      <li>モジュール性は一部分を再設計し、捨てていくために重要</li>
+      <li>しかし、マイクロサービスアーキテクチャを使えば良いというものではない
+        <ul>
+          <li>マイクロサービスアーキテクチャは分散と非同期性があるが、どちらも複雑さを助長する</li>
+          <li>機能開発の速度を著しく落とす</li>
+          <li>一枚板として設計し、後から徐々にコードを引き剥がし、マイクロサービスにすれば良い</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+</div>
             
           
         </div>
@@ -59,7 +84,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../scraps/question.html">質問の思いつき方</a>
+                <a href="../scraps/review.html">Re:VIEW記法</a>
               
             </div>
             <div class="col">
@@ -71,7 +96,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../scraps/sacrificial-architecture.html">犠牲的アーキテクチャ</a>
+                <a href="../scraps/saikyo-kashika.html">最強の可視化</a>
               
             </div>
           </div>
@@ -80,7 +105,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/scraps/review.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/scraps/sacrificial-architecture.md';">Edit</button>
         
         
       </div>
