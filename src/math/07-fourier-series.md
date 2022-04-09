@@ -1,6 +1,6 @@
 # フーリエ級数
 
-- $\displaystyle \sum_{n=0}^\infty a_n \varphi?n(x)$
+- $\displaystyle \sum_{n=0}^\infty a_n \varphi_n(x)$
 - これまでの系の話はかなり一般化したもので、これを $\cos$ に適用すると、よく言われるフーリエ級数となる
 - $\phi_n(x) = \cos\left(\left(n+1\right) x \right)\quad(n=0,1,2,\cdots)$
   - $(\varphi_i \cdot \varphi_j) = 0$ になる(らしい)
