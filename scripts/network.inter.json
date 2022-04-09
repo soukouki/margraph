@@ -1,0 +1,28 @@
+{
+    "type": "article",
+    "title": "network of margraph",
+    "breadcrumb": [
+        {
+            "path": "index",
+            "title": "margraph"
+        },
+        {
+            "path": "margraph/network",
+            "title": "network of margraph"
+        }
+    ],
+    "contents": [
+      {
+        "type": "image",
+        "path": "network",
+        "extension": "png"
+      }
+    ],
+    "prev": null,
+    "index": {
+        "path": "margraph/index",
+        "title": "margraph"
+    },
+    "next": null,
+    "links": []
+}

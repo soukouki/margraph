@@ -14,7 +14,7 @@ SOURCE_DIRS = $(sort $(dir $(SOURCES)))
 
 DEPENDENCE_FILES = $(subst //,/,$(patsubst src/%,tmp/%dependence.dep,$(SOURCE_DIRS)))
 
-HTML_FILES = $(patsubst src/%.md,public/%.html,$(SOURCES))
+HTML_FILES = $(patsubst src/%.md,public/%.html,$(SOURCES)) public/network.html
 INDEXES = $(subst //,/,$(patsubst src/%,public/%index.html,$(SOURCE_DIRS)))
 
 ARTICLES_FILES = $(patsubst src/%,tmp/%articles.json,$(SOURCE_DIRS))
@@ -84,6 +84,17 @@ tmp/index.inter.json: src/*.md tmp/merged-articles.json
 public/%.html: tmp/%.inter.json scripts/make-html/base.erb
 	$(MKDIR)
 	$(MAKE_HTML) $*
+
+public/network.html: tmp/network.inter.json scripts/make-html/base.erb public/network.png
+	$(MKDIR)
+	$(MAKE_HTML) network
+
+tmp/network.inter.json: scripts/network.inter.json
+	$(MKDIR)
+	cp scripts/network.inter.json tmp/network.inter.json
+
+public/network.png: tmp/network.png
+	cp tmp/network.png public/network.png
 
 # 依存関係
 
