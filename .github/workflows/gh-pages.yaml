@@ -21,7 +21,7 @@ jobs:
           ruby-version: 2.7
       
       - name: Install Other
-        run: apt-get install graphviz & make install
+        run: sudo apt-get install graphviz & make install
       
       - name: Build
         run: make -j all
