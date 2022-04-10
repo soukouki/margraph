@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>Zig</title>
+    <title>プログラム言語</title>
   </head>
   <body>
     
@@ -19,45 +19,24 @@
           
             <li class="breadcrumb-item"><a href="../programming/index.html">programming</a></li>
           
-          <li class="breadcrumb-item">Zig</li>
+          <li class="breadcrumb-item">プログラム言語</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>Zig</h1>
+      <h1>プログラム言語</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li><a href="../programming/programming-language.html">プログラミング言語</a>の一つ</li>
-  <li>https://ziglang.org</li>
+  <li><a href="../programming/programming-language.html">プログラミング言語</a>と同じ</li>
+  <li>JIS基準などはこっちを使っている</li>
+  <li>昔はこちらの方がよく使われていたとか？</li>
 </ul>
-</div>
-            
-          
-            
-              <h3>ジェネリクスの書き方が面白い</h3>
-            
-          
-            
-              <div>```zigconst std = @import(“std”);</div>
-            
-          
-            
-              <div>fn List(comptime T: type) type {    return struct {        items: []T,        len: usize,    };}</div>
-            
-          
-            
-              <div>pub fn main() void {    var buffer: [10]i32 = undefined;    var list = List(i32){        .items = &amp;buffer,        .len = 0,    };</div>
-            
-          
-            
-              <div><pre><code>std.debug.print("{d}\n", .{list.items.len}); } ```
-</code></pre>
 </div>
             
           
@@ -77,7 +56,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../programming/type-and-value.html">型と値を同じように扱いたい</a>
+                <a href="../programming/programming-language.html">プログラミング言語</a>
               
             </div>
             <div class="col">
@@ -88,6 +67,9 @@
             </div>
             <div class="col">
               
+                次の記事<br />
+                <a href="../programming/tailwindcss.html">Tailwind CSS</a>
+              
             </div>
           </div>
         </div>
@@ -95,7 +77,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/zig.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/programming-language-2.md';">Edit</button>
         
         
       </div>
@@ -134,8 +116,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/programming-language-2.html">プログラム言語</a></h5>
-                    <p class="card-text">- プログラミング言語と同じ - JIS基準などはこっちを使っ...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/zig.html">Zig</a></h5>
+                    <p class="card-text">- プログラミング言語の一つ - https://ziglan...</p>
                   </div>
                 </div>
               </div>
@@ -191,8 +173,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../programming/type-and-value.html">型と値を同じように扱いたい</a></h5>
-                  <p class="card-text">- 型と値を同じように扱いたい   - よりシンプルに、抽象化...</p>
+                  <h5 class="card-title fs-6"><a href="../programming/prog-game.html">プログラミングを使ったゲームのアイデア</a></h5>
+                  <p class="card-text">- フィールドの中にロボット(?)なりを配置して、戦わせるゲー...</p>
                 </div>
               </div>
             </div>
