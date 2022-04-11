@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>ヒープ</title>
+  </head>
+  <body>
+    
+    <nav class="navbar sticky-top bg-body" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <div class="container" style="max-width: 40em;">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../programming/index.html">programming</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../programming/algorithms-and-data-structure/index.html">algorithms-and-data-structure</a></li>
+          
+          <li class="breadcrumb-item">ヒープ</li>
+        </ol>
+      </div>
+    </nav>
+
+    <article class="container" style="max-width: 40em;">
+
+      <h1>ヒープ</h1>
+
+      
+        <div class="contents">
+        
+            
+              <div>子要素は親要素より常に大きい(小さい)か等しい、という制約がついた<a href="../../programming/algorithms-and-data-structure/12-tree.html">木構造</a></div>
+            
+          
+            
+              <div><a href="../../programming/algorithms-and-data-structure/13-binary-tree.html">二分木</a>を使った、二分ヒープを指すことが多い</div>
+            
+          
+            
+              <div><a href="../../programming/algorithms-and-data-structure/13-binary-tree.html">二分木</a>をヒープに変換する処理は、<a href="../../programming/algorithms-and-data-structure/93-bigo-n.html">$O\left(n\right)$</a> かかる</div>
+            
+          
+            
+              <div>代わりに、要素の中で最大(最小)の要素は <a href="../../programming/algorithms-and-data-structure/90-bigo-1.html">$O\left(1\right)$</a> で取得できる</div>
+            
+          
+            
+              <div>最大(最小)の要素を取り出す(削除する)には <a href="../../programming/algorithms-and-data-structure/92-bigo-logn.html">$O\left(\log n\right)$</a> かかる(ヒープにするための並び替えに時間がかかる)</div>
+            
+          
+            
+              <div>また、挿入には <a href="../../programming/algorithms-and-data-structure/92-bigo-logn.html">$O\left(\log n\right)$</a> かかる</div>
+            
+          
+            
+              <div>ヒープ構造の実装は<a href="../../programming/algorithms-and-data-structure/07a-array.html">配列</a>だけで表現でき、例えば以下のようにすると要素同士を行き来できる</div>
+            
+          
+            
+              <div>```pyparent(i)    return floor(i/2)</div>
+            
+          
+            
+              <div>left(i)    return 2i</div>
+            
+          
+            
+              <div>right(i)    return 2i+1```</div>
+            
+          
+        </div>
+      
+
+      
+
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+                前の記事<br />
+                <a href="../../programming/algorithms-and-data-structure/14-binary-search-tree.html">二分探索木</a>
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../../programming/algorithms-and-data-structure/index.html">algorithms-and-data-structure</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../../programming/algorithms-and-data-structure/16-heap-sort.html">ヒープソート</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/algorithms-and-data-structure/15-heap.md';">Edit</button>
+        
+        
+      </div>
+
+      
+      <div class="link-network">
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/12-tree.html">木構造</a></h5>
+                  <p class="card-text">言わずと知れた、逆さまの木のようになった抽象データ構造 グラフ...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/17-graph.html">グラフ構造</a></h5>
+                    <p class="card-text">ノードとエッジで構成された抽象データ型 ノードには向きや距離を...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/kajou.html">箇条書き</a></h5>
+                    <p class="card-text">- 箇条書きが便利   - 今のmargraphだと画像も自由...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/13-binary-tree.html">二分木</a></h5>
+                  <p class="card-text">木構造の一種。それぞれのノードが2つの子しか持たない。...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/14-binary-search-tree.html">二分探索木</a></h5>
+                    <p class="card-text">ノードの値より小さい値は左側の枝に、大きい値は右側の枝に振り分...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/93-bigo-n.html">$O\left(n\right)$</a></h5>
+                  <p class="card-text">ビッグオー記法 - nが日常で扱う程度なら全然アリ - nが大...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/hyoki-yure.html">表記揺れ</a></h5>
+                    <p class="card-text">- margraphさとこの問題がもろに出る - 表記揺れをま...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/07-linked-list.html">連結リスト</a></h5>
+                    <p class="card-text">その要素と、次の要素(または前後の要素)へのポインタをもつもの...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/11-counting-sort.html">数え上げソート</a></h5>
+                    <p class="card-text">比較する要素を、それらの要素で数え上げてしまうソート。 時間計...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/10-quick-sort.html">クイックソート</a></h5>
+                    <p class="card-text">分割統治法を用いたソートアルゴリズムの一つ 適当な値を境界値と...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/09-merge-sort.html">マージソート</a></h5>
+                    <p class="card-text">分割統治法を用いたアルゴリズム - 分割   - 配列があった...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/90-bigo-1.html">$O\left(1\right)$</a></h5>
+                  <p class="card-text">ビッグオー記法、アルゴリズムのオーダー - 最高 - どんなに...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/92-bigo-logn.html">$O\left(\log n\right)$</a></h5>
+                  <p class="card-text">ビッグオー記法 - それなりに早いし、使う分なら全然問題ない気...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/07a-array.html">配列</a></h5>
+                  <p class="card-text">メモリ上で連続した領域。言わずとしれたデータ構造 リスト構造と...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../long-tweets/2021-09-09.html">プログラムの抽象化の美しさ</a></h5>
+                    <p class="card-text">> 小説や文学は読まないが、文字の美しい組み合わせや運び、そう...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/101-merge-json.html">Merge Json</a></h5>
+                    <p class="card-text">複数のjsonファイルを与えられたときに、いい感じにマージして...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/102-collect-link.html">Collect Links</a></h5>
+                    <p class="card-text">集められた記事のタイトルを使って、記事中からどの部分にリンクを...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/110a-sample.html">記事の中間表現のテスト用</a></h5>
+                    <p class="card-text">タイトル直下のテキスト 段落毎に分けておく ## h2用タイト...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/01-vector.html">ベクトル</a></h5>
+                    <p class="card-text">- ベクタとも - C++の配列とかで見れるvectorはこれ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/persistant-data-structure.html">永続データ構造</a></h5>
+                    <p class="card-text">- 変更するときに、値を直接書き換えるのではなく、変更前のバー...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/elm-comp.html">Elmで競プロ</a></h5>
+                    <p class="card-text">- 環境   - https://github.com/sou...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/daachhorce.html">Daachhorce</a></h5>
+                    <p class="card-text">- ダークホース https://tech.legalforc...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/05-stacks.html">スタック</a></h5>
+                    <p class="card-text">last-in, first-out(LIFO) 例えば平積み...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/06-queue.html">キュー</a></h5>
+                    <p class="card-text">first-in, first-out(FIFO) スタックと...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/04-selection-sort.html">選択ソート</a></h5>
+                    <p class="card-text">空間計算量$ O\left(N\right) $ 時間計算量$...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/19-adjacency-list.html">隣接リスト</a></h5>
+                    <p class="card-text">グラフ構造を表す手段の一つ ノード`i`がエッジによってノード...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/02-insertion-sort.html">挿入ソート</a></h5>
+                    <p class="card-text">空間計算量$ O\left(N\right) $ 時間計算量$...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../reading-note/tapl/01-02-types.html">型システム</a></h5>
+                    <p class="card-text">## 定義 > プログラムの各部分を、それが計算する値の種類に...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/data-structure.html">データ構造面白い</a></h5>
+                  <p class="card-text">最近データ構造が面白いと思うようになった。多分アルゴリズムとデ...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/01-intro.html">アルゴリズムとデータ構造</a></h5>
+                    <p class="card-text">アルゴリズムとデータ構造の授業のノート 時間計算量とメモリ計算...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/16-heap-sort.html">ヒープソート</a></h5>
+                  <p class="card-text">ヒープを使ったソート ヒープの最大(最小)の要素を順番に取り出...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+      </div>
+      
+
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>
