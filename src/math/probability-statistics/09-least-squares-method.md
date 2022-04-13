@@ -1,0 +1,22 @@
+# 最小二乗法
+
+- 適当な関数(1次関数など)をモデル関数として、観測された結果との差の2乗を最小化する
+- $\bar y_i = a x_i + b$
+  - $\bar y$ はモデル関数
+- 1次関数をモデル関数としたときの計算
+  - 線形回帰
+  - $\displaystyle L = \sum_{i=1}^N (\bar y_i - y_i)^2 = \sum_{i=1}^N (a x_i + b - y_i)^2$ が最小になるように $a$ と $b$ を求める
+  - 2次関数であれば、微分が0になる場所が最大値/最小値になる
+  - $\displaystyle L = \sum (a^2 x_i^2 + b^2 + y_i^2 + 2 a b x_i - 2 b y_i - 2 a x_i y_i)$
+  - $\displaystyle L = a^2 \sum x_i^2 + N b^2 + \sum y_i^2 + 2ab \sum x_i - 2b \sum y_i - 2a \sum x_i y_i$
+  - ところで、$\sum x_i^2, \sum y_i^2$ は観測結果から分かるので、これは $a$ と $b$ の2次関数となる
+    - TODO : 2変数の2次関数わからん
+  - 最小値を求めるためにbで微分すると、
+    - $\displaystyle \dfrac{\partial L}{\partial b} = 2Nb + 2a \sum x_i - 2 \sum y_i = 0$
+    - $b = \dfrac{\sum y_i - a \sum x_i}{N}$
+    - $b = \bar y_i - a \bar x_i$
+  - aも求める必要があるので、そちらも微分して
+    - $\displaystyle  \dfrac{\partial L}{\partial a} = 2a \sum x_i^2 + 2b \sum x_i - 2b \sum x_i y_i = 0$
+    - ここでbを入れたりと、少しギャップがある
+    - $a = \dfrac{\displaystyle \sum x_i y_i - N \bar x_i \bar y_i}{\displaystyle \sum x_i^2 - N \bar x_i^2}$
+      - $\sum x_i = N \bar x$ と見る
