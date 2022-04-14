@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>フーリエ級数</title>
+    <title>完全系</title>
   </head>
   <body>
     
@@ -21,36 +21,41 @@
           
             <li class="breadcrumb-item"><a href="../../math/fourier/index.html">fourier</a></li>
           
-          <li class="breadcrumb-item">フーリエ級数</li>
+          <li class="breadcrumb-item">完全系</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>フーリエ級数</h1>
+      <h1>完全系</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>$\displaystyle \sum_{n=0}^\infty a_n \varphi_n(x)$</li>
-  <li>これまでの系の話はかなり一般化したもので、これを $\cos$ に適用すると、よく言われるフーリエ級数となる</li>
-  <li>$\varphi_n(x) = \cos\left(\left(n+1\right) x \right)\quad(n=0,1,2,\dots)$
+  <li>閉区間 $[a, b]$ で定義された関数 $f$ のうち、$(f \cdot \varphi_n) = 0$ となる系を完全系と呼ぶ</li>
+  <li>ただし $f=0$ は除く</li>
+  <li>たとえば
     <ul>
-      <li>$(\varphi_i \cdot \varphi_j) = 0$ になる(らしい)</li>
-      <li>$(\varphi_i \cdot \varphi_i) = \dfrac{\pi}{2}$ になる(らしい)</li>
-      <li>$f(x)=1$ と定数関数を置いてみると、$(f \cdot \varphi_n) = 0$ となる(らしい)</li>
-      <li>1と言う定数関数を処理すると0になるのは具合が悪い(らしい)</li>
-    </ul>
-  </li>
-  <li>フーリエ級数の分野で大事なこと
-    <ul>
-      <li>フーリエ級数が収束するための条件</li>
-      <li>フーリエ級数が収束するとき、それが元の関数fに一致するかどうか
+      <li>$\varphi$ が以下のとき
         <ul>
-          <li>一致するための条件</li>
+          <li>$\varphi(x) = 1$</li>
+          <li>$\varphi_{2n-1}(x) = \cos(nx)\quad(n=1,2,3,\dots)$</li>
+          <li>$\varphi_{2n}(x) = \sin(nx)\quad(n=1,2,3,\dots)$</li>
+        </ul>
+      </li>
+      <li>$\left{ \varphi_n \right}_{n=0}^\infty$ は $[-\pi, \pi]$ 上で完全系な直行系となる</li>
+      <li>以下証明？
+        <ul>
+          <li>$\displaystyle \int_\pi^\pi \cos(nx)\ dx = 0 \quad (n \neq 0)$</li>
+          <li>$\displaystyle \int_\pi^\pi \sin(nx)\ dx = 0 \quad (n \neq 0)$
+            <ul>
+              <li>この2つはまぁグラフを想像すればそれっぽい</li>
+            </ul>
+          </li>
+          <li></li>
         </ul>
       </li>
     </ul>
@@ -75,7 +80,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/fourier/06-fourier-coefficients.html">フーリエ係数</a>
+                <a href="../../math/fourier/07-fourier-series.html">フーリエ級数</a>
               
             </div>
             <div class="col">
@@ -86,9 +91,6 @@
             </div>
             <div class="col">
               
-                次の記事<br />
-                <a href="../../math/fourier/08-complete.html">完全系</a>
-              
             </div>
           </div>
         </div>
@@ -96,34 +98,13 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/fourier/07-fourier-series.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/fourier/08-complete.md';">Edit</button>
         
         
       </div>
 
       
       <div class="link-network">
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/fourier/00-introduction.html">フーリエ解析</a></h5>
-                  <p class="card-text">- の授業ノート - 自分用にダラダラ作っているので、あまり参...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../lectures/class-note.html">授業ノート</a></h5>
-                    <p class="card-text">margraph上の授業ノート 授業の一部分しか書いてなかった...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
         
       </div>
       

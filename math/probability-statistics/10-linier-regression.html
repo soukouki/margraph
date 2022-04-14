@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>相関</title>
+    <title>線形回帰</title>
   </head>
   <body>
     
@@ -21,35 +21,25 @@
           
             <li class="breadcrumb-item"><a href="../../math/probability-statistics/index.html">probability-statistics</a></li>
           
-          <li class="breadcrumb-item">相関</li>
+          <li class="breadcrumb-item">線形回帰</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>相関</h1>
+      <h1>線形回帰</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>correlation</li>
-</ul>
-</div>
-            
-          
-            
-              <h2>正の相関</h2>
-            
-          
-            
-              <div><ul>
-  <li>ある次元が大きくなるとき、もう一方の次元も大きくなるような相関</li>
-  <li>身長と体重の関係
+  <li>授業で扱った、<a href="../../math/probability-statistics/09-least-squares-method.html">最小二乗法</a>を用いた線形<a href="../../math/probability-statistics/08-regression.html">回帰</a>について</li>
+  <li>$a$ を変形していくと、$\dfrac{C_{XY}}{S_X^2}$ となる
     <ul>
-      <li>身長が高いほど、体重も重くなる</li>
+      <li>$C_{XY}$ は測定値 $x_i$ と $y_i$ の共分散</li>
+      <li>$S_X$ は測定値 $x_i$ の分散</li>
     </ul>
   </li>
 </ul>
@@ -57,28 +47,38 @@
             
           
             
-              <h2>負の相関</h2>
+              <h2>計算方法</h2>
             
           
             
               <div><ul>
-  <li>ある次元が大きくなるとき、もう一方の次元は小さくなるような相関</li>
-  <li>欠席と成績の関係
+  <li>$\displaystyle L = \sum_{i=1}^N (\bar y_i - y_i)^2 = \sum_{i=1}^N (a x_i + b - y_i)^2$ が最小になるように $a$ と $b$ を求める</li>
+  <li>2次関数であれば、微分が0になる場所が最大値/最小値になる</li>
+  <li>$\displaystyle L = \sum (a^2 x_i^2 + b^2 + y_i^2 + 2 a b x_i - 2 b y_i - 2 a x_i y_i)$</li>
+  <li>$\displaystyle L = a^2 \sum x_i^2 + N b^2 + \sum y_i^2 + 2ab \sum x_i - 2b \sum y_i - 2a \sum x_i y_i$</li>
+  <li>ところで、$\sum x_i^2, \sum y_i^2$ は観測結果から分かるので、これは $a$ と $b$ の2次関数となる
     <ul>
-      <li>欠席が多いほど、成績は低くなる</li>
+      <li>TODO : 2変数の2次関数わからん</li>
     </ul>
   </li>
-</ul>
-</div>
-            
-          
-            
-              <h2>無相関</h2>
-            
-          
-            
-              <div><ul>
-  <li>正の相関も負の相関もないとき</li>
+  <li>最小値を求めるためにbで微分すると、
+    <ul>
+      <li>$\displaystyle \dfrac{\partial L}{\partial b} = 2Nb + 2a \sum x_i - 2 \sum y_i = 0$</li>
+      <li>$b = \dfrac{\sum y_i - a \sum x_i}{N}$</li>
+      <li>$b = \bar y_i - a \bar x_i$</li>
+    </ul>
+  </li>
+  <li>aも求める必要があるので、そちらも微分して
+    <ul>
+      <li>$\displaystyle  \dfrac{\partial L}{\partial a} = 2a \sum x_i^2 + 2b \sum x_i - 2b \sum x_i y_i = 0$</li>
+      <li>ここでbを入れたりと、少しギャップがある</li>
+      <li>$a = \dfrac{\displaystyle \sum x_i y_i - N \bar x_i \bar y_i}{\displaystyle \sum x_i^2 - N \bar x_i^2}$
+        <ul>
+          <li>$\sum x_i = N \bar x$ と見る</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 </div>
             
@@ -99,7 +99,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/probability-statistics/00-scatter-plot.html">散布図</a>
+                <a href="../../math/probability-statistics/09-least-squares-method.html">最小二乗法</a>
               
             </div>
             <div class="col">
@@ -110,9 +110,6 @@
             </div>
             <div class="col">
               
-                次の記事<br />
-                <a href="../../math/probability-statistics/02-correlation-coefficien.html">相関係数</a>
-              
             </div>
           </div>
         </div>
@@ -120,7 +117,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/01-correlation.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/10-linier-regression.md';">Edit</button>
         
         
       </div>
@@ -132,8 +129,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/00-scatter-plot.html">散布図</a></h5>
-                  <p class="card-text">- scatter plot - 縦軸と横軸に分けて、2次元の...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/09-least-squares-method.html">最小二乗法</a></h5>
+                  <p class="card-text">- 適当な関数(1次関数など)をモデル関数として、観測された結...</p>
                 </div>
               </div>
             </div>
@@ -144,29 +141,11 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/02-correlation-coefficien.html">相関係数</a></h5>
-                  <p class="card-text">- 相関の度合いを測る係数   - 正なら正の相関   - 負...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/08-regression.html">回帰</a></h5>
+                  <p class="card-text">- 見えてるものの裏側に何があるのかを探る   - 見えるもの...</p>
                 </div>
               </div>
             </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/04-average.html">平均</a></h5>
-                    <p class="card-text">- xの平均を $\bar x$ とする - $\displa...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05-standared-deviation.html">標準偏差</a></h5>
-                    <p class="card-text">- $S_x  \sqrt{\dfrac{\sum_{i=1}...</p>
-                  </div>
-                </div>
-              </div>
             
           </div>
         
