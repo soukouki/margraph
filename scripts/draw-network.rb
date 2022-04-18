@@ -19,9 +19,6 @@ body = network
 
 puts <<~DOT
   digraph {
-    graph [fontname = "IPAGothic"];
-    node [fontname = "IPAGothic"];
-    edge [fontname = "IPAGothic"];
     layout = fdp;
     #{body}
   }
