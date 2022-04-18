@@ -1,24 +1,11 @@
 # 直交系
 
-- 系(数学)で、直行であるもの
-- 直行の性質は正規直交基底と似たようなもの
-- ある系が直行系かどうかを証明してみる
-  - $\varphi$ が以下のとき、$\left\{ \varphi_n \right\}_{n=0}^\infty$ は $[-\pi, \pi]$ 上で完全系な直行系となる
-    - $\varphi(x) = 1$
-    - $\varphi_{2n-1}(x) = \cos(nx)\quad(n=1,2,3,\dots)$
-    - $\varphi_{2n}(x) = \sin(nx)\quad(n=1,2,3,\dots)$
-  - 以下を証明すれば $\{\varphi_n\}_{n=0}^\infty$ が直行系であることが分かる
-    - $\displaystyle \int_\pi^\pi \cos(nx)\ dx = 0 \quad (n \neq 0)$
-    - $\displaystyle \int_\pi^\pi \sin(nx)\ dx = 0 \quad (n \neq 0)$
-      - この2つはまぁグラフを想像すればそれっぽい
-    - $\displaystyle \int_{-\pi}^\pi \cos(mx)\cos(nx)\ dx = \begin{cases} 0\quad(m \neq n)\\ \pi\quad(m = n \neq 0) \end{cases}$
-      - 例えば $n = m = 1$ のとき、三角関数の半角の公式を使えば
-        - $\displaystyle \int_{-\pi}^\pi \cos^2 x = \int_{-\pi}^\pi \frac{1+\cos 2x}{2}\ dx$
-        - とりあえず正の値にはなりそう
-    - $\displaystyle \int_{-\pi}^\pi \sin(mx)\sin(nx)\ dx = \begin{cases} 0\quad(m \neq n)\\ \pi\quad(m = n \neq 0) \end{cases}$
-      - 例えば同じく $n = m = 1$ のとき、同様に
-        - $\displaystyle \int_{-\pi}^\pi \sin^2 x = \int_{-\pi}^\pi \frac{1-\cos 2x}{2}\ dx$
-        - これも確かに正の値にはなりそう
-    - $\displaystyle \int_{-\pi}^\pi \cos(mx)\sin(nx)\ dx = 0\quad(m,n: \text{任意})$
-      - 奇関数なので、明らかに0
-    - それぞれについてはわかったけど、なぜ直行系であると分かるの？
+- 系(数学)で、直交であるもの
+- 直交の性質は正規直交基底と似たようなもの
+- これを使うと
+  - $\displaystyle f(x) = \sum_{i=0}^\infty a_i \varphi_i$ としたとき、
+  - $\displaystyle \int_a^b f(x) \varphi_n(x)\ dx = a_n(\varphi_n \cdot \varphi_n) = a_n \|\| \varphi_n \|\|^2$
+    - $f(x)$ から特定の次元の値を取り出す感じ
+  - よって $\displaystyle a_n = \frac{1}{\|\|\varphi_n\|\|^2} \int_a^b f(x)\varphi_n(x)\ dx$
+    - これがフーリエ係数につながる
+- ある系が直交系か見てみる

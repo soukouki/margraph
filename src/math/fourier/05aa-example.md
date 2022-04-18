@@ -1,0 +1,21 @@
+# ある系が直交系か見てみる
+
+- $\varphi$ が以下のとき、$\left\{ \varphi_n \right\}_{n=0}^\infty$ は $[-\pi, \pi]$ 上で完全系な直交系となる
+  - $\varphi(x) = 1$
+  - $\varphi_{2n-1}(x) = \cos(nx)\quad(n=1,2,3,\dots)$
+  - $\varphi_{2n}(x) = \sin(nx)\quad(n=1,2,3,\dots)$
+- 以下を証明すれば $\{\varphi_n\}_{n=0}^\infty$ が直交系であることが分かる
+  - $\displaystyle \int_\pi^\pi \cos(nx)\ dx = 0 \quad (n \neq 0)$
+  - $\displaystyle \int_\pi^\pi \sin(nx)\ dx = 0 \quad (n \neq 0)$
+    - この2つはまぁグラフを想像すればそれっぽい
+  - $\displaystyle \int_{-\pi}^\pi \cos(mx)\cos(nx)\ dx = \begin{cases} 0\quad(m \neq n)\\ \pi\quad(m = n \neq 0) \end{cases}$
+    - 例えば $n = m = 1$ のとき、三角関数の半角の公式を使えば
+      - $\displaystyle \int_{-\pi}^\pi \cos^2 x = \int_{-\pi}^\pi \frac{1+\cos 2x}{2}\ dx$
+      - とりあえず正の値にはなりそう
+  - $\displaystyle \int_{-\pi}^\pi \sin(mx)\sin(nx)\ dx = \begin{cases} 0\quad(m \neq n)\\ \pi\quad(m = n \neq 0) \end{cases}$
+    - 例えば同じく $n = m = 1$ のとき、同様に
+      - $\displaystyle \int_{-\pi}^\pi \sin^2 x = \int_{-\pi}^\pi \frac{1-\cos 2x}{2}\ dx$
+      - これも確かに正の値にはなりそう
+  - $\displaystyle \int_{-\pi}^\pi \cos(mx)\sin(nx)\ dx = 0\quad(m,n: \text{任意})$
+    - 奇関数なので、明らかに0
+  - それぞれについて成り立ちそうなことはわかったけど、なぜ直交系であると分かるの？

@@ -1,4 +1,4 @@
-# 直行系
+# 系(数学)
 
 - ベクトルで扱っていたものを関数に適用していく
   - $\displaystyle (f \cdot g) = \int_a^b f(x)g(x)\ dx$
@@ -8,11 +8,6 @@
   - $(\varphi_i \cdot \varphi_j) = 0\quad(i \neq j)$
     - 添字が違うとき、掛けると0になる
     - ベクトルの内積みたい
-- これを使うと
-  - $\displaystyle f(x) = \sum_{i=0}^\infty a_i \varphi_i$ としたとき、
-  - $\displaystyle \int_a^b f(x) \varphi_n(x)\ dx = a_n(\varphi_n \cdot \varphi_n) = a_n \|\| \varphi_n \|\|^2$
-    - $f(x)$ から特定の次元の値を取り出す感じ
-  - よって $\displaystyle a_n = \frac{1}{\|\|\varphi_n\|\|^2} \int_a^b f(x)\varphi_n(x)\ dx$
-    - これがフーリエ係数につながる
-- これなんか群論ににてない？
+- これなんか群論に似てない？
   - ベクトルで扱っていたものを関数に適用できないか試すところとか
+  - 純粋数学に近いからそう感じるとか？
