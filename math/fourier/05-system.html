@@ -48,12 +48,6 @@
           <li>絶対値(<a href="../../math/fourier/03-norm.html">ノルム</a>)は、さっきの積を使って定義する</li>
         </ul>
       </li>
-      <li>$|| \varphi_i || = 1$
-        <ul>
-          <li><a href="../../math/fourier/03-norm.html">ノルム</a>が1の $\varphi_i$ を導入する</li>
-          <li>つまり $(\varphi_i \cdot \varphi_i) = 1$</li>
-        </ul>
-      </li>
       <li>$(\varphi_i \cdot \varphi_j) = 0\quad(i \neq j)$
         <ul>
           <li>添字が違うとき、掛けると0になる</li>
@@ -62,24 +56,10 @@
       </li>
     </ul>
   </li>
-  <li>これを使うと
-    <ul>
-      <li>$\displaystyle f(x) = \sum_{i=0}^\infty a_i \varphi_i$ としたとき</li>
-      <li>$\displaystyle \int_a^b f(x) \varphi_n(x)\ dx = a_n(\varphi_n \cdot \varphi_n) = a_n || \varphi_n ||^2 = a_n$
-        <ul>
-          <li>$f(x)$ から特定の次元の値を取り出す感じ</li>
-        </ul>
-      </li>
-      <li>よって $\displaystyle a_n = \int_a^b f(x)\varphi_n(x)\ dx$
-        <ul>
-          <li>これが<a href="../../math/fourier/06-fourier-coefficients.html">フーリエ係数</a>につながる</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>これなんか群論ににてない？
+  <li>これなんか群論に似てない？
     <ul>
       <li><a href="../../math/fourier/01-vector.html">ベクトル</a>で扱っていたものを関数に適用できないか試すところとか</li>
+      <li>純粋数学に近いからそう感じるとか？</li>
     </ul>
   </li>
 </ul>
@@ -102,7 +82,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/fourier/04-orthogonal-basis.html">正規直行基底</a>
+                <a href="../../math/fourier/04a-orthonomal-basis.html">正規直交基底</a>
               
             </div>
             <div class="col">
@@ -216,6 +196,15 @@
               </div>
             </div>
             
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/05b-orthonormal-system.html">正規直交系</a></h5>
+                    <p class="card-text">- 直交系に以下の条件を追加したもの - $\|\| \var...</p>
+                  </div>
+                </div>
+              </div>
+            
           </div>
         
           <div class="row flex-nowrap overflow-auto">
@@ -243,20 +232,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/fourier/06-fourier-coefficients.html">フーリエ係数</a></h5>
-                  <p class="card-text">- 先程定義した系を使う - $\displaystyle a...</p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
                   <h5 class="card-title fs-6"><a href="../../math/fourier/05a-orthogonal-system.html">直交系</a></h5>
-                  <p class="card-text">- 系(数学)で、直行であるもの - 直行の性質は正規直交基底...</p>
+                  <p class="card-text">- 系(数学)で、直交であるもの - 直交の性質は正規直交基底...</p>
                 </div>
               </div>
             </div>
@@ -264,8 +241,26 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/08-complete.html">完全系</a></h5>
-                    <p class="card-text">- 閉区間 $[a, b]$ で定義された関数 $f$ のうち...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/04a-orthonomal-basis.html">正規直交基底</a></h5>
+                    <p class="card-text">- 直交基底に加えて、以下を満たすもの   - $\|\|\b...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/06-fourier-coefficients.html">フーリエ係数</a></h5>
+                    <p class="card-text">- 先程定義した系を使う - $\displaystyle a...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/05aa-example.html">ある系が直交系か見てみる</a></h5>
+                    <p class="card-text">- $\varphi$ が以下のとき、$\left\{ \va...</p>
                   </div>
                 </div>
               </div>

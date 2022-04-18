@@ -36,55 +36,24 @@
         
             
               <div><ul>
-  <li><a href="../../math/fourier/05-system.html">系(数学)</a>で、直行であるもの</li>
-  <li>直行の性質は正規直交基底と似たようなもの</li>
-  <li>ある系が直行系かどうかを証明してみる
+  <li><a href="../../math/fourier/05-system.html">系(数学)</a>で、直交であるもの</li>
+  <li>直交の性質は<a href="../../math/fourier/04a-orthonomal-basis.html">正規直交基底</a>と似たようなもの</li>
+  <li>これを使うと
     <ul>
-      <li>$\varphi$ が以下のとき、$\left{ \varphi_n \right}_{n=0}^\infty$ は $[-\pi, \pi]$ 上で<a href="../../math/fourier/08-complete.html">完全系</a>な直行系となる
+      <li>$\displaystyle f(x) = \sum_{i=0}^\infty a_i \varphi_i$ としたとき、</li>
+      <li>$\displaystyle \int_a^b f(x) \varphi_n(x)\ dx = a_n(\varphi_n \cdot \varphi_n) = a_n || \varphi_n ||^2$
         <ul>
-          <li>$\varphi(x) = 1$</li>
-          <li>$\varphi_{2n-1}(x) = \cos(nx)\quad(n=1,2,3,\dots)$</li>
-          <li>$\varphi_{2n}(x) = \sin(nx)\quad(n=1,2,3,\dots)$</li>
+          <li>$f(x)$ から特定の次元の値を取り出す感じ</li>
         </ul>
       </li>
-      <li>以下を証明すれば ${\varphi_n}_{n=0}^\infty$ が直行系であることが分かる
+      <li>よって $\displaystyle a_n = \frac{1}{||\varphi_n||^2} \int_a^b f(x)\varphi_n(x)\ dx$
         <ul>
-          <li>$\displaystyle \int_\pi^\pi \cos(nx)\ dx = 0 \quad (n \neq 0)$</li>
-          <li>$\displaystyle \int_\pi^\pi \sin(nx)\ dx = 0 \quad (n \neq 0)$
-            <ul>
-              <li>この2つはまぁグラフを想像すればそれっぽい</li>
-            </ul>
-          </li>
-          <li>$\displaystyle \int_{-\pi}^\pi \cos(mx)\cos(nx)\ dx = \begin{cases} 0\quad(m \neq n)\ \pi\quad(m = n \neq 0) \end{cases}$
-            <ul>
-              <li>例えば $n = m = 1$ のとき、三角関数の半角の公式を使えば
-                <ul>
-                  <li>$\displaystyle \int_{-\pi}^\pi \cos^2 x = \int_{-\pi}^\pi \frac{1+\cos 2x}{2}\ dx$</li>
-                  <li>とりあえず正の値にはなりそう</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>$\displaystyle \int_{-\pi}^\pi \sin(mx)\sin(nx)\ dx = \begin{cases} 0\quad(m \neq n)\ \pi\quad(m = n \neq 0) \end{cases}$
-            <ul>
-              <li>例えば同じく $n = m = 1$ のとき、同様に
-                <ul>
-                  <li>$\displaystyle \int_{-\pi}^\pi \sin^2 x = \int_{-\pi}^\pi \frac{1-\cos 2x}{2}\ dx$</li>
-                  <li>これも確かに正の値にはなりそう</li>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          <li>$\displaystyle \int_{-\pi}^\pi \cos(mx)\sin(nx)\ dx = 0\quad(m,n: \text{任意})$
-            <ul>
-              <li>奇関数なので、明らかに0</li>
-            </ul>
-          </li>
-          <li>それぞれについてはわかったけど、なぜ直行系であると分かるの？</li>
+          <li>これが<a href="../../math/fourier/06-fourier-coefficients.html">フーリエ係数</a>につながる</li>
         </ul>
       </li>
     </ul>
   </li>
+  <li><a href="../../math/fourier/05aa-example.html">ある系が直交系か見てみる</a></li>
 </ul>
 </div>
             
@@ -117,7 +86,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../../math/fourier/06-fourier-coefficients.html">フーリエ係数</a>
+                <a href="../../math/fourier/05aa-example.html">ある系が直交系か見てみる</a>
               
             </div>
           </div>
@@ -171,11 +140,23 @@
                 </div>
               </div>
             
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/04a-orthonomal-basis.html">正規直交基底</a></h5>
+                  <p class="card-text">- 直交基底に加えて、以下を満たすもの   - $\|\|\b...</p>
+                </div>
+              </div>
+            </div>
+            
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/06-fourier-coefficients.html">フーリエ係数</a></h5>
-                    <p class="card-text">- 先程定義した系を使う - $\displaystyle a...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/04-orthogonal-basis.html">直交基底</a></h5>
+                    <p class="card-text">- 以下を満たすもの   - $\boldsymbol{e}_...</p>
                   </div>
                 </div>
               </div>
@@ -186,8 +167,41 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/fourier/08-complete.html">完全系</a></h5>
-                  <p class="card-text">- 閉区間 $[a, b]$ で定義された関数 $f$ のうち...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/06-fourier-coefficients.html">フーリエ係数</a></h5>
+                  <p class="card-text">- 先程定義した系を使う - $\displaystyle a...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/05aa-example.html">ある系が直交系か見てみる</a></h5>
+                  <p class="card-text">- $\varphi$ が以下のとき、$\left\{ \va...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/08-complete.html">完全系</a></h5>
+                    <p class="card-text">- 閉区間 $[a, b]$ で定義された関数 $f$ のうち...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/05b-orthonormal-system.html">正規直交系</a></h5>
+                  <p class="card-text">- 直交系に以下の条件を追加したもの - $\|\| \var...</p>
                 </div>
               </div>
             </div>
