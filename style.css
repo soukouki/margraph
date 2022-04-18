@@ -55,6 +55,13 @@ blockquote {
   margin-bottom: 8px;
 }
 
+.contents :is(ul, ol) {
+  padding-left: calc(1rem + 2px);
+}
+.contents :is(ul, ol) > li {
+  padding-left: 0rem;
+}
+
 table {
   max-width: fit-content;
   border: 8px;
