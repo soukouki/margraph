@@ -1,12 +1,13 @@
 自己紹介
 =====
 
-どこかの大学の情報系の学科に通っています。
+会津大学のコンピュータ理工学科とかいうところに通ってます。
 
-数学とか物理とかが授業についていけなくなっている大学生です。
-
-|GitHub|twitter|Discord|
-|---|---|---|
-|soukouki|sou7___|sou7#0094|
+- GitHub
+  - https://github.com/soukouki
+- Twitter
+  - https://twitter.com/sou7___
+- Discord
+  - sou7#0094
 
 彼女募集中です。
