@@ -3,6 +3,10 @@ article > * + * {
   margin-top: 16px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
 .link-network > * + * {
   margin-top: 16px;
 }
@@ -47,21 +51,30 @@ blockquote {
   border-left-color: var(--bs-primary);
 }
 
+.contents > div > :is(ul, ol) > li {
+  margin-bottom: 8px;
+}
+
 table {
   max-width: fit-content;
-  border: 16px;
-  border-radius: 16px;
+  border: 8px;
+  border-radius: 8px;
+}
+thead > tr > th {
+  font-weight: normal;
+}
+thead > tr > th,
+tbody > tr > td {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 thead > tr > th,
 tbody > tr > td {
   border: none;
 }
+thead > tr > th + th,
 tbody > tr > td + td {
-  padding-left: 32px;
-}
-thead > tr > th {
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-left: 16px;
 }
 thead > tr,
 tbody > tr {
@@ -71,7 +84,7 @@ thead > tr > th {
   border-bottom: solid 2px var(--bs-light);
 }
 tbody > tr + tr > td {
-  border-top: solid 2px var(--bs-light);
+  border-top: solid 1px var(--bs-gray);
 }
 thead > tr > th:empty {
   border: none;
