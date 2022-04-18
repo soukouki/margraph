@@ -1,4 +1,4 @@
-# 系(数学)
+# 関数系
 
 - ベクトルで扱っていたものを関数に適用していく
   - $\displaystyle (f \cdot g) = \int_a^b f(x)g(x)\ dx$

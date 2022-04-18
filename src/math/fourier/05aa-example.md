@@ -1,10 +1,10 @@
-# ある系が直交系か見てみる
+# ある関数系が直交関数系か見てみる
 
-- $\varphi$ が以下のとき、$\left\{ \varphi_n \right\}_{n=0}^\infty$ は $[-\pi, \pi]$ 上で完全系な直交系となる
+- $\varphi$ が以下のとき、$\left\{ \varphi_n \right\}_{n=0}^\infty$ は $[-\pi, \pi]$ 上で完全関数系な直交関数系となる
   - $\varphi(x) = 1$
   - $\varphi_{2n-1}(x) = \cos(nx)\quad(n=1,2,3,\dots)$
   - $\varphi_{2n}(x) = \sin(nx)\quad(n=1,2,3,\dots)$
-- 以下を証明すれば $\{\varphi_n\}_{n=0}^\infty$ が直交系であることが分かる
+- 以下を証明すれば $\{\varphi_n\}_{n=0}^\infty$ が直交関数系であることが分かる
   - $\displaystyle \int_\pi^\pi \cos(nx)\ dx = 0 \quad (n \neq 0)$
   - $\displaystyle \int_\pi^\pi \sin(nx)\ dx = 0 \quad (n \neq 0)$
     - この2つはまぁグラフを想像すればそれっぽい
@@ -18,4 +18,4 @@
       - これも確かに正の値にはなりそう
   - $\displaystyle \int_{-\pi}^\pi \cos(mx)\sin(nx)\ dx = 0\quad(m,n: \text{任意})$
     - 奇関数なので、明らかに0
-  - それぞれについて成り立ちそうなことはわかったけど、なぜ直交系であると分かるの？
+  - それぞれについて成り立ちそうなことはわかったけど、なぜ直交関数系であると分かるの？
