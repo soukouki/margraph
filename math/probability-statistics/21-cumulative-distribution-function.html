@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>Coq</title>
+    <title>累積分布関数</title>
     <meta NAME="robots" CONTENT="noindex,nofollow">
   </head>
   <body>
@@ -18,30 +18,31 @@
           
             <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
+            <li class="breadcrumb-item"><a href="../../math/index.html">math</a></li>
           
-            <li class="breadcrumb-item"><a href="../../reading-note/coq/index.html">coq</a></li>
+            <li class="breadcrumb-item"><a href="../../math/probability-statistics/index.html">probability-statistics</a></li>
           
-          <li class="breadcrumb-item">Coq</li>
+          <li class="breadcrumb-item">累積分布関数</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>Coq</h1>
+      <h1>累積分布関数</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>https://www.chiguri.info/sfja/index.html の勉強メモ</li>
-  <li>ファイル名にはアルファベットの連番とアンダーバーを使う
+  <li>$\displaystyle F(x) = \int_{-\infty}^{x} f(x’)\ dx’$
     <ul>
-      <li>ファイル名に数字やハイフンを入れるとVSCodeの拡張機能が動かなくなるので</li>
+      <li>ある値までの密度分布を積分したもの</li>
     </ul>
   </li>
+  <li>$F(x) = P(X \leq x)$ とも書ける</li>
+  <li>逆に微分していけば密度分布になる</li>
 </ul>
 </div>
             
@@ -61,17 +62,20 @@
           <div class="row text-center">
             <div class="col">
               
+                前の記事<br />
+                <a href="../../math/probability-statistics/20-probability-mass.html">確率質量</a>
+              
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../../reading-note/coq/index.html">coq</a>
+                <a href="../../math/probability-statistics/index.html">probability-statistics</a>
               
             </div>
             <div class="col">
               
                 次の記事<br />
-                <a href="../../reading-note/coq/aa_bool.html">ブール演算(Coq)</a>
+                <a href="../../math/probability-statistics/22-expectation-value.html">期待値</a>
               
             </div>
           </div>
@@ -80,7 +84,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/coq/_coq.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/21-cumulative-distribution-function.md';">Edit</button>
         
         
       </div>

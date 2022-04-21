@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>標準偏差</title>
+    <title>期待値を使った分散</title>
     <meta NAME="robots" CONTENT="noindex,nofollow">
   </head>
   <body>
@@ -22,38 +22,28 @@
           
             <li class="breadcrumb-item"><a href="../../math/probability-statistics/index.html">probability-statistics</a></li>
           
-          <li class="breadcrumb-item">標準偏差</li>
+          <li class="breadcrumb-item">期待値を使った分散</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>標準偏差</h1>
+      <h1>期待値を使った分散</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>$S_x = \sqrt{\dfrac{\sum_{i=1}^N (x_i - \bar x)^2}{N}}$
+  <li>離散型の場合、$\displaystyle V[X] = \sum_{k=1}^{|\Omega|} (x_k - E[x])^2 P(X=x_k)$
     <ul>
-      <li>$N$ はサンプルサイズ(データ数)</li>
-      <li>$\bar x$ はxの<a href="../../math/probability-statistics/04-average.html">平均</a></li>
+      <li>$E[x]$ は<a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></li>
+      <li><a href="../../math/probability-statistics/04-average.html">平均</a>の代わりに<a href="../../math/probability-statistics/22-expectation-value.html">期待値</a>を使っている</li>
+      <li>$\dfrac{1}{N}$ の代わりに $P(X=x_k)$ を使っている</li>
     </ul>
   </li>
-  <li><a href="../../math/probability-statistics/04-average.html">平均</a>値を基準にする場合、すごい使いやすい
-    <ul>
-      <li><a href="../../math/probability-statistics/04-average.html">平均</a>値に近いとき、最小になるので使いやすい</li>
-    </ul>
-  </li>
-  <li>$\dfrac{\sum |x_i - \bar x|}{N}$ では、なんか微妙らしい
-    <ul>
-      <li>$A = \dfrac{\sum |x_i - x_{med}|}{N}$ とすると、中央値が基準に使いやすい値になる</li>
-      <li>あんま使わない
--　外れ値があって、標準偏差が扱いづらいときに使う</li>
-    </ul>
-  </li>
+  <li>連続型の場合、$\displaystyle V[X] = \int_{-\infty}^\infty (x-E[X])^2 f(x)\ dx$</li>
 </ul>
 </div>
             
@@ -74,7 +64,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/probability-statistics/04-average.html">平均</a>
+                <a href="../../math/probability-statistics/22-expectation-value.html">期待値</a>
               
             </div>
             <div class="col">
@@ -86,7 +76,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../../math/probability-statistics/06-hyoujun-tokuten.html">標準得点</a>
+                <a href="../../math/probability-statistics/24-.html">期待値を使った標準得点</a>
               
             </div>
           </div>
@@ -95,13 +85,34 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/05-standared-deviation.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/23-.md';">Edit</button>
         
         
       </div>
 
       
       <div class="link-network">
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></h5>
+                  <p class="card-text">- 試行回数を無限に増やしていったときの平均値 - 標本に対し...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/19-probablity-density.html">確率密度</a></h5>
+                    <p class="card-text">- 無限にデータを増やして、ヒストグラムの幅をどんどん小さくし...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
         
           <div class="row flex-nowrap overflow-auto">
             <div class="col-4">
@@ -116,8 +127,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/23-.html">期待値を使った分散</a></h5>
-                    <p class="card-text">- 離散型の場合、$\displaystyle V[X]  \...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05-standared-deviation.html">標準偏差</a></h5>
+                    <p class="card-text">- $S_x  \sqrt{\dfrac{\sum_{i=1}...</p>
                   </div>
                 </div>
               </div>
@@ -125,8 +136,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></h5>
-                    <p class="card-text">- 試行回数を無限に増やしていったときの平均値 - 標本に対し...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/02-correlation-coefficien.html">相関係数</a></h5>
+                    <p class="card-text">- 相関の度合いを測る係数   - 正なら正の相関   - 負...</p>
                   </div>
                 </div>
               </div>
@@ -136,48 +147,6 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/10-quick-sort.html">クイックソート</a></h5>
                     <p class="card-text">分割統治法を用いたソートアルゴリズムの一つ 適当な値を境界値と...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/02-correlation-coefficien.html">相関係数</a></h5>
-                  <p class="card-text">- 相関の度合いを測る係数   - 正なら正の相関   - 負...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/01-correlation.html">相関</a></h5>
-                    <p class="card-text">- correlation ## 正の相関 - ある次元が大き...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/06-hyoujun-tokuten.html">標準得点</a></h5>
-                  <p class="card-text">- Zスコア - $Z\dfrac{x_i - \bar x_...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/07-hensati.html">偏差値</a></h5>
-                    <p class="card-text">- $10Z + 50$   - $Z$ は標準得点 - 10...</p>
                   </div>
                 </div>
               </div>

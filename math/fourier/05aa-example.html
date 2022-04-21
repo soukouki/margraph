@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>ある関数系が直交関数系か見てみる</title>
+    <title>$\{cos nx\}_{n=1}^\infty$ は $[0, \pi]$ で直交関数系である</title>
     <meta NAME="robots" CONTENT="noindex,nofollow">
   </head>
   <body>
@@ -22,61 +22,49 @@
           
             <li class="breadcrumb-item"><a href="../../math/fourier/index.html">fourier</a></li>
           
-          <li class="breadcrumb-item">ある関数系が直交関数系か見てみる</li>
+          <li class="breadcrumb-item">$\{cos nx\}_{n=1}^\infty$ は $[0, \pi]$ で直交関数系である</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>ある関数系が直交関数系か見てみる</h1>
+      <h1>$\{cos nx\}_{n=1}^\infty$ は $[0, \pi]$ で直交関数系である</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>$\varphi$ が以下のとき、$\left{ \varphi_n \right}_{n=0}^\infty$ は $[-\pi, \pi]$ 上で<a href="../../math/fourier/08-complete.html">完全関数系</a>な<a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a>となる
+  <li>次の2つを示せれば、<a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a>だとわかる
     <ul>
-      <li>$\varphi(x) = 1$</li>
-      <li>$\varphi_{2n-1}(x) = \cos(nx)\quad(n=1,2,3,\dots)$</li>
-      <li>$\varphi_{2n}(x) = \sin(nx)\quad(n=1,2,3,\dots)$</li>
-    </ul>
-  </li>
-  <li>以下を証明すれば ${\varphi_n}_{n=0}^\infty$ が<a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a>であることが分かる
-    <ul>
-      <li>$\displaystyle \int_\pi^\pi \cos(nx)\ dx = 0 \quad (n \neq 0)$</li>
-      <li>$\displaystyle \int_\pi^\pi \sin(nx)\ dx = 0 \quad (n \neq 0)$
+      <li>$n \neq m$ のとき $\int \cos nx \cos mx\ dx = 0$
         <ul>
-          <li>この2つはまぁグラフを想像すればそれっぽい</li>
-        </ul>
-      </li>
-      <li>$\displaystyle \int_{-\pi}^\pi \cos(mx)\cos(nx)\ dx = \begin{cases} 0\quad(m \neq n)\ \pi\quad(m = n \neq 0) \end{cases}$
-        <ul>
-          <li>例えば $n = m = 1$ のとき、三角関数の半角の公式を使えば
-            <ul>
-              <li>$\displaystyle \int_{-\pi}^\pi \cos^2 x = \int_{-\pi}^\pi \frac{1+\cos 2x}{2}\ dx$</li>
-              <li>とりあえず正の値にはなりそう</li>
-            </ul>
+          <li>
+\[\begin{eqnarray}
+\int_0^\pi \cos nx \cos mx\ dx &amp;=&amp; \int_0^\pi \dfrac{1}{2} \big\{ \cos \left( nx+mx \right) + \cos \left( nx-mx \right) \big\} dx \\
+&amp;=&amp; \dfrac{1}{2} \int_0^\pi \big\{ \cos (n+m) x + \cos (n-m) x \big\}\ dx \\
+&amp;=&amp; \dfrac{1}{2} \left[ \dfrac{sin(n+m) x}{n+m} + \dfrac{sin(n-m) x}{n-m} \right]_0^\pi \\
+&amp;=&amp; 0
+\end{eqnarray}\]
           </li>
+          <li>三角関数の和積公式で変換</li>
+          <li>$\sin(0) = \sin(\pi) = 0$</li>
         </ul>
       </li>
-      <li>$\displaystyle \int_{-\pi}^\pi \sin(mx)\sin(nx)\ dx = \begin{cases} 0\quad(m \neq n)\ \pi\quad(m = n \neq 0) \end{cases}$
+      <li>$\int \cos^2 nx\ dx = a_n$
         <ul>
-          <li>例えば同じく $n = m = 1$ のとき、同様に
-            <ul>
-              <li>$\displaystyle \int_{-\pi}^\pi \sin^2 x = \int_{-\pi}^\pi \frac{1-\cos 2x}{2}\ dx$</li>
-              <li>これも確かに正の値にはなりそう</li>
-            </ul>
+          <li>
+\[\begin{eqnarray}
+\int_0^\pi \cos^2 nx\ dx &amp;=&amp; \int_0^\pi \dfrac{1}{2} ( \cos 2nx + \cos 0 ) dx \\
+&amp;=&amp; \dfrac{1}{2} \int_0^\pi ( \cos 2nx + 1 )\ dx \\
+&amp;=&amp; \dfrac{1}{2} \left[ \dfrac{\sin 2nx}{2n} + \pi \right]_0^\pi \\
+&amp;=&amp; \dfrac{\pi}{2}
+\end{eqnarray}\]
           </li>
+          <li>同じく三角関数の和積公式と、$\sin(0) = \sin(\pi) = 0$で変形</li>
         </ul>
       </li>
-      <li>$\displaystyle \int_{-\pi}^\pi \cos(mx)\sin(nx)\ dx = 0\quad(m,n: \text{任意})$
-        <ul>
-          <li>奇関数なので、明らかに0</li>
-        </ul>
-      </li>
-      <li>それぞれについて成り立ちそうなことはわかったけど、なぜ<a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a>であると分かるの？</li>
     </ul>
   </li>
 </ul>
@@ -132,8 +120,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/fourier/08-complete.html">完全関数系</a></h5>
-                  <p class="card-text">- 閉区間 $[a, b]$ で定義された関数 $f$ のうち...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a></h5>
+                  <p class="card-text">- 関数系(数学)で、直交であるもの - 直交の性質は直交基底...</p>
                 </div>
               </div>
             </div>
@@ -147,23 +135,11 @@
                 </div>
               </div>
             
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a></h5>
-                  <p class="card-text">- 関数系(数学)で、直交であるもの - 直交の性質は正規直交...</p>
-                </div>
-              </div>
-            </div>
-            
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/04a-orthonomal-basis.html">正規直交基底</a></h5>
-                    <p class="card-text">- 直交基底に加えて、以下を満たすもの   - $\|\|\b...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/04-orthogonal-basis.html">直交基底</a></h5>
+                    <p class="card-text">- 以下を満たすもの   - $\boldsymbol{e}_...</p>
                   </div>
                 </div>
               </div>
@@ -182,6 +158,15 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/fourier/05b-orthonormal-system.html">正規直交関数系</a></h5>
                     <p class="card-text">- 直交関数系に以下の条件を追加したもの - $\|\| \v...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/09-trigonometric-system.html">三角関数系</a></h5>
+                    <p class="card-text">- $1, \cos x, \sin x, \cos 2x, ...</p>
                   </div>
                 </div>
               </div>

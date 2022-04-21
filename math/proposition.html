@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
-    <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>ブール演算(Coq)</title>
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <title>命題</title>
     <meta NAME="robots" CONTENT="noindex,nofollow">
   </head>
   <body>
@@ -16,67 +16,27 @@
       <div class="container" style="max-width: 40em;">
         <ol class="breadcrumb">
           
-            <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
+            <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
+            <li class="breadcrumb-item"><a href="../math/index.html">math</a></li>
           
-            <li class="breadcrumb-item"><a href="../../reading-note/coq/index.html">coq</a></li>
-          
-          <li class="breadcrumb-item">ブール演算(Coq)</li>
+          <li class="breadcrumb-item">命題</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>ブール演算(Coq)</h1>
+      <h1>命題</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>演算子の優先順位は<code>&amp;&amp;</code>と<code>||</code>で同じで、前にある方から計算される</li>
+  <li>正しいか正しくないかが分かるもの</li>
 </ul>
 </div>
-            
-          
-            
-              <pre><code class="language-v">Inductive bool : Type :=
-  | true
-  | false.
-
-Definition negb (b:bool) : bool :=
-  match b with
-  | true => false
-  | false => true
-  end.
-
-Definition andb (b1:bool) (b2:bool) : bool :=
-  match b1 with
-  | true => b2
-  | false => false
-  end.
-
-Definition orb (b1:bool) (b2:bool) : bool :=
-  match b1 with
-  | true => true
-  | false => b2
-  end.
-
-Notation "x && y" := (andb x y).
-Notation "x || y" := (orb x y).
-
-Example test_andb_orb5 : false && true || true = true.
-Proof. simpl. reflexivity. Qed.
-Example test_andb_orb7 : false && false || true = true.
-Proof. simpl. reflexivity. Qed.
-
-Example test_andb_orb14 : false || true && false = false.
-Proof. simpl. reflexivity. Qed.
-Example test_andb_orb15 : false || false && true = false.
-Proof. simpl. reflexivity. Qed.
-</code></pre>
             
           
         </div>
@@ -95,19 +55,16 @@ Proof. simpl. reflexivity. Qed.
             <div class="col">
               
                 前の記事<br />
-                <a href="../../reading-note/coq/_coq.html">Coq</a>
+                <a href="../math/losistics.html">論理</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../../reading-note/coq/index.html">coq</a>
+                <a href="../math/index.html">math</a>
               
             </div>
             <div class="col">
-              
-                次の記事<br />
-                <a href="../../reading-note/coq/ab_nat.html">数(Coq)</a>
               
             </div>
           </div>
@@ -116,13 +73,43 @@ Proof. simpl. reflexivity. Qed.
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/coq/aa_bool.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/proposition.md';">Edit</button>
         
         
       </div>
 
       
       <div class="link-network">
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-04-defs-is-equal.html">再帰的な項の定義と具体的な項の定義は等しい</a></h5>
+                  <p class="card-text">命題3.2.6(再帰的な項の定義と具体的な項の定義は等しい)に...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-01-recursive-def.html">再帰的な項の定義</a></h5>
+                    <p class="card-text">定義3.2.1より - (1)は自明 - (2)はなに？   ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-03-concrete-def.html">具体的な項の定義</a></h5>
+                    <p class="card-text">- $S_0$は空集合 - $S_1$ は再帰的な項の定義や推...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
         
       </div>
       

@@ -36,8 +36,16 @@
         
             
               <div><ul>
-  <li>閉区間 $[a, b]$ で定義された関数 $f$ のうち、$(f \cdot \varphi_n) = 0$ となる<a href="../../math/fourier/05-system.html">関数系</a>を完全<a href="../../math/fourier/05-system.html">関数系</a>と呼ぶ</li>
-  <li>ただし $f=0$ は除く</li>
+  <li>${\varphi_n}_{n=0}^\infty$ に直交する0でない $f(x)$ が無いならば、その関数は完全<a href="../../math/fourier/05-system.html">関数系</a>である
+    <ul>
+      <li>直交するとは、<a href="../../math/fourier/04-orthogonal-basis.html">直交基底</a>のように $\boldsymbol{e}_i \cdot \boldsymbol{e}_j = 0 \quad (i \neq j)$ となるような性質を持つこと</li>
+      <li>例えば、$\varphi_n = \cos nx$ のとき、$f(x) = 1$ に対して完全<a href="../../math/fourier/05-system.html">関数系</a>でない
+        <ul>
+          <li>どれだけ $\varphi_n$ を増やしたところで、$x = 0$ のときに処理できない</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 </div>
             
@@ -68,6 +76,9 @@
               
             </div>
             <div class="col">
+              
+                次の記事<br />
+                <a href="../../math/fourier/09-trigonometric-system.html">三角関数系</a>
               
             </div>
           </div>
@@ -125,16 +136,7 @@
                 <div class="card h-100">
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a></h5>
-                    <p class="card-text">- 関数系(数学)で、直交であるもの - 直交の性質は正規直交...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/07-fourier-series.html">フーリエ級数</a></h5>
-                    <p class="card-text">- $\displaystyle \sum_{n0}^\inf...</p>
+                    <p class="card-text">- 関数系(数学)で、直交であるもの - 直交の性質は直交基底...</p>
                   </div>
                 </div>
               </div>
@@ -148,17 +150,35 @@
                 </div>
               </div>
             
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/09-trigonometric-system.html">三角関数系</a></h5>
+                    <p class="card-text">- $1, \cos x, \sin x, \cos 2x, ...</p>
+                  </div>
+                </div>
+              </div>
+            
           </div>
         
           <div class="row flex-nowrap overflow-auto">
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/fourier/05aa-example.html">ある関数系が直交関数系か見てみる</a></h5>
-                  <p class="card-text">- $\varphi$ が以下のとき、$\left\{ \va...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/04-orthogonal-basis.html">直交基底</a></h5>
+                  <p class="card-text">- 以下を満たすもの   - $\boldsymbol{e}_...</p>
                 </div>
               </div>
             </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/04a-orthonomal-basis.html">正規直交基底</a></h5>
+                    <p class="card-text">- 直交基底に加えて、以下を満たすもの   - $\|\|\b...</p>
+                  </div>
+                </div>
+              </div>
             
           </div>
         

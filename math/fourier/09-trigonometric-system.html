@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>標準偏差</title>
+    <title>三角関数系</title>
     <meta NAME="robots" CONTENT="noindex,nofollow">
   </head>
   <body>
@@ -20,40 +20,24 @@
           
             <li class="breadcrumb-item"><a href="../../math/index.html">math</a></li>
           
-            <li class="breadcrumb-item"><a href="../../math/probability-statistics/index.html">probability-statistics</a></li>
+            <li class="breadcrumb-item"><a href="../../math/fourier/index.html">fourier</a></li>
           
-          <li class="breadcrumb-item">標準偏差</li>
+          <li class="breadcrumb-item">三角関数系</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>標準偏差</h1>
+      <h1>三角関数系</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>$S_x = \sqrt{\dfrac{\sum_{i=1}^N (x_i - \bar x)^2}{N}}$
-    <ul>
-      <li>$N$ はサンプルサイズ(データ数)</li>
-      <li>$\bar x$ はxの<a href="../../math/probability-statistics/04-average.html">平均</a></li>
-    </ul>
-  </li>
-  <li><a href="../../math/probability-statistics/04-average.html">平均</a>値を基準にする場合、すごい使いやすい
-    <ul>
-      <li><a href="../../math/probability-statistics/04-average.html">平均</a>値に近いとき、最小になるので使いやすい</li>
-    </ul>
-  </li>
-  <li>$\dfrac{\sum |x_i - \bar x|}{N}$ では、なんか微妙らしい
-    <ul>
-      <li>$A = \dfrac{\sum |x_i - x_{med}|}{N}$ とすると、中央値が基準に使いやすい値になる</li>
-      <li>あんま使わない
--　外れ値があって、標準偏差が扱いづらいときに使う</li>
-    </ul>
-  </li>
+  <li>$1, \cos x, \sin x, \cos 2x, \sin 2x, \dots$ と続く<a href="../../math/fourier/05-system.html">関数系</a></li>
+  <li>$[-\pi, \pi]$ で<a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a>となる</li>
 </ul>
 </div>
             
@@ -74,19 +58,16 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/probability-statistics/04-average.html">平均</a>
+                <a href="../../math/fourier/08-complete.html">完全関数系</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../../math/probability-statistics/index.html">probability-statistics</a>
+                <a href="../../math/fourier/index.html">fourier</a>
               
             </div>
             <div class="col">
-              
-                次の記事<br />
-                <a href="../../math/probability-statistics/06-hyoujun-tokuten.html">標準得点</a>
               
             </div>
           </div>
@@ -95,7 +76,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/05-standared-deviation.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/fourier/09-trigonometric-system.md';">Edit</button>
         
         
       </div>
@@ -107,8 +88,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/04-average.html">平均</a></h5>
-                  <p class="card-text">- xの平均を $\bar x$ とする - $\displa...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/05-system.html">関数系</a></h5>
+                  <p class="card-text">- ベクトルで扱っていたものを関数に適用していく   - $\...</p>
                 </div>
               </div>
             </div>
@@ -116,8 +97,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/23-.html">期待値を使った分散</a></h5>
-                    <p class="card-text">- 離散型の場合、$\displaystyle V[X]  \...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/01-vector.html">ベクトル</a></h5>
+                    <p class="card-text">- ベクタとも - C++の配列とかで見れるvectorはこれ...</p>
                   </div>
                 </div>
               </div>
@@ -125,8 +106,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></h5>
-                    <p class="card-text">- 試行回数を無限に増やしていったときの平均値 - 標本に対し...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/03-norm.html">ノルム</a></h5>
+                    <p class="card-text">- $\displaystyle \|\|\boldsymbo...</p>
                   </div>
                 </div>
               </div>
@@ -134,8 +115,17 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/10-quick-sort.html">クイックソート</a></h5>
-                    <p class="card-text">分割統治法を用いたソートアルゴリズムの一つ 適当な値を境界値と...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/02-inner-product.html">内積</a></h5>
+                    <p class="card-text">- $\boldsymbol{u}$ と $\boldsymb...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/08-complete.html">完全関数系</a></h5>
+                    <p class="card-text">- $\{\varphi_n\}_{n0}^\infty$ に...</p>
                   </div>
                 </div>
               </div>
@@ -146,8 +136,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/02-correlation-coefficien.html">相関係数</a></h5>
-                  <p class="card-text">- 相関の度合いを測る係数   - 正なら正の相関   - 負...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a></h5>
+                  <p class="card-text">- 関数系(数学)で、直交であるもの - 直交の性質は直交基底...</p>
                 </div>
               </div>
             </div>
@@ -155,8 +145,26 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/01-correlation.html">相関</a></h5>
-                    <p class="card-text">- correlation ## 正の相関 - ある次元が大き...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/04-orthogonal-basis.html">直交基底</a></h5>
+                    <p class="card-text">- 以下を満たすもの   - $\boldsymbol{e}_...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/05b-orthonormal-system.html">正規直交関数系</a></h5>
+                    <p class="card-text">- 直交関数系に以下の条件を追加したもの - $\|\| \v...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/05aa-example.html">$\{cos nx\}_{n=1}^\infty$ は $[0, \pi]$ で直交関数系である</a></h5>
+                    <p class="card-text">- 次の2つを示せれば、直交関数系だとわかる   - $n \...</p>
                   </div>
                 </div>
               </div>
@@ -167,8 +175,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/06-hyoujun-tokuten.html">標準得点</a></h5>
-                  <p class="card-text">- Zスコア - $Z\dfrac{x_i - \bar x_...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/07-fourier-series.html">フーリエ級数</a></h5>
+                  <p class="card-text">- $\displaystyle \sum_{n0}^\inf...</p>
                 </div>
               </div>
             </div>
@@ -176,11 +184,23 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/07-hensati.html">偏差値</a></h5>
-                    <p class="card-text">- $10Z + 50$   - $Z$ は標準得点 - 10...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/00-introduction.html">フーリエ解析</a></h5>
+                    <p class="card-text">- の授業ノート - 自分用にダラダラ作っているので、あまり参...</p>
                   </div>
                 </div>
               </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/06-fourier-coefficients.html">フーリエ係数</a></h5>
+                  <p class="card-text">- 先程定義した関数系を使う - $\displaystyle...</p>
+                </div>
+              </div>
+            </div>
             
           </div>
         
