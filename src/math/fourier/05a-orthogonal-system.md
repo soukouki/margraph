@@ -1,7 +1,7 @@
 # 直交関数系
 
 - 関数系(数学)で、直交であるもの
-- 直交の性質は正規直交基底と似たようなもの
+- 直交の性質は直交基底と似たようなもの
 - これを使うと
   - $\displaystyle f(x) = \sum_{i=0}^\infty a_i \varphi_i$ としたとき、
   - $\displaystyle \int_a^b f(x) \varphi_n(x)\ dx = a_n(\varphi_n \cdot \varphi_n) = a_n \|\| \varphi_n \|\|^2$

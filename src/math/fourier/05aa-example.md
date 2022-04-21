@@ -1,21 +1,24 @@
-# ある関数系が直交関数系か見てみる
+# $\{cos nx\}_{n=1}^\infty$ は $[0, \pi]$ で直交関数系である
 
-- $\varphi$ が以下のとき、$\left\{ \varphi_n \right\}_{n=0}^\infty$ は $[-\pi, \pi]$ 上で完全関数系な直交関数系となる
-  - $\varphi(x) = 1$
-  - $\varphi_{2n-1}(x) = \cos(nx)\quad(n=1,2,3,\dots)$
-  - $\varphi_{2n}(x) = \sin(nx)\quad(n=1,2,3,\dots)$
-- 以下を証明すれば $\{\varphi_n\}_{n=0}^\infty$ が直交関数系であることが分かる
-  - $\displaystyle \int_\pi^\pi \cos(nx)\ dx = 0 \quad (n \neq 0)$
-  - $\displaystyle \int_\pi^\pi \sin(nx)\ dx = 0 \quad (n \neq 0)$
-    - この2つはまぁグラフを想像すればそれっぽい
-  - $\displaystyle \int_{-\pi}^\pi \cos(mx)\cos(nx)\ dx = \begin{cases} 0\quad(m \neq n)\\ \pi\quad(m = n \neq 0) \end{cases}$
-    - 例えば $n = m = 1$ のとき、三角関数の半角の公式を使えば
-      - $\displaystyle \int_{-\pi}^\pi \cos^2 x = \int_{-\pi}^\pi \frac{1+\cos 2x}{2}\ dx$
-      - とりあえず正の値にはなりそう
-  - $\displaystyle \int_{-\pi}^\pi \sin(mx)\sin(nx)\ dx = \begin{cases} 0\quad(m \neq n)\\ \pi\quad(m = n \neq 0) \end{cases}$
-    - 例えば同じく $n = m = 1$ のとき、同様に
-      - $\displaystyle \int_{-\pi}^\pi \sin^2 x = \int_{-\pi}^\pi \frac{1-\cos 2x}{2}\ dx$
-      - これも確かに正の値にはなりそう
-  - $\displaystyle \int_{-\pi}^\pi \cos(mx)\sin(nx)\ dx = 0\quad(m,n: \text{任意})$
-    - 奇関数なので、明らかに0
-  - それぞれについて成り立ちそうなことはわかったけど、なぜ直交関数系であると分かるの？
+- 次の2つを示せれば、直交関数系だとわかる
+  - $n \neq m$ のとき $\int \cos nx \cos mx\ dx = 0$
+    - $$
+      \begin{eqnarray}
+      \int_0^\pi \cos nx \cos mx\ dx &=& \int_0^\pi \dfrac{1}{2} \big\{ \cos \left( nx+mx \right) + \cos \left( nx-mx \right) \big\} dx \\
+      &=& \dfrac{1}{2} \int_0^\pi \big\{ \cos (n+m) x + \cos (n-m) x \big\}\ dx \\
+      &=& \dfrac{1}{2} \left[ \dfrac{sin(n+m) x}{n+m} + \dfrac{sin(n-m) x}{n-m} \right]_0^\pi \\
+      &=& 0
+      \end{eqnarray}
+      $$
+    - 三角関数の和積公式で変換
+    - $\sin(0) = \sin(\pi) = 0$
+  - $\int \cos^2 nx\ dx = a_n$
+    - $$
+      \begin{eqnarray}
+      \int_0^\pi \cos^2 nx\ dx &=& \int_0^\pi \dfrac{1}{2} ( \cos 2nx + \cos 0 ) dx \\
+      &=& \dfrac{1}{2} \int_0^\pi ( \cos 2nx + 1 )\ dx \\
+      &=& \dfrac{1}{2} \left[ \dfrac{\sin 2nx}{2n} + \pi \right]_0^\pi \\
+      &=& \dfrac{\pi}{2}
+      \end{eqnarray}
+      $$       
+    - 同じく三角関数の和積公式と、$\sin(0) = \sin(\pi) = 0$で変形
