@@ -35,128 +35,83 @@
         <div class="contents">
         
             
-              <h2>処理を小さなスクリプトに分ける</h2>
-            
-          
-            
               <div><ul>
-  <li>スクリプトに違う<a href="../../other/language.html">言語</a>や技術を利用できる
+  <li>処理を小さなスクリプトに分ける
     <ul>
-      <li>例えば、rubyのプロセス起動が遅ければC<a href="../../other/language.html">言語</a>に書き換える、といったことができる</li>
+      <li>スクリプトに違う<a href="../../programming/programming-language.html">プログラミング言語</a>や技術を利用できる
+        <ul>
+          <li>例えば、rubyのプロセス起動が遅ければC<a href="../../other/language.html">言語</a>に書き換える、といったことができる</li>
+        </ul>
+      </li>
+      <li>データの入出力が明確になるので、疎結合になる</li>
     </ul>
   </li>
-  <li>データの入出力が明確になるので、疎結合になる</li>
-</ul>
-</div>
-            
-          
-            
-              <h2>スクリプトの起動はmakeを使う</h2>
-            
-          
-            
-              <div><ul>
-  <li>ファイル同士の依存関係であったり、並列実行が単純なコマンドでできて便利</li>
-  <li>多くの環境で利用でき、インストールなどが必要ない事が多い</li>
-  <li>広く利用されている</li>
-</ul>
-</div>
-            
-          
-            
-              <h2>データのやり取りはファイルの読み書きで行う</h2>
-            
-          
-            
-              <div><ul>
-  <li>makefileとの相性が良い</li>
-  <li>標準出力をデバッグなどに利用できる</li>
-  <li>各<a href="../../other/language.html">言語</a>から簡単に利用できる</li>
-</ul>
-</div>
-            
-          
-            
-              <h2>ファイルの形式はjsonを使う</h2>
-            
-          
-            
-              <div><ul>
-  <li>人間が直接読み書きできる</li>
-  <li>プログラムから扱いやすい
+  <li>スクリプトの起動はmakeを使う
     <ul>
-      <li>少なくともライブラリとして提供されている可能性はかなり高い</li>
+      <li>ファイル同士の依存関係であったり、並列実行が単純なコマンドでできて便利</li>
+      <li>多くの環境で利用でき、インストールなどが必要ない事が多い</li>
+      <li>広く利用されている</li>
     </ul>
   </li>
-  <li>解析が高速</li>
-  <li>参照などによる問題が起こらない</li>
-  <li>インデントなどのによるファイルの肥大が起こらない</li>
-  <li><a href="../../margraph/design/101-merge-json.html">Merge Json</a>を使って、マージの処理を再利用できる</li>
-</ul>
-</div>
-            
-          
-            
-              <h2>パスのフォーマット</h2>
-            
-          
-            
-              <div><code>src/aaa/bbb.md</code>ファイルであれば、<code>"aaa/bbb"</code>のように表す(拡張子も省略する)。<code>tmp/aaa/ccc</code>ディレクトリであれば、<code>"aaa/ccc"</code>のように表す。<code>.</code>や<code>..</code>、<code>//</code>などは使わない。先頭と末尾に<code>/</code>は付けない。</div>
-            
-          
-            
-              <div><ul>
-  <li>統一することで、バグの機会をなくす</li>
-  <li><code>/</code>の個数を数えればディレクトリやファイルの深さがわかるようにする</li>
-  <li>ディレクトリや拡張子を変更する際に、パスを足すだけで<a href="../../margraph/margraph-junban.html">リンク</a>になるようにする</li>
-</ul>
-</div>
-            
-          
-            
-              <h2>入出力の形式はドキュメント化する</h2>
-            
-          
-            
-              <div><ul>
-  <li>入出力の形式を変えづらくし、疎結合な状態が保たれるようにする</li>
-</ul>
-</div>
-            
-          
-            
-              <h2>スクリプト同士はディレクトリを分ける</h2>
-            
-          
-            
-              <div><ul>
-  <li>安易に共有ライブラリを持たないようにする
+  <li>データのやり取りはファイルの読み書きで行う
     <ul>
-      <li>共有ライブラリを持つときは、疎結合が損なわれている可能性がある</li>
+      <li>makefileとの相性が良い</li>
+      <li>標準出力をデバッグなどに利用できる</li>
+      <li>各<a href="../../other/language.html">言語</a>から簡単に利用できる</li>
     </ul>
   </li>
-</ul>
-</div>
-            
-          
-            
-              <h2>実行に失敗したら、プロセスの戻り値を0以外にする</h2>
-            
-          
-            
-              <div><ul>
-  <li>makefileの仕様で、戻り値を0以外にすると自動で失敗してくれる</li>
-</ul>
-</div>
-            
-          
-            
-              <h2>ファイルとディレクトリの命名規則はケバブケース</h2>
-            
-          
-            
-              <div><ul>
-  <li><a href="../../other/language.html">言語</a>的に決まっているなどの例外がなければ、ケバブケースを用いる</li>
+  <li>ファイルの形式はjsonを使う
+    <ul>
+      <li>人間が直接読み書きできる</li>
+      <li>プログラムから扱いやすい
+        <ul>
+          <li>少なくともライブラリとして提供されている可能性はかなり高い</li>
+        </ul>
+      </li>
+      <li>解析が高速</li>
+      <li>参照などによる問題が起こらない</li>
+      <li>インデントなどのによるファイルの肥大が起こらない</li>
+      <li><a href="../../margraph/design/101-merge-json.html">Merge Json</a>を使って、マージの処理を再利用できる</li>
+    </ul>
+  </li>
+  <li>パスのフォーマット
+    <ul>
+      <li><code>src/aaa/bbb.md</code>ファイルであれば、<code>"aaa/bbb"</code>のように表す(拡張子も省略する)。</li>
+      <li><code>tmp/aaa/ccc</code>ディレクトリであれば、<code>"aaa/ccc"</code>のように表す。</li>
+      <li><code>.</code>や<code>..</code>、<code>//</code>などは使わない。先頭と末尾に<code>/</code>は付けない。</li>
+      <li>統一することで、バグの機会をなくす</li>
+      <li><code>/</code>の個数を数えればディレクトリやファイルの深さがわかるようにする</li>
+      <li>ディレクトリや拡張子を変更する際に、パスを足すだけで<a href="../../margraph/margraph-junban.html">リンク</a>になるようにする</li>
+    </ul>
+  </li>
+  <li>入出力の形式はドキュメント化する
+    <ul>
+      <li>入出力の形式を変えづらくし、疎結合な状態が保たれるようにする</li>
+    </ul>
+  </li>
+  <li>スクリプト同士はディレクトリを分ける
+    <ul>
+      <li>安易に共有ライブラリを持たないようにする
+        <ul>
+          <li>共有ライブラリを持つときは、疎結合が損なわれている可能性がある</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>実行に失敗したら、プロセスの戻り値を0以外にする
+    <ul>
+      <li>makefileの仕様で、戻り値を0以外にすると自動で失敗してくれる</li>
+    </ul>
+  </li>
+  <li>ファイルとディレクトリの命名規則はケバブケース
+    <ul>
+      <li><a href="../../other/language.html">言語</a>的に決まっているなどの例外がなければ、ケバブケースを用いる
+        <ul>
+          <li>urlのパスの命名規則とかこんな感じじゃなかったっけ</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
 </div>
             
@@ -207,8 +162,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../other/language.html">言語</a></h5>
-                  <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                  <h5 class="card-title fs-6"><a href="../../programming/programming-language.html">プログラミング言語</a></h5>
+                  <p class="card-text">- さまざまな形でコンピュータに指令を伝えるために使われる言語...</p>
                 </div>
               </div>
             </div>
@@ -216,11 +171,104 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../programming/programming-language.html">プログラミング言語</a></h5>
-                    <p class="card-text">- さまざまな形でコンピュータに指令を伝えるために使われる言語...</p>
+                    <h5 class="card-title fs-6"><a href="../../long-tweets/2021-09-09.html">プログラムの抽象化の美しさ</a></h5>
+                    <p class="card-text">> 小説や文学は読まないが、文字の美しい組み合わせや運び、そう...</p>
                   </div>
                 </div>
               </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/prog-game.html">プログラミングを使ったゲームのアイデア</a></h5>
+                    <p class="card-text">- フィールドの中にロボット(?)なりを配置して、戦わせるゲー...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/programming-language-2.html">プログラム言語</a></h5>
+                    <p class="card-text">- プログラミング言語と同じ - JIS基準などはこっちを使っ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/zig.html">Zig</a></h5>
+                    <p class="card-text">- プログラミング言語の一つ - https://ziglan...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../reading-note/tapl/03-05-operational-sem.html">操作的意味論</a></h5>
+                    <p class="card-text">抽象機械を定義し、プログラミング言語の振る舞いを規定する 機械...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../reading-note/tapl/05-06-call-by-value.html">値呼び戦略</a></h5>
+                    <p class="card-text">正規順序戦略のように最も外側の簡約基を簡約するが、右側がすでに...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../scraps/don.html">「ドン」がネットワークのくびれで機能する</a></h5>
+                    <p class="card-text">https://yashio.hatenablog.com/e...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../theses/ppl2022-1.html">Type-Based Qubit Allocatiion for a First-Order Quantum Programming Language</a></h5>
+                    <p class="card-text">PPL2022の発表 ## どんなもの？ - 量子計算機上で動...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../theses/functional-reactive-animation.html">Functional Reactive Animation</a></h5>
+                    <p class="card-text">ElmのTEAの元となった論文(今となってはだいぶ離れてるらし...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../theses/ppl.html">PPL</a></h5>
+                    <p class="card-text">プログラミングおよびプログラミング言語ワークショップ...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../other/language.html">言語</a></h5>
+                  <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                </div>
+              </div>
+            </div>
             
               <div class="col-4">
                 <div class="card h-100">
