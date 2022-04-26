@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>累積分布関数</title>
+    <title>度数分布</title>
     <meta NAME="robots" CONTENT="noindex,nofollow">
   </head>
   <body>
@@ -22,27 +22,50 @@
           
             <li class="breadcrumb-item"><a href="../../math/probability-statistics/index.html">probability-statistics</a></li>
           
-          <li class="breadcrumb-item">累積分布関数</li>
+          <li class="breadcrumb-item">度数分布</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>累積分布関数</h1>
+      <h1>度数分布</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>$\displaystyle F(x) = \int_{-\infty}^{x} f(x’)\ dx’$
+  <li><a href="../../math/probability-statistics/12-event.html">事象</a>を集めた上で、それぞれの排反する<a href="../../math/probability-statistics/12-event.html">事象</a>が何回起こったのかをまとめたもの</li>
+  <li>大体表にして、度数分布表にする</li>
+  <li>度数分布表の例
     <ul>
-      <li>ある値までの<a href="../../math/probability-statistics/19-probablity-density.html">確率密度</a>を積分したもの</li>
+      <li>
+        <table>
+          <thead>
+            <tr>
+              <th style="text-align: left">階級</th>
+              <th style="text-align: right">回答数</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: left">1</td>
+              <td style="text-align: right">3</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">2</td>
+              <td style="text-align: right">4</td>
+            </tr>
+            <tr>
+              <td style="text-align: left">3</td>
+              <td style="text-align: right">10</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
     </ul>
   </li>
-  <li>$F(x) = P(X \leq x)$ とも書ける</li>
-  <li>逆に微分していけば<a href="../../math/probability-statistics/19-probablity-density.html">確率密度</a>になる</li>
 </ul>
 </div>
             
@@ -63,7 +86,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/probability-statistics/20-probability-mass.html">確率質量</a>
+                <a href="../../math/probability-statistics/25-histogram.html">ヒストグラム</a>
               
             </div>
             <div class="col">
@@ -75,7 +98,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../../math/probability-statistics/22-expectation-value.html">期待値</a>
+                <a href="../../math/probability-statistics/27-bernoulli-dist.html">ベルヌーイ分布</a>
               
             </div>
           </div>
@@ -84,7 +107,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/21-cumulative-distribution-function.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/26-frequency-dist.md';">Edit</button>
         
         
       </div>
@@ -96,8 +119,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/19-probablity-density.html">確率密度</a></h5>
-                  <p class="card-text">- 無限にデータを増やして、ヒストグラムの幅をどんどん小さくし...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/12-event.html">事象</a></h5>
+                  <p class="card-text">- イベント - 起こる集合 - $A_i$ はそれぞれ排反で...</p>
                 </div>
               </div>
             </div>
@@ -105,8 +128,17 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/25-histogram.html">ヒストグラム</a></h5>
-                    <p class="card-text">- 実際に起こった事象を、縦軸に階級を、横軸に階級をとったグラ...</p>
+                    <h5 class="card-title fs-6"><a href="../../other/event.html">イベント</a></h5>
+                    <p class="card-text">イベントは内向的な理由で行うべきだ、と言う主張について - 内...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../lectures/history-of-science/09-ptolemaic-system.html">天動説</a></h5>
+                    <p class="card-text">アリストテレスは天動説をとっていた アリストテレスの天動説にあ...</p>
                   </div>
                 </div>
               </div>
@@ -123,6 +155,15 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/29-poisson-dist.html">ポワソン分布</a></h5>
+                    <p class="card-text">- 二項分布 $Bi(n,p)$ の試行回数 $n$ を大きく...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/probability-statistics/18-probability-distribution.html">確率分布</a></h5>
                     <p class="card-text">- 扱い方   - 離散型(discrete)     - イ...</p>
                   </div>
@@ -132,8 +173,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></h5>
-                    <p class="card-text">- 試行回数を無限に増やしていったときの平均値 - 標本に対し...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/13-joint-probability.html">同時確率</a></h5>
+                    <p class="card-text">- 結合確率とも - $P(A) \cap P(B)$ のよう...</p>
                   </div>
                 </div>
               </div>
@@ -141,8 +182,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/20-probability-mass.html">確率質量</a></h5>
-                    <p class="card-text">- 確率密度に対して、離散的な確率のことを確率質量と呼ぶことが...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/25-histogram.html">ヒストグラム</a></h5>
+                    <p class="card-text">- 実際に起こった事象を、縦軸に階級を、横軸に階級をとったグラ...</p>
                   </div>
                 </div>
               </div>
