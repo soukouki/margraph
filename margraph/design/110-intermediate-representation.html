@@ -60,6 +60,36 @@
           
             
               <pre><code class="language-json">{
+  "type": "index",
+  "title": "aaa",
+  "breadcrumb": [
+    {
+      "title": "note",
+      "path": "index",
+    },
+    {
+      "title": "aaa",
+      "path": "aaa/index"
+    }
+  ],
+  "dirs": [
+    {
+      "title": "ディレクトリのタイトル",
+      "path": "aaa/direc"
+    }
+  ],
+  "files": [
+    {
+      "title": "ファイルのタイトル",
+      "path": "aaa/page"
+    }
+  ]
+}
+</code></pre>
+            
+          
+            
+              <pre><code class="language-json">{
   "type": "article",
   "title": "記事の中間表現のサンプル",
   "breadcrumb": [
@@ -158,36 +188,6 @@
 </code></pre>
             
           
-            
-              <pre><code class="language-json">{
-  "type": "index",
-  "title": "aaa",
-  "breadcrumb": [
-    {
-      "title": "note",
-      "path": "index",
-    },
-    {
-      "title": "aaa",
-      "path": "aaa/index"
-    }
-  ],
-  "dirs": [
-    {
-      "title": "ディレクトリのタイトル",
-      "path": "aaa/direc"
-    }
-  ],
-  "files": [
-    {
-      "title": "ファイルのタイトル",
-      "path": "aaa/page"
-    }
-  ]
-}
-</code></pre>
-            
-          
         </div>
       
 
@@ -276,15 +276,6 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../margraph/block-ui.html">ブロック的データ</a></h5>
-                    <p class="card-text">margraphとかで、箇条書きの中に入れられないもの。 - ...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../margraph/todo.html">margraphの機能追加</a></h5>
                     <p class="card-text">- 「像」や「系」のような短い記事の対処   - ノイズになる...</p>
                   </div>
@@ -303,17 +294,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../margraph/design/200-network-link.html">関連記事をどこで処理するか</a></h5>
-                    <p class="card-text">- 中間表現にリンクを埋め込む   - 中間表現だけで処理でき...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../margraph/design/102-collect-link.html">Collect Links</a></h5>
-                    <p class="card-text">集められた記事のタイトルを使って、記事中からどの部分にリンクを...</p>
+                    <h5 class="card-title fs-6"><a href="../../margraph/block-ui.html">ブロック的データ</a></h5>
+                    <p class="card-text">margraphとかで、箇条書きの中に入れられないもの。 - ...</p>
                   </div>
                 </div>
               </div>
@@ -330,8 +312,26 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/200-network-link.html">関連記事をどこで処理するか</a></h5>
+                    <p class="card-text">- 中間表現にリンクを埋め込む   - 中間表現だけで処理でき...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../margraph/design/201-num-of-hops.html">何ホップ分表示するか</a></h5>
                     <p class="card-text">関連項目として、何ホップ分表示させるか - Scrapboxで...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/102-collect-link.html">Collect Links</a></h5>
+                    <p class="card-text">集められた記事のタイトルを使って、記事中からどの部分にリンクを...</p>
                   </div>
                 </div>
               </div>
@@ -450,8 +450,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../margraph/design/112-make-index.html">Make Index</a></h5>
-                  <p class="card-text">ディレクトリの構造をパースして、目次用のmargraph用中間...</p>
+                  <h5 class="card-title fs-6"><a href="../../margraph/design/113-make-html.html">Make Html</a></h5>
+                  <p class="card-text">Make IndexとParse Markdownで生成したm...</p>
                 </div>
               </div>
             </div>
@@ -462,8 +462,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../margraph/design/113-make-html.html">Make Html</a></h5>
-                  <p class="card-text">Make IndexとParse Markdownで生成したm...</p>
+                  <h5 class="card-title fs-6"><a href="../../margraph/design/112-make-index.html">Make Index</a></h5>
+                  <p class="card-text">ディレクトリの構造をパースして、目次用のmargraph用中間...</p>
                 </div>
               </div>
             </div>

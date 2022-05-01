@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <title>メモリ領域</title>
+    <meta NAME="robots" CONTENT="noindex,nofollow">
+  </head>
+  <body>
+    
+    <nav class="navbar sticky-top bg-body" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <div class="container" style="max-width: 40em;">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../programming/index.html">programming</a></li>
+          
+          <li class="breadcrumb-item">メモリ領域</li>
+        </ol>
+      </div>
+    </nav>
+
+    <article class="container" style="max-width: 40em;">
+
+      <h1>メモリ領域</h1>
+
+      
+        <div class="contents">
+        
+            
+              <div><ul>
+  <li>プログラムを動かす際、メモリは4つの領域に分けて使われる</li>
+  <li><a href="../programming/text-area.html">テキスト領域</a>
+    <ul>
+      <li>機械語に翻訳されたプログラムが置かれる</li>
+      <li>ノイマン型コンピュータ</li>
+    </ul>
+  </li>
+  <li>静的領域
+    <ul>
+      <li>C<a href="../other/language.html">言語</a>で言うグローバル変数やstatic変数が置かれる</li>
+    </ul>
+  </li>
+  <li><a href="../programming/algorithms-and-data-structure/15-heap.html">ヒープ</a>領域
+    <ul>
+      <li>動的にメモリを確保する必要がある祭に呼ばれる</li>
+      <li><a href="../programming/algorithms-and-data-structure/15-heap.html">ヒープ</a>の確保は一定時間がかかる
+        <ul>
+          <li>高速化が重要な<a href="../other/language.html">言語</a>では気にしてる</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="../programming/algorithms-and-data-structure/05-stacks.html">スタック</a>領域
+    <ul>
+      <li>C<a href="../other/language.html">言語</a>で言う自動変数が置かれる</li>
+      <li>関数呼び出しのたびに<a href="../programming/algorithms-and-data-structure/05-stacks.html">スタック</a>が積まれ、戻るたびに開放していく</li>
+    </ul>
+  </li>
+</ul>
+</div>
+            
+          
+        </div>
+      
+
+      
+
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+                前の記事<br />
+                <a href="../programming/makeing-language-workspace.html">言語自作勉強会</a>
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../programming/index.html">programming</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../programming/mkdir.html">mkdirで連番ディレクトリを作る</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/memory-area.md';">Edit</button>
+        
+        
+      </div>
+
+      
+      <div class="link-network">
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../programming/text-area.html">テキスト領域</a></h5>
+                  <p class="card-text">- 機械語で書かれたプログラムを動かす際、プログラム自体が書か...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/rust-string.html">Rustの文字列</a></h5>
+                    <p class="card-text">- Rustの文字列は大きく分けて2種類ある   - `Str...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../other/language.html">言語</a></h5>
+                  <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/programming-language.html">プログラミング言語</a></h5>
+                    <p class="card-text">- さまざまな形でコンピュータに指令を伝えるために使われる言語...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/rule.html">ルール</a></h5>
+                    <p class="card-text">- 人が増えるとどうせ守られなくなるもの   - 人が多いノー...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../linguistics/bouba-kiki-effect.html">ブーバ・キキ効果</a></h5>
+                    <p class="card-text">Bouba/Kiki Effect - それぞれ丸い曲線とギザ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../linguistics/minimal-pair.html">ミニマル・ペア</a></h5>
+                    <p class="card-text">Minimal-Pair 音素の範囲を見つけるために使うペアと...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/02-practice.html">margraphのプラクティス</a></h5>
+                    <p class="card-text">- 処理を小さなスクリプトに分ける   - スクリプトに違うプ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/120-attachment.html">margraphの添付ファイル</a></h5>
+                    <p class="card-text">`src/<mdファイルのパス>`から始まる文字があるときには...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/probability-statistics/13-joint-probability.html">同時確率</a></h5>
+                    <p class="card-text">- 結合確率とも - $P(A) \cap P(B)$ のよう...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/gengoka.html">言語化</a></h5>
+                    <p class="card-text">- 今まで曖昧に捉えていたモノや概念を、言葉にして書き出すこと...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/honshitu.html">本質</a></h5>
+                    <p class="card-text">物事の根本的な性質・要素 - 大した影響がない要素を捨てた、変...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/plags-ut.html">PLAGS UT</a></h5>
+                    <p class="card-text">- 自動評価付きPythonプログラミング課題管理システム -...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/01-02-types.html">型システム</a></h5>
+                    <p class="card-text">## 定義 > プログラムの各部分を、それが計算する値の種類に...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-07-axiomatic-sem.html">公理的意味論</a></h5>
+                    <p class="card-text">言語の定義として公理的意味論自身を取る 鬼門は手続き...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-06-expressive-sem.html">表示的意味論</a></h5>
+                    <p class="card-text">意味領域の集まりを見つけ、項を意味領域の元に移す解釈関数を定義...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../scraps/shifting-language-eco-system.html">言語のエコシステムの変化</a></h5>
+                    <p class="card-text">https://izumisy.work/entry/2021...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/15-heap.html">ヒープ</a></h5>
+                  <p class="card-text">子要素は親要素より常に大きい(小さい)か等しい、という制約がつ...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/12-tree.html">木構造</a></h5>
+                    <p class="card-text">言わずと知れた、逆さまの木のようになった抽象データ構造 グラフ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/13-binary-tree.html">二分木</a></h5>
+                    <p class="card-text">木構造の一種。それぞれのノードが2つの子しか持たない。...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/93-bigo-n.html">$O\left(n\right)$</a></h5>
+                    <p class="card-text">ビッグオー記法 - nが日常で扱う程度なら全然アリ - nが大...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/90-bigo-1.html">$O\left(1\right)$</a></h5>
+                    <p class="card-text">ビッグオー記法、アルゴリズムのオーダー - 最高 - どんなに...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/92-bigo-logn.html">$O\left(\log n\right)$</a></h5>
+                    <p class="card-text">ビッグオー記法 - それなりに早いし、使う分なら全然問題ない気...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07a-array.html">配列</a></h5>
+                    <p class="card-text">メモリ上で連続した領域。言わずとしれたデータ構造 リスト構造と...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/data-structure.html">データ構造面白い</a></h5>
+                    <p class="card-text">最近データ構造が面白いと思うようになった。多分アルゴリズムとデ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/16-heap-sort.html">ヒープソート</a></h5>
+                    <p class="card-text">ヒープを使ったソート ヒープの最大(最小)の要素を順番に取り出...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/05-stacks.html">スタック</a></h5>
+                  <p class="card-text">last-in, first-out(LIFO) 例えば平積み...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07-linked-list.html">連結リスト</a></h5>
+                    <p class="card-text">その要素と、次の要素(または前後の要素)へのポインタをもつもの...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/20-DFS.html">深さ優先探索</a></h5>
+                    <p class="card-text">グラフ構造を探索するアルゴリズムの一つ。DFSとも呼ばれる。...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/06-queue.html">キュー</a></h5>
+                    <p class="card-text">first-in, first-out(FIFO) スタックと...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-12-large-step-semantics.html">大ステップ意味論</a></h5>
+                    <p class="card-text">操作的意味論で用いられる二つのスタイルのうちの一つ。もう一つは...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+      </div>
+      
+
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>
