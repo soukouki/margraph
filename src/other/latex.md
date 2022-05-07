@@ -7,4 +7,3 @@
 - `||`を使うときには、`\|\|`を使う
   - margraphの仕様によるもの
 - https://easy-copy-mathjax.nakaken88.com/all/ を見ると色々書いてあって便利
-- 
