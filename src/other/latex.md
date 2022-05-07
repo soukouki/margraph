@@ -6,3 +6,5 @@
 - `\displaystyle`を入れる等して、大きめに表示するように心がける
 - `||`を使うときには、`\|\|`を使う
   - margraphの仕様によるもの
+- https://easy-copy-mathjax.nakaken88.com/all/ を見ると色々書いてあって便利
+- 
