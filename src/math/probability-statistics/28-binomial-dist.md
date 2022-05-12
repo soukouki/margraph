@@ -12,4 +12,3 @@
 - $B_i(n,p) = P(X=x) = \dbinom{n}{x}\ p^x\ (1-p)^{n-x}$
 - 期待値 $E[x] = np$
 - 分散 $V[X] = np(1-p)$
-- a
