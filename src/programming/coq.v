@@ -24,3 +24,10 @@ by [].
 Qed.
 
 End ModusPones.
+
+Check MP.
+(*
+MP
+	 : forall X Y : Prop, (X -> Y) -> X -> Y
+すべてのProp型のXとYに対して、X->YとXが成り立つのであればYが成り立つ
+*)
