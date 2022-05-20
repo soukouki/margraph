@@ -38,12 +38,31 @@
           
             
               <div><ul>
-  <li><a href="../long-tweets/2021-11-02.html">Scrapbox</a>がgoogleアカウント必要なので、自分用に作っちゃったもの。階層整理型のメモツールと、グラフ整理型のメモツールのいいとこ取りを目指す。</li>
+  <li><a href="../long-tweets/2021-11-02.html">Scrapbox</a>がgoogleアカウント必要なので、自分用に作っちゃったもの。階層整理型のメモツールと、グラフ整理型のメモツールのいいとこ取りを目指す。
+    <ul>
+      <li>階層型を目指すの、かなり難しい気がしてきた</li>
+      <li>otherから切り出して整理するのはいいけど、どこのフォルダに置くべきか考えるのが難しい
+        <ul>
+          <li>現時点でもソフトウェアとプログラミングの境が曖昧になってる
+            <ul>
+              <li>例えばVimはotherかprogrammingか、<a href="../other/outliner.html">アウトライナー</a>はどうか</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
   <li>自動で記事名を<a href="../margraph/margraph-junban.html">リンク</a>して、ページ下部に2ホップ分の<a href="../margraph/margraph-junban.html">リンク</a>を貼ることが特徴</li>
   <li><a href="../other/latex.html">LaTeX</a>で数式も書けるし、画像やコードも添付できる</li>
   <li>自分用サービスとして使える存在にしていきたい
     <ul>
       <li><a href="../scraps/haburashi-test.html">歯ブラシテスト</a>をクリアしたい</li>
+    </ul>
+  </li>
+  <li><a href="../other/outliner.html">アウトライナー</a>と言うよりかは、自由に書ける形式でいきたい
+    <ul>
+      <li>ファイルとフォルダの簡潔な形式との互換性を持たせたい</li>
+      <li>サービス終了で使えなくなるサービスにしたくない</li>
     </ul>
   </li>
 </ul>
@@ -135,8 +154,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../margraph/margraph-junban.html">リンク</a></h5>
-                  <p class="card-text">- コードブロック中ではリンクしない方がいい   - LaTe...</p>
+                  <h5 class="card-title fs-6"><a href="../other/outliner.html">アウトライナー</a></h5>
+                  <p class="card-text">- 章立てとかの全体的な構造を定めてから、細部の文章を追加して...</p>
                 </div>
               </div>
             </div>
@@ -150,23 +169,17 @@
                 </div>
               </div>
             
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/design/111-parse-markdown.html">Parse Markdown</a></h5>
-                    <p class="card-text">Markdownをパースして、margraph用中間表現を生成...</p>
-                  </div>
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../margraph/margraph-junban.html">リンク</a></h5>
+                  <p class="card-text">- コードブロック中ではリンクしない方がいい   - LaTe...</p>
                 </div>
               </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/design/02-practice.html">margraphのプラクティス</a></h5>
-                    <p class="card-text">- 処理を小さなスクリプトに分ける   - スクリプトに違うプ...</p>
-                  </div>
-                </div>
-              </div>
+            </div>
             
               <div class="col-4">
                 <div class="card h-100">
@@ -191,6 +204,24 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../margraph/design/102-collect-link.html">Collect Links</a></h5>
                     <p class="card-text">集められた記事のタイトルを使って、記事中からどの部分にリンクを...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/111-parse-markdown.html">Parse Markdown</a></h5>
+                    <p class="card-text">Markdownをパースして、margraph用中間表現を生成...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/02-practice.html">margraphのプラクティス</a></h5>
+                    <p class="card-text">- 処理を小さなスクリプトに分ける   - スクリプトに違うプ...</p>
                   </div>
                 </div>
               </div>
@@ -324,8 +355,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../margraph/block-ui.html">ブロック的データ</a></h5>
-                  <p class="card-text">margraphとかで、箇条書きの中に入れられないもの。 - ...</p>
+                  <h5 class="card-title fs-6"><a href="../margraph/margraph-kakin.html">margraphの課金形式</a></h5>
+                  <p class="card-text">- サービスとして運用するなら、課金は必須   - サーバー代...</p>
                 </div>
               </div>
             </div>
@@ -348,8 +379,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../margraph/margraph-kakin.html">margraphの課金形式</a></h5>
-                  <p class="card-text">- サービスとして運用するなら、課金は必須   - サーバー代...</p>
+                  <h5 class="card-title fs-6"><a href="../margraph/block-ui.html">ブロック的データ</a></h5>
+                  <p class="card-text">margraphとかで、箇条書きの中に入れられないもの。 - ...</p>
                 </div>
               </div>
             </div>
@@ -365,123 +396,6 @@
                 </div>
               </div>
             </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/hyoki-yure.html">表記揺れ</a></h5>
-                  <p class="card-text">- margraphさとこの問題がもろに出る - 表記揺れをま...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/21-BFS.html">幅優先探索</a></h5>
-                    <p class="card-text">グラフ構造を探索するアルゴリズムの一つ。 キューを使って次に探...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/93-bigo-n.html">$O\left(n\right)$</a></h5>
-                    <p class="card-text">ビッグオー記法 - nが日常で扱う程度なら全然アリ - nが大...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../mind/mbti-ne.html">Ne</a></h5>
-                    <p class="card-text">MBTIの心理機能の1つ - 外向的直感と言われるもの - い...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/rule.html">ルール</a></h5>
-                  <p class="card-text">- 人が増えるとどうせ守られなくなるもの   - 人が多いノー...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/language.html">言語</a></h5>
-                    <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/undergraduate-1.html">学部一年の振り返り</a></h5>
-                  <p class="card-text">- プログラミング関連について   - Rustを触ってみたり...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/elm.html">Elm</a></h5>
-                    <p class="card-text">- https://guide.elm-lang.jp   -...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/makeing-language-workspace.html">言語自作勉強会</a></h5>
-                    <p class="card-text">の反省 ## 概要 事前に私が作った[baby-interpr...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/senren.html">シンプル</a></h5>
-                    <p class="card-text">- 機能をシンプルにするには、大きく2つあると思う - 機能を...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../simutrans/ahns.html">AHNS</a></h5>
-                    <p class="card-text">- ahakuokuが開いたNSサーバー - 主にpak128...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/city.html">都市</a></h5>
-                    <p class="card-text">- 都市には広がりと集まりが必要なのではないか   - 集まり...</p>
-                  </div>
-                </div>
-              </div>
             
           </div>
         
@@ -531,11 +445,38 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/outliner.html">アウトライナー</a></h5>
-                  <p class="card-text">- 章立てとかの全体的な構造を定めてから、細部の文章を追加して...</p>
+                  <h5 class="card-title fs-6"><a href="../other/hyoki-yure.html">表記揺れ</a></h5>
+                  <p class="card-text">- margraphさとこの問題がもろに出る - 表記揺れをま...</p>
                 </div>
               </div>
             </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/21-BFS.html">幅優先探索</a></h5>
+                    <p class="card-text">グラフ構造を探索するアルゴリズムの一つ。 キューを使って次に探...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/93-bigo-n.html">$O\left(n\right)$</a></h5>
+                    <p class="card-text">ビッグオー記法 - nが日常で扱う程度なら全然アリ - nが大...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../mind/mbti-ne.html">Ne</a></h5>
+                    <p class="card-text">MBTIの心理機能の1つ - 外向的直感と言われるもの - い...</p>
+                  </div>
+                </div>
+              </div>
             
           </div>
         
@@ -548,6 +489,15 @@
                 </div>
               </div>
             </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/makeing-language-workspace.html">言語自作勉強会</a></h5>
+                    <p class="card-text">の反省 ## 概要 事前に私が作った[baby-interpr...</p>
+                  </div>
+                </div>
+              </div>
             
               <div class="col-4">
                 <div class="card h-100">
@@ -572,6 +522,75 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../reading-note/tapl/05-13-church-number.html">チャーチ数</a></h5>
                     <p class="card-text">簡単のため、振る舞い等価なものは区別せずに考える。そのため、値...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../other/rule.html">ルール</a></h5>
+                  <p class="card-text">- 人が増えるとどうせ守られなくなるもの   - 人が多いノー...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/language.html">言語</a></h5>
+                    <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../other/undergraduate-1.html">学部一年の振り返り</a></h5>
+                  <p class="card-text">- プログラミング関連について   - Rustを触ってみたり...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/elm.html">Elm</a></h5>
+                    <p class="card-text">- https://guide.elm-lang.jp   -...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/senren.html">シンプル</a></h5>
+                    <p class="card-text">- 機能をシンプルにするには、大きく2つあると思う - 機能を...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../simutrans/ahns-c1.html">AHNS-C1</a></h5>
+                    <p class="card-text">- AHNSのコンセプト鯖 - 途中から中心都市の成京の路線バ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/city.html">都市</a></h5>
+                    <p class="card-text">- 都市には広がりと集まりが必要なのではないか   - 集まり...</p>
                   </div>
                 </div>
               </div>
