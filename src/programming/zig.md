@@ -4,6 +4,7 @@
 - https://ziglang.org
 
 ### ジェネリクスの書き方が面白い
+
 ```zig
 const std = @import("std");
 
