@@ -48,14 +48,14 @@
       </li>
     </ul>
   </li>
-  <li>‘String’系の型は’&amp;str’系の型に型変換できる
+  <li><code>String</code>系の型は<code>&amp;str</code>系の型に型変換できる
     <ul>
-      <li>‘String’内部で持っている’str’への参照とバイト長をコピーするだけで済む</li>
+      <li><code>String</code>内部で持っている<code>str</code>への参照とバイト長をコピーするだけで済む</li>
     </ul>
   </li>
-  <li>‘&amp;str’系の型を’String’系の型に変換するにはメソッド呼び出しが必要
+  <li><code>&amp;str</code>系の型を<code>String</code>系の型に変換するにはメソッド呼び出しが必要
     <ul>
-      <li>‘String’系の型は<a href="../programming/algorithms-and-data-structure/15-heap.html">ヒープ</a>領域に文字列が確保されるので、$O(n)$ のコストがかかる
+      <li><code>String</code>系の型は<a href="../programming/algorithms-and-data-structure/15-heap.html">ヒープ</a>領域に文字列が確保されるので、$O(n)$ のコストがかかる
         <ul>
           <li>重い処理はメソッド呼び出しとして設計してある</li>
         </ul>
