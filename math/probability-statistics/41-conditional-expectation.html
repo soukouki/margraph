@@ -38,28 +38,9 @@
               <div><ul>
   <li>条件付きの<a href="../../math/probability-statistics/22-expectation-value.html">期待値</a>
     <ul>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>$E[X¥</td>
-              <td>Y=y] = \int x g(x¥</td>
-              <td>y) dx$</td>
-            </tr>
-          </tbody>
-        </table>
+      <li>$E[X|Y=y] = \int x g(x|y) dx$
         <ul>
-          <li>
-            <table>
-              <tbody>
-                <tr>
-                  <td>$g(x¥</td>
-                  <td>y) = P(x¥</td>
-                  <td>y)$</td>
-                </tr>
-              </tbody>
-            </table>
-          </li>
+          <li>$g(x|y) = P(x|y)$</li>
           <li>yの関数になる</li>
         </ul>
       </li>
@@ -67,18 +48,7 @@
   </li>
   <li>条件付きの<a href="../../math/probability-statistics/05a-variance.html">分散</a>
     <ul>
-      <li>
-        <table>
-          <tbody>
-            <tr>
-              <td>$V[X¥</td>
-              <td>Y=y] = \int (y-E[Y¥</td>
-              <td>X=x])^2 h(y¥</td>
-              <td>x) dy$</td>
-            </tr>
-          </tbody>
-        </table>
-      </li>
+      <li>$V[X|Y=y] = \int (y-E[Y|X=x])^2 h(y|x) dy$</li>
     </ul>
   </li>
 </ul>
