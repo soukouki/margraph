@@ -46,6 +46,51 @@
 </div>
             
           
+            
+              <h2></h2>
+            
+          
+            
+              <div><ul>
+  <li>分散を、<a href="../../math/probability-statistics/04-average.html">平均</a>の代わりに<a href="../../math/probability-statistics/22-expectation-value.html">期待値</a>を使って計算する</li>
+  <li>離散型の場合、$\displaystyle V[X] = \sum_{k=1}^{|\Omega|} (x_k - E[X])^2 P(X=x_k)$
+    <ul>
+      <li>$E[X]$ は<a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></li>
+      <li><a href="../../math/probability-statistics/04-average.html">平均</a>の代わりに<a href="../../math/probability-statistics/22-expectation-value.html">期待値</a>を使っている</li>
+      <li>$\dfrac{1}{N}$ の代わりに $P(X=x_k)$ を使っている</li>
+    </ul>
+  </li>
+  <li>
+    <p>連続型の場合、$\displaystyle V[X] = \int_{-\infty}^\infty (x-E[X])^2 f(x)\ dx$</p>
+  </li>
+  <li>$V[X] = E[X^2] - E[X]^2$ と計算できる
+    <ul>
+      <li>
+\[\begin{eqnarray}
+V[X] &amp;=&amp; \sum_{k=1}^{|\Omega|} (x_k - E[X])^2 P(X=x_k) \\
+&amp;=&amp; \sum (x_l^2-2x_kE[X]+E[X]^2) P(X=x_k) \\
+&amp;=&amp; \sum x_k^2 P(X=x_k) -2E[X] \sum x_k P(X=x_k) + E[X]^2 \sum P(X=x_k)\\
+&amp;=&amp; \sum x_k^2 P(X=x_k) - E[X]^2 \\
+&amp;=&amp; E[X^2] - E[X]^2 \\
+\end{eqnarray}\]
+      </li>
+      <li>2乗の<a href="../../math/probability-statistics/04-average.html">平均</a>のほうが、大きい値の影響が大きいから大きくなる、みたいな方法で覚える
+        <ul>
+          <li>分散は必ず正の数</li>
+        </ul>
+      </li>
+      <li>$\sum x_k P(X=x_k) = E[X]$
+        <ul>
+          <li><a href="../../math/probability-statistics/22-expectation-value.html">期待値</a>の定義と同じ</li>
+        </ul>
+      </li>
+      <li>$\sum P(X=x_k) = 1$</li>
+    </ul>
+  </li>
+</ul>
+</div>
+            
+          
         </div>
       
 
@@ -104,15 +149,6 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/04-average.html">平均</a></h5>
-                    <p class="card-text">- xの平均を $\bar x$ とする - $\displa...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/probability-statistics/06-hyoujun-tokuten.html">標準得点</a></h5>
                     <p class="card-text">- Zスコア - $Z\dfrac{x_i - \bar x_...</p>
                   </div>
@@ -143,8 +179,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/37-moment-generating-function.html">モーメント母関数</a></h5>
-                  <p class="card-text">- 複雑ななんかで使う - 数学的なテクニックらしい - $M...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></h5>
+                  <p class="card-text">- 試行回数を無限に増やしていったときの平均値 - 標本に対し...</p>
                 </div>
               </div>
             </div>
@@ -152,11 +188,53 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></h5>
-                    <p class="card-text">- 試行回数を無限に増やしていったときの平均値 - 標本に対し...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/19-probablity-density.html">確率密度</a></h5>
+                    <p class="card-text">- 無限にデータを増やして、ヒストグラムの幅をどんどん小さくし...</p>
                   </div>
                 </div>
               </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/04-average.html">平均</a></h5>
+                  <p class="card-text">- xの平均を $\bar x$ とする - $\displa...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/34-skewness.html">歪度</a></h5>
+                    <p class="card-text">- 分布を見た際に、平均値から左右へどれくらい偏っているか、歪...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/10-quick-sort.html">クイックソート</a></h5>
+                    <p class="card-text">分割統治法を用いたソートアルゴリズムの一つ 適当な値を境界値と...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/37-moment-generating-function.html">モーメント母関数</a></h5>
+                  <p class="card-text">- 複雑ななんかで使う - 数学的なテクニックらしい - $M...</p>
+                </div>
+              </div>
+            </div>
             
           </div>
         
@@ -175,6 +253,15 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/probability-statistics/01-correlation.html">相関</a></h5>
                     <p class="card-text">- correlation ## 正の相関 - ある次元が大き...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/02a-cov.html">共分散</a></h5>
+                    <p class="card-text">- $C_{xy}  E[XY] - E[X]E[Y]$ - ...</p>
                   </div>
                 </div>
               </div>
@@ -224,6 +311,18 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/41-conditional-expectation.html">条件付きの期待値と分散</a></h5>
+                  <p class="card-text">- 条件付きの期待値   - $E[X|Yy] = \int ...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
                   <h5 class="card-title fs-6"><a href="../../math/probability-statistics/30-gaussian-dist.html">正規分布</a></h5>
                   <p class="card-text">- ガウス分布とも呼ばれる - ポワソン分布の確率 $p$ を...</p>
                 </div>
@@ -250,18 +349,6 @@
                   </div>
                 </div>
               </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/23-.html">期待値を使った分散</a></h5>
-                  <p class="card-text">- 分散を、平均の代わりに期待値を使って計算する - 離散型の...</p>
-                </div>
-              </div>
-            </div>
             
           </div>
         

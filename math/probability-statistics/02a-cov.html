@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>散布図</title>
+    <title>共分散</title>
     <meta NAME="robots" CONTENT="noindex,nofollow">
   </head>
   <body>
@@ -22,23 +22,22 @@
           
             <li class="breadcrumb-item"><a href="../../math/probability-statistics/index.html">probability-statistics</a></li>
           
-          <li class="breadcrumb-item">散布図</li>
+          <li class="breadcrumb-item">共分散</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>散布図</h1>
+      <h1>共分散</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>scatter plot</li>
-  <li>縦軸と横軸に分けて、2次元のデータを描画したもの</li>
-  <li><a href="../../math/probability-statistics/01-correlation.html">相関</a>を視覚的に見れる</li>
+  <li>$C_{xy} = E[XY] - E[X]E[Y]$</li>
+  <li>$\displaystyle \sum_{i=1}^N(x_i - \bar x)(y_i - \bar y)$</li>
 </ul>
 </div>
             
@@ -59,7 +58,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/probability-statistics/-watch.html">確率統計用のwatch</a>
+                <a href="../../math/probability-statistics/02-correlation-coefficien.html">相関係数</a>
               
             </div>
             <div class="col">
@@ -71,7 +70,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../../math/probability-statistics/01-correlation.html">相関</a>
+                <a href="../../math/probability-statistics/03-bosuu.html">母数</a>
               
             </div>
           </div>
@@ -80,7 +79,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/00-scatter-plot.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/02a-cov.md';">Edit</button>
         
         
       </div>
@@ -92,8 +91,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/01-correlation.html">相関</a></h5>
-                  <p class="card-text">- correlation ## 正の相関 - ある次元が大き...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/02-correlation-coefficien.html">相関係数</a></h5>
+                  <p class="card-text">- 相関の度合いを測る係数   - 正なら正の相関   - 負...</p>
                 </div>
               </div>
             </div>
@@ -101,8 +100,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/17-indipendent.html">独立</a></h5>
-                    <p class="card-text">- $P(Xx, Y=y) = P(X=x \cap Y=y)...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/01-correlation.html">相関</a></h5>
+                    <p class="card-text">- correlation ## 正の相関 - ある次元が大き...</p>
                   </div>
                 </div>
               </div>
@@ -110,8 +109,56 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/02-correlation-coefficien.html">相関係数</a></h5>
-                    <p class="card-text">- 相関の度合いを測る係数   - 正なら正の相関   - 負...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/04-average.html">平均</a></h5>
+                    <p class="card-text">- xの平均を $\bar x$ とする - $\displa...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05-standared-deviation.html">標準偏差</a></h5>
+                    <p class="card-text">- $S_x  \sqrt{\dfrac{\sum_{i=1}...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05a-variance.html">分散</a></h5>
+                    <p class="card-text">- 標準偏差を2乗したもの   - $\sigma^2$ - ...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/10-linier-regression.html">線形回帰</a></h5>
+                  <p class="card-text">- 授業で扱った、最小二乗法を用いた線形回帰について - $a...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/09-least-squares-method.html">最小二乗法</a></h5>
+                    <p class="card-text">- 適当な関数(1次関数など)をモデル関数として、観測された結...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/08-regression.html">回帰</a></h5>
+                    <p class="card-text">- 見えてるものの裏側に何があるのかを探る   - 見えるもの...</p>
                   </div>
                 </div>
               </div>

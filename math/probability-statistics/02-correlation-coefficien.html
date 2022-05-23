@@ -50,7 +50,7 @@
   </li>
   <li>$r_{xy} = \dfrac{C_{xy}}{S_x S_y}$
     <ul>
-      <li>$C_{xy}$ は共<a href="../../math/probability-statistics/05a-variance.html">分散</a>(covariance)</li>
+      <li>$C_{xy}$ は<a href="../../math/probability-statistics/02a-cov.html">共分散</a>(covariance)</li>
       <li>$S_x$ はxの<a href="../../math/probability-statistics/05-standared-deviation.html">標準偏差</a></li>
       <li>$S_X^2$ はxの標本<a href="../../math/probability-statistics/05a-variance.html">分散</a></li>
     </ul>
@@ -93,7 +93,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../../math/probability-statistics/03-bosuu.html">母数</a>
+                <a href="../../math/probability-statistics/02a-cov.html">共分散</a>
               
             </div>
           </div>
@@ -119,6 +119,15 @@
                 </div>
               </div>
             </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/17-indipendent.html">独立</a></h5>
+                    <p class="card-text">- $P(Xx, Y=y) = P(X=x \cap Y=y)...</p>
+                  </div>
+                </div>
+              </div>
             
               <div class="col-4">
                 <div class="card h-100">
@@ -153,15 +162,6 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/24-.html">期待値を使った標準得点</a></h5>
-                    <p class="card-text">- 標準得点を、平均の代わりに期待値を使って計算する - $Z...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/probability-statistics/30-gaussian-dist.html">正規分布</a></h5>
                     <p class="card-text">- ガウス分布とも呼ばれる - ポワソン分布の確率 $p$ を...</p>
                   </div>
@@ -171,8 +171,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/36-test-result.html">確率統計のテスト結果</a></h5>
-                    <p class="card-text">||| |:--:|--:| |平均点|55| |標準偏差|1...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/06-hyoujun-tokuten.html">標準得点</a></h5>
+                    <p class="card-text">- Zスコア - $Z\dfrac{x_i - \bar x_...</p>
                   </div>
                 </div>
               </div>
@@ -180,8 +180,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/23-.html">期待値を使った分散</a></h5>
-                    <p class="card-text">- 分散を、平均の代わりに期待値を使って計算する - 離散型の...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/36-test-result.html">確率統計のテスト結果</a></h5>
+                    <p class="card-text">||| |:--:|--:| |平均点|55| |標準偏差|1...</p>
                   </div>
                 </div>
               </div>
@@ -228,6 +228,39 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/02a-cov.html">共分散</a></h5>
+                  <p class="card-text">- $C_{xy}  E[XY] - E[X]E[Y]$ - ...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/10-linier-regression.html">線形回帰</a></h5>
+                    <p class="card-text">- 授業で扱った、最小二乗法を用いた線形回帰について - $a...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05-standared-deviation.html">標準偏差</a></h5>
+                  <p class="card-text">- $S_x  \sqrt{\dfrac{\sum_{i=1}...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
                   <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05a-variance.html">分散</a></h5>
                   <p class="card-text">- 標準偏差を2乗したもの   - $\sigma^2$ - ...</p>
                 </div>
@@ -255,8 +288,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/31-exponential-dist.html">指数分布</a></h5>
-                    <p class="card-text">- $f(x)  \lambda \exp(- \lambda...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/41-conditional-expectation.html">条件付きの期待値と分散</a></h5>
+                    <p class="card-text">- 条件付きの期待値   - $E[X|Yy] = \int ...</p>
                   </div>
                 </div>
               </div>
@@ -264,8 +297,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/10-linier-regression.html">線形回帰</a></h5>
-                    <p class="card-text">- 授業で扱った、最小二乗法を用いた線形回帰について - $a...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/31-exponential-dist.html">指数分布</a></h5>
+                    <p class="card-text">- $f(x)  \lambda \exp(- \lambda...</p>
                   </div>
                 </div>
               </div>
@@ -302,27 +335,6 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../simutrans/hida.html">飛騨</a></h5>
                     <p class="card-text">- AHNS-C2の飛騨付近の開発計画 - ニューヨークやシカ...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05-standared-deviation.html">標準偏差</a></h5>
-                  <p class="card-text">- $S_x  \sqrt{\dfrac{\sum_{i=1}...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/06-hyoujun-tokuten.html">標準得点</a></h5>
-                    <p class="card-text">- Zスコア - $Z\dfrac{x_i - \bar x_...</p>
                   </div>
                 </div>
               </div>
