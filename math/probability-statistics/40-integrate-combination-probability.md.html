@@ -36,10 +36,10 @@
         
             
               <div><ul>
-  <li>$P(X=x|Y=y) = g(x|y)$ と置く</li>
-  <li>$\displaystle \int g(x|y)\ dx = 1$ となる
+  <li>$g(x|y) = P(X=x|Y=y)$ とおく</li>
+  <li>$\int g(x|y)\ dx = 1$ となる
     <ul>
-      <li><a href="../../math/probability-statistics/14-conditional-probability.html">条件付き確率</a>でも、<a href="../../math/probability-statistics/11-probability.html">確率</a>を足し合わせると1になる</li>
+      <li><a href="../../math/probability-statistics/14-conditional-probability.html">条件付き確率</a>でも、<a href="../../math/probability-statistics/11-probability.html">確率</a>を足し合わせると1となる</li>
       <li>直感的には、$f_{XY}(x,y) \to f(y)$ となり、分母と等しくなる
         <ul>
           <li>すべてのxについて見ていくのだから、結局すべてのyも集められていく</li>
@@ -47,10 +47,10 @@
       </li>
     </ul>
   </li>
-  <li>$\displaystle \int g(x|y)\ dy = g(y)$ となる
+  <li>$\int g(x|y)h(y)\ dy = h(x)$ となる
     <ul>
-      <li>うーん・・・？よくわからん</li>
-      <li>$\displaystle g(x|y) = g(x)$ となるとき、<a href="../../math/probability-statistics/17-indipendent.html">独立</a>になる…らしい</li>
+      <li>$h(x) = P(X=x)$ とおく</li>
+      <li><a href="../../math/probability-statistics/39-marginal-probability.html">周辺確率</a>を求めている</li>
     </ul>
   </li>
 </ul>
@@ -73,7 +73,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/probability-statistics/38-.html">チェビシェフの不等式</a>
+                <a href="../../math/probability-statistics/39-marginal-probability.html">周辺確率</a>
               
             </div>
             <div class="col">
@@ -190,6 +190,15 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/17-indipendent.html">独立</a></h5>
+                    <p class="card-text">- $P(Xx, Y=y) = P(X=x \cap Y=y)...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/probability-statistics/27-bernoulli-dist.html">ベルヌーイ分布</a></h5>
                     <p class="card-text">- 確率 $p$ で1を、確率 $1-p$ で0を取る離散確率...</p>
                   </div>
@@ -235,6 +244,15 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/43-most-likelihood-method.html">最尤法</a></h5>
+                    <p class="card-text">- MLMとも - 尤は、尤もらしい(もっともらしい)のやつ ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/probability-statistics/16-bayes-theorem.html">ベイズの定理</a></h5>
                     <p class="card-text">- $P(A_1\|B_1)  \dfrac{P(B_1\|A...</p>
                   </div>
@@ -256,20 +274,11 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/17-indipendent.html">独立</a></h5>
-                  <p class="card-text">- $P(Xx, Y=y) = P(X=x \cap Y=y)...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/39-marginal-probability.html">周辺確率</a></h5>
+                  <p class="card-text">- 同時確率 $f(x,y)$ に対して、それを積分して $\...</p>
                 </div>
               </div>
             </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/01-correlation.html">相関</a></h5>
-                    <p class="card-text">- correlation ## 正の相関 - ある次元が大き...</p>
-                  </div>
-                </div>
-              </div>
             
           </div>
         

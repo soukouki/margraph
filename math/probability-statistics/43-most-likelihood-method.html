@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>確率の例</title>
+    <title>最尤法</title>
     <meta NAME="robots" CONTENT="noindex,nofollow">
   </head>
   <body>
@@ -22,76 +22,38 @@
           
             <li class="breadcrumb-item"><a href="../../math/probability-statistics/index.html">probability-statistics</a></li>
           
-          <li class="breadcrumb-item">確率の例</li>
+          <li class="breadcrumb-item">最尤法</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>確率の例</h1>
+      <h1>最尤法</h1>
 
       
         <div class="contents">
         
             
-              <div><table>
-  <thead>
-    <tr>
-      <th style="text-align: left"> </th>
-      <th style="text-align: right">熱がある($B_1$)</th>
-      <th style="text-align: right">熱がない($B_2$)</th>
-      <th style="text-align: right">小計</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">風邪である($A_1$)</td>
-      <td style="text-align: right">4</td>
-      <td style="text-align: right">1</td>
-      <td style="text-align: right">5</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">風邪でない($A_2$)</td>
-      <td style="text-align: right">2</td>
-      <td style="text-align: right">13</td>
-      <td style="text-align: right">15</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">小計</td>
-      <td style="text-align: right">6</td>
-      <td style="text-align: right">14</td>
-      <td style="text-align: right">20</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-            
-          
-            
               <div><ul>
-  <li>$P(A_1) = \dfrac{|A_1|}{\Omega}=\dfrac{5}{20}$
+  <li>MLMとも</li>
+  <li>尤は、尤もらしい(もっともらしい)のやつ</li>
+  <li>サンプリング調査して出てきた結果は、最も起こりやすいものが実現した、発生したと考える。</li>
+  <li>例
     <ul>
-      <li>風邪である<a href="../../math/probability-statistics/11-probability.html">確率</a></li>
-    </ul>
-  </li>
-  <li>$P(A_1 \cap B_1) = \dfrac{|A_1 \cap B_1|}{|\Omega|} = \dfrac{4}{20}$
-    <ul>
-      <li>風邪であり、かつ熱がある<a href="../../math/probability-statistics/11-probability.html">確率</a></li>
-      <li><a href="../../math/probability-statistics/13-joint-probability.html">同時確率</a></li>
-    </ul>
-  </li>
-  <li>$P(A_1|B_1) = \dfrac{|A_1 \cap B_1|}{|B_1|} = \dfrac{4}{6}$
-    <ul>
-      <li><a href="../../math/probability-statistics/14-conditional-probability.html">条件付き確率</a></li>
-      <li>熱がある人の中で、風を引いている人の<a href="../../math/probability-statistics/11-probability.html">確率</a></li>
-      <li>分母に注意！
+      <li>$p$ の<a href="../../math/probability-statistics/11-probability.html">確率</a>で1, $1-p$ の<a href="../../math/probability-statistics/11-probability.html">確率</a>で0が発生するとき</li>
+      <li>4回サンプルを取って、1,0,1,1,1となったとき、$L(p) = p,\ 1-p\,\ p,\ p,\ p$ が一番起こりやすいと考える</li>
+      <li>最大値を求める
         <ul>
-          <li>縦棒の右側と左側で、大きく意味が異なるので注意(どっちがどっちかわからなくなる)</li>
+          <li>$L(p) = p^4-p^5$</li>
+          <li>最大値のとき微分して0になるので、</li>
+          <li>$\dfrac{dL(p)}{dp} = 4p^3-5p^4 = p^3(4-5p) = 0$ より、 $p=0,\ 0.8$ のとき等式が成り立つ</li>
+          <li>境界も含めて代入して計算すると、$\hat \theta=0.8$ のとき最大値とわかる</li>
         </ul>
       </li>
     </ul>
   </li>
+  <li>ただ、<a href="../../math/probability-statistics/44-unbiased.html">不遍性</a>がないことが重要</li>
 </ul>
 </div>
             
@@ -112,7 +74,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/probability-statistics/14-conditional-probability.html">条件付き確率</a>
+                <a href="../../math/probability-statistics/42-estimation.html">推定</a>
               
             </div>
             <div class="col">
@@ -124,7 +86,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../../math/probability-statistics/16-bayes-theorem.html">ベイズの定理</a>
+                <a href="../../math/probability-statistics/44-unbiased.html">不遍性</a>
               
             </div>
           </div>
@@ -133,7 +95,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/15-example.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/43-most-likelihood-method.md';">Edit</button>
         
         
       </div>
@@ -183,6 +145,15 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../other/atsumari.html">集まり</a></h5>
                     <p class="card-text">- 物事が一ヶ所にまとめられ、集約されているようなさま - 広...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/13-joint-probability.html">同時確率</a></h5>
+                    <p class="card-text">- 結合確率とも - $P(A) \cap P(B)$ のよう...</p>
                   </div>
                 </div>
               </div>
@@ -244,6 +215,15 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/15-example.html">確率の例</a></h5>
+                    <p class="card-text">||熱がある($B_1$)|熱がない($B_2$)|小計| |...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/probability-statistics/38-.html">チェビシェフの不等式</a></h5>
                     <p class="card-text">- どんな分布・確率変数 $X$ に対しても、$P(|X-\m...</p>
                   </div>
@@ -255,15 +235,6 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/probability-statistics/28-binomial-dist.html">二項分布</a></h5>
                     <p class="card-text">- ベルヌーイ分布の確率分布を使う - $B_i(n,p)$ ...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/43-most-likelihood-method.html">最尤法</a></h5>
-                    <p class="card-text">- MLMとも - 尤は、尤もらしい(もっともらしい)のやつ ...</p>
                   </div>
                 </div>
               </div>
@@ -301,8 +272,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/13-joint-probability.html">同時確率</a></h5>
-                  <p class="card-text">- 結合確率とも - $P(A) \cap P(B)$ のよう...</p>
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/44-unbiased.html">不遍性</a></h5>
+                  <p class="card-text">- 普遍性(ubiguitousness)とは似ているが異なる...</p>
                 </div>
               </div>
             </div>
@@ -310,23 +281,38 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../other/language.html">言語</a></h5>
-                    <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/42-estimation.html">推定</a></h5>
+                    <p class="card-text">- どれくらい確からしいか、ある仮設がどれくらい言えるか、とい...</p>
                   </div>
                 </div>
               </div>
             
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/14-conditional-probability.html">条件付き確率</a></h5>
-                  <p class="card-text">- $P(A_1\|B_1) \times P(B_1)  P...</p>
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></h5>
+                    <p class="card-text">- 試行回数を無限に増やしていったときの平均値 - 標本に対し...</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/03-bosuu.html">母数</a></h5>
+                    <p class="card-text">- 母集団の特性を表す数 - **サンプルサイズの数ではない*...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05a-variance.html">分散</a></h5>
+                    <p class="card-text">- 標準偏差を2乗したもの   - $\sigma^2$ - ...</p>
+                  </div>
+                </div>
+              </div>
             
           </div>
         
