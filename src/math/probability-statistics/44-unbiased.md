@@ -1,4 +1,4 @@
-# 不遍性
+# 不偏性
 
 - 普遍性(ubiguitousness)とは似ているが異なる
 - $E[\hat \theta] = \theta$
@@ -21,5 +21,5 @@
       - $\S^2$ は標本分散
       - $\sigma^2$ は母分散
       - この方式で求めた分散を $s^2$ と書く
-        - 不遍分散という
+        - 不偏分散という
         - $\displaystyle s^2 = \frac{\sum_{i=1}^n(X_i - \bar X)^2}{n-1}$
