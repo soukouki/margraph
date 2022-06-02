@@ -36,13 +36,71 @@
         
             
               <div><ul>
-  <li>ある一点の値を<a href="../../math/probability-statistics/42-estimation.html">推定</a>する(点<a href="../../math/probability-statistics/42-estimation.html">推定</a>)に対して、</li>
+  <li>ある一点の値を<a href="../../math/probability-statistics/42-estimation.html">推定</a>する(点<a href="../../math/probability-statistics/42-estimation.html">推定</a>)に対して、ある区間に入る<a href="../../math/probability-statistics/11-probability.html">確率</a>が何%なのか、という形で<a href="../../math/probability-statistics/42-estimation.html">推定</a>する</li>
   <li>$P(L \leq \theta \leq U) \geq 1 - \alpha$
     <ul>
       <li>与えられた $\alpha$ が保証する、真の<a href="../../math/probability-statistics/03-bosuu.html">母数</a>の入る区間 L, U を<a href="../../math/probability-statistics/42-estimation.html">推定</a>する</li>
+      <li>$L$ を下側信頼限界</li>
+      <li>$U$ を上側信頼限界</li>
+      <li>$1-\alpha$ は信頼係数</li>
+      <li>$\theta$ は標準化された統計量、例えば<a href="../../math/probability-statistics/04-average.html">平均</a>や<a href="../../math/probability-statistics/05a-variance.html">分散</a>(下で出てくるように)
+        <ul>
+          <li><a href="../../math/probability-statistics/03-bosuu.html">母数</a> $\sigma^2$ が既知なら $Z$ を、既知でないなら $t$ を求める</li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li>たまに、決めた $\alpha$ と L, U に収まるまで何回も試すような<a href="../../math/probability-statistics/42-estimation.html">推定</a>をすることがあり、Pハッキングと呼ばれる</li>
+  <li>例えば、$\alpha = 0.05, L = 10, U = 20$ としたとき、95%の<a href="../../math/probability-statistics/11-probability.html">確率</a>で $L \leq \theta \leq U$ となる</li>
+</ul>
+</div>
+            
+          
+            
+              <h2></h2>
+            
+          
+            
+              <div><ul>
+  <li>$Z = \dfrac{\bar x - \mu}{\sqrt{\sigma^2 / n}}$
+    <ul>
+      <li><a href="../../math/probability-statistics/46-.html">中心極限定理</a>から<a href="../../math/probability-statistics/30-gaussian-dist.html">正規分布</a>なのがわかるから、こんな式になるのかな・・？</li>
+      <li>変形すると、区間は $[\bar X - Z_{\small \dfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}, \bar X + Z_{\small  \dfrac{\alpha}{2}}\dfrac{\sigma}{\sqrt{n}}]$ になる</li>
+    </ul>
+  </li>
+  <li>計算の流れ
+    <ol>
+      <li>仮に $\alpha = 0.05$ とする</li>
+      <li><a href="../../math/probability-statistics/30-gaussian-dist.html">正規分布</a>表を見ると、$0.025$ の面積になる<a href="../../math/probability-statistics/11-probability.html">確率</a>は $U=1.96$(<a href="../../math/probability-statistics/06-hyoujun-tokuten.html">標準得点</a>)、$L=-1.96$</li>
+      <li>母<a href="../../math/probability-statistics/04-average.html">平均</a> $\mu$ の値を求める
+        <ul>
+          <li>$-1.96 \leq Z = \dfrac{\bar x - \mu}{\sqrt{\sigma^2 / n}} \leq 1.96$</li>
+          <li>$\bar x, n, \sigma^2$ がわかっているとしたら、$\mu$ の値が求められる
+            <ul>
+              <li>元が<a href="../../math/probability-statistics/30-gaussian-dist.html">正規分布</a>だとわかっていれば、$\sigma^2 = np(1-p)$ で求められる</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ol>
+  </li>
+</ul>
+</div>
+            
+          
+            
+              <h2></h2>
+            
+          
+            
+              <div><ul>
+  <li>$t=\dfrac{\bar x - \mu}{s \sqrt{ 1 / n }}$
+    <ul>
+      <li>このsは<a href="../../math/probability-statistics/44-unbiased-variance.html">不偏分散</a></li>
+    </ul>
+  </li>
+  <li>$P \left(-t_{\small \dfrac{\alpha}{2}} (n-1) \leq \dfrac{\sqrt{n}(\bar x- \mu)}{s} \leq t_{\small \dfrac{\alpha}{2}} (n-1) \right)$</li>
+  <li>計算の流れは<a href="../../math/probability-statistics/04-average.html">平均</a>と同じようにやる</li>
 </ul>
 </div>
             
@@ -63,7 +121,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/probability-statistics/44-unbiased.html">不遍性</a>
+                <a href="../../math/probability-statistics/44-unbiased-variance.html">不偏分散</a>
               
             </div>
             <div class="col">
@@ -73,6 +131,9 @@
               
             </div>
             <div class="col">
+              
+                次の記事<br />
+                <a href="../../math/probability-statistics/46-.html">中心極限定理</a>
               
             </div>
           </div>
@@ -120,8 +181,29 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/04-average.html">平均</a></h5>
-                    <p class="card-text">- xの平均を $\bar x$ とする - $\displa...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/44-unbiased.html">不偏性</a></h5>
+                    <p class="card-text">- 普遍性(ubiguitousness)とは似ているが異なる...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/11-probability.html">確率</a></h5>
+                  <p class="card-text">- $0 \leq P(A_i) \leq 1$   - $A...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/12-event.html">事象</a></h5>
+                    <p class="card-text">- イベント - 起こる集合 - $A_i$ はそれぞれ排反で...</p>
                   </div>
                 </div>
               </div>
@@ -129,8 +211,143 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/44-unbiased.html">不遍性</a></h5>
-                    <p class="card-text">- 普遍性(ubiguitousness)とは似ているが異なる...</p>
+                    <h5 class="card-title fs-6"><a href="../../other/event.html">イベント</a></h5>
+                    <p class="card-text">イベントは内向的な理由で行うべきだ、と言う主張について - 内...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/sorehasou.html">それはそう</a></h5>
+                    <p class="card-text">- 自明、当然、みたいな意味合い - それはそう、なリストは何...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/atsumari.html">集まり</a></h5>
+                    <p class="card-text">- 物事が一ヶ所にまとめられ、集約されているようなさま - 広...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/13-joint-probability.html">同時確率</a></h5>
+                    <p class="card-text">- 結合確率とも - $P(A) \cap P(B)$ のよう...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/20-probability-mass.html">確率質量</a></h5>
+                    <p class="card-text">- 確率密度に対して、離散的な確率のことを確率質量と呼ぶことが...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/17-indipendent.html">独立</a></h5>
+                    <p class="card-text">- $P(Xx, Y=y) = P(X=x \cap Y=y)...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/27-bernoulli-dist.html">ベルヌーイ分布</a></h5>
+                    <p class="card-text">- 確率 $p$ で1を、確率 $1-p$ で0を取る離散確率...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/29-poisson-dist.html">ポワソン分布</a></h5>
+                    <p class="card-text">- 二項分布 $Bi(n,p)$ の試行回数 $n$ を大きく...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/40-integrate-combination-probability.md.html">条件付き確率の積分</a></h5>
+                    <p class="card-text">- $g(x\|y)  P(X=x\|Y=y)$ とおく - ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/15-example.html">確率の例</a></h5>
+                    <p class="card-text">||熱がある($B_1$)|熱がない($B_2$)|小計| |...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/28-binomial-dist.html">二項分布</a></h5>
+                    <p class="card-text">- ベルヌーイ分布の確率分布を使う - $B_i(n,p)$ ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/43-most-likelihood-method.html">最尤法</a></h5>
+                    <p class="card-text">- 最尤は「さいゆう」と読む - MLMとも - 尤は、尤もら...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/38-chebyshev-inequality.html">チェビシェフの不等式</a></h5>
+                    <p class="card-text">- どんな分布・確率変数 $X$ に対しても、$P(\|X-\...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/16-bayes-theorem.html">ベイズの定理</a></h5>
+                    <p class="card-text">- $P(A_1\|B_1)  \dfrac{P(B_1\|A...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/19-probablity-density.html">確率密度</a></h5>
+                    <p class="card-text">- 無限にデータを増やして、ヒストグラムの幅をどんどん小さくし...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/39-marginal-probability.html">周辺確率</a></h5>
+                    <p class="card-text">- 同時確率 $f(x,y)$ に対して、それを積分して $\...</p>
                   </div>
                 </div>
               </div>
@@ -147,14 +364,212 @@
               </div>
             </div>
             
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/04-average.html">平均</a></h5>
+                  <p class="card-text">- xの平均を $\bar x$ とする - $\displa...</p>
+                </div>
+              </div>
+            </div>
+            
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/28-binomial-dist.html">二項分布</a></h5>
-                    <p class="card-text">- ベルヌーイ分布の確率分布を使う - $B_i(n,p)$ ...</p>
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/22-expectation-value.html">期待値</a></h5>
+                    <p class="card-text">- 試行回数を無限に増やしていったときの平均値 - 標本に対し...</p>
                   </div>
                 </div>
               </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/02-correlation-coefficien.html">相関係数</a></h5>
+                    <p class="card-text">- 相関の度合いを測る係数   - 正なら正の相関   - 負...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/36-test-result.html">確率統計のテスト結果</a></h5>
+                    <p class="card-text">||| |:--:|--:| |平均点|55| |標準偏差|1...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05-standared-deviation.html">標準偏差</a></h5>
+                    <p class="card-text">- $S_x  \sqrt{\dfrac{\sum_{i=1}...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/34-skewness.html">歪度</a></h5>
+                    <p class="card-text">- 分布を見た際に、平均値から左右へどれくらい偏っているか、歪...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/32-.html">記述統計</a></h5>
+                    <p class="card-text">- あるデータの中で、平均はいくつか、分散はどれくらいか、のよ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/10-quick-sort.html">クイックソート</a></h5>
+                    <p class="card-text">分割統治法を用いたソートアルゴリズムの一つ 適当な値を境界値と...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/05a-variance.html">分散</a></h5>
+                  <p class="card-text">- 標準偏差を2乗したもの   - $\sigma^2$ - ...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/37-moment-generating-function.html">モーメント母関数</a></h5>
+                    <p class="card-text">- 複雑な確率分布で使う - 数学的なテクニックらしい - $...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/41-conditional-expectation.html">条件付きの期待値と分散</a></h5>
+                    <p class="card-text">- 条件付きの期待値   - $\displaystyle E...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/31-exponential-dist.html">指数分布</a></h5>
+                    <p class="card-text">- $f(x)  \lambda \exp(- \lambda...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/10-linier-regression.html">線形回帰</a></h5>
+                    <p class="card-text">- 授業で扱った、最小二乗法を用いた線形回帰について - $a...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/hirogari.html">広がり</a></h5>
+                    <p class="card-text">- 物事が開けた、分散したようなさま - 一ヶ所に纏まってる、...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../scraps/sacrificial-architecture.html">犠牲的アーキテクチャ</a></h5>
+                    <p class="card-text">- https://bliki-ja.github.io/Sa...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../simutrans/hida.html">飛騨</a></h5>
+                    <p class="card-text">- AHNS-C2の飛騨付近の開発計画 - ニューヨークやシカ...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/46-.html">中心極限定理</a></h5>
+                  <p class="card-text">- ある母集団から無作為に抽出した要素の平均を取るとき、標本数...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/30-gaussian-dist.html">正規分布</a></h5>
+                  <p class="card-text">- ガウス分布とも呼ばれる - ポワソン分布の確率 $p$ を...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/06-hyoujun-tokuten.html">標準得点</a></h5>
+                  <p class="card-text">- Zスコア - $Z\dfrac{x_i - \bar x_...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/07-hensati.html">偏差値</a></h5>
+                    <p class="card-text">- $10Z + 50$   - $Z$ は標準得点 - 10...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/44-unbiased-variance.html">不偏分散</a></h5>
+                  <p class="card-text">- 不偏性に近い性質を持つ分散において、分散の代わりに使う値...</p>
+                </div>
+              </div>
+            </div>
             
           </div>
         
