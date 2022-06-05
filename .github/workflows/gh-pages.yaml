@@ -27,6 +27,7 @@ jobs:
           path: |
             tmp
             public
+          key: primes
       
       - name: Build
         run: make -j all
