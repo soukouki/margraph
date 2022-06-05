@@ -10,7 +10,7 @@
     - https://github.com/darkreader/darkreader
 - 失敗したやり方のメモ
   - Windowsのときみたく、OS側の設定を探した
-    - ``gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"`
+    - `gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"`
     - https://wiki.archlinux.org/title/Dark_mode_switching の、gsettingsのコマンドを使うとFireFoxは切り替わった
       - vivaldiは上手く行かなかった
       - 日本語版の方は情報が古いのか、gsettingsのコマンドは載ってなかった
