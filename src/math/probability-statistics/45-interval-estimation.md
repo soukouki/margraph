@@ -27,6 +27,6 @@
 ## 分散の例
 
 - $t=\dfrac{\bar x - \mu}{s \sqrt{ 1 / n }}$
-  - このsは不偏分散
+  - このsの二乗($s^2$)は不偏分散
 - $P \left(-t_{\small \dfrac{\alpha}{2}} (n-1) \leq \dfrac{\sqrt{n}(\bar x- \mu)}{s} \leq t_{\small \dfrac{\alpha}{2}} (n-1) \right)$
 - 計算の流れは平均と同じようにやる
