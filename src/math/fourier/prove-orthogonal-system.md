@@ -1,6 +1,21 @@
-# 直交系であることの証明
+# 直交系かどうか
 
-- $\\{ \cos nx \\}_{n=1}^\infty$ が直行系であることを証明する
+- $\\{ \cos nx \\}_{n=1}^\infty$ が $[0, \pi]$ において直行系であることを証明する
   - 直交系の $\phi_n$ に $\cos nx$ を入れて考えてやればいい
 - $n \neq m$ のとき
-  - $\cos nx \cdot \cos mx = $
+  - $$ \int_0^\pi \cos nx \cdot \cos mx\ dx $$
+    - 関数の内積のとおりに
+  - $$ = \int_0^\pi \frac{1}{2}\\{{ \cos(n+m)x + \cos(n-m)x \\}}\ dx $$
+    - 三角関数の積和のやつ
+  - $$ = \frac{1}{2} \left[ \frac{\sin(n+m)x}{n+m} \cdot \frac{\sin(n-m)x}{n-m} \right]_0^\pi $$
+    - 積分しーの
+  - $ = 0 $
+    - どっちにしろ $x$ は $0$ と $\pi$ なので $0$ になる
+- $n == m$ のとき
+  - $$ \int_0^\pi \cos^2 nx\ dx $$
+  - $$ = \int_0^\pi \\{ \dfrac{1}{2} \cos 2nx + 1 \\}\ dx $$
+    - 三角関数の2乗の公式・・・もう忘れたなぁ・・・
+  - $$ = \frac{1}{2} \left[ \frac{\sin 2nx}{2n} + x \right]_0^\pi $$
+    - 積分しーの
+  - $$ = \frac{\pi}{2} $$
+    - 結局 $\sin$ 側は消える
