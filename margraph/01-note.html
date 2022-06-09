@@ -38,31 +38,54 @@
           
             
               <div><ul>
-  <li><a href="../long-tweets/2021-11-02.html">Scrapbox</a>がgoogleアカウント必要なので、自分用に作っちゃったもの。階層整理型のメモツールと、グラフ整理型のメモツールのいいとこ取りを目指す。
+  <li><a href="../long-tweets/2021-11-02.html">Scrapbox</a>がgoogleアカウント必要なので、自分用に作っちゃったもの</li>
+  <li>古典的なファイル管理+Markdownとの互換性を持つ
     <ul>
-      <li>階層型を目指すの、かなり難しい気がしてきた</li>
-      <li>otherから切り出して整理するのはいいけど、どこのフォルダに置くべきか考えるのが難しい
-        <ul>
-          <li>現時点でもソフトウェアとプログラミングの境が曖昧になってる
-            <ul>
-              <li>例えばVimはotherかprogrammingか、<a href="../other/outliner.html">アウトライナー</a>はどうか</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <li>編集時には好きなエディタを使えるようにする</li>
     </ul>
   </li>
-  <li>自動で記事名を<a href="../margraph/margraph-junban.html">リンク</a>して、ページ下部に2ホップ分の<a href="../margraph/margraph-junban.html">リンク</a>を貼ることが特徴</li>
-  <li><a href="../other/latex.html">LaTeX</a>で数式も書けるし、画像やコードも添付できる</li>
-  <li>自分用サービスとして使える存在にしていきたい
+  <li>記事名の自動<a href="../margraph/margraph-junban.html">リンク</a>
     <ul>
-      <li><a href="../scraps/haburashi-test.html">歯ブラシテスト</a>をクリアしたい</li>
+      <li>ABCという記事があるとき、他の記事でABCと書くと、自動で<a href="../margraph/margraph-junban.html">リンク</a>される</li>
     </ul>
   </li>
-  <li><a href="../other/outliner.html">アウトライナー</a>と言うよりかは、自由に書ける形式でいきたい
+  <li>ページ下部の2ホップ<a href="../margraph/margraph-junban.html">リンク</a>
     <ul>
-      <li>ファイルとフォルダの簡潔な形式との互換性を持たせたい</li>
-      <li>サービス終了で使えなくなるサービスにしたくない</li>
+      <li><a href="../long-tweets/2021-11-02.html">Scrapbox</a>と同じように、ページ下部に<a href="../margraph/margraph-junban.html">リンク</a>・被<a href="../margraph/margraph-junban.html">リンク</a>された記事を2ホップ分表示する</li>
+      <li>柔軟にページを行き来できるようにする</li>
+    </ul>
+  </li>
+  <li>MathJaxによる<a href="../tool/latex.html">LaTeX</a>記法のサポート</li>
+  <li>階層整理型のメモツールと、グラフ整理型のメモツールのいいとこ取りを目指す</li>
+</ul>
+</div>
+            
+          
+            
+              <h2>暫定的なこと</h2>
+            
+          
+            
+              <div><ul>
+  <li>MarkdownからHTMLに変換するだけのツールになっているけれど、いずれはウェブアプリケーションに置き換えたい</li>
+</ul>
+</div>
+            
+          
+            
+              <h2>やらないこと</h2>
+            
+          
+            
+              <div><ul>
+  <li>タグ管理
+    <ul>
+      <li>タグ管理はスケールに対するデメリットが大きい</li>
+    </ul>
+  </li>
+  <li>高機能な整理機能
+    <ul>
+      <li>整理に時間を吸われたくない</li>
     </ul>
   </li>
 </ul>
@@ -163,8 +186,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/outliner.html">アウトライナー</a></h5>
-                  <p class="card-text">- 章立てとかの全体的な構造を定めてから、細部の文章を追加して...</p>
+                  <h5 class="card-title fs-6"><a href="../margraph/margraph-junban.html">リンク</a></h5>
+                  <p class="card-text">- コードブロック中ではリンクしない方がいい   - LaTe...</p>
                 </div>
               </div>
             </div>
@@ -172,23 +195,11 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/todo.html">margraphの機能追加</a></h5>
-                    <p class="card-text">- 「像」や「系」のような短い記事の対処   - ノイズになる...</p>
+                    <h5 class="card-title fs-6"><a href="../margraph/block-ui.html">ブロック的データ</a></h5>
+                    <p class="card-text">箇条書きの中に入れられないもの。 - ブロック的データ   -...</p>
                   </div>
                 </div>
               </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../margraph/margraph-junban.html">リンク</a></h5>
-                  <p class="card-text">- コードブロック中ではリンクしない方がいい   - LaTe...</p>
-                </div>
-              </div>
-            </div>
             
               <div class="col-4">
                 <div class="card h-100">
@@ -238,15 +249,6 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/kakau.html">Kakau</a></h5>
-                    <p class="card-text">kakau.app - メモアプリの一つ - 箇条書きをさらに...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../scraps/-scrap.html">スクラップ</a></h5>
                     <p class="card-text">読んだ記事、報告書、論文なんかに対して、自分に向けたタイトル、...</p>
                   </div>
@@ -271,13 +273,22 @@
                 </div>
               </div>
             
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../tool/kakau.html">Kakau</a></h5>
+                    <p class="card-text">kakau.app - メモアプリの一つ - 箇条書きをさらに...</p>
+                  </div>
+                </div>
+              </div>
+            
           </div>
         
           <div class="row flex-nowrap overflow-auto">
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/latex.html">LaTeX</a></h5>
+                  <h5 class="card-title fs-6"><a href="../tool/latex.html">LaTeX</a></h5>
                   <p class="card-text">- $\LaTeX$ 関連のメモ - 式の前後には空白を入れる...</p>
                 </div>
               </div>
@@ -291,18 +302,6 @@
                   </div>
                 </div>
               </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../scraps/haburashi-test.html">歯ブラシテスト</a></h5>
-                  <p class="card-text">https://cnxt.jp/topics/toothbru...</p>
-                </div>
-              </div>
-            </div>
             
           </div>
         
@@ -373,18 +372,6 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../margraph/block-ui.html">ブロック的データ</a></h5>
-                  <p class="card-text">margraphとかで、箇条書きの中に入れられないもの。 - ...</p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
                   <h5 class="card-title fs-6"><a href="../margraph/margraph-kakin.html">margraphの課金形式</a></h5>
                   <p class="card-text">- サービスとして運用するなら、課金は必須   - サーバー代...</p>
                 </div>
@@ -398,10 +385,19 @@
               <div class="card h-100">
                 <div class="card-body">
                   <h5 class="card-title fs-6"><a href="../margraph/margraph-ui.html">margraphのUI</a></h5>
-                  <p class="card-text">- 記事を見せるときは本文も出す   - 記事一覧もそう   ...</p>
+                  <p class="card-text">- 情報密度は上げたい - Scrapboxではリンクやタグを...</p>
                 </div>
               </div>
             </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/cost.html">コスト</a></h5>
+                    <p class="card-text">- 何かをするために使用しないければいけないリソース - コス...</p>
+                  </div>
+                </div>
+              </div>
             
           </div>
         
@@ -427,7 +423,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/cognicull.html">コグニカル</a></h5>
+                    <h5 class="card-title fs-6"><a href="../tool/cognicull.html">コグニカル</a></h5>
                     <p class="card-text">- https://cognicull.com/ja - 知識...</p>
                   </div>
                 </div>
@@ -520,6 +516,18 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../other/outliner.html">アウトライナー</a></h5>
+                  <p class="card-text">- 章立てとかの全体的な構造を定めてから、細部の文章を追加して...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
                   <h5 class="card-title fs-6"><a href="../other/rule.html">ルール</a></h5>
                   <p class="card-text">- 人が増えるとどうせ守られなくなるもの   - 人が多いノー...</p>
                 </div>
@@ -589,18 +597,6 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/twitter.html">ツイッター</a></h5>
-                  <p class="card-text">言わずとしれたツイッター にゃーんってつぶやいたり、思考を吐き...</p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
                   <h5 class="card-title fs-6"><a href="../other/undergraduate-1.html">学部一年の振り返り</a></h5>
                   <p class="card-text">- プログラミング関連について   - Rustを触ってみたり...</p>
                 </div>
@@ -642,6 +638,30 @@
                   </div>
                 </div>
               </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../scraps/haburashi-test.html">歯ブラシテスト</a></h5>
+                  <p class="card-text">https://cnxt.jp/topics/toothbru...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../tool/twitter.html">ツイッター</a></h5>
+                  <p class="card-text">言わずとしれたツイッター にゃーんってつぶやいたり、思考を吐き...</p>
+                </div>
+              </div>
+            </div>
             
           </div>
         
