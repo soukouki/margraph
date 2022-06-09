@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>直交系</title>
+    <meta NAME="robots" CONTENT="noindex,nofollow">
+  </head>
+  <body>
+    
+    <nav class="navbar sticky-top bg-body" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <div class="container" style="max-width: 40em;">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../math/index.html">math</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../math/fourier/index.html">fourier</a></li>
+          
+          <li class="breadcrumb-item">直交系</li>
+        </ol>
+      </div>
+    </nav>
+
+    <article class="container" style="max-width: 40em;">
+
+      <h1>直交系</h1>
+
+      
+        <div class="contents">
+        
+            
+              <div><ul>
+  <li><a href="../../math/fourier/inner-product.html">ベクトルの内積</a>が0のとき、そのベクトルは直交するという
+    <ul>
+      <li>直行と名前が似ているが別</li>
+    </ul>
+  </li>
+  <li>関数系 $\{ \phi_n(x) \}_{n=0}^\infty$ において、$\phi_n \cdot \phi_m = 0\ (n \neq m), \quad \phi_n \cdot \phi_n \neq 0$ のとき、直交系という
+    <ul>
+      <li><a href="../../math/fourier/inner-product.html">ベクトルの内積</a>の代わりに、<a href="../../math/fourier/inner-product-func.html">関数の内積</a>を使っている</li>
+      <li>ベクトルに似た概念を関数系に持ち込んだ形
+        <ul>
+          <li>ベクトルが直交してるときと同じような定義</li>
+        </ul>
+      </li>
+      <li>ともかく $n \neq m$ なら0で、$n = m$ なら0じゃないような感じ</li>
+    </ul>
+  </li>
+</ul>
+</div>
+            
+          
+        </div>
+      
+
+      
+
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+                前の記事<br />
+                <a href="../../math/fourier/lehmann-lebegue-supplement.html">リーマン・ルベーグの補題</a>
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../../math/fourier/index.html">fourier</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../../math/fourier/perceval-equality.html">パーセバルの等式</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/fourier/orthogonal-system.md';">Edit</button>
+        
+        
+      </div>
+
+      
+      <div class="link-network">
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/inner-product.html">ベクトルの内積</a></h5>
+                  <p class="card-text">- $\displaystyle \boldsymbol{f ...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/stokes.html">ストークスの定理</a></h5>
+                    <p class="card-text">電磁気の静電ポテンシャルや、アンペールの法則の証明で用いる 微...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/inner-product-func.html">関数の内積</a></h5>
+                  <p class="card-text">- ベクトルの内積を、関数にも適用してみる - $\displ...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/fourier-series.html">フーリエ級数</a></h5>
+                  <p class="card-text">- フーリエ級数 $\displaystyle \sum_{n...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/euler-formura.html">オイラーの公式</a></h5>
+                    <p class="card-text">- $e^{ix}  \cos x + i \sin x$  ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/senren.html">シンプル</a></h5>
+                    <p class="card-text">- 機能をシンプルにするには、大きく2つあると思う - 機能を...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/fourier-series-complex.html">複素フーリエ級数</a></h5>
+                    <p class="card-text">- 複素フーリエ級数 $\displaystyle f(x) ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/lehmann-lebegue-supplement.html">リーマン・ルベーグの補題</a></h5>
+                    <p class="card-text">- $\displaystyle \lim_{n \to \i...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/perceval-equality.html">パーセバルの等式</a></h5>
+                    <p class="card-text">- $\displaystyle \frac{1}{2\pi}...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/prove-orthogonal-system.html">直交系かどうか</a></h5>
+                  <p class="card-text">- $\\{ \cos nx \\}_{n1}^\infty$...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/fourier/trigonometoric-system.html">三角関数系</a></h5>
+                  <p class="card-text">- $1,\ \cos x,\ \sin x,\ \cos 2...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/complete.html">完全な関数系</a></h5>
+                    <p class="card-text">- $\\{\varphi_n\\}_{n0}^\infty$...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+      </div>
+      
+
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>

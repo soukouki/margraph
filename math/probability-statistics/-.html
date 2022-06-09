@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>確率統計</title>
+    <meta NAME="robots" CONTENT="noindex,nofollow">
+  </head>
+  <body>
+    
+    <nav class="navbar sticky-top bg-body" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <div class="container" style="max-width: 40em;">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../math/index.html">math</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../math/probability-statistics/index.html">probability-statistics</a></li>
+          
+          <li class="breadcrumb-item">確率統計</li>
+        </ol>
+      </div>
+    </nav>
+
+    <article class="container" style="max-width: 40em;">
+
+      <h1>確率統計</h1>
+
+      
+        <div class="contents">
+        
+            
+              <div><ul>
+  <li><a href="../../math/probability-statistics/11-probability.html">確率</a>統計の<a href="../../lectures/class-note.html">授業ノート</a></li>
+  <li>授業中に出てきたもののメモ</li>
+  <li>年度や専制に寄っても異なるし、間違いも多いと思われるので使う際は気をつけて</li>
+  <li>上から出てきた順に並べてある</li>
+</ul>
+</div>
+            
+          
+        </div>
+      
+
+      
+
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../../math/probability-statistics/index.html">probability-statistics</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../../math/probability-statistics/00-scatter-plot.html">散布図</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/probability-statistics/-.md';">Edit</button>
+        
+        
+      </div>
+
+      
+      <div class="link-network">
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/probability-statistics/11-probability.html">確率</a></h5>
+                  <p class="card-text">- $0 \leq P(A_i) \leq 1$   - $A...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/12-event.html">事象</a></h5>
+                    <p class="card-text">- イベント - 起こる集合 - $A_i$ はそれぞれ排反で...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/event.html">イベント</a></h5>
+                    <p class="card-text">イベントは内向的な理由で行うべきだ、と言う主張について - 内...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/sorehasou.html">それはそう</a></h5>
+                    <p class="card-text">- 自明、当然、みたいな意味合い - それはそう、なリストは何...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/atsumari.html">集まり</a></h5>
+                    <p class="card-text">- 物事が一ヶ所にまとめられ、集約されているようなさま - 広...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/13-joint-probability.html">同時確率</a></h5>
+                    <p class="card-text">- 結合確率とも - $P(A) \cap P(B)$ のよう...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/15-example.html">確率の例</a></h5>
+                    <p class="card-text">||熱がある($B_1$)|熱がない($B_2$)|小計| |...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/16-bayes-theorem.html">ベイズの定理</a></h5>
+                    <p class="card-text">- $P(A_1\|B_1)  \dfrac{P(B_1\|A...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/17-indipendent.html">独立</a></h5>
+                    <p class="card-text">- $P(Xx, Y=y) = P(X=x \cap Y=y)...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/19-probablity-density.html">確率密度</a></h5>
+                    <p class="card-text">- 無限にデータを増やして、ヒストグラムの幅をどんどん小さくし...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/27-bernoulli-dist.html">ベルヌーイ分布</a></h5>
+                    <p class="card-text">- 確率 $p$ で1を、確率 $1-p$ で0を取る離散確率...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/28-binomial-dist.html">二項分布</a></h5>
+                    <p class="card-text">- ベルヌーイ分布の確率分布を使う - $B_i(n,p)$ ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/29-poisson-dist.html">ポアソン分布</a></h5>
+                    <p class="card-text">- 二項分布 $Bi(n,p)$ の試行回数 $n$ を大きく...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/30-gaussian-dist.html">正規分布</a></h5>
+                    <p class="card-text">- ガウス分布とも呼ばれる - ポアソン分布の確率 $p$ を...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/38-chebyshev-inequality.html">チェビシェフの不等式</a></h5>
+                    <p class="card-text">- どんな分布・確率変数 $X$ に対しても、$P(\|X-\...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/39-marginal-probability.html">周辺確率</a></h5>
+                    <p class="card-text">- 同時確率 $f(x,y)$ に対して、それを積分して $\...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/43-most-likelihood-method.html">最尤法</a></h5>
+                    <p class="card-text">- 最尤は「さいゆう」と読む - MLMとも - 尤は、尤もら...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/45-interval-estimation.html">区間推定</a></h5>
+                    <p class="card-text">- ある一点の値を推定する(点推定)に対して、ある区間に入る確...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/47-hypothesis-testing.html">仮説検定</a></h5>
+                    <p class="card-text">- あまりにも結果が偏っていたときに、そもそもの分布が間違って...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/48-significant.html">有意</a></h5>
+                    <p class="card-text">- 想定していた確率分布と、観測された結果のズレが確率的に小さ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/51-example.html">仮説検定の例</a></h5>
+                    <p class="card-text">- 仮説検定の例 - ある制作に対する支持率を調べるために、1...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../lectures/class-note.html">授業ノート</a></h5>
+                  <p class="card-text">margraph上の授業ノート 授業の一部分しか書いてなかった...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/01-note.html">margraph</a></h5>
+                    <p class="card-text">named by sizumita - Scrapboxがgo...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/-.html">フーリエ解析</a></h5>
+                    <p class="card-text">- フーリエ解析の授業ノート - 「フーリエ解析とその応用 洲...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+      </div>
+      
+
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>
