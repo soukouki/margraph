@@ -13,7 +13,7 @@
   - https://github.com/soukouki/yokan
   - 「Go言語で作るインタプリタ」を参考に、独自の構文や機能を考案
 - 言語自作勉強会を主催
-  - インタプリタを改造する形で、言語の作り方について学ぶ勉強会を主催
+  - インタプリタを改造する形で、プログラミング言語の作り方について学ぶ勉強会を主催
   - 12人が参加
 - 自作インタプリタ baby-interpreterの開発
   - https://github.com/soukouki/baby-interpreter
