@@ -1,1 +1,27 @@
+# 作ったもの・やったことリスト
 
+- 各種Lightning Talkイベントへの登壇
+  - 全国学生エンジニア交流会 NSEEM
+  - Zli 大LT
+    - 2022夏、2022冬の2回登壇
+  - Piyogrammer Conference 2022
+  - OSC21 Aizu
+  - Zli・SGG合同LT
+  - A-Pxl 定例LT
+  - 登壇した際のスライドは https://speakerdeck.com/soukouki にあります
+- 自作インタプリタ yokanの開発
+  - https://github.com/soukouki/yokan
+  - 「Go言語で作るインタプリタ」を参考に、独自の構文や機能を考案
+- 言語自作勉強会を主催
+  - インタプリタを改造する形で、言語の作り方について学ぶ勉強会を主催
+  - 12人が参加
+- 自作インタプリタ baby-interpreterの開発
+  - https://github.com/soukouki/baby-interpreter
+  - 勉強会用に、一部の機能をわざと実装せず、改造の余地を残したインタプリタ
+- ZliTechBook V2の執筆
+  - https://techbookfest.org/product/5485473420017664?productVariantID=5371132934881280
+  - 「改造で学ぶ！言語自作」の章を執筆
+- margraphの開発
+  - 学んだことや考えたことを纏める先として、ノートアプリを開発、改善を続けています
+- sou7-backlightの制作
+  - PCのOSをArchLinuxに入れ替えた際、バックライトの明暗の変化が気に入らなかったので、変化の度合いを調整したものを公開した
