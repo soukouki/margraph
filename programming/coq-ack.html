@@ -6,9 +6,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
-    <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>フーリエ係数</title>
-    <meta NAME="robots" CONTENT="noindex,nofollow">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <title>Coqのアッカーマン関数</title>
   </head>
   <body>
     
@@ -16,34 +15,35 @@
       <div class="container" style="max-width: 40em;">
         <ol class="breadcrumb">
           
-            <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
+            <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../../math/index.html">math</a></li>
+            <li class="breadcrumb-item"><a href="../programming/index.html">programming</a></li>
           
-            <li class="breadcrumb-item"><a href="../../math/fourier/index.html">fourier</a></li>
-          
-          <li class="breadcrumb-item">フーリエ係数</li>
+          <li class="breadcrumb-item">Coqのアッカーマン関数</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>フーリエ係数</h1>
+      <h1>Coqのアッカーマン関数</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>先程定義した<a href="../../math/fourier/05-system.html">関数系</a>を使う</li>
-  <li>$\displaystyle a_n = \frac{1}{||\varphi_n||^2} \int_a^b f(x)\varphi_n(x)\ dx$
+  <li><a href="../programming/coq.html">Coq</a>で、Fixpointを使ってアッカーマン関数を素朴に定義しようとすると弾かれる。</li>
+  <li>これは、<a href="../programming/coq.html">Coq</a>が<a href="../reading-note/tapl/03-06-expressive-sem.html">表示的意味論</a>を使用しているせい。
     <ul>
-      <li>$\displaystyle \frac{(f \cdot \varphi_n)}{||\varphi_n||^2}$</li>
-      <li>試験に出すらしい</li>
+      <li>不動点関数で意味論を計算するためには、明らかに計算が終了しないといけない</li>
     </ul>
   </li>
-  <li><a href="../../math/fourier/09-trigonometric-system.html">三角関数系</a>のフーリエ係数のことを、フーリエ係数と呼ぶことがある</li>
+  <li><a href="../programming/coq.html">Coq</a>でアッカーマン関数を実装するには、ちょっと回りくどいやり方を取らないといけない
+    <ul>
+      <li>https://gist.github.com/ghulette/96e1c7dbb9791ed43551a6f402be6940</li>
+    </ul>
+  </li>
 </ul>
 </div>
             
@@ -64,19 +64,19 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../math/fourier/05b-orthonormal-system.html">正規直交関数系</a>
+                <a href="../programming/coq.html">Coq</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../../math/fourier/index.html">fourier</a>
+                <a href="../programming/index.html">programming</a>
               
             </div>
             <div class="col">
               
                 次の記事<br />
-                <a href="../../math/fourier/07-fourier-series.html">フーリエ級数</a>
+                <a href="../programming/daachhorce.html">Daachhorce</a>
               
             </div>
           </div>
@@ -85,7 +85,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/fourier/06-fourier-coefficients.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/coq-ack.md';">Edit</button>
         
         
       </div>
@@ -97,8 +97,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/fourier/05-system.html">関数系</a></h5>
-                  <p class="card-text">- ベクトルで扱っていたものを関数に適用していく   - $\...</p>
+                  <h5 class="card-title fs-6"><a href="../programming/coq.html">Coq</a></h5>
+                  <p class="card-text">- 定理証明支援系の一つ - 関数型プログラミング言語・・・ら...</p>
                 </div>
               </div>
             </div>
@@ -106,8 +106,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/01-vector.html">ベクトル</a></h5>
-                    <p class="card-text">- ベクタとも - C++の配列とかで見れるvectorはこれ...</p>
+                    <h5 class="card-title fs-6"><a href="../math/theorem.html">定理</a></h5>
+                    <p class="card-text">- Theorem - 命題の一つで、命題の中でも重要なもの...</p>
                   </div>
                 </div>
               </div>
@@ -115,8 +115,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/03-norm.html">ノルム</a></h5>
-                    <p class="card-text">- $\displaystyle \|\|\boldsymbo...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/programming-language.html">プログラミング言語</a></h5>
+                    <p class="card-text">- さまざまな形でコンピュータに指令を伝えるために使われる言語...</p>
                   </div>
                 </div>
               </div>
@@ -124,17 +124,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/02-inner-product.html">内積</a></h5>
-                    <p class="card-text">- $\boldsymbol{u}$ と $\boldsymb...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/08-complete.html">完全関数系</a></h5>
-                    <p class="card-text">- $\{\varphi_n\}_{n0}^\infty$ に...</p>
+                    <h5 class="card-title fs-6"><a href="../math/genmei.html">言明</a></h5>
+                    <p class="card-text">- 論理学で真か偽か分かるもの - Coqとかでこの単語を使う...</p>
                   </div>
                 </div>
               </div>
@@ -145,8 +136,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/fourier/09-trigonometric-system.html">三角関数系</a></h5>
-                  <p class="card-text">- $1, \cos x, \sin x, \cos 2x, ...</p>
+                  <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-06-expressive-sem.html">表示的意味論</a></h5>
+                  <p class="card-text">意味領域の集まりを見つけ、項を意味領域の元に移す解釈関数を定義...</p>
                 </div>
               </div>
             </div>
@@ -154,29 +145,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/07-fourier-series.html">フーリエ級数</a></h5>
-                    <p class="card-text">- $\displaystyle \sum_{n0}^\inf...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../math/fourier/05a-orthogonal-system.html">直交関数系</a></h5>
-                  <p class="card-text">- 関数系(数学)で、直交であるもの - 直交の性質は直交基底...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/04-orthogonal-basis.html">直交基底</a></h5>
-                    <p class="card-text">- 以下を満たすもの   - $\boldsymbol{e}_...</p>
+                    <h5 class="card-title fs-6"><a href="../other/atsumari.html">集まり</a></h5>
+                    <p class="card-text">- 物事が一ヶ所にまとめられ、集約されているようなさま - 広...</p>
                   </div>
                 </div>
               </div>
@@ -184,8 +154,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/05aa-example.html">$\{cos nx\}_{n=1}^\infty$ は $[0, \pi]$ で直交関数系である</a></h5>
-                    <p class="card-text">- 次の2つを示せれば、直交関数系だとわかる   - $n \...</p>
+                    <h5 class="card-title fs-6"><a href="../other/language.html">言語</a></h5>
+                    <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
                   </div>
                 </div>
               </div>
@@ -193,8 +163,17 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/fourier/05b-orthonormal-system.html">正規直交関数系</a></h5>
-                    <p class="card-text">- 直交関数系に以下の条件を追加したもの - $\|\| \v...</p>
+                    <h5 class="card-title fs-6"><a href="../other/honshitu.html">本質</a></h5>
+                    <p class="card-text">物事の根本的な性質・要素 - 大した影響がない要素を捨てた、変...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-05-operational-sem.html">操作的意味論</a></h5>
+                    <p class="card-text">抽象機械を定義し、プログラミング言語の振る舞いを規定する 機械...</p>
                   </div>
                 </div>
               </div>
