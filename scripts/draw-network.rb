@@ -20,6 +20,7 @@ body = network
 puts <<~DOT
   digraph {
     layout = fdp;
+    fontname = "IPAPGothic";
     #{body}
   }
 DOT
