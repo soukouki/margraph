@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>Re:VIEW記法</title>
+    <title>Vivaldiでダークテーマを使う</title>
   </head>
   <body>
     
@@ -17,30 +17,65 @@
           
             <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../scraps/index.html">scraps</a></li>
+            <li class="breadcrumb-item"><a href="../tools/index.html">tools</a></li>
           
-          <li class="breadcrumb-item">Re:VIEW記法</li>
+          <li class="breadcrumb-item">Vivaldiでダークテーマを使う</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>Re:VIEW記法</h1>
+      <h1>Vivaldiでダークテーマを使う</h1>
 
       
         <div class="contents">
         
             
-              <div>https://github.com/kmuto/review/blob/master/doc/format.ja.md</div>
-            
-          
-            
-              <div>本を作るための記法。Markdownに似た感じ。</div>
-            
-          
-            
-              <div>TeXや<a href="../tools/latex.html">LaTeX</a>の機能をMarkdownの基本機能に追加したような感じ。</div>
+              <div><ul>
+  <li>右往左往したのでメモ</li>
+  <li>拡張機能を入れる必要がある
+    <ul>
+      <li>公式ヘルプでそっちに案内しているので、標準機能にはついてないのだと思われる
+        <ul>
+          <li>テーマごとに設定できたら、昼と夜でテーマを使い分けられて面白いのに</li>
+          <li>https://help.vivaldi.com/ja/desktop-ja/appearance-customization-ja/browser-themes/#uebupejinodakumodo</li>
+        </ul>
+      </li>
+      <li>うちはオープンソースのものを使いたかったので、Dark Readerを使うことに
+        <ul>
+          <li>https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh?hl=ja</li>
+          <li>https://github.com/darkreader/darkreader</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>失敗したやり方のメモ
+    <ul>
+      <li>Windowsのときみたく、OS側の設定を探した
+        <ul>
+          <li><code>gsettings set org.gnome.desktop.interface gtk-theme "Adwaita-dark"</code></li>
+          <li>https://wiki.archlinux.org/title/Dark_mode_switching の、gsettingsのコマンドを使うとFireFoxは切り替わった
+            <ul>
+              <li>vivaldiは上手く行かなかった</li>
+              <li>日本語版の方は情報が古いのか、gsettingsのコマンドは載ってなかった
+                <ul>
+                  <li>https://wiki.archlinux.jp/index.php/%E3%83%80%E3%83%BC%E3%82%AF%E3%83%A2%E3%83%BC%E3%83%89%E3%81%AE%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88</li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="../other/archlinux.html">ArchLinux</a> + i3 で、の1例として・・・
+    <ul>
+      <li>GUI環境がどうレイヤが重なってるのか把握できてないので、あくまでやってみた系の記事として</li>
+    </ul>
+  </li>
+</ul>
+</div>
             
           
         </div>
@@ -59,19 +94,16 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../scraps/question.html">質問の思いつき方</a>
+                <a href="../tools/twitter.html">ツイッター</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../scraps/index.html">scraps</a>
+                <a href="../tools/index.html">tools</a>
               
             </div>
             <div class="col">
-              
-                次の記事<br />
-                <a href="../scraps/sacrificial-architecture.html">犠牲的アーキテクチャ</a>
               
             </div>
           </div>
@@ -80,7 +112,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/scraps/review.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/tools/vivaldi-dark-theme.md';">Edit</button>
         
         
       </div>
@@ -92,8 +124,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../tools/latex.html">LaTeX</a></h5>
-                  <p class="card-text">- $\LaTeX$ 関連のメモ - 式の前後には空白を入れる...</p>
+                  <h5 class="card-title fs-6"><a href="../other/archlinux.html">ArchLinux</a></h5>
+                  <p class="card-text">- Linuxディストリビューションの一つ - Ubuntuと...</p>
                 </div>
               </div>
             </div>
@@ -101,17 +133,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/01-note.html">margraph</a></h5>
-                    <p class="card-text">named by sizumita - Scrapboxがgo...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/margraph-junban.html">リンク</a></h5>
-                    <p class="card-text">- コードブロック中ではリンクしない方がいい   - LaTe...</p>
+                    <h5 class="card-title fs-6"><a href="../2-what-i-did.html">作ったもの・やったことリスト</a></h5>
+                    <p class="card-text">- 各種Lightning Talkイベントへの登壇   - ...</p>
                   </div>
                 </div>
               </div>
