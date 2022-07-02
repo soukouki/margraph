@@ -50,6 +50,13 @@
     <ul>
       <li>変数定義とその仮定部分に名前をつけて、コンテキストに移せる</li>
       <li>例えば、<code>forall x: nat, A x -&gt; B x</code>に対して使うと、<code>forall x: nat, A x</code>をコンテキストに移せる</li>
+      <li>多分<code>move=&gt;</code>とほぼ同じ動き</li>
+    </ul>
+  </li>
+  <li><code>generalize dependent 変数名</code>
+    <ul>
+      <li>コンテキストの変数を、forallの形でトップに持ってくる</li>
+      <li>多分<code>move:</code>とほぼ同じ動き</li>
     </ul>
   </li>
   <li><code>apply</code>
@@ -102,7 +109,7 @@
       <li>SSReflectのタクティック</li>
     </ul>
   </li>
-  <li><code>inductive</code>
+  <li><code>induction</code>
     <ul>
       <li><a href="../math/induction.html">帰納法</a>を使う</li>
     </ul>
@@ -118,11 +125,6 @@
       <li>forallになっているコンテキストに対して、変数を指定する</li>
     </ul>
   </li>
-  <li><code>inversion __ as (__, __)</code>
-    <ul>
-      <li>existになってるコンテキストに対して使えるっぽい？</li>
-    </ul>
-  </li>
   <li><code>exists</code>
     <ul>
       <li>existになってるトップに対して使えるっぽい？</li>
@@ -131,6 +133,16 @@
   <li><code>try タクティック名</code>
     <ul>
       <li>名前から想像するに、失敗してもいい的な・・・？</li>
+    </ul>
+  </li>
+  <li><code>inversion __ as (__, __)</code>
+    <ul>
+      <li>existになってるコンテキストに対して使えるっぽい？</li>
+    </ul>
+  </li>
+  <li><code>inversion [補題](../math/lemma.html)名</code>
+    <ul>
+      <li><a href="../math/lemma.html">補題</a>をバラバラにする・・・？</li>
     </ul>
   </li>
   <li><code>assumption</code>
