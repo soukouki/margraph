@@ -10,6 +10,10 @@
 - `intros`
   - 変数定義とその仮定部分に名前をつけて、コンテキストに移せる
   - 例えば、`forall x: nat, A x -> B x`に対して使うと、`forall x: nat, A x`をコンテキストに移せる
+  - 多分`move=>`とほぼ同じ動き
+- `generalize dependent 変数名`
+  - コンテキストの変数を、forallの形でトップに持ってくる
+  - 多分`move:`とほぼ同じ動き
 - `apply`
   - トップにある定理を使って、他の要素を置き換える
   - moveと合わせた動きも書けるらしい
@@ -33,7 +37,7 @@
 - `elim`
   - 帰納法を使う
   - SSReflectのタクティック
-- `inductive`
+- `induction`
   - 帰納法を使う
 - `clear`
    - 指定したコンテキストを削除する
