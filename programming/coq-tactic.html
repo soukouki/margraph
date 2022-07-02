@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../style.css" type="text/css">
+    <title>Coqのタクティック</title>
+  </head>
+  <body>
+    
+    <nav class="navbar sticky-top bg-body" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <div class="container" style="max-width: 40em;">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../programming/index.html">programming</a></li>
+          
+          <li class="breadcrumb-item">Coqのタクティック</li>
+        </ol>
+      </div>
+    </nav>
+
+    <article class="container" style="max-width: 40em;">
+
+      <h1>Coqのタクティック</h1>
+
+      
+        <div class="contents">
+        
+            
+              <div><ul>
+  <li><a href="../programming/coq.html">Coq</a>のタクティックについて、見つけたものに対してのメモ</li>
+  <li><code>move=&gt; 変数名</code>
+    <ul>
+      <li><a href="../programming/algorithms-and-data-structure/05-stacks.html">スタック</a>のトップからローカルコンテキストに変数を動かす</li>
+      <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>move: 変数名</code>
+    <ul>
+      <li>ローカルコンテキストからトップに変数を動かす</li>
+      <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>apply</code>
+    <ul>
+      <li>トップにある<a href="../math/theorem.html">定理</a>を使って、他の要素を置き換える</li>
+      <li>moveと合わせた動きも書けるらしい</li>
+      <li><code>apply /[補題](../math/lemma.html)名</code>
+        <ul>
+          <li><a href="../math/lemma.html">補題</a>を使うこともできる</li>
+        </ul>
+      </li>
+      <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>rewrite [補題](../math/lemma.html)名</code>
+    <ul>
+      <li>関数・<a href="../math/lemma.html">補題</a>を指定して、その式を左辺のものから右辺のものに置き換える</li>
+      <li><code>rewrite- [補題](../math/lemma.html)名</code>
+        <ul>
+          <li>右辺から左辺に置き換えるものに変わる</li>
+        </ul>
+      </li>
+      <li><code>rewrite /=</code>
+        <ul>
+          <li>定義をたどる程度の計算をしてくれる</li>
+        </ul>
+      </li>
+      <li><code>rewrite /定義名</code>
+        <ul>
+          <li>定義名の定義を紐解いて、展開してくれる</li>
+        </ul>
+      </li>
+      <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>case</code>
+    <ul>
+      <li>場合分けをする</li>
+      <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>elim</code>
+    <ul>
+      <li><a href="../math/induction.html">帰納法</a>を使う</li>
+      <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>inductive</code>
+    <ul>
+      <li><a href="../math/induction.html">帰納法</a>を使う</li>
+    </ul>
+  </li>
+</ul>
+</div>
+            
+          
+        </div>
+      
+
+      
+
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+                前の記事<br />
+                <a href="../programming/coq-ack.html">Coqのアッカーマン関数</a>
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../programming/index.html">programming</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../programming/daachhorce.html">Daachhorce</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/coq-tactic.md';">Edit</button>
+        
+        
+      </div>
+
+      
+      <div class="link-network">
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../programming/coq.html">Coq</a></h5>
+                  <p class="card-text">- 定理証明支援系の一つ - 関数型プログラミング言語・・・ら...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/programming-language.html">プログラミング言語</a></h5>
+                    <p class="card-text">- さまざまな形でコンピュータに指令を伝えるために使われる言語...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/genmei.html">言明</a></h5>
+                    <p class="card-text">- 論理学で真か偽か分かるもの - Coqとかでこの単語を使う...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/coq-ack.html">Coqのアッカーマン関数</a></h5>
+                    <p class="card-text">- Coqで、Fixpointを使ってアッカーマン関数を素朴に...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/05-stacks.html">スタック</a></h5>
+                  <p class="card-text">last-in, first-out(LIFO) 例えば平積み...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07-linked-list.html">連結リスト</a></h5>
+                    <p class="card-text">その要素と、次の要素(または前後の要素)へのポインタをもつもの...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07a-array.html">配列</a></h5>
+                    <p class="card-text">メモリ上で連続した領域。言わずとしれたデータ構造 リスト構造と...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/memory-area.html">メモリ領域</a></h5>
+                    <p class="card-text">- プログラムを動かす際、メモリは4つの領域に分けて使われる...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/06-queue.html">キュー</a></h5>
+                    <p class="card-text">first-in, first-out(FIFO) スタックと...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/20-DFS.html">深さ優先探索</a></h5>
+                    <p class="card-text">グラフ構造を探索するアルゴリズムの一つ。DFSとも呼ばれる。...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-12-large-step-semantics.html">大ステップ意味論</a></h5>
+                    <p class="card-text">操作的意味論で用いられる二つのスタイルのうちの一つ。もう一つは...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/theorem.html">定理</a></h5>
+                  <p class="card-text">- Theorem - 命題の一つで、命題の中でも重要なもの...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/proposition.html">命題</a></h5>
+                    <p class="card-text">- 正しいか正しくないかが分かるもの...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../long-tweets/2021-08-01.html">生きがい</a></h5>
+                    <p class="card-text">生きがいを見つけることって、自身が感じる公理を見つけて、それを...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/201-num-of-hops.html">何ホップ分表示するか</a></h5>
+                    <p class="card-text">関連項目として、何ホップ分表示させるか - Scrapboxで...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/01-02-types.html">型システム</a></h5>
+                    <p class="card-text">## 定義 > プログラムの各部分を、それが計算する値の種類に...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/lemma.html">補題</a></h5>
+                  <p class="card-text">- Lemma - 定理を証明するために補助的に使う命題...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/induction.html">帰納法</a></h5>
+                  <p class="card-text">- 数学的帰納法とか言われてるやつ - 再帰的な定義になってい...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-04-defs-is-equal.html">再帰的な項の定義と具体的な項の定義は等しい</a></h5>
+                    <p class="card-text">命題3.2.6(再帰的な項の定義と具体的な項の定義は等しい)に...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+      </div>
+      
+
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>
