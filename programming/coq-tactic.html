@@ -46,6 +46,12 @@
       <li>SSReflectのタクティック</li>
     </ul>
   </li>
+  <li><code>intros</code>
+    <ul>
+      <li>変数定義とその仮定部分に名前をつけて、コンテキストに移せる</li>
+      <li>例えば、<code>forall x: nat, A x -&gt; B x</code>に対して使うと、<code>forall x: nat, A x</code>をコンテキストに移せる</li>
+    </ul>
+  </li>
   <li><code>apply</code>
     <ul>
       <li>トップにある<a href="../math/theorem.html">定理</a>を使って、他の要素を置き換える</li>
@@ -56,6 +62,11 @@
         </ul>
       </li>
       <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>unfold</code>
+    <ul>
+      <li>指定した名前の定義を展開してくれる</li>
     </ul>
   </li>
   <li><code>rewrite [補題](../math/lemma.html)名</code>
@@ -94,6 +105,42 @@
   <li><code>inductive</code>
     <ul>
       <li><a href="../math/induction.html">帰納法</a>を使う</li>
+    </ul>
+  </li>
+  <li><code>clear</code>
+    <ul>
+      <li>指定したコンテキストを削除する</li>
+      <li>コンテキストを別の形に変換して、残った元のやつを消すときに使う</li>
+    </ul>
+  </li>
+  <li><code>specialize</code>
+    <ul>
+      <li>forallになってるコンテキストに対して使えるっぽい？</li>
+    </ul>
+  </li>
+  <li><code>inversion __ as (__, __)</code>
+    <ul>
+      <li>existになってるコンテキストに対して使えるっぽい？</li>
+    </ul>
+  </li>
+  <li><code>exists</code>
+    <ul>
+      <li>existになってるトップに対して使えるっぽい？</li>
+    </ul>
+  </li>
+  <li><code>try タクティック名</code>
+    <ul>
+      <li>名前から想像するに、失敗してもいい的な・・・？</li>
+    </ul>
+  </li>
+  <li><code>assumption</code>
+    <ul>
+      <li>謎</li>
+    </ul>
+  </li>
+  <li><code>split</code>
+    <ul>
+      <li>謎</li>
     </ul>
   </li>
 </ul>
