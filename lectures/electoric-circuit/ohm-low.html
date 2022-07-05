@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>磁束</title>
+    <title>オームの法則の拡張</title>
   </head>
   <body>
     
@@ -19,35 +19,27 @@
           
             <li class="breadcrumb-item"><a href="../../lectures/index.html">lectures</a></li>
           
-            <li class="breadcrumb-item"><a href="../../lectures/electromagnetics/index.html">electromagnetics</a></li>
+            <li class="breadcrumb-item"><a href="../../lectures/electoric-circuit/index.html">electoric-circuit</a></li>
           
-          <li class="breadcrumb-item">磁束</li>
+          <li class="breadcrumb-item">オームの法則の拡張</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>磁束</h1>
+      <h1>オームの法則の拡張</h1>
 
       
         <div class="contents">
         
             
-              <div>$\Phi$ (ギリシャ文字ファイの大文字)を使う。</div>
-            
-          
-            
-              <div>回路を縁として、回路の法線方向の磁場の和。簡単に言うと、磁力線の数。</div>
-            
-          
-            
-              <div>\[\Phi(t) = \int_S\mathbf{B}(\mathbf{r},t)\cdot \mathbf{n(r)}\ dS\]
+              <div><ul>
+  <li><a href="../../lectures/electoric-circuit/resistance.html">抵抗</a>・<a href="../../lectures/electoric-circuit/inductor.html">インダクタ</a>・<a href="../../lectures/electoric-circuit/capacitor.html">キャパシタ</a>でできた回路に対して、複素数で直流回路の<a href="../../lectures/electromagnetics/ohm.html">オームの法則</a>のように計算できる</li>
+  <li>$Z_R = R,\quad Z_L = jwL,\quad Z_C = \dfrac{1}{jwC} = -j\dfrac{1}{wC}$</li>
+  <li>$Z = Z_R + Z_L + Z_C = R + jwL + \dfrac{1}{jwC}$</li>
+</ul>
 </div>
-            
-          
-            
-              <div>単位はウェーバー( $\mathrm{Wb}$ )で、 $1\mathrm{Wb} = 1 \mathrm{T\cdot m^2}$</div>
             
           
         </div>
@@ -66,19 +58,19 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../lectures/electromagnetics/faraday.html">ファラデーの電磁誘導の法則</a>
+                <a href="../../lectures/electoric-circuit/inductor.html">インダクタ</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../../lectures/electromagnetics/index.html">electromagnetics</a>
+                <a href="../../lectures/electoric-circuit/index.html">electoric-circuit</a>
               
             </div>
             <div class="col">
               
                 次の記事<br />
-                <a href="../../lectures/electromagnetics/gauss.html">ガウスの法則</a>
+                <a href="../../lectures/electoric-circuit/resistance.html">抵抗</a>
               
             </div>
           </div>
@@ -87,7 +79,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/lectures/electromagnetics/flux.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/lectures/electoric-circuit/ohm-low.md';">Edit</button>
         
         
       </div>
@@ -99,8 +91,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/ampere-equation.html">アンペールの法則</a></h5>
-                  <p class="card-text">ビオ・サバールの法則では計算が複雑なので、それを簡単にするため...</p>
+                  <h5 class="card-title fs-6"><a href="../../lectures/electoric-circuit/resistance.html">抵抗</a></h5>
+                  <p class="card-text">- $v(t)  Ri(t)$ - $i(t)  \dfrac...</p>
                 </div>
               </div>
             </div>
@@ -108,53 +100,11 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/biot-savart.html">ビオ・サバールの法則</a></h5>
-                    <p class="card-text">曲線 $C$ の導線に電流 $I$ を流したときに、その導線の...</p>
+                    <h5 class="card-title fs-6"><a href="../../lectures/electoric-circuit/Q.html">Q値</a></h5>
+                    <p class="card-text">- インダクタ・キャパシタ・抵抗を並べた直列共振回路の、電圧拡...</p>
                   </div>
                 </div>
               </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/maxwell.html">マクスウェルの方程式</a></h5>
-                    <p class="card-text">電場についてのガウスの法則より、$\displaystyle ...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/stokes.html">ストークスの定理</a></h5>
-                    <p class="card-text">電磁気の静電ポテンシャルや、アンペールの法則の証明で用いる 微...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/ampere.html">アンペールの力</a></h5>
-                  <p class="card-text">磁束密度 $\mathbf{B}$ の中の微小部分の導線 $\...</p>
-                </div>
-              </div>
-            </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/faraday.html">ファラデーの電磁誘導の法則</a></h5>
-                  <p class="card-text">磁束の変化とコイルの起電力が比例する、という法則 $$ \ph...</p>
-                </div>
-              </div>
-            </div>
             
               <div class="col-4">
                 <div class="card h-100">
@@ -165,14 +115,23 @@
                 </div>
               </div>
             
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../lectures/history-of-science/13-vacuum-aversion.html">真空嫌悪</a></h5>
+                    <p class="card-text">真空ができそうになると、自然がそれを妨げるという原理 例えば、...</p>
+                  </div>
+                </div>
+              </div>
+            
           </div>
         
           <div class="row flex-nowrap overflow-auto">
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/self-inductance.html">自己インダクタンス</a></h5>
-                  <p class="card-text">コイルを通る電流の変化のしにくさを示す値。単位はヘンリー。 電...</p>
+                  <h5 class="card-title fs-6"><a href="../../lectures/electoric-circuit/inductor.html">インダクタ</a></h5>
+                  <p class="card-text">- コイルの直流抵抗を0、キャパシタンスを0にして理想化したも...</p>
                 </div>
               </div>
             </div>
@@ -180,8 +139,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../lectures/electoric-circuit/inductor.html">インダクタ</a></h5>
-                    <p class="card-text">- コイルの直流抵抗を0、キャパシタンスを0にして理想化したも...</p>
+                    <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/mutual-inductance.html">相互インダクタンス</a></h5>
+                    <p class="card-text">2つのコイルの間の誘導電流の関係を表す値 相互インダクタンスと...</p>
                   </div>
                 </div>
               </div>
@@ -189,8 +148,41 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../other/sorehasou.html">それはそう</a></h5>
-                    <p class="card-text">- 自明、当然、みたいな意味合い - それはそう、なリストは何...</p>
+                    <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/self-inductance.html">自己インダクタンス</a></h5>
+                    <p class="card-text">コイルを通る電流の変化のしにくさを示す値。単位はヘンリー。 電...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../lectures/electoric-circuit/capacitor.html">キャパシタ</a></h5>
+                  <p class="card-text">- コンデンサの抵抗を無限大、インダクタンスを0にして理想化し...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/ohm.html">オームの法則</a></h5>
+                  <p class="card-text">$ V  \Delta \phi = RI $ 人によっては中...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/sigma.html">電気伝導度</a></h5>
+                    <p class="card-text">$$ \sigma  \frac{1}{\rho} $$ オー...</p>
                   </div>
                 </div>
               </div>
