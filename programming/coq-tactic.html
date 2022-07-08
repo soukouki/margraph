@@ -106,7 +106,18 @@
           <li>定義名の定義を紐解いて、展開してくれる</li>
         </ul>
       </li>
+      <li><code>rewrite (_ : もとの変数名 = 新しい変数名)</code>
+        <ul>
+          <li>変数を置き換えて、置き換えに必要なゴールを追加する</li>
+          <li>substでできる場合はsubstを使ったほうが簡単</li>
+        </ul>
+      </li>
       <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>subst</code>
+    <ul>
+      <li><code>n = m</code>のような置き換えがコンテキストにあったときに、自動で置き換えてくれる</li>
     </ul>
   </li>
   <li><code>case</code>
