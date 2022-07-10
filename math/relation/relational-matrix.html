@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
-    <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>Elmで競プロ</title>
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>関係行列</title>
   </head>
   <body>
     
@@ -15,43 +15,31 @@
       <div class="container" style="max-width: 40em;">
         <ol class="breadcrumb">
           
-            <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
+            <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../programming/index.html">programming</a></li>
+            <li class="breadcrumb-item"><a href="../../math/index.html">math</a></li>
           
-          <li class="breadcrumb-item">Elmで競プロ</li>
+            <li class="breadcrumb-item"><a href="../../math/relation/index.html">relation</a></li>
+          
+          <li class="breadcrumb-item">関係行列</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>Elmで競プロ</h1>
+      <h1>関係行列</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>環境
-    <ul>
-      <li>https://github.com/soukouki/elm-competitive-program-template
-        <ul>
-          <li>テンプレート作った</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-  <li>作りたいライブラリ
-    <ul>
-      <li>入出力のライブラリがとりあえず欲しい
-        <ul>
-          <li><a href="../programming/algorithms-and-data-structure/07a-array.html">配列</a>に入れていく処理とかいちいち書きたくない</li>
-          <li>パーサーに似た感じで指定できたら良いなぁ</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
+  <li><a href="../../math/relation/binary-relation.html">二項関係</a>を表す方法</li>
+  <li>Aの要素を行に、Rの要素を列に表示し、その<a href="../../programming/algorithms-and-data-structure/07a-array.html">配列</a>の各要素に関係の有無を1/0で表す</li>
+  <li>プログラムで表現するのに適している</li>
+  <li><a href="../../math/relation/relation-composition.html">関係の合成</a>は行列の積で計算できる</li>
+  <li><a href="../../math/relation/inverse-relation.html">逆関係</a>は転置行列に対応する</li>
 </ul>
 </div>
             
@@ -72,19 +60,16 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../programming/elm.html">Elm</a>
+                <a href="../../math/relation/relation-composition.html">関係の合成</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../programming/index.html">programming</a>
+                <a href="../../math/relation/index.html">relation</a>
               
             </div>
             <div class="col">
-              
-                次の記事<br />
-                <a href="../programming/elm-study.html">Elmをぶんぶんに教えた時のメモ</a>
               
             </div>
           </div>
@@ -93,7 +78,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/elm-comp.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/relation/relational-matrix.md';">Edit</button>
         
         
       </div>
@@ -105,7 +90,37 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07a-array.html">配列</a></h5>
+                  <h5 class="card-title fs-6"><a href="../../math/relation/binary-relation.html">二項関係</a></h5>
+                  <p class="card-text">- 2項関係Rとは、$R \subset A \times B...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/relation/arrow-diagram.html">矢線図</a></h5>
+                    <p class="card-text">- 二項関係を表す方法 - それぞれの集合の要素を立てに並べ、...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/relation/coordinate-diagram.html">座標図</a></h5>
+                    <p class="card-text">- 二項関係を表す方法 - $A$ の要素を $x$ 軸に、$...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/07a-array.html">配列</a></h5>
                   <p class="card-text">メモリ上で連続した領域。言わずとしれたデータ構造 リスト構造と...</p>
                 </div>
               </div>
@@ -114,7 +129,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07-linked-list.html">連結リスト</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/07-linked-list.html">連結リスト</a></h5>
                     <p class="card-text">その要素と、次の要素(または前後の要素)へのポインタをもつもの...</p>
                   </div>
                 </div>
@@ -123,7 +138,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/senren.html">シンプル</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../other/senren.html">シンプル</a></h5>
                     <p class="card-text">- 機能をシンプルにするには、大きく2つあると思う - 機能を...</p>
                   </div>
                 </div>
@@ -132,7 +147,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../long-tweets/2021-09-09.html">プログラムの抽象化の美しさ</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../long-tweets/2021-09-09.html">プログラムの抽象化の美しさ</a></h5>
                     <p class="card-text">> 小説や文学は読まないが、文字の美しい組み合わせや運び、そう...</p>
                   </div>
                 </div>
@@ -141,7 +156,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/design/101-merge-json.html">Merge Json</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/101-merge-json.html">Merge Json</a></h5>
                     <p class="card-text">複数のjsonファイルを与えられたときに、いい感じにマージして...</p>
                   </div>
                 </div>
@@ -150,7 +165,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/design/102-collect-link.html">Collect Links</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/102-collect-link.html">Collect Links</a></h5>
                     <p class="card-text">集められた記事のタイトルを使って、記事中からどの部分にリンクを...</p>
                   </div>
                 </div>
@@ -159,7 +174,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/design/110a-sample.html">記事の中間表現のテスト用</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/110a-sample.html">記事の中間表現のテスト用</a></h5>
                     <p class="card-text">タイトル直下のテキスト 段落毎に分けておく ## h2用タイト...</p>
                   </div>
                 </div>
@@ -168,16 +183,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/relation/relational-matrix.html">関係行列</a></h5>
-                    <p class="card-text">- 二項関係を表す方法 - Aの要素を行に、Rの要素を列に表示...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/daachhorce.html">Daachhorce</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/daachhorce.html">Daachhorce</a></h5>
                     <p class="card-text">- ダークホース https://tech.legalforc...</p>
                   </div>
                 </div>
@@ -186,7 +192,16 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/persistant-data-structure.html">永続データ構造</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/elm-comp.html">Elmで競プロ</a></h5>
+                    <p class="card-text">- 環境   - https://github.com/sou...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/persistant-data-structure.html">永続データ構造</a></h5>
                     <p class="card-text">- 変更するときに、値を直接書き換えるのではなく、変更前のバー...</p>
                   </div>
                 </div>
@@ -195,7 +210,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/02-insertion-sort.html">挿入ソート</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/02-insertion-sort.html">挿入ソート</a></h5>
                     <p class="card-text">空間計算量$ O\left(N\right) $ 時間計算量$...</p>
                   </div>
                 </div>
@@ -204,7 +219,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/04-selection-sort.html">選択ソート</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/04-selection-sort.html">選択ソート</a></h5>
                     <p class="card-text">空間計算量$ O\left(N\right) $ 時間計算量$...</p>
                   </div>
                 </div>
@@ -213,7 +228,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/05-stacks.html">スタック</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/05-stacks.html">スタック</a></h5>
                     <p class="card-text">last-in, first-out(LIFO) 例えば平積み...</p>
                   </div>
                 </div>
@@ -222,7 +237,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/06-queue.html">キュー</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/06-queue.html">キュー</a></h5>
                     <p class="card-text">first-in, first-out(FIFO) スタックと...</p>
                   </div>
                 </div>
@@ -231,7 +246,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/09-merge-sort.html">マージソート</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/09-merge-sort.html">マージソート</a></h5>
                     <p class="card-text">分割統治法を用いたアルゴリズム - 分割   - 配列があった...</p>
                   </div>
                 </div>
@@ -240,7 +255,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/15-heap.html">ヒープ</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/15-heap.html">ヒープ</a></h5>
                     <p class="card-text">子要素は親要素より常に大きい(小さい)か等しい、という制約がつ...</p>
                   </div>
                 </div>
@@ -249,7 +264,7 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/19-adjacency-list.html">隣接リスト</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../programming/algorithms-and-data-structure/19-adjacency-list.html">隣接リスト</a></h5>
                     <p class="card-text">グラフ構造を表す手段の一つ ノード`i`がエッジによってノード...</p>
                   </div>
                 </div>
@@ -258,11 +273,44 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/01-02-types.html">型システム</a></h5>
+                    <h5 class="card-title fs-6"><a href="../../reading-note/tapl/01-02-types.html">型システム</a></h5>
                     <p class="card-text">## 定義 > プログラムの各部分を、それが計算する値の種類に...</p>
                   </div>
                 </div>
               </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/relation/relation-composition.html">関係の合成</a></h5>
+                  <p class="card-text">- A,B,Cを集合とし、RをAからBへの二項関係、SをBから...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/function-composite.html">合成関数</a></h5>
+                    <p class="card-text">- 関数$f: A \to B, g: B \to C$ が与...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/relation/inverse-relation.html">逆関係</a></h5>
+                  <p class="card-text">- RをAからBへの関係としたとき   - $R^{-1}  ...</p>
+                </div>
+              </div>
+            </div>
             
           </div>
         
