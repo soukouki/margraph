@@ -17,7 +17,7 @@
     - assertとapplyを組み合わせる
 - `generalize dependent 変数名`
   - コンテキストの変数を、forallの形でトップに持ってくる
-  - 多分`move:`とほぼ同じ動き
+  - `move:`と似てるけれど、置き換えられる場合と置き換えられない場合がある
 - `distruct 変数名`
   - 変数の型を分解する。例えば、pが`pair (n1 n2)`のようなら、`distruct p`とするとn1とn2が出てくる
   - `distruct 変数名 as [変数名]`
