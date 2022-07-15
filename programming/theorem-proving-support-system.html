@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>帰納法</title>
+    <title>定理証明支援系</title>
   </head>
   <body>
     
@@ -17,35 +17,28 @@
           
             <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../math/index.html">math</a></li>
+            <li class="breadcrumb-item"><a href="../programming/index.html">programming</a></li>
           
-          <li class="breadcrumb-item">帰納法</li>
+          <li class="breadcrumb-item">定理証明支援系</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>帰納法</h1>
+      <h1>定理証明支援系</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>数学的帰納法とか言われてるやつ</li>
-  <li>再帰的な定義になっている関数に使う</li>
-  <li>base case
+  <li><a href="../math/theorem.html">定理</a>を証明する際、証明が正しいことを証明してくれるシステム
     <ul>
-      <li>明らかな形で定義されていることが多い</li>
-      <li>$n=0$ の場合、みたいのはこれ</li>
+      <li>複雑な証明では、たまに間違いが指摘されたり、本当に正しいのかわからない場合がある</li>
     </ul>
   </li>
-  <li>induction step
-    <ul>
-      <li>$f(n) = \mathrm{hoge}(n)$ と仮定したとき、$f(n+1) = \mathrm{hoge}(n+1)$ なことを示す部分</li>
-    </ul>
-  </li>
+  <li><a href="../programming/coq.html">Coq</a>などが有名</li>
 </ul>
 </div>
             
@@ -66,19 +59,19 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../math/genmei.html">言明</a>
+                <a href="../programming/text-area.html">テキスト領域</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../math/index.html">math</a>
+                <a href="../programming/index.html">programming</a>
               
             </div>
             <div class="col">
               
                 次の記事<br />
-                <a href="../math/injective.html">単射</a>
+                <a href="../programming/type-and-value.html">型と値を同じように扱いたい</a>
               
             </div>
           </div>
@@ -87,7 +80,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/induction.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/theorem-proving-support-system.md';">Edit</button>
         
         
       </div>
@@ -99,8 +92,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../math/peano-axioms.html">ペアノの公理系</a></h5>
-                  <p class="card-text">- 自然数とは何かを表す公理 - 次の5つの公理を満たす集合 ...</p>
+                  <h5 class="card-title fs-6"><a href="../math/theorem.html">定理</a></h5>
+                  <p class="card-text">- Theorem - 命題の一つで、命題の中でも重要なもの...</p>
                 </div>
               </div>
             </div>
@@ -108,29 +101,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/injective.html">単射</a></h5>
-                    <p class="card-text">- $f(a)  f(b) \iff a = b$ を満たす関...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../programming/coq-tactic.html">Coqのタクティック</a></h5>
-                  <p class="card-text">- Coqのタクティックについて、見つけたものに対してのメモ...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/coq.html">Coq</a></h5>
-                    <p class="card-text">- 定理証明支援系の一つ - カリー・ハワード同型対応に基づい...</p>
+                    <h5 class="card-title fs-6"><a href="../math/proposition.html">命題</a></h5>
+                    <p class="card-text">- 正しいか正しくないかが分かるもの...</p>
                   </div>
                 </div>
               </div>
@@ -138,8 +110,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/05-stacks.html">スタック</a></h5>
-                    <p class="card-text">last-in, first-out(LIFO) 例えば平積み...</p>
+                    <h5 class="card-title fs-6"><a href="../long-tweets/2021-08-01.html">生きがい</a></h5>
+                    <p class="card-text">生きがいを見つけることって、自身が感じる公理を見つけて、それを...</p>
                   </div>
                 </div>
               </div>
@@ -147,8 +119,17 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/theorem.html">定理</a></h5>
-                    <p class="card-text">- Theorem - 命題の一つで、命題の中でも重要なもの...</p>
+                    <h5 class="card-title fs-6"><a href="../margraph/design/201-num-of-hops.html">何ホップ分表示するか</a></h5>
+                    <p class="card-text">関連項目として、何ホップ分表示させるか - Scrapboxで...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/genmei.html">言明</a></h5>
+                    <p class="card-text">- 論理学で真か偽か分かるもの - Coqとかでこの単語を使う...</p>
                   </div>
                 </div>
               </div>
@@ -165,8 +146,17 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/proposition.html">命題</a></h5>
-                    <p class="card-text">- 正しいか正しくないかが分かるもの...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/coq-tactic.html">Coqのタクティック</a></h5>
+                    <p class="card-text">- Coqのタクティックについて、見つけたものに対してのメモ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/01-02-types.html">型システム</a></h5>
+                    <p class="card-text">## 定義 > プログラムの各部分を、それが計算する値の種類に...</p>
                   </div>
                 </div>
               </div>
@@ -177,8 +167,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-04-defs-is-equal.html">再帰的な項の定義と具体的な項の定義は等しい</a></h5>
-                  <p class="card-text">命題3.2.6(再帰的な項の定義と具体的な項の定義は等しい)に...</p>
+                  <h5 class="card-title fs-6"><a href="../programming/coq.html">Coq</a></h5>
+                  <p class="card-text">- 定理証明支援系の一つ - カリー・ハワード同型対応に基づい...</p>
                 </div>
               </div>
             </div>
@@ -186,8 +176,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-01-recursive-def.html">再帰的な項の定義</a></h5>
-                    <p class="card-text">定義3.2.1より - (1)は自明 - (2)はなに？   ...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/programming-language.html">プログラミング言語</a></h5>
+                    <p class="card-text">- さまざまな形でコンピュータに指令を伝えるために使われる言語...</p>
                   </div>
                 </div>
               </div>
@@ -195,8 +185,26 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-03-concrete-def.html">具体的な項の定義</a></h5>
-                    <p class="card-text">- $S_0$は空集合 - $S_1$ は再帰的な項の定義や推...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/backward-reasoning.html">後ろ向き推論</a></h5>
+                    <p class="card-text">- 証明の進め方の一つ - 証明の後ろ(最終的に証明したい事柄...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-06-expressive-sem.html">表示的意味論</a></h5>
+                    <p class="card-text">意味領域の集まりを見つけ、項を意味領域の元に移す解釈関数を定義...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/coq-ack.html">Coqのアッカーマン関数</a></h5>
+                    <p class="card-text">- Coqで、Fixpointを使ってアッカーマン関数を素朴に...</p>
                   </div>
                 </div>
               </div>

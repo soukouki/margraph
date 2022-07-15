@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>ペアノの公理系</title>
+    <title>部分写像</title>
   </head>
   <body>
     
@@ -19,39 +19,25 @@
           
             <li class="breadcrumb-item"><a href="../math/index.html">math</a></li>
           
-          <li class="breadcrumb-item">ペアノの公理系</li>
+          <li class="breadcrumb-item">部分写像</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>ペアノの公理系</h1>
+      <h1>部分写像</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>自然数とは何かを表す公理</li>
-  <li>次の5つの公理を満たす集合 $N$, 要素1及び写像 $\sigma$ の組 $(N, 1, \sigma)$
-    <ol>
-      <li>$1 \in N$ が存在する</li>
-      <li>写像 $\sigma : N \to N$ が存在する</li>
-      <li>$\sigma$ は<a href="../math/injective.html">単射</a>である</li>
-      <li>$x \in N$ であれば $\sigma(x) \neq 1$
-        <ul>
-          <li>はじめの要素に写像される要素はない</li>
-        </ul>
-      </li>
-      <li>部分集合 $S \subset N$ が次の集合を持つなら $S = N$
-        <ol>
-          <li>$1 \in S$</li>
-          <li>$x \in S$ であれば $\sigma(x) \in S$
- - これは数学的<a href="../math/induction.html">帰納法</a>の原理</li>
-        </ol>
-      </li>
-    </ol>
+  <li>部分写像と多分同義</li>
+  <li>$X \to Y$ の写像fの概念を一般化して、$X’ \subset X$ なる $X’$ に対して $X’ \to Y$ となる
+    <ul>
+      <li>要するに、$X \to Y$ の写像では全てのXに対して定義されてないといけないが、部分関数ではXの一部の要素だけで定義されていれば良い</li>
+    </ul>
   </li>
 </ul>
 </div>
@@ -73,7 +59,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../math/partial-function.html">部分写像</a>
+                <a href="../math/losistics.html">論理</a>
               
             </div>
             <div class="col">
@@ -85,7 +71,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../math/permutation.html">順列の数</a>
+                <a href="../math/peano-axioms.html">ペアノの公理系</a>
               
             </div>
           </div>
@@ -94,7 +80,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/peano-axioms.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/partial-function.md';">Edit</button>
         
         
       </div>
@@ -106,8 +92,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../math/injective.html">単射</a></h5>
-                  <p class="card-text">- $f(a)  f(b) \iff a = b$ を満たす関...</p>
+                  <h5 class="card-title fs-6"><a href="../math/total-function.html">全域写像</a></h5>
+                  <p class="card-text">- 写像と同じ意味で、部分写像に対して全域で定義されていること...</p>
                 </div>
               </div>
             </div>
@@ -118,8 +104,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../math/induction.html">帰納法</a></h5>
-                  <p class="card-text">- 数学的帰納法とか言われてるやつ - 再帰的な定義になってい...</p>
+                  <h5 class="card-title fs-6"><a href="../programming/coq-ack.html">Coqのアッカーマン関数</a></h5>
+                  <p class="card-text">- Coqで、Fixpointを使ってアッカーマン関数を素朴に...</p>
                 </div>
               </div>
             </div>
@@ -127,8 +113,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/coq-tactic.html">Coqのタクティック</a></h5>
-                    <p class="card-text">- Coqのタクティックについて、見つけたものに対してのメモ...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/coq.html">Coq</a></h5>
+                    <p class="card-text">- 定理証明支援系の一つ - カリー・ハワード同型対応に基づい...</p>
                   </div>
                 </div>
               </div>
@@ -136,8 +122,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-04-defs-is-equal.html">再帰的な項の定義と具体的な項の定義は等しい</a></h5>
-                    <p class="card-text">命題3.2.6(再帰的な項の定義と具体的な項の定義は等しい)に...</p>
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-06-expressive-sem.html">表示的意味論</a></h5>
+                    <p class="card-text">意味領域の集まりを見つけ、項を意味領域の元に移す解釈関数を定義...</p>
                   </div>
                 </div>
               </div>
