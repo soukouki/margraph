@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>ミニマル・ペア</title>
+    <title>Minimal Cake Pattern</title>
   </head>
   <body>
     
@@ -17,34 +17,58 @@
           
             <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../linguistics/index.html">linguistics</a></li>
+            <li class="breadcrumb-item"><a href="../programming/index.html">programming</a></li>
           
-          <li class="breadcrumb-item">ミニマル・ペア</li>
+          <li class="breadcrumb-item">Minimal Cake Pattern</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>ミニマル・ペア</h1>
+      <h1>Minimal Cake Pattern</h1>
 
       
         <div class="contents">
         
             
-              <div>Minimal-Pair</div>
-            
-          
-            
-              <div>音素の範囲を見つけるために使うペアとなる単語</div>
-            
-          
-            
               <div><ul>
-  <li>IPAの発音記号と<a href="../other/language.html">言語</a>を対応させていくときに、若干発音が違うが、同じように聞こえる物がある。
+  <li>Scalaなどの<a href="../other/language.html">言語</a>において、依存性注入を実現するためのデザイン<a href="../other/pattern.html">パターン</a></li>
+  <li>https://qiita.com/tayama0324/items/03ba48d3277079f20500</li>
+  <li>抽象フィールドの宣言を行うトレイトと、実態の定義を行うトレイトに分ける
     <ul>
-      <li>例えば、betとpetはそれぞれ違う意味を持つので、英語ではbとpを区別する、ということがわかる</li>
-      <li>日本語では、「ん」の発音が5種類あったりするので、これは重要</li>
+      <li>Mix-inを使う</li>
+    </ul>
+  </li>
+  <li>実装規約
+    <ul>
+      <li>Usesトレイト
+        <ul>
+          <li>
+            <blockquote>
+              <p>SomeClass への依存を表現するトレイトとして trait UsesSomeClass を定義します。</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+      <li>Mix-inトレイトの定義
+        <ul>
+          <li>
+            <blockquote>
+              <p>SomeClass を注入するためのクラスとして trait MixInSomeClass を定義します。</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
+      <li>依存性の宣言と注入
+        <ul>
+          <li>
+            <blockquote>
+              <p>UsesSomeClass を継承することで SomeClass への依存を表現します。同様に、 MixInSomeClass を継承することで SomeClass インスタンスを注入します。</p>
+            </blockquote>
+          </li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -67,19 +91,19 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../linguistics/linking.html">リンキング</a>
+                <a href="../programming/memory-area.html">メモリ領域</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../linguistics/index.html">linguistics</a>
+                <a href="../programming/index.html">programming</a>
               
             </div>
             <div class="col">
               
                 次の記事<br />
-                <a href="../linguistics/nasal.html">鼻音</a>
+                <a href="../programming/mkdir.html">mkdirで連番ディレクトリを作る</a>
               
             </div>
           </div>
@@ -88,7 +112,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/linguistics/minimal-pair.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/minimal-cake-pattern.md';">Edit</button>
         
         
       </div>
@@ -163,6 +187,15 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../linguistics/minimal-pair.html">ミニマル・ペア</a></h5>
+                    <p class="card-text">Minimal-Pair 音素の範囲を見つけるために使うペアと...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../margraph/design/02-practice.html">margraphのプラクティス</a></h5>
                     <p class="card-text">- 処理を小さなスクリプトに分ける   - スクリプトに違うプ...</p>
                   </div>
@@ -226,15 +259,6 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/minimal-cake-pattern.html">Minimal Cake Pattern</a></h5>
-                    <p class="card-text">- Scalaなどの言語において、依存性注入を実現するためのデ...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../programming/plags-ut.html">PLAGS UT</a></h5>
                     <p class="card-text">- 自動評価付きPythonプログラミング課題管理システム -...</p>
                   </div>
@@ -291,6 +315,90 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../scraps/shifting-language-eco-system.html">言語のエコシステムの変化</a></h5>
                     <p class="card-text">https://izumisy.work/entry/2021...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../other/pattern.html">パターン</a></h5>
+                  <p class="card-text">- 完全なパターンになったデザインを見た時、人は詳しくは見ない...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../long-tweets/2021-10-09.html">AIによる仕事の淘汰</a></h5>
+                    <p class="card-text">(Github Copilotを見て) うーん、仕事が無くなる...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/110-intermediate-representation.html">margraph用中間表現</a></h5>
+                    <p class="card-text">工数は増えるけれど、これは疎結合・高凝縮性の確保のために必要な...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/combination.html">組み合わせの数</a></h5>
+                    <p class="card-text">- n個あるものの中から順序を考えずr個取り出すパターンの数を...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/losistics.html">論理</a></h5>
+                    <p class="card-text">- $A \land B$   - AかつB   - Aが成り...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/permutation.html">順列の数</a></h5>
+                    <p class="card-text">- $_nP_r  n(n-1)(n-2) \cdots (n...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/daachhorce.html">Daachhorce</a></h5>
+                    <p class="card-text">- ダークホース https://tech.legalforc...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/regexp.html">正規表現</a></h5>
+                    <p class="card-text">- 文字列を検索するために使う - 便利なので皆覚えよう！ -...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/type-and-value.html">型と値を同じように扱いたい</a></h5>
+                    <p class="card-text">- 型と値を同じように扱いたい   - よりシンプルに、抽象化...</p>
                   </div>
                 </div>
               </div>
