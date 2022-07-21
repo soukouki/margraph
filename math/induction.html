@@ -46,6 +46,17 @@
       <li>$f(n) = \mathrm{hoge}(n)$ と仮定したとき、$f(n+1) = \mathrm{hoge}(n+1)$ なことを示す部分</li>
     </ul>
   </li>
+  <li>機能法では、特殊な<a href="../math/proposition.html">命題</a>よりも、一般的な<a href="../math/proposition.html">命題</a>のほうが<a href="../math/prove.html">証明</a>しやすい
+    <ul>
+      <li>例えばnが自然数、lが自然数のリストのとき、<code>[n] ++ l</code>に対する<a href="../math/prove.html">証明</a>より、<code>l</code>に対する<a href="../math/prove.html">証明</a>のほうが簡単なことが多い</li>
+      <li>induction rollingと呼ばれる</li>
+    </ul>
+  </li>
+  <li>forallをできる限り残したほうがいい
+    <ul>
+      <li><code>moev=&gt;</code>ではなく、<code>injection x =&gt; y</code>という形を取ることで、forallを広めに取れる</li>
+    </ul>
+  </li>
 </ul>
 </div>
             
@@ -99,6 +110,165 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/proposition.html">命題</a></h5>
+                  <p class="card-text">- 正しいか正しくないかが分かるもの...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/genmei.html">言明</a></h5>
+                    <p class="card-text">- 論理学で真か偽か分かるもの - Coqとかでこの単語を使う...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/lemma.html">補題</a></h5>
+                    <p class="card-text">- Lemma - 定理を証明するために補助的に使う命題...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/theorem.html">定理</a></h5>
+                    <p class="card-text">- Theorem - 命題の一つで、命題の中でも重要なもの...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/prove.html">証明</a></h5>
+                  <p class="card-text">- 命題が正しいことを他の人に明らかな形で示すこと - Coq...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/coq.html">Coq</a></h5>
+                    <p class="card-text">- 定理証明支援系の一つ - カリー・ハワード同型対応に基づい...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/theorem-proving-support-system.html">定理証明支援系</a></h5>
+                    <p class="card-text">- 定理を証明する際、証明が正しいことを証明してくれるシステム...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/language.html">言語</a></h5>
+                    <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../lectures/electromagnetics/rot.html">ベクトルの回転</a></h5>
+                    <p class="card-text">$$ \mathbf{\nabla} \times \math...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../lectures/electromagnetics/stokes.html">ストークスの定理</a></h5>
+                    <p class="card-text">電磁気の静電ポテンシャルや、アンペールの法則の証明で用いる 微...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/fermats-little-thorem.html">フェルマーの小定理</a></h5>
+                    <p class="card-text">- 以下   1. pが素数で $x \not \equiv ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/fourier/prove-orthogonal-system.html">直交系かどうか</a></h5>
+                    <p class="card-text">- $\\{ \cos nx \\}_{n1}^\infty$...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/probability-statistics/44-unbiased.html">不偏性</a></h5>
+                    <p class="card-text">- 普遍性(ubiguitousness)とは似ているが異なる...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/backward-reasoning.html">後ろ向き推論</a></h5>
+                    <p class="card-text">- 証明の進め方の一つ - 証明の後ろ(最終的に証明したい事柄...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/coq-ack.html">Coqのアッカーマン関数</a></h5>
+                    <p class="card-text">- Coqで、Fixpointを使ってアッカーマン関数を素朴に...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../theses/ppl2022-1.html">Type-Based Qubit Allocatiion for a First-Order Quantum Programming Language</a></h5>
+                    <p class="card-text">PPL2022の発表 ## どんなもの？ - 量子計算機上で動...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../theses/ppl2022-3.html">Sub-chaining styleとflat-chaining style双方の形式に対応したfluent interfaceの生成に向けた形式的な取り組み</a></h5>
+                    <p class="card-text">PPL2022の発表 ## どんなもの？ - メソッドチェーン...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
                   <h5 class="card-title fs-6"><a href="../math/peano-axioms.html">ペアノの公理系</a></h5>
                   <p class="card-text">- 自然数とは何かを表す公理 - 次の5つの公理を満たす集合 ...</p>
                 </div>
@@ -129,53 +299,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/coq.html">Coq</a></h5>
-                    <p class="card-text">- 定理証明支援系の一つ - カリー・ハワード同型対応に基づい...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/05-stacks.html">スタック</a></h5>
                     <p class="card-text">last-in, first-out(LIFO) 例えば平積み...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/prove.html">証明</a></h5>
-                    <p class="card-text">- 命題が正しいことを他の人に明らかな形で示すこと - Coq...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/theorem.html">定理</a></h5>
-                    <p class="card-text">- Theorem - 命題の一つで、命題の中でも重要なもの...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/lemma.html">補題</a></h5>
-                    <p class="card-text">- Lemma - 定理を証明するために補助的に使う命題...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/proposition.html">命題</a></h5>
-                    <p class="card-text">- 正しいか正しくないかが分かるもの...</p>
                   </div>
                 </div>
               </div>
