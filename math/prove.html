@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>本質</title>
+    <title>証明</title>
   </head>
   <body>
     
@@ -17,51 +17,31 @@
           
             <li class="breadcrumb-item"><a href="../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../other/index.html">other</a></li>
+            <li class="breadcrumb-item"><a href="../math/index.html">math</a></li>
           
-          <li class="breadcrumb-item">本質</li>
+          <li class="breadcrumb-item">証明</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>本質</h1>
+      <h1>証明</h1>
 
       
         <div class="contents">
         
             
-              <div>物事の根本的な性質・要素</div>
-            
-          
-            
               <div><ul>
-  <li>大した影響がない要素を捨てた、変えられない部分</li>
-  <li>ドリルを求める客が本当に欲しい物は、家の壁に空いた5ミリの穴
+  <li><a href="../math/proposition.html">命題</a>が正しいことを他の人に明らかな形で示すこと</li>
+  <li><a href="../programming/coq.html">Coq</a>などの<a href="../programming/theorem-proving-support-system.html">定理証明支援系</a>を使うと、自然<a href="../other/language.html">言語</a>を使わず証明できるので証明できたことが証明できる
     <ul>
-      <li>マーケティングの方で言われる言葉</li>
-      <li>ドリルの競争に参加するのではなく、本質的に重要なのは何かを見つけ、求められていることを提供する的な言葉…のはず</li>
+      <li>自然<a href="../other/language.html">言語</a>を使って証明すると、間違いが起こることがある。実際に証明したと言う主張が間違っていたことがあった</li>
     </ul>
   </li>
-  <li>本質的な物だけで決まるわけではない
+  <li>特殊な<a href="../math/proposition.html">命題</a>よりも、一般的な<a href="../math/proposition.html">命題</a>のほうが証明しやすいことが多い
     <ul>
-      <li>本質と言われているものを追ってしまうけれど、競争に勝つのは本質が優れている方ではない
-        <ul>
-          <li>規格争いなんかはその最たる例</li>
-          <li>悪い規格の方がマーケティングに力を注ぐから、そっちが買っちゃう、なんて言われたり</li>
-        </ul>
-      </li>
-      <li>GoやPythonなんかはそうだと思う
-        <ul>
-          <li><a href="../other/language.html">言語</a>の綺麗さと人気は比例しない</li>
-          <li>流行るためにはマーケティングにも力を注ぐ必要がある
-            <ul>
-              <li>逆に本質が良ければ流行った後長く使われる…?</li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+      <li>例えばnが自然数、lが自然数のリストのとき、<code>[n] ++ l</code>に対する証明より、<code>l</code>に対する証明のほうが簡単なことが多い</li>
     </ul>
   </li>
 </ul>
@@ -84,19 +64,19 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../other/hirogari.html">広がり</a>
+                <a href="../math/proposition.html">命題</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../other/index.html">other</a>
+                <a href="../math/index.html">math</a>
               
             </div>
             <div class="col">
               
                 次の記事<br />
-                <a href="../other/hyoki-yure.html">表記揺れ</a>
+                <a href="../math/stirlings-formula.html">スターリングの公式</a>
               
             </div>
           </div>
@@ -105,7 +85,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/other/honshitu.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/prove.md';">Edit</button>
         
         
       </div>
@@ -117,8 +97,38 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../other/language.html">言語</a></h5>
-                  <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                  <h5 class="card-title fs-6"><a href="../math/proposition.html">命題</a></h5>
+                  <p class="card-text">- 正しいか正しくないかが分かるもの...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/genmei.html">言明</a></h5>
+                    <p class="card-text">- 論理学で真か偽か分かるもの - Coqとかでこの単語を使う...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/theorem.html">定理</a></h5>
+                    <p class="card-text">- Theorem - 命題の一つで、命題の中でも重要なもの...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../programming/coq.html">Coq</a></h5>
+                  <p class="card-text">- 定理証明支援系の一つ - カリー・ハワード同型対応に基づい...</p>
                 </div>
               </div>
             </div>
@@ -131,6 +141,39 @@
                   </div>
                 </div>
               </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-06-expressive-sem.html">表示的意味論</a></h5>
+                    <p class="card-text">意味領域の集まりを見つけ、項を意味領域の元に移す解釈関数を定義...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../programming/theorem-proving-support-system.html">定理証明支援系</a></h5>
+                  <p class="card-text">- 定理を証明する際、証明が正しいことを証明してくれるシステム...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../other/language.html">言語</a></h5>
+                  <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                </div>
+              </div>
+            </div>
             
               <div class="col-4">
                 <div class="card h-100">
@@ -207,15 +250,6 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../math/prove.html">証明</a></h5>
-                    <p class="card-text">- 命題が正しいことを他の人に明らかな形で示すこと - Coq...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../math/probability-statistics/13-joint-probability.html">同時確率</a></h5>
                     <p class="card-text">- 結合確率とも - $P(A) \cap P(B)$ のよう...</p>
                   </div>
@@ -227,6 +261,15 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../other/gengoka.html">言語化</a></h5>
                     <p class="card-text">- 今まで曖昧に捉えていたモノや概念を、言葉にして書き出すこと...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/honshitu.html">本質</a></h5>
+                    <p class="card-text">物事の根本的な性質・要素 - 大した影響がない要素を捨てた、変...</p>
                   </div>
                 </div>
               </div>
@@ -300,8 +343,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../long-tweets/2021-09-09.html">プログラムの抽象化の美しさ</a></h5>
-                  <p class="card-text">> 小説や文学は読まないが、文字の美しい組み合わせや運び、そう...</p>
+                  <h5 class="card-title fs-6"><a href="../lectures/electromagnetics/rot.html">ベクトルの回転</a></h5>
+                  <p class="card-text">$$ \mathbf{\nabla} \times \math...</p>
                 </div>
               </div>
             </div>
@@ -309,8 +352,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07a-array.html">配列</a></h5>
-                    <p class="card-text">メモリ上で連続した領域。言わずとしれたデータ構造 リスト構造と...</p>
+                    <h5 class="card-title fs-6"><a href="../lectures/electromagnetics/div.html">ベクトルの発散</a></h5>
+                    <p class="card-text">$$ \mathbf{\nabla} \cdot \mathb...</p>
                   </div>
                 </div>
               </div>
@@ -318,8 +361,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/05-10-higher-order-func.html">高階関数</a></h5>
-                    <p class="card-text">関数を引数に取る関数と、関数を返す関数のこと...</p>
+                    <h5 class="card-title fs-6"><a href="../lectures/electromagnetics/nabla.html">$\mathbf{\nabla}$</a></h5>
+                    <p class="card-text">ベクトルの発散やベクトルの回転で使う $$ \mathbf{\...</p>
                   </div>
                 </div>
               </div>
@@ -330,8 +373,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../margraph/margraph-why.html">margraphに求められていること</a></h5>
-                  <p class="card-text">本質的に求められていることを書く - 様々な知識や経験を溜めて...</p>
+                  <h5 class="card-title fs-6"><a href="../lectures/electromagnetics/stokes.html">ストークスの定理</a></h5>
+                  <p class="card-text">電磁気の静電ポテンシャルや、アンペールの法則の証明で用いる 微...</p>
                 </div>
               </div>
             </div>
@@ -339,8 +382,17 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../long-tweets/2021-11-25.html">ノートの活用</a></h5>
-                    <p class="card-text">人が覚えられる量には明らかに限界がある(例えば保育園や小学校の...</p>
+                    <h5 class="card-title fs-6"><a href="../lectures/electromagnetics/ampere-equation.html">アンペールの法則</a></h5>
+                    <p class="card-text">ビオ・サバールの法則では計算が複雑なので、それを簡単にするため...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/fourier/inner-product.html">ベクトルの内積</a></h5>
+                    <p class="card-text">- $\displaystyle \boldsymbol{f ...</p>
                   </div>
                 </div>
               </div>
@@ -351,8 +403,32 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../math/fourier/-.html">フーリエ解析</a></h5>
-                  <p class="card-text">- フーリエ解析の授業ノート - 「フーリエ解析とその応用 洲...</p>
+                  <h5 class="card-title fs-6"><a href="../math/fermats-little-thorem.html">フェルマーの小定理</a></h5>
+                  <p class="card-text">- 以下   1. pが素数で $x \not \equiv ...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/lemma.html">補題</a></h5>
+                  <p class="card-text">- Lemma - 定理を証明するために補助的に使う命題...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/fourier/prove-orthogonal-system.html">直交系かどうか</a></h5>
+                  <p class="card-text">- $\\{ \cos nx \\}_{n1}^\infty$...</p>
                 </div>
               </div>
             </div>
@@ -360,8 +436,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../lectures/class-note.html">授業ノート</a></h5>
-                    <p class="card-text">margraph上の授業ノート 授業の一部分しか書いてなかった...</p>
+                    <h5 class="card-title fs-6"><a href="../math/fourier/orthogonal-system.html">直交系</a></h5>
+                    <p class="card-text">- ベクトルの内積が0のとき、そのベクトルは直交するという  ...</p>
                   </div>
                 </div>
               </div>
@@ -369,8 +445,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/okurigana.html">送り仮名</a></h5>
-                    <p class="card-text">普段は見ない送り仮名を集めたい - 必らず   - 解析概論 ...</p>
+                    <h5 class="card-title fs-6"><a href="../math/fourier/inner-product-func.html">関数の内積</a></h5>
+                    <p class="card-text">- ベクトルの内積を、関数にも適用してみる - $\displ...</p>
                   </div>
                 </div>
               </div>
@@ -381,8 +457,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../programming/makeing-language-workspace.html">言語自作勉強会</a></h5>
-                  <p class="card-text">の反省 ## 概要 事前に私が作った[baby-interpr...</p>
+                  <h5 class="card-title fs-6"><a href="../math/probability-statistics/44-unbiased.html">不偏性</a></h5>
+                  <p class="card-text">- 普遍性(ubiguitousness)とは似ているが異なる...</p>
                 </div>
               </div>
             </div>
@@ -390,8 +466,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/senren.html">シンプル</a></h5>
-                    <p class="card-text">- 機能をシンプルにするには、大きく2つあると思う - 機能を...</p>
+                    <h5 class="card-title fs-6"><a href="../math/probability-statistics/42-estimation.html">推定</a></h5>
+                    <p class="card-text">- どれくらい確からしいか、ある仮設がどれくらい言えるか、とい...</p>
                   </div>
                 </div>
               </div>
@@ -399,8 +475,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../long-tweets/2021-11-29.html">やりたいこと</a></h5>
-                    <p class="card-text">> うつのせいで僕何もしてない、１１月入ってプログラム一行も書...</p>
+                    <h5 class="card-title fs-6"><a href="../math/probability-statistics/22-expectation-value.html">期待値</a></h5>
+                    <p class="card-text">- 試行回数を無限に増やしていったときの平均値 - 標本に対し...</p>
                   </div>
                 </div>
               </div>
@@ -408,8 +484,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/sintyoku-konpe.html">進捗コンペ</a></h5>
-                    <p class="card-text">Zliでやってた進捗コンペで出た成果 ## 主な進捗 - 言語...</p>
+                    <h5 class="card-title fs-6"><a href="../math/probability-statistics/03-bosuu.html">母数</a></h5>
+                    <p class="card-text">- 母集団の特性を表す数 - **サンプルサイズの数ではない*...</p>
                   </div>
                 </div>
               </div>
@@ -417,8 +493,26 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/undergraduate-1.html">学部一年の振り返り</a></h5>
-                    <p class="card-text">- プログラミング関連について   - Rustを触ってみたり...</p>
+                    <h5 class="card-title fs-6"><a href="../math/probability-statistics/05a-variance.html">分散</a></h5>
+                    <p class="card-text">- 標準偏差を2乗したもの   - $\sigma^2$ - ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/probability-statistics/44-unbiased-variance.html">不偏分散</a></h5>
+                    <p class="card-text">- 不偏性に近い性質を持つ分散において、分散の代わりに使う値...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/probability-statistics/43-most-likelihood-method.html">最尤法</a></h5>
+                    <p class="card-text">- 最尤は「さいゆう」と読む - MLMとも - 尤は、尤もら...</p>
                   </div>
                 </div>
               </div>
@@ -429,8 +523,20 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-06-expressive-sem.html">表示的意味論</a></h5>
-                  <p class="card-text">意味領域の集まりを見つけ、項を意味領域の元に移す解釈関数を定義...</p>
+                  <h5 class="card-title fs-6"><a href="../programming/backward-reasoning.html">後ろ向き推論</a></h5>
+                  <p class="card-text">- 証明の進め方の一つ - 証明の後ろ(最終的に証明したい事柄...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../programming/coq-ack.html">Coqのアッカーマン関数</a></h5>
+                  <p class="card-text">- Coqで、Fixpointを使ってアッカーマン関数を素朴に...</p>
                 </div>
               </div>
             </div>
@@ -438,8 +544,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/atsumari.html">集まり</a></h5>
-                    <p class="card-text">- 物事が一ヶ所にまとめられ、集約されているようなさま - 広...</p>
+                    <h5 class="card-title fs-6"><a href="../math/partial-function.html">部分写像</a></h5>
+                    <p class="card-text">- 部分写像と多分同義 - $X \to Y$ の写像fの概念...</p>
                   </div>
                 </div>
               </div>
@@ -447,26 +553,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/coq-ack.html">Coqのアッカーマン関数</a></h5>
-                    <p class="card-text">- Coqで、Fixpointを使ってアッカーマン関数を素朴に...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/coq.html">Coq</a></h5>
-                    <p class="card-text">- 定理証明支援系の一つ - カリー・ハワード同型対応に基づい...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-05-operational-sem.html">操作的意味論</a></h5>
-                    <p class="card-text">抽象機械を定義し、プログラミング言語の振る舞いを規定する 機械...</p>
+                    <h5 class="card-title fs-6"><a href="../math/total-function.html">全域写像</a></h5>
+                    <p class="card-text">- 写像と同じ意味で、部分写像に対して全域で定義されていること...</p>
                   </div>
                 </div>
               </div>
@@ -477,8 +565,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../theses/functional-reactive-animation.html">Functional Reactive Animation</a></h5>
-                  <p class="card-text">ElmのTEAの元となった論文(今となってはだいぶ離れてるらし...</p>
+                  <h5 class="card-title fs-6"><a href="../programming/coq-tactic.html">Coqのタクティック</a></h5>
+                  <p class="card-text">- Coqのタクティックについて、見つけたものに対してのメモ...</p>
                 </div>
               </div>
             </div>
@@ -486,8 +574,17 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/event.html">イベント</a></h5>
-                    <p class="card-text">イベントは内向的な理由で行うべきだ、と言う主張について - 内...</p>
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/05-stacks.html">スタック</a></h5>
+                    <p class="card-text">last-in, first-out(LIFO) 例えば平積み...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/induction.html">帰納法</a></h5>
+                    <p class="card-text">- 数学的帰納法とか言われてるやつ - 再帰的な定義になってい...</p>
                   </div>
                 </div>
               </div>
@@ -498,8 +595,8 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../tools/kakau.html">Kakau</a></h5>
-                  <p class="card-text">kakau.app - メモアプリの一つ - 箇条書きをさらに...</p>
+                  <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-04-defs-is-equal.html">再帰的な項の定義と具体的な項の定義は等しい</a></h5>
+                  <p class="card-text">命題3.2.6(再帰的な項の定義と具体的な項の定義は等しい)に...</p>
                 </div>
               </div>
             </div>
@@ -507,8 +604,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/kajou.html">箇条書き</a></h5>
-                    <p class="card-text">- 箇条書きが便利   - 今のmargraphだと画像も自由...</p>
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-01-recursive-def.html">再帰的な項の定義</a></h5>
+                    <p class="card-text">定義3.2.1より - (1)は自明 - (2)はなに？   ...</p>
                   </div>
                 </div>
               </div>
@@ -516,11 +613,44 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../margraph/margraph-junban.html">リンク</a></h5>
-                    <p class="card-text">- 中間表現に分けた後でリンクしないといけない   - リンク...</p>
+                    <h5 class="card-title fs-6"><a href="../reading-note/tapl/03-03-concrete-def.html">具体的な項の定義</a></h5>
+                    <p class="card-text">- $S_0$は空集合 - $S_1$ は再帰的な項の定義や推...</p>
                   </div>
                 </div>
               </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../theses/ppl2022-1.html">Type-Based Qubit Allocatiion for a First-Order Quantum Programming Language</a></h5>
+                  <p class="card-text">PPL2022の発表 ## どんなもの？ - 量子計算機上で動...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../theses/ppl.html">PPL</a></h5>
+                    <p class="card-text">プログラミングおよびプログラミング言語ワークショップ...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../theses/ppl2022-3.html">Sub-chaining styleとflat-chaining style双方の形式に対応したfluent interfaceの生成に向けた形式的な取り組み</a></h5>
+                  <p class="card-text">PPL2022の発表 ## どんなもの？ - メソッドチェーン...</p>
+                </div>
+              </div>
+            </div>
             
           </div>
         
