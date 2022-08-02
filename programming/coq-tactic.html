@@ -153,6 +153,13 @@
       <li>コンテキストを別の形に変換して、残った元のやつを消すときに使う</li>
     </ul>
   </li>
+  <li><code>have: ([命題](../math/proposition.html))</code> <code>suff: ([命題](../math/proposition.html))</code>
+    <ul>
+      <li>Aという<a href="../math/proposition.html">命題</a>があるときにBという<a href="../math/proposition.html">命題</a>を指定すると、A-&gt;BとBの2つのゴールに分けて<a href="../math/prove.html">証明</a>できる</li>
+      <li>haveではB, A-&gt;Bの順で、Bが簡単なときに適している</li>
+      <li>suffではA-&gt;B, Bの順になる</li>
+    </ul>
+  </li>
   <li><code>specialize ([補題](../math/lemma.html)名 変数名)</code>
     <ul>
       <li>forallになっているコンテキストに対して、変数を指定する</li>
