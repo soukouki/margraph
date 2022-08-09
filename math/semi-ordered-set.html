@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>スターリングの公式</title>
+    <title>半順序集合</title>
   </head>
   <body>
     
@@ -19,22 +19,34 @@
           
             <li class="breadcrumb-item"><a href="../math/index.html">math</a></li>
           
-          <li class="breadcrumb-item">スターリングの公式</li>
+          <li class="breadcrumb-item">半順序集合</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>スターリングの公式</h1>
+      <h1>半順序集合</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li>$n! \sim \sqrt{2 \pi n} n^n e^{-n}$</li>
-  <li>階乗の近似</li>
+  <li>集合S上の関係Rが任意の $a, b, c \in S$ に対して、以下の条件を満たすとき、S上の半順序と呼ぶ
+    <ul>
+      <li>反射的 $aRa$</li>
+      <li>反対称的 $aRb, bRa \to a=b$</li>
+      <li>推移的 $aRb, bRc \to aRc$</li>
+    </ul>
+  </li>
+  <li>半順序集合では任意の要素に対して関係Rが成り立つことを要求していない
+    <ul>
+      <li>$\forall a,b \in S, aRb$ は成り立たない</li>
+      <li>これを条件に加えたものが<a href="../math/full-ordered-set.html">全順序集合</a></li>
+      <li>ひし形みたいな関係になりうる</li>
+    </ul>
+  </li>
 </ul>
 </div>
             
@@ -55,7 +67,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../math/semi-ordered-set.html">半順序集合</a>
+                <a href="../math/prove.html">証明</a>
               
             </div>
             <div class="col">
@@ -67,7 +79,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../math/surjection.html">全射</a>
+                <a href="../math/stirlings-formula.html">スターリングの公式</a>
               
             </div>
           </div>
@@ -76,13 +88,25 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/stirlings-formula.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/semi-ordered-set.md';">Edit</button>
         
         
       </div>
 
       
       <div class="link-network">
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../math/full-ordered-set.html">全順序集合</a></h5>
+                  <p class="card-text">- 半順序集合の条件に加えて、$\forall a,b \in...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
         
       </div>
       
