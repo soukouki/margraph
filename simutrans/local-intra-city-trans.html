@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../style.css" type="text/css">
-    <title>飛騨</title>
+    <title>輸送の段階的構造</title>
   </head>
   <body>
     
@@ -19,57 +19,30 @@
           
             <li class="breadcrumb-item"><a href="../simutrans/index.html">simutrans</a></li>
           
-          <li class="breadcrumb-item">飛騨</li>
+          <li class="breadcrumb-item">輸送の段階的構造</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>飛騨</h1>
+      <h1>輸送の段階的構造</h1>
 
       
         <div class="contents">
         
             
               <div><ul>
-  <li><a href="../simutrans/ahns.html">AHNS</a>-C2の飛騨付近の開発計画</li>
-  <li>ニューヨークやシカゴに似た雰囲気の開発にしたい</li>
-  <li>矩形の区画
+  <li>市内輸送、<a href="../other/city.html">都市</a>圏内輸送、<a href="../other/city.html">都市</a>間輸送、…と、段階を分けたほうが効率が良くなる</li>
+  <li>シムトラでしばらく、ターミナル型で市内輸送と<a href="../other/city.html">都市</a>圏内輸送を合わせる実験をしていた
     <ul>
-      <li>ニューヨークのように、矩形の区画をベースにした開発にしたい</li>
-      <li>後で触れるセントラルパークやターミナルも、この区画をベースにして配置したい</li>
+      <li><a href="../simutrans/ahns-c1.html">AHNS-C1</a>の高輪ではバスで、<a href="../simutrans/alns-9.html">ALNS9</a>の大花では路面電車で</li>
+      <li>ただ、ターミナル付近での交通機関による土地の混雑や、ターミナルから離れた区間で系統を新設しずらい問題が出てきた</li>
     </ul>
   </li>
-  <li>セントラルパーク
+  <li><a href="../math/probability-statistics/05a-variance.html">分散</a>的な輸送網であれば、また違う結果が出るのかもしれない
     <ul>
-      <li>中央部に大きな緑地を作りたい</li>
-      <li>セントラルパークを中心地として、その周囲は特に高層化したい</li>
-    </ul>
-  </li>
-  <li>街の発展方法
-    <ul>
-      <li>高層化する部分と、低層・中層の部分を分けたい
-        <ul>
-          <li>大きな道路沿いは高め、みたいな</li>
-        </ul>
-      </li>
-      <li>手植えは辛いので、街を分けた上でふりかけ、自動発展を活用したい</li>
-    </ul>
-  </li>
-  <li>ターミナル駅
-    <ul>
-      <li>郊外に向かう鉄道路線との接続駅</li>
-      <li><a href="../math/probability-statistics/05a-variance.html">分散</a>させたい</li>
-      <li>横はあまり広げずに、2層式などにしたい</li>
-      <li>アーチ屋根などを活用したい</li>
-    </ul>
-  </li>
-  <li><a href="../simutrans/inner-city-transfar.html">市内交通</a>
-    <ul>
-      <li>路面電車と高架鉄道に絞る</li>
-      <li>使い分けはまだ考えてない</li>
-      <li>セントラルパークを中心とした路線網</li>
+      <li>例えば現実の高速バス輸送網とか</li>
     </ul>
   </li>
 </ul>
@@ -92,7 +65,7 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../simutrans/bpm.html">bpm</a>
+                <a href="../simutrans/inner-city-transfar.html">市内交通</a>
               
             </div>
             <div class="col">
@@ -104,7 +77,7 @@
             <div class="col">
               
                 次の記事<br />
-                <a href="../simutrans/inner-city-transfar.html">市内交通</a>
+                <a href="../simutrans/new-shinkansen.html">新新幹線</a>
               
             </div>
           </div>
@@ -113,7 +86,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/simutrans/hida.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/simutrans/local-intra-city-trans.md';">Edit</button>
         
         
       </div>
@@ -125,11 +98,65 @@
             <div class="col-4">
               <div class="card h-100">
                 <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../simutrans/ahns.html">AHNS</a></h5>
-                  <p class="card-text">- ahakuokuが開いたNSサーバー - 主にpak128...</p>
+                  <h5 class="card-title fs-6"><a href="../other/city.html">都市</a></h5>
+                  <p class="card-text">- 都市には広がりと集まりが必要なのではないか   - 集まり...</p>
                 </div>
               </div>
             </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/hirogari.html">広がり</a></h5>
+                    <p class="card-text">- 物事が開けた、分散したようなさま - 一ヶ所に纏まってる、...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/atsumari.html">集まり</a></h5>
+                    <p class="card-text">- 物事が一ヶ所にまとめられ、集約されているようなさま - 広...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../long-tweets/2021-11-26.html">地名の規模</a></h5>
+                    <p class="card-text">シムトラで街の位置をリアルと合わせる時、かつ今の市町村よりよっ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../novels/world-tree.html">世界樹の上に村を作ってみませんか</a></h5>
+                    <p class="card-text">氷純 - ハロロース！の元ネタ - かなりしっかりとしたまちづ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/undergraduate-1.html">学部一年の振り返り</a></h5>
+                    <p class="card-text">- プログラミング関連について   - Rustを触ってみたり...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../scraps/city-project.html">都市計画</a></h5>
+                    <p class="card-text">- > 都市計画は、目的地までの道のりを目的地と同じくらい望ま...</p>
+                  </div>
+                </div>
+              </div>
             
               <div class="col-4">
                 <div class="card h-100">
@@ -143,8 +170,29 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../simutrans/ahns-c1.html">AHNS-C1</a></h5>
-                    <p class="card-text">- AHNSのコンセプト鯖 - 途中から中心都市の成京の路線バ...</p>
+                    <h5 class="card-title fs-6"><a href="../simutrans/inner-city-transfar.html">市内交通</a></h5>
+                    <p class="card-text">- 市内・都市内の需要を処理する交通 - バスや地下鉄、市電、...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../simutrans/ahns-c1.html">AHNS-C1</a></h5>
+                  <p class="card-text">- AHNSのコンセプト鯖 - 途中から中心都市の成京の路線バ...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../simutrans/ahns.html">AHNS</a></h5>
+                    <p class="card-text">- ahakuokuが開いたNSサーバー - 主にpak128...</p>
                   </div>
                 </div>
               </div>
@@ -152,20 +200,23 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../simutrans/bpm.html">bpm</a></h5>
-                    <p class="card-text">- bit per monthの略 - 1増やすごとに1ヶ月の...</p>
+                    <h5 class="card-title fs-6"><a href="../simutrans/takanawa.html">高縄駅</a></h5>
+                    <p class="card-text">- AHNS-C1の成京付近にある駅 - 巨大なバスターミナル...</p>
                   </div>
                 </div>
               </div>
             
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../simutrans/new-shinkansen.html">新新幹線</a></h5>
-                    <p class="card-text">- AHNS-F1で作った、1000両を超える新幹線 - OT...</p>
-                  </div>
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../simutrans/alns-9.html">ALNS9</a></h5>
+                  <p class="card-text">- 有栖鯖の9期 - 旅客の増加量の予想ミスで、鯖管にかなり迷...</p>
                 </div>
               </div>
+            </div>
             
           </div>
         
@@ -326,15 +377,6 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/hirogari.html">広がり</a></h5>
-                    <p class="card-text">- 物事が開けた、分散したようなさま - 一ヶ所に纏まってる、...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../scraps/sacrificial-architecture.html">犠牲的アーキテクチャ</a></h5>
                     <p class="card-text">- https://bliki-ja.github.io/Sa...</p>
                   </div>
@@ -344,29 +386,8 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../simutrans/local-intra-city-trans.html">輸送の段階的構造</a></h5>
-                    <p class="card-text">- 市内輸送、都市圏内輸送、都市間輸送、...と、段階を分けた...</p>
-                  </div>
-                </div>
-              </div>
-            
-          </div>
-        
-          <div class="row flex-nowrap overflow-auto">
-            <div class="col-4">
-              <div class="card h-100">
-                <div class="card-body">
-                  <h5 class="card-title fs-6"><a href="../simutrans/inner-city-transfar.html">市内交通</a></h5>
-                  <p class="card-text">- 市内・都市内の需要を処理する交通 - バスや地下鉄、市電、...</p>
-                </div>
-              </div>
-            </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../other/city.html">都市</a></h5>
-                    <p class="card-text">- 都市には広がりと集まりが必要なのではないか   - 集まり...</p>
+                    <h5 class="card-title fs-6"><a href="../simutrans/hida.html">飛騨</a></h5>
+                    <p class="card-text">- AHNS-C2の飛騨付近の開発計画 - ニューヨークやシカ...</p>
                   </div>
                 </div>
               </div>
