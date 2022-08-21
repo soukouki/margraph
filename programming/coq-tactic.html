@@ -61,6 +61,7 @@
           <li>assertとapplyを組み合わせる</li>
         </ul>
       </li>
+      <li>SSReflectのタクティクスが使えるなら、move: で持ってくるほうが楽</li>
     </ul>
   </li>
   <li><code>generalize dependent 変数名</code>
@@ -101,7 +102,7 @@
   <li><code>rewrite [補題](../math/lemma.html)名</code>
     <ul>
       <li>関数・<a href="../math/lemma.html">補題</a>を指定して、その式を左辺のものから右辺のものに置き換える</li>
-      <li><code>rewrite- [補題](../math/lemma.html)名</code>
+      <li><code>rewrite -[補題](../math/lemma.html)名</code>
         <ul>
           <li>右辺から左辺に置き換えるものに変わる</li>
         </ul>
@@ -114,6 +115,11 @@
       <li><code>rewrite /定義名</code>
         <ul>
           <li>定義名の定義を紐解いて、展開してくれる</li>
+        </ul>
+      </li>
+      <li><code>rewrite -/定義名</code>
+        <ul>
+          <li>定義名の定義に基づいて、折りたたんでくれる</li>
         </ul>
       </li>
       <li><code>rewrite (_ : もとの変数名 = 新しい変数名)</code>
@@ -182,7 +188,15 @@
   </li>
   <li><code>split</code>
     <ul>
-      <li>謎</li>
+      <li><code>A /\ B</code> となっていて、分けて<a href="../math/prove.html">証明</a>するときに使える</li>
+    </ul>
+  </li>
+  <li><code>by (タクティック)</code>
+    <ul>
+      <li>SSReflectにおいて、サブゴールを閉じる目印にする</li>
+      <li>自動である程度推論してくれる機能があるので、便利</li>
+      <li>特にタクティックを指定しない場合は、<code>by []</code>とする</li>
+      <li>SSReflectのタクティック</li>
     </ul>
   </li>
 </ul>
