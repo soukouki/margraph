@@ -139,7 +139,12 @@
   <li><code>case</code>
     <ul>
       <li>場合分けをする</li>
-      <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>case_eq</code>
+    <ul>
+      <li><code>case</code>に加えて、場合分けするときの条件を仮定につけてくれる</li>
+      <li><code>b = x1 &lt; x2</code>のbに対して場合分けするときなどに、<code>b = true</code>, <code>b = false</code>などと仮定を付けてくれる</li>
     </ul>
   </li>
   <li><code>elim</code>
@@ -197,6 +202,22 @@
       <li>自動である程度推論してくれる機能があるので、便利</li>
       <li>特にタクティックを指定しない場合は、<code>by []</code>とする</li>
       <li>SSReflectのタクティック</li>
+    </ul>
+  </li>
+  <li><code>set (変数名) := (変数の中身)</code>
+    <ul>
+      <li>式に対して新しい変数で置き換える</li>
+      <li>ごちゃごちゃしてる式に対して、名前を付け直すことで<a href="../math/prove.html">証明</a>を整理できる</li>
+    </ul>
+  </li>
+  <li><code>rename (元の変数名) into (変更先の名前)</code>
+    <ul>
+      <li>変数名を変更できる</li>
+      <li>意味のある変数名を使って、<a href="../math/prove.html">証明</a>の際の混乱を減らす
+        <ul>
+          <li>例えば、<a href="../programming/algorithms-and-data-structure/07a-array.html">配列</a>なら<code>x1 :: x2 :: x3 :: xs4</code>のように、連番にしてみるなど</li>
+        </ul>
+      </li>
     </ul>
   </li>
 </ul>
@@ -338,15 +359,6 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07-linked-list.html">連結リスト</a></h5>
                     <p class="card-text">その要素と、次の要素(または前後の要素)へのポインタをもつもの...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07a-array.html">配列</a></h5>
-                    <p class="card-text">メモリ上で連続した領域。言わずとしれたデータ構造 リスト構造と...</p>
                   </div>
                 </div>
               </div>
@@ -572,6 +584,144 @@
                 </div>
               </div>
             </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/07a-array.html">配列</a></h5>
+                  <p class="card-text">メモリ上で連続した領域。言わずとしれたデータ構造 リスト構造と...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../other/senren.html">シンプル</a></h5>
+                    <p class="card-text">- 機能をシンプルにするには、大きく2つあると思う - 機能を...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../long-tweets/2021-09-09.html">プログラムの抽象化の美しさ</a></h5>
+                    <p class="card-text">> 小説や文学は読まないが、文字の美しい組み合わせや運び、そう...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/101-merge-json.html">Merge Json</a></h5>
+                    <p class="card-text">複数のjsonファイルを与えられたときに、いい感じにマージして...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/102-collect-link.html">Collect Links</a></h5>
+                    <p class="card-text">集められた記事のタイトルを使って、記事中からどの部分にリンクを...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../margraph/design/110a-sample.html">記事の中間表現のテスト用</a></h5>
+                    <p class="card-text">タイトル直下のテキスト 段落毎に分けておく ## h2用タイト...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../math/relation/relational-matrix.html">関係行列</a></h5>
+                    <p class="card-text">- 二項関係を表す方法 - Aの要素を行に、Rの要素を列に表示...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/daachhorce.html">Daachhorce</a></h5>
+                    <p class="card-text">- ダークホース https://tech.legalforc...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/elm-comp.html">Elmで競プロ</a></h5>
+                    <p class="card-text">- 環境   - https://github.com/sou...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/persistant-data-structure.html">永続データ構造</a></h5>
+                    <p class="card-text">- 変更するときに、値を直接書き換えるのではなく、変更前のバー...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/02-insertion-sort.html">挿入ソート</a></h5>
+                    <p class="card-text">空間計算量$ O\left(N\right) $ 時間計算量$...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/04-selection-sort.html">選択ソート</a></h5>
+                    <p class="card-text">空間計算量$ O\left(N\right) $ 時間計算量$...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/09-merge-sort.html">マージソート</a></h5>
+                    <p class="card-text">分割統治法を用いたアルゴリズム - 分割   - 配列があった...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/15-heap.html">ヒープ</a></h5>
+                    <p class="card-text">子要素は親要素より常に大きい(小さい)か等しい、という制約がつ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../programming/algorithms-and-data-structure/19-adjacency-list.html">隣接リスト</a></h5>
+                    <p class="card-text">グラフ構造を表す手段の一つ ノード`i`がエッジによってノード...</p>
+                  </div>
+                </div>
+              </div>
             
           </div>
         
