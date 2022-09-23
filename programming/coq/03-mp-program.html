@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
+    <link rel="stylesheet" href="../../style.css" type="text/css">
+    <title>プログラムを用いた定理証明</title>
+  </head>
+  <body>
+    
+    <nav class="navbar sticky-top bg-body" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+      <div class="container" style="max-width: 40em;">
+        <ol class="breadcrumb">
+          
+            <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../programming/index.html">programming</a></li>
+          
+            <li class="breadcrumb-item"><a href="../../programming/coq/index.html">coq</a></li>
+          
+          <li class="breadcrumb-item">プログラムを用いた定理証明</li>
+        </ol>
+      </div>
+    </nav>
+
+    <article class="container" style="max-width: 40em;">
+
+      <h1>プログラムを用いた定理証明</h1>
+
+      
+        <div class="contents">
+        
+            
+              <div>では実際に、カリー・ハワード同型対応を使い、プログラムを用いて<a href="../../math/proposition.html">命題</a>を<a href="../../math/prove.html">証明</a>してみたいと思います。</div>
+            
+          
+            
+              <h2>例1. モーダスポネンス</h2>
+            
+          
+            
+              <div>今回は、PならばQであるならば、PならばQという<a href="../../math/proposition.html">命題</a>を<a href="../../math/prove.html">証明</a>します。もっと具体的な例で表すならば、<code>雨が降っていれば家にいる</code>(PならばQ)と<code>[雨が降っている]</code>(P)という2つを仮定し、<code>[家にいる]</code>(Q)という結論を導き出すような<a href="../../math/proposition.html">命題</a>です、xならばyを、数式で用いられる $x \to y$ と言う形で表すと、先ほどの<a href="../../math/proposition.html">命題</a>は次のように表せます。</div>
+            
+          
+            
+              <div>\[(P \to Q) \to P \to Q\]
+</div>
+            
+          
+            
+              <div>この<a href="../../math/proposition.html">命題</a>を<a href="../../math/prove.html">証明</a>するために、以下のようなプログラムを書きます(例はHaskellで書いていますが、TypeScript、Scala、Rustなど、多くの<a href="../../other/language.html">言語</a>でも同じように<a href="../../math/prove.html">証明</a>できます)。</div>
+            
+          
+            
+              <pre><code class="language-haskell">modusPonens :: (p -> q) -> p -> q
+modusPonens hpq hp = hpq hp
+</code></pre>
+            
+          
+            
+              <div>このとき、型は以下のようになります。(<code>x -&gt; y</code> は、x型を引数に取り、y型を返す関数を表します。)</div>
+            
+          
+            
+              <div><table>
+  <thead>
+    <tr>
+      <th style="text-align: center">変数</th>
+      <th style="text-align: center">型</th>
+      <th style="text-align: center">型の意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>hpq</code></td>
+      <td style="text-align: center"><code>p -&gt; q</code></td>
+      <td style="text-align: center">$P \to Q$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>hp</code></td>
+      <td style="text-align: center"><code>p</code></td>
+      <td style="text-align: center">$P$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>hpq hp</code></td>
+      <td style="text-align: center"><code>q</code></td>
+      <td style="text-align: center">$Q$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>modusPonens</code></td>
+      <td style="text-align: center"><code>(p -&gt; q) -&gt; p -&gt; q</code></td>
+      <td style="text-align: center">$(P \to Q) \to P \to Q$</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+            
+          
+            
+              <div><code>hpq hp</code>では、<code>p -&gt; q</code>という型の関数に対して、<code>p</code>型の値を引数として渡しています。すると関数は<code>q</code>型の値を返します。</div>
+            
+          
+            
+              <div>型で使われている<code>p</code>や<code>q</code>は、任意の型を表すもので、型引数と呼ばれます。C++やJavaのテンプレートと同じようなものです。</div>
+            
+          
+            
+              <h2>例2. </h2>
+            
+          
+            
+              <div>カリー・ハワード同型対応において、<a href="../../math/losistics.html">論理</a>積は直積型(タプルや構造体)に対応します。</div>
+            
+          
+            
+              <div>例えば、$P \to Q \to P \land Q$ は、以下のプログラムで<a href="../../math/prove.html">証明</a>できます。</div>
+            
+          
+            
+              <pre><code class="language-haskell">and :: p -> q -> (p, q)
+and hp hq = (hp, hq)
+</code></pre>
+            
+          
+            
+              <div>$P \land Q \to P$ と $P \land Q \to Q$ も次のように<a href="../../math/prove.html">証明</a>できます。</div>
+            
+          
+            
+              <div>```haskelland_l :: (p, q) -&gt; pand_l (hp, _) = hp</div>
+            
+          
+            
+              <div>and_r :: (p, q) -&gt; qand_r (_, hq) = hq```</div>
+            
+          
+            
+              <h2>例3. </h2>
+            
+          
+            
+              <div><a href="../../math/losistics.html">論理</a>和は、直和型に対応します。今回は<code>Either</code>型を用いて<a href="../../math/prove.html">証明</a>します。</div>
+            
+          
+            
+              <div>$P \to P \lor Q$ と $Q \to P \lor Q$ は、以下のように<a href="../../math/prove.html">証明</a>できます。</div>
+            
+          
+            
+              <div>```haskellor_introl :: p -&gt; Either p qor_introl hp = Left hp</div>
+            
+          
+            
+              <div>or_intror :: q -&gt; Either p qor_intror hq = Right hq```</div>
+            
+          
+            
+              <h2>例4. 否定</h2>
+            
+          
+            
+              <div><a href="../../math/proposition.html">命題</a>Pの否定 $\lnot P$ は、$P \to \bot$ という形で表されます。</div>
+            
+          
+            
+              <div>ボトム型 $\bot$ は、どんな値も存在しない型です。例えば、<code>Int</code>型には値<code>1</code>が、<code>()</code>型には値<code>()</code>が存在しますが、ボトム型には値が存在しません。Haskellでは<code>Data.Void</code>のVoid型に対応します。</div>
+            
+          
+            
+              <div>```haskellimport Data.Void</div>
+            
+          
+            
+              <div>and_not :: (p -&gt; Void) -&gt; ((p, q) -&gt; Void)and_not hnp = hnp . and_l```</div>
+            
+          
+            
+              <div>型は以下のようになります。</div>
+            
+          
+            
+              <div><table>
+  <thead>
+    <tr>
+      <th style="text-align: center">式</th>
+      <th style="text-align: center">型</th>
+      <th style="text-align: center">型の意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>hnp</code></td>
+      <td style="text-align: center"><code>p -&gt; Void</code></td>
+      <td style="text-align: center">$\lnot P$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>and_l</code></td>
+      <td style="text-align: center"><code>(p, q) -&gt; p</code></td>
+      <td style="text-align: center">$P \land Q \to P$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>hnp . and_l</code></td>
+      <td style="text-align: center"><code>(p, q) -&gt; Void</code></td>
+      <td style="text-align: center">$\lnot (P \land Q)$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>and_not</code></td>
+      <td style="text-align: center"><code>((p -&gt; Void) -&gt; ((p, q) -&gt; Void))</code></td>
+      <td style="text-align: center">$\lnot P \to \lnot (P \land Q)$</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+            
+          
+            
+              <h2>例5. ド・モルガンの法則</h2>
+            
+          
+            
+              <div>場合分けを用いてド・モルガンの法則の一部である $\lnot P \lor \lnot Q \to \lnot (P \land Q)$ を<a href="../../math/prove.html">証明</a>します。</div>
+            
+          
+            
+              <pre><code class="language-haskell">deMorgan :: (Either (p -> Void) (q -> Void)) -> ((p, q) -> Void)
+deMorgan (Left hnp) = hnp . and_l
+deMorgan (Right hnq) = hnq . and_r
+</code></pre>
+            
+          
+            
+              <div>仮定にある $\lnot P \lor \lnot Q$ に対して、$\lnot P$ の場合と $\lnot Q$ の場合に場合分けを行っています。場合分けはHaskellの<a href="../../other/pattern.html">パターン</a>マッチに相当します。</div>
+            
+          
+            
+              <div>型は以下のようになります。</div>
+            
+          
+            
+              <div><table>
+  <thead>
+    <tr>
+      <th style="text-align: center">式</th>
+      <th style="text-align: center">型</th>
+      <th style="text-align: center">型の意味</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><code>hnp</code></td>
+      <td style="text-align: center"><code>p -&gt; Void</code></td>
+      <td style="text-align: center">$\lnot P$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>and_l</code></td>
+      <td style="text-align: center"><code>(p, q) -&gt; p</code></td>
+      <td style="text-align: center">$P \land Q \to P$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>hnp . and_l</code></td>
+      <td style="text-align: center"><code>(p, q) -&gt; Void</code></td>
+      <td style="text-align: center">$\lnot (P \land Q)$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>hnq</code></td>
+      <td style="text-align: center"><code>q -&gt; Void</code></td>
+      <td style="text-align: center">$\lnot Q$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>and_r</code></td>
+      <td style="text-align: center"><code>(p, q) -&gt; q</code></td>
+      <td style="text-align: center">$P \land Q \to Q$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>hnq . and_r</code></td>
+      <td style="text-align: center"><code>(p, q) -&gt; Void</code></td>
+      <td style="text-align: center">$\lnot (P \land Q)$</td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><code>deMorgan</code></td>
+      <td style="text-align: center">(省略)</td>
+      <td style="text-align: center">$\lnot P \lor \lnot Q \to \lnot (P \land Q)$</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+            
+          
+            
+              <div>ここまでプログラムを用いた<a href="../../math/theorem.html">定理</a>証明を紹介しましたが、<a href="../../programming/coq.html">Coq</a>ではこれをタクティックと呼ばれるものを使い、抽象的に記述します。他の<a href="../../programming/theorem-proving-support-system.html">定理証明支援系</a>でも同様の機能があります。</div>
+            
+          
+            
+              <div>TODO: 練習問題少し追加するほうが良いかも</div>
+            
+          
+        </div>
+      
+
+      
+
+      
+      
+      
+      <hr />
+
+      
+        <div class="hood-link">
+          <div class="row text-center">
+            <div class="col">
+              
+                前の記事<br />
+                <a href="../../programming/coq/02-proof-assistant.html">定理証明支援系としてのプログラミング言語</a>
+              
+            </div>
+            <div class="col">
+              
+                目次<br />
+                <a href="../../programming/coq/index.html">coq</a>
+              
+            </div>
+            <div class="col">
+              
+                次の記事<br />
+                <a href="../../programming/coq/04-coqide.html">CoqIDE</a>
+              
+            </div>
+          </div>
+        </div>
+      
+
+      <div class="d-flex flex-row-reverse">
+        
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/programming/coq/03-mp-program.md';">Edit</button>
+        
+        
+      </div>
+
+      
+      <div class="link-network">
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/proposition.html">命題</a></h5>
+                  <p class="card-text">- 正しいか正しくないかが分かるもの...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/genmei.html">言明</a></h5>
+                    <p class="card-text">- 論理学で真か偽か分かるもの - Coqとかでこの単語を使う...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/induction.html">帰納法</a></h5>
+                    <p class="card-text">- 数学的帰納法とか言われてるやつ - 再帰的な定義になってい...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/lemma.html">補題</a></h5>
+                    <p class="card-text">- Lemma - 定理を証明するために補助的に使う命題...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/coq-tactic.html">Coqのタクティック</a></h5>
+                    <p class="card-text">- Coqのタクティックについて、見つけたものに対してのメモ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/coq/02-proof-assistant.html">定理証明支援系としてのプログラミング言語</a></h5>
+                    <p class="card-text">Coqは、定理証明支援系とプログラミング言語の両方を兼ね備えた...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../reading-note/tapl/03-04-defs-is-equal.html">再帰的な項の定義と具体的な項の定義は等しい</a></h5>
+                    <p class="card-text">命題3.2.6(再帰的な項の定義と具体的な項の定義は等しい)に...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/prove.html">証明</a></h5>
+                  <p class="card-text">- 命題が正しいことを他の人に明らかな形で示すこと - Coq...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/rot.html">ベクトルの回転</a></h5>
+                    <p class="card-text">$$ \mathbf{\nabla} \times \math...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../lectures/electromagnetics/stokes.html">ストークスの定理</a></h5>
+                    <p class="card-text">電磁気の静電ポテンシャルや、アンペールの法則の証明で用いる 微...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fermats-little-thorem.html">フェルマーの小定理</a></h5>
+                    <p class="card-text">- 以下   1. pが素数で $x \not \equiv ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/lattice.html">束</a></h5>
+                    <p class="card-text">- 以下の公理的な恒等式を満たす、2種類の2項演算と集合   ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/fourier/prove-orthogonal-system.html">直交系かどうか</a></h5>
+                    <p class="card-text">- $\\{ \cos nx \\}_{n1}^\infty$...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/44-unbiased.html">不偏性</a></h5>
+                    <p class="card-text">- 普遍性(ubiguitousness)とは似ているが異なる...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/backward-reasoning.html">後ろ向き推論</a></h5>
+                    <p class="card-text">- 証明の進め方の一つ - 証明の後ろ(最終的に証明したい事柄...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/coq-ack.html">Coqのアッカーマン関数</a></h5>
+                    <p class="card-text">- Coqで、Fixpointを使ってアッカーマン関数を素朴に...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/coq-memo.html">Coqの証明メモ</a></h5>
+                    <p class="card-text">- Coqで証明するときに使えるテクニックなど - 証明事例集...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/coq/05-tactics.html">Coqのタクティック</a></h5>
+                    <p class="card-text">Coqのタクティックについて触る。CoqのGallinaとLt...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../theses/ppl2022-1.html">Type-Based Qubit Allocatiion for a First-Order Quantum Programming Language</a></h5>
+                    <p class="card-text">PPL2022の発表 ## どんなもの？ - 量子計算機上で動...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../theses/ppl2022-3.html">Sub-chaining styleとflat-chaining style双方の形式に対応したfluent interfaceの生成に向けた形式的な取り組み</a></h5>
+                    <p class="card-text">PPL2022の発表 ## どんなもの？ - メソッドチェーン...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../other/language.html">言語</a></h5>
+                  <p class="card-text">- 情報を交換するために作られたもの - 媒体はいろいろ   ...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/programming-language.html">プログラミング言語</a></h5>
+                    <p class="card-text">- さまざまな形でコンピュータに指令を伝えるために使われる言語...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/rule.html">ルール</a></h5>
+                    <p class="card-text">- 人が増えるとどうせ守られなくなるもの   - 人が多いノー...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../color/natural-harmony.html">ナチュラルハーモニー</a></h5>
+                    <p class="card-text">- 明るいところを黄っぽく、暗いところを青っぽくする - コン...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../color/complex-harmony.html">コンプレックスハーモニー</a></h5>
+                    <p class="card-text">- 明るいところを青めに、暗いところを黄めに配色する - ナチ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../2-what-i-did.html">作ったもの・やったことリスト</a></h5>
+                    <p class="card-text">- 各種Lightning Talkイベントへの登壇   - ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../linguistics/bouba-kiki-effect.html">ブーバ・キキ効果</a></h5>
+                    <p class="card-text">Bouba/Kiki Effect - それぞれ丸い曲線とギザ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../linguistics/minimal-pair.html">ミニマル・ペア</a></h5>
+                    <p class="card-text">Minimal-Pair 音素の範囲を見つけるために使うペアと...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/02-practice.html">margraphのプラクティス</a></h5>
+                    <p class="card-text">- 処理を小さなスクリプトに分ける   - スクリプトに違うプ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/120-attachment.html">margraphの添付ファイル</a></h5>
+                    <p class="card-text">`src/<mdファイルのパス>`から始まる文字があるときには...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/probability-statistics/13-joint-probability.html">同時確率</a></h5>
+                    <p class="card-text">- 結合確率とも - $P(A) \cap P(B)$ のよう...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/gengoka.html">言語化</a></h5>
+                    <p class="card-text">- 今まで曖昧に捉えていたモノや概念を、言葉にして書き出すこと...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../other/honshitu.html">本質</a></h5>
+                    <p class="card-text">物事の根本的な性質・要素 - 大した影響がない要素を捨てた、変...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/elm.html">Elm</a></h5>
+                    <p class="card-text">- 純粋関数型言語 - 機能がかなり絞ってあるので、関数型への...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/memory-area.html">メモリ領域</a></h5>
+                    <p class="card-text">- プログラムを動かす際、メモリは4つの領域に分けて使われる...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/plags-ut.html">PLAGS UT</a></h5>
+                    <p class="card-text">- 自動評価付きPythonプログラミング課題管理システム -...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/rust-string.html">Rustの文字列</a></h5>
+                    <p class="card-text">- Rustの文字列は大きく分けて2種類ある   - `Str...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/text-area.html">テキスト領域</a></h5>
+                    <p class="card-text">- 機械語で書かれたプログラムを動かす際、プログラム自体が書か...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../reading-note/tapl/01-02-types.html">型システム</a></h5>
+                    <p class="card-text">## 定義 > プログラムの各部分を、それが計算する値の種類に...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../scraps/shifting-language-eco-system.html">言語のエコシステムの変化</a></h5>
+                    <p class="card-text">https://izumisy.work/entry/2021...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/losistics.html">論理</a></h5>
+                  <p class="card-text">- $A \land B$   - AかつB   - Aが成り...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../lectures/history-of-science/17-paradigm.html">パラダイム論</a></h5>
+                    <p class="card-text">科学史においてトーマス・クーンが提唱した概念 科学の歴史に現れ...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/exist.html">$\exists$</a></h5>
+                    <p class="card-text">- $\exists x[x>0]$   - $x>0$ とな...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/forall.html">$\forall$</a></h5>
+                    <p class="card-text">- $\forall x[x>0]$   - すべてのxにたい...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../other/pattern.html">パターン</a></h5>
+                  <p class="card-text">- 完全なパターンになったデザインを見た時、人は詳しくは見ない...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../long-tweets/2021-10-09.html">AIによる仕事の淘汰</a></h5>
+                    <p class="card-text">(Github Copilotを見て) うーん、仕事が無くなる...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/110-intermediate-representation.html">margraph用中間表現</a></h5>
+                    <p class="card-text">工数は増えるけれど、これは疎結合・高凝縮性の確保のために必要な...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/combination.html">組み合わせの数</a></h5>
+                    <p class="card-text">- n個あるものの中から順序を考えずr個取り出すパターンの数を...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../math/permutation.html">順列の数</a></h5>
+                    <p class="card-text">- $_nP_r  n(n-1)(n-2) \cdots (n...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/daachhorce.html">Daachhorce</a></h5>
+                    <p class="card-text">- ダークホース https://tech.legalforc...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/minimal-cake-pattern.html">Minimal Cake Pattern</a></h5>
+                    <p class="card-text">- Scalaなどのプログラミング言語において、依存性注入を実...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/regexp.html">正規表現</a></h5>
+                    <p class="card-text">- 文字列を検索するために使う - 便利なので皆覚えよう！ -...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/type-and-value.html">型と値を同じように扱いたい</a></h5>
+                    <p class="card-text">- 型と値を同じように扱いたい   - よりシンプルに、抽象化...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../math/theorem.html">定理</a></h5>
+                  <p class="card-text">- Theorem - 命題の一つで、命題の中でも重要なもの...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../long-tweets/2021-08-01.html">生きがい</a></h5>
+                    <p class="card-text">生きがいを見つけることって、自身が感じる公理を見つけて、それを...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../margraph/design/201-num-of-hops.html">何ホップ分表示するか</a></h5>
+                    <p class="card-text">関連項目として、何ホップ分表示させるか - Scrapboxで...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/coq.html">Coq</a></h5>
+                  <p class="card-text">- 定理証明支援系の一つ - カリー・ハワード同型対応に基づい...</p>
+                </div>
+              </div>
+            </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../reading-note/tapl/03-06-expressive-sem.html">表示的意味論</a></h5>
+                    <p class="card-text">意味領域の集まりを見つけ、項を意味領域の元に移す解釈関数を定義...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/coq/01-introduction.html">Coqのチュートリアル</a></h5>
+                    <p class="card-text">Coqのチュートリアルです。最終的に本としてまとめるため、少し...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../programming/coq/04-coqide.html">CoqIDE</a></h5>
+                    <p class="card-text">CoqIDE開いて本と同じ感じで一通り触ってみる...</p>
+                  </div>
+                </div>
+              </div>
+            
+          </div>
+        
+          <div class="row flex-nowrap overflow-auto">
+            <div class="col-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title fs-6"><a href="../../programming/theorem-proving-support-system.html">定理証明支援系</a></h5>
+                  <p class="card-text">- 定理を証明する際、証明が正しいことを証明してくれるシステム...</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        
+      </div>
+      
+
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', (event) => {
+        document.querySelectorAll('pre code').forEach((el) => {
+          hljs.highlightElement(el);
+        });
+      });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/highlight.min.js"></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+        },
+        chtml: { 
+          displayAlign: 'left',
+        },
+      };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+  </body>
+</html>
