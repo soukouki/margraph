@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-dark-5@1.1.3/dist/css/bootstrap-nightfall.min.css" media="(prefers-color-scheme: dark)">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.3.1/styles/base16/ashes.min.css">
     <link rel="stylesheet" href="../../style.css" type="text/css">
-    <title>不動点コンビネータ</title>
+    <title>閉じている</title>
   </head>
   <body>
     
@@ -17,28 +17,37 @@
           
             <li class="breadcrumb-item"><a href="../../index.html">margraph</a></li>
           
-            <li class="breadcrumb-item"><a href="../../reading-note/index.html">reading-note</a></li>
+            <li class="breadcrumb-item"><a href="../../math/index.html">math</a></li>
           
-            <li class="breadcrumb-item"><a href="../../reading-note/tapl/index.html">tapl</a></li>
+            <li class="breadcrumb-item"><a href="../../math/linear/index.html">linear</a></li>
           
-          <li class="breadcrumb-item">不動点コンビネータ</li>
+          <li class="breadcrumb-item">閉じている</li>
         </ol>
       </div>
     </nav>
 
     <article class="container" style="max-width: 40em;">
 
-      <h1>不動点コンビネータ</h1>
+      <h1>閉じている</h1>
 
       
         <div class="contents">
         
             
-              <div>しばしば値呼びY<a href="../../reading-note/tapl/05-01-combinator.html">コンビネータ</a>、Z<a href="../../reading-note/tapl/05-01-combinator.html">コンビネータ</a>とも呼ばれる</div>
-            
-          
-            
-              <div>$\mathrm{fix} = \lambda f.\ (\lambda x.\ f\ (\lambda y.\ x\ x\ y))\ (\lambda x.\ f\ (\lambda y.\ x\ x\ y))$</div>
+              <div><ul>
+  <li>集合Aが演算Bについて閉じているとき
+    <ul>
+      <li>Aの元に対する演算Bの結果がAの元になる</li>
+    </ul>
+  </li>
+  <li>ところで、Bは全てのAの元に対して定義されている必要はあるか？
+    <ul>
+      <li>ex, 0割り</li>
+      <li>全ての元に定義されていない演算があるとき、任意の集合がその演算について閉じていると言えるか？</li>
+    </ul>
+  </li>
+</ul>
+</div>
             
           
         </div>
@@ -57,16 +66,19 @@
             <div class="col">
               
                 前の記事<br />
-                <a href="../../reading-note/tapl/05-13-church-number.html">チャーチ数</a>
+                <a href="../../math/linear/01-complex.number-definition.html">実数の組を使った複素数の定義</a>
               
             </div>
             <div class="col">
               
                 目次<br />
-                <a href="../../reading-note/tapl/index.html">tapl</a>
+                <a href="../../math/linear/index.html">linear</a>
               
             </div>
             <div class="col">
+              
+                次の記事<br />
+                <a href="../../math/linear/03-norm.html">ノルム</a>
               
             </div>
           </div>
@@ -75,7 +87,7 @@
 
       <div class="d-flex flex-row-reverse">
         
-          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/reading-note/tapl/05-14-z-combinator.md';">Edit</button>
+          <button type="button" class="btn btn-outline-primary btn-sm" onclick="window.location.href='https://github.com/soukouki/margraph/edit/master/src/math/linear/02-closed.md';">Edit</button>
         
         
       </div>
@@ -96,15 +108,6 @@
               <div class="col-4">
                 <div class="card h-100">
                   <div class="card-body">
-                    <h5 class="card-title fs-6"><a href="../../math/linear/02-closed.html">閉じている</a></h5>
-                    <p class="card-text">- 集合Aが演算Bについて閉じているとき   - Aの元に対す...</p>
-                  </div>
-                </div>
-              </div>
-            
-              <div class="col-4">
-                <div class="card h-100">
-                  <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../math/lattice.html">束</a></h5>
                     <p class="card-text">- 以下の公理的な恒等式を満たす、2種類の2項演算と集合   ...</p>
                   </div>
@@ -116,6 +119,15 @@
                   <div class="card-body">
                     <h5 class="card-title fs-6"><a href="../../reading-note/tapl/05-13-church-number.html">チャーチ数</a></h5>
                     <p class="card-text">簡単のため、振る舞い等価なものは区別せずに考える。そのため、値...</p>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="col-4">
+                <div class="card h-100">
+                  <div class="card-body">
+                    <h5 class="card-title fs-6"><a href="../../reading-note/tapl/05-14-z-combinator.html">不動点コンビネータ</a></h5>
+                    <p class="card-text">しばしば値呼びYコンビネータ、Zコンビネータとも呼ばれる $\...</p>
                   </div>
                 </div>
               </div>
